@@ -63,3 +63,11 @@ policy:
     enabled_in: [dev, test]
     placeholders_allowed: true
     placeholders_pattern: "^\\[PLACEHOLDER-[A-Z0-9-]+\\]$"
+
+# استثناءات فحوصات CI — تفعيل Phase 00B (2026-10-06)
+# السكربتات تقرأ من هنا — لا hardcode.
+ci:
+  exemptions:
+    ci_015_internet: ["spike/**"]
+    ci_016_network_pkg: ["spike/**"]
+    ci_017_placeholder: ["spike/**", "test/**", "**/dev/**"]

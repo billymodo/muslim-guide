@@ -12,13 +12,16 @@ PLANNED (يبدأ بعد اعتماد Phase 00)
 - نفس الإشعار بعد **إعادة تشغيل الجهاز**.
 - exact alarms على Android 12+.
 - سلوك أجهزة OEM (Xiaomi، Huawei، …).
-- حد 64 إشعارًا على iOS (إن كان ضمن النطاق).
+- iOS: N/A — deferred to v2.0 (DEC-0015, OD-0021).
 - نمط الكتابة من الخلفية بدون مشاكل Hive عبر isolates.
 - تشغيل صوت في الخلفية + audio focus + المقاطعات.
 
 ## Out of Scope
 - تصميم UI نهائي.
 - أذان فعلي.
+
+## Dependencies
+- CR-0004: audio_service + just_audio (مسموح داخل spike/)
 
 ## Exit Criteria
 - جدول نتائج على **جهاز حقيقي** (طراز + إصدار نظام + النتيجة).
@@ -29,6 +32,8 @@ PLANNED (يبدأ بعد اعتماد Phase 00)
 - سجل الإشعارات (لقطات).
 - سجل الأخطاء.
 - قرار موثق.
+- Build Issues في spike/RESULTS.md (desugaring)
+- اختبار audio focus (مكالمة + تشغيل خلفي)
 
 ## Deviations from Specification
 (يُملأ عند التنفيذ)

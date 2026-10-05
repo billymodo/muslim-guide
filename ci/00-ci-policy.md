@@ -68,6 +68,16 @@ build-debug
 project-checks
 ```
 
+أسماء إضافية (تفعيل Phase 00B — تعليم بشري 2026-10-06):
+
+```text
+check-test-count
+check-no-print
+check-no-internet
+check-no-network-pkg
+check-no-placeholder
+```
+
 ## Network & Manifest Checks (توضيح CI-015)
 
 - Flutter يضيف صلاحية `INTERNET` تلقائيًا في manifest نسخ debug/profile لأجل hot reload.
@@ -82,7 +92,7 @@ project-checks
 | المرحلة | الفحوصات المفعّلة |
 |---|---|
 | Phase 00 | CI-009، CI-010، CI-011، CI-002 (فحص الأصول الأساسي)، CI-018 |
-| Phase 00B → Phase 04 | إضافة CI-012 … CI-017 |
+| Phase 00B → Phase 04 | **مفعّلة منذ 2026-10-06:** CI-012, CI-014, CI-015, CI-016, CI-017 — وCI-013 مؤجّل إلى Phase 01 |
 | Phase 05+ | إضافة CI-001، CI-003 … CI-008 (license gate كامل) — **مشروطًا** بتحديث `legal/assets.yaml` إلى schema v2 أولًا |
 
 - المعتمد في: `03-decisions.md` (DEC-0018) و`governance/cr/CR-0001-phase-aware-ci-rollout.md`.

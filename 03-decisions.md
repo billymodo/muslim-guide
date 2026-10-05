@@ -126,3 +126,11 @@
 - **Reason**: License Gate يفترض محتوى مُشحونًا؛ `legal/assets.yaml` ما زالت بصيغة schema v1 ومخالفة لـ S-001/S-003.
 - **Decided**: 2026-10-05 — `governance/cr/CR-0001-phase-aware-ci-rollout.md`
 - **Affected Documents**: `ci/00-ci-policy.md`, `ci/01-ci-checks.md`, `phases/00-foundation.md`, `.github/workflows/ci.yml`
+
+## Change Requests (CRs)
+
+- CR-0001 — Phase-Aware CI Rollout — APPROVED (2026-10-05) — `governance/cr/CR-0001-phase-aware-ci-rollout.md`
+- CR-0002 — توحيد تسمية Phase A → Phase 00 — APPROVED (2026-10-05) — `governance/cr/CR-0002-phase-a-naming.md`
+- CR-0003 — minSdk 24 — APPROVED (2026-10-06) — `governance/cr/CR-0003-minsdk-24.md`
+- CR-0004 — audio_service + just_audio داخل spike — APPROVED (2026-10-06) — `governance/cr/CR-0004-audio-in-spike.md`
+- CR-0005 — توسيع عقد أسماء jobs في CI — APPROVED (2026-10-06) — `governance/cr/CR-0005-ci-job-names-expanded.md`

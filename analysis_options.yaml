@@ -6,6 +6,8 @@ analyzer:
   exclude:
     - build/**
     - android/**
+    # Spike 00B معفى (legal/policy.yaml + موافقات 2026-10-06) — له pubspec وتحليله الخاص.
+    - spike/**
 
 linter:
   rules:

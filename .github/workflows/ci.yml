@@ -154,3 +154,129 @@ jobs:
 
       - name: 'CI-011: flutter build apk --debug'
         run: flutter build apk --debug
+
+  # ===== Phase 00B — تفعيل CI-012/014/015/016/017 (2026-10-06) =====
+  # كل job: CI الإجمالي يُحسب فاشلاً إذا فشل أي منها.
+  check-test-count:
+    name: check-test-count
+    needs: test
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Flutter (pinned)
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+
+      - name: 'CI-018: Flutter version pinned'
+        shell: bash
+        run: |
+          set -euo pipefail
+          INSTALLED=$(flutter --version 2>/dev/null | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          PINNED=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          if [ "$INSTALLED" != "$PINNED" ]; then
+            echo "CI-018 FAIL: installed=$INSTALLED pinned=$PINNED"
+            exit 1
+          fi
+          echo 'CI-018 OK'
+
+      - name: Get dependencies (enforce lockfile)
+        run: flutter pub get --enforce-lockfile
+
+      - name: 'CI-012: tests not reduced'
+        shell: bash
+        run: |
+          chmod +x tool/*.sh
+          tool/check_test_count.sh
+
+  check-no-print:
+    name: check-no-print
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 'CI-018: Flutter version pinned (static)'
+        shell: bash
+        run: |
+          set -euo pipefail
+          FVM=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          WF=$(grep -oE "flutter-version: '[0-9]+\.[0-9]+\.[0-9]+'" .github/workflows/ci.yml | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          if [ "$FVM" != "$WF" ]; then echo "CI-018 FAIL: fvmrc=$FVM workflow=$WF"; exit 1; fi
+          echo "CI-018 OK (static): $FVM"
+
+      - name: 'CI-014: no print / no undocumented ignore'
+        shell: bash
+        run: |
+          chmod +x tool/*.sh
+          tool/check_no_print.sh
+
+  check-no-internet:
+    name: check-no-internet
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 'CI-018: Flutter version pinned (static)'
+        shell: bash
+        run: |
+          set -euo pipefail
+          FVM=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          WF=$(grep -oE "flutter-version: '[0-9]+\.[0-9]+\.[0-9]+'" .github/workflows/ci.yml | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          if [ "$FVM" != "$WF" ]; then echo "CI-018 FAIL: fvmrc=$FVM workflow=$WF"; exit 1; fi
+          echo "CI-018 OK (static): $FVM"
+
+      - name: 'CI-015: no INTERNET in main manifest'
+        shell: bash
+        run: |
+          chmod +x tool/*.sh
+          tool/check_no_internet.sh
+
+  check-no-network-pkg:
+    name: check-no-network-pkg
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 'CI-018: Flutter version pinned (static)'
+        shell: bash
+        run: |
+          set -euo pipefail
+          FVM=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          WF=$(grep -oE "flutter-version: '[0-9]+\.[0-9]+\.[0-9]+'" .github/workflows/ci.yml | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          if [ "$FVM" != "$WF" ]; then echo "CI-018 FAIL: fvmrc=$FVM workflow=$WF"; exit 1; fi
+          echo "CI-018 OK (static): $FVM"
+
+      - name: 'CI-016: no network packages in pubspec'
+        shell: bash
+        run: |
+          chmod +x tool/*.sh
+          tool/check_no_network_pkg.sh
+
+  check-no-placeholder:
+    name: check-no-placeholder
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 'CI-018: Flutter version pinned (static)'
+        shell: bash
+        run: |
+          set -euo pipefail
+          FVM=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          WF=$(grep -oE "flutter-version: '[0-9]+\.[0-9]+\.[0-9]+'" .github/workflows/ci.yml | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          if [ "$FVM" != "$WF" ]; then echo "CI-018 FAIL: fvmrc=$FVM workflow=$WF"; exit 1; fi
+          echo "CI-018 OK (static): $FVM"
+
+      - name: 'CI-017: no placeholder in main'
+        shell: bash
+        run: |
+          chmod +x tool/*.sh
+          tool/check_no_placeholder.sh

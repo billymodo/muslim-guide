@@ -1,0 +1,4 @@
+# Spike 00B — يُحذف قبل اعتماد 00B (legal/policy.yaml)
+build/
+.dart_tool/
+*.apk
