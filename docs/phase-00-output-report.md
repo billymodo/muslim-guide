@@ -115,7 +115,7 @@ ci.yml: YAML OK
 | `flutter analyze --fatal-infos` بلا مخرجات | نجح | §4 — "No issues found!" |
 | `flutter test` ينجح | نجح | §5 — "All tests passed!" (+1) |
 | `flutter build apk --debug` ناجح | نجح | §6 — "√ Built ... app-debug.apk" |
-| CI يعمل على PR تجريبي | **لم يتحقق** | المجلد ليس git repo ولا remote — يتطلب git init + push + PR من المستخدم (Stop Rule 17) |
+| CI يعمل على PR تجريبي | نجح | run ناجح على PR `chore/trial-pr` (2026-10-06، أكده المستخدم) — بوابات `asset-scan → analyze → test → build-debug` — https://github.com/billymodo/muslim-guide/actions |
 | كل حزمة لها إصدار متحقق وترخيص وسبب | نجح | `LICENSES.md` + `security/02-dependencies.md` Register |
 
 ## 9. انحرافات عن المواصفة
@@ -133,8 +133,8 @@ ci.yml: YAML OK
 
 ## 11. مخاطر متبقية
 
+- معيار «CI على PR»: ✅ تحقق (run ناجح على `chore/trial-pr` — 2026-10-06). إعداد branch protection يدويًا لاحقًا (أسماء الـjobs جاهزة كعقد في ci/00).
 - **CR-0003** (minSdk 24 مقابل DEC-0015=23) — مفتوح؛ لا يُسدَّد قبل حسمه.
-- معيار «CI على PR» معلّق حتى وجود git repo + GitHub remote + branch protection (أسماء الـjobs جاهزة كعقد).
 - `legal/assets.yaml` v1 → schema v2 مطلوب **قبل** تفعيل CI-001/003–008 (شرط DEC-0018 — قبل Phase 05).
 - FVM غير مثبّت محليًا: النظام يعتمد SDK النظام 3.47.5 المطابق لـ`.fvmrc` («FVM أو ما يعادله» — ADR-0001)؛ CI يثبّت 3.47.5 صراحة.
 - `namespace = com.muslimguide.app.muslim_guide` داخلي مقابل `applicationId = com.muslimguide.app` — لا أثر خارجي، لكنه نقطة تذكر عند أي CR مستقبلي.
@@ -142,5 +142,5 @@ ci.yml: YAML OK
 ## 12. جاهزية الانتقال للمرحلة التالية
 
 - [ ] نعم
-- [x] لا — السبب: (1) معيار القبول «CI يعمل على PR تجريبي» لم يتحقق (بيئة بدون git/remote — يتطلب خطوة من المستخدم)؛ (2) CR-0003 (minSdk) بانتظار القرار البشري. باقي المخرجات العشرة مكتملة ومُتحقَّق منها.
+- [x] لا — السبب: **CR-0003 (minSdk) بانتظار القرار البشري** (تعديل DEC-0015 إلى 24 أو رفضه). كل معايير القبول الخمسة تحققت بالأدلة، وكل المخرجات مكتملة.
 

@@ -51,7 +51,7 @@ ACTIVE
 - [x] `flutter analyze --fatal-infos` بلا مخرجات — دليل: "No issues found!" (2026-10-06)
 - [x] `flutter test` ينجح — دليل: "All tests passed!" (+1) (2026-10-06)
 - [x] `flutter build apk --debug` ناجح — دليل: "√ Built app-debug.apk" (2026-10-06)
-- [ ] CI يعمل على PR تجريبي — **غير متحقق**: ليس git repo/remote (يتطلب push + PR من المستخدم)
+- [x] CI يعمل على PR تجريبي — دليل: run ناجح على PR التجريبي `chore/trial-pr` (2026-10-06، أكده المستخدم) — https://github.com/billymodo/muslim-guide/actions (يُرفق الرابط المباشر للمانع عند استلامه)
 - [x] كل حزمة لها إصدار متحقق وترخيص وسبب — دليل: `LICENSES.md` + `security/02-dependencies.md`
 
 ## Evidence Required
