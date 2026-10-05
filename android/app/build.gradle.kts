@@ -17,9 +17,9 @@ android {
     defaultConfig {
         // DEC-0015: applicationId مُعتمد بشريًا (2026-10-05).
         applicationId = "com.muslimguide.app"
-        // DEC-0015 + CR-0003 (بانتظار القرار): الأصل 23، لكن Flutter 3.47.5
-        // يهاجر أي قيمة 16..23 إلى flutter.minSdkVersion (=24) عند كل flutter build.
-        minSdk = flutter.minSdkVersion // 24 فعليًا — aapt2: minSdkVersion:'24'
+        // DEC-0015 (معدّل بـ CR-0003 — APPROVED 2026-10-06): minSdk 24.
+        // Flutter 3.47.5 يفرض 24 كحد أدنى فعلي (FlutterExtension.kt).
+        minSdk = 24
         targetSdk = 34
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION
         // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)

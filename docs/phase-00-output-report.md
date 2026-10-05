@@ -115,32 +115,37 @@ ci.yml: YAML OK
 | `flutter analyze --fatal-infos` بلا مخرجات | نجح | §4 — "No issues found!" |
 | `flutter test` ينجح | نجح | §5 — "All tests passed!" (+1) |
 | `flutter build apk --debug` ناجح | نجح | §6 — "√ Built ... app-debug.apk" |
-| CI يعمل على PR تجريبي | نجح | run ناجح على PR `chore/trial-pr` (2026-10-06، أكده المستخدم) — بوابات `asset-scan → analyze → test → build-debug` — https://github.com/billymodo/muslim-guide/actions |
+| CI يعمل على PR تجريبي | نجح | https://github.com/billymodo/muslim-guide/actions/runs/37384176239 — PR `chore/trial-pr` — conclusion: **success** (GitHub API، 2026-10-06) — بوابات: asset-scan → analyze → test → build-debug |
+
+**سجل CI (Evidence):**
+- run `37384176239` — `chore/trial-pr` — **success** — https://github.com/billymodo/muslim-guide/actions/runs/37384176239
+- run `37383065316` — `main` (أول دفع) — **success** — https://github.com/billymodo/muslim-guide/actions/runs/37383065316
+- مُتحقَّق من GitHub API بتاريخ 2026-10-06.
 | كل حزمة لها إصدار متحقق وترخيص وسبب | نجح | `LICENSES.md` + `security/02-dependencies.md` Register |
 
 ## 9. انحرافات عن المواصفة
 
 - ما لم يُنفَّذ: `release.yml` (يُنشأ Phase 09 — قرار بشري)؛ «CI على PR تجريبي» (بيئة بدون git/remote)؛ الفحوصات الأسبوعية المجدولة (مؤجلة ضمن DEC-0018).
-- ما نُفِّذ بشكل مختلف: نطاق CI = CI-002/009/010/011/018 بدل CI-001…018 (DEC-0018 / CR-0001)؛ `DECISIONS.md` → `03-decisions.md`؛ minSdk فعلي **24** بدل 23 (CR-0003 مفتوح).
+- ما نُفِّذ بشكل مختلف: نطاق CI = CI-002/009/010/011/018 بدل CI-001…018 (DEC-0018 / CR-0001)؛ `DECISIONS.md` → `03-decisions.md`؛ minSdk: حُسم بـ **CR-0003 (APPROVED 2026-10-06)** — عُدّل DEC-0015 إلى 24.
 - السبب: License Gate يتعارض مع `legal/assets.yaml` v1 (S-001/S-003)؛ Flutter 3.47.5 يفرض `flutter.minSdkVersion=24` ويهاجر القيم 16..23 تلقائيًا (`min_sdk_version_migration.dart`).
 - التفاصيل: `phases/00-foundation.md` §Deviations.
 
 ## 10. نقاط تحتاج مراجعة بشرية
 
 - شرعي؟ — لا محتوى شرعي (لا شيء في هذا Phase).
-- ترخيص؟ — ✅ MIT معتمد (DEC-0014، بشري)؛ **CR-0003 (minSdk 24) بانتظار ردك**.
+- ترخيص؟ — ✅ MIT معتمد (DEC-0014، بشري)؛ ✅ **CR-0003 معتمد 2026-10-06** (DEC-0015 → minSdk 24).
 - معماري؟ — المنصات معتمدة (DEC-0015)؛ الجهاز المرجعي معتمد (DEC-0017)؛ ملاحظة: `approvals.yaml` APR-0001 ما زالت PENDING (تعديلها بشري فقط — Rule 020).
 
 ## 11. مخاطر متبقية
 
 - معيار «CI على PR»: ✅ تحقق (run ناجح على `chore/trial-pr` — 2026-10-06). إعداد branch protection يدويًا لاحقًا (أسماء الـjobs جاهزة كعقد في ci/00).
-- **CR-0003** (minSdk 24 مقابل DEC-0015=23) — مفتوح؛ لا يُسدَّد قبل حسمه.
+- CR-0003: ✅ **حُسم** (APPROVED 2026-10-06) — DEC-0015 تعديل إلى `minSdk 24` + `build.gradle.kts` الآن `minSdk = 24` صريح.
 - `legal/assets.yaml` v1 → schema v2 مطلوب **قبل** تفعيل CI-001/003–008 (شرط DEC-0018 — قبل Phase 05).
 - FVM غير مثبّت محليًا: النظام يعتمد SDK النظام 3.47.5 المطابق لـ`.fvmrc` («FVM أو ما يعادله» — ADR-0001)؛ CI يثبّت 3.47.5 صراحة.
 - `namespace = com.muslimguide.app.muslim_guide` داخلي مقابل `applicationId = com.muslimguide.app` — لا أثر خارجي، لكنه نقطة تذكر عند أي CR مستقبلي.
 
 ## 12. جاهزية الانتقال للمرحلة التالية
 
-- [ ] نعم
-- [x] لا — السبب: **CR-0003 (minSdk) بانتظار القرار البشري** (تعديل DEC-0015 إلى 24 أو رفضه). كل معايير القبول الخمسة تحققت بالأدلة، وكل المخرجات مكتملة.
+- [x] نعم — معايير القبول 5/5 بالأدلة، وحُسم CR-0003، وكل المخرجات مكتملة.
+- العبارة الرسمية (2026-10-06): **«أُعتمد إغلاق Phase 00. انتقل إلى Phase 00B.»**
 

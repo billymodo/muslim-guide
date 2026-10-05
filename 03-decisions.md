@@ -94,7 +94,9 @@
 ## DEC-0015 — Platforms (v1.0)
 - **Status**: APPROVED
 - **Title**: Android فقط في v1.0
-- **Decision**: Android فقط في v1.0 — `minSdk 23`، `compileSdk 35`، `targetSdk 34`.
+- **Decision**: Android فقط في v1.0 — `minSdk 24`، `compileSdk 35`، `targetSdk 34`.
+- **Note**: Flutter 3.47.5 enforces minSdk 24.
+- **Amended**: CR-0003 (2026-10-06) — كان `minSdk 23`.
 - **Consequences**: iOS مؤجل إلى v2.0+ وسُجّل كـ OD-0021.
 - **Decided**: 2026-10-05 (حسم OD-0006)
 - **Affected Documents**: `pubspec.yaml`, `android/`, `phases/00-foundation.md`

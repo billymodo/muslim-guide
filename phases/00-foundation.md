@@ -1,7 +1,7 @@
 # Phase 00 — Decisions and Foundation
 
 ## Status
-ACTIVE
+APPROVED
 
 ## Objective
 تثبيت baseline، حسم القرارات، إنشاء الوثائق، مشروع Flutter فارغ يبنى، وCI.
@@ -51,20 +51,20 @@ ACTIVE
 - [x] `flutter analyze --fatal-infos` بلا مخرجات — دليل: "No issues found!" (2026-10-06)
 - [x] `flutter test` ينجح — دليل: "All tests passed!" (+1) (2026-10-06)
 - [x] `flutter build apk --debug` ناجح — دليل: "√ Built app-debug.apk" (2026-10-06)
-- [x] CI يعمل على PR تجريبي — دليل: run ناجح على PR التجريبي `chore/trial-pr` (2026-10-06، أكده المستخدم) — https://github.com/billymodo/muslim-guide/actions (يُرفق الرابط المباشر للمانع عند استلامه)
+- [x] CI يعمل على PR تجريبي — دليل: https://github.com/billymodo/muslim-guide/actions/runs/37384176239 — PR `chore/trial-pr` — conclusion: **success** (GitHub API، 2026-10-06)
 - [x] كل حزمة لها إصدار متحقق وترخيص وسبب — دليل: `LICENSES.md` + `security/02-dependencies.md`
 
 ## Evidence Required
 - ناتج الأوامر حرفيًا
 - `pubspec.lock`
-- سجل CI
+- سجل CI — run التجريبي: https://github.com/billymodo/muslim-guide/actions/runs/37384176239 (conclusion: **success** — مُتحقَّق عبر GitHub API 2026-10-06)
 
 ## Deviations from Specification
 
 - **نطاق CI**: بدل «CI-001 … CI-018» → نطاق Phase 00 = CI-002, CI-009, CI-010, CI-011, CI-018 — بقرار DEC-0018 (CR-0001)؛ السبب: License Gate يفترض `legal/assets.yaml` محدّثة إلى schema v2 (حاليًا v1 ومخالفة S-001/S-003).
 - **`release.yml`** (مهمة التنفيذ 4): لم يُنشأ — قرار بشري 2026-10-05 (يُنشأ في Phase 09).
 - **`DECISIONS.md`** (مهمة التنفيذ 7): لا يوجد ملف منفصل — المصدر الوحيد `03-decisions.md` (قرار بشري 2026-10-05)؛ أُعيدت تسمية الإشارة داخل هذا الملف.
-- **minSdk**: DEC-0015 ينص على 23، والبناء الفعلي = **24** (يفرضها Flutter 3.47.5 وتهاجر أدواته القيم 16..23 تلقائيًا عند كل `flutter build`) → **CR-0003 بانتظار القرار البشري**.
+- **minSdk**: كان DEC-0015 = 23 والبناء الفعلي = 24 (يفرضها Flutter 3.47.5) → **حُسم بـ CR-0003 (APPROVED 2026-10-06)**: عُدّل DEC-0015 إلى `minSdk 24`.
 - **«CI يعمل على PR تجريبي»**: غير مُتحقَّق منه — المجلد ليس git repo ولا يوجد GitHub remote؛ يتطلب git init + push + PR من المستخدم (Stop Rule 17 — مُصرَّح به صراحةً).
 - **الفحوصات المجدولة أسبوعيًا** (ci/00): غير مفعّلة — فحوصات التبعيات والتراخيص مؤجلة ضمن DEC-0018 حتى Phase 05+.
 - **namespace الباكدج**: `com.muslimguide.app.muslim_guide` (داخلي لـ MainActivity/Kotlin) مقابل `applicationId = com.muslimguide.app` (المعتمد) — فصل داخلي عادي من `flutter create`.
@@ -75,7 +75,8 @@ ACTIVE
 - الجهاز المرجعي
 
 ## Approval
-- Status: ACTIVE
-- Approved By: User
-- Approval Date: 2026-10-05
-- Approval Text: أُعتمد تنفيذ Phase 00.
+- Status: APPROVED
+- Approved By: Abdo
+- Approval Date: 2026-10-06
+- Approval Text: أُعتمد إغلاق Phase 00 بعد اكتمال كل معايير القبول.
+- Transition Phrase: أُعتمد إغلاق Phase 00. انتقل إلى Phase 00B.
