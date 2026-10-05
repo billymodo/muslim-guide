@@ -1,0 +1,193 @@
+version: 1
+
+# كل أصل خارجي مسجل هنا.
+# لا يُضاف أصل بحالة APPROVED قبل التحقق المستقل من الترخيص وحقوق إعادة التوزيع.
+
+assets:
+  # ===== النص القرآني والترجمة والتفسير =====
+  - asset_id: quran-uthmani
+    asset_type: text
+    name: "النص القرآني العثماني"
+    provider: "Tanzil.net"
+    source_url: "https://tanzil.net"
+    license_type: "CC BY 3.0 (no modification)"
+    redistribution_allowed: true
+    attribution_required: true
+    status: SOURCE_IDENTIFIED
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-4
+    phase: 06
+
+  - asset_id: quran-translation-en
+    asset_type: text
+    name: "Saheeh International"
+    provider: "QuranEnc.com"
+    source_url: "https://quranenc.com"
+    license_type: "Free with attribution, no modification"
+    redistribution_allowed: true
+    attribution_required: true
+    status: SOURCE_IDENTIFIED
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-4
+    phase: 06
+
+  - asset_id: quran-tafsir-ar
+    asset_type: text
+    name: "التفسير الميسر"
+    provider: "Tafsir API (spa5k)"
+    source_url: "https://github.com/spa5k/tafsir_api"
+    license_type: "Open source (self-host)"
+    redistribution_allowed: true
+    attribution_required: true
+    status: LICENSE_REVIEW
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-4
+    phase: 06
+
+  - asset_id: quran-tafsir-en
+    asset_type: text
+    name: "Tafsir (EN)"
+    provider: "QuranEnc / IslamHouse"
+    source_url: "https://quranenc.com"
+    license_type: "Free with attribution"
+    redistribution_allowed: true
+    attribution_required: true
+    status: SOURCE_IDENTIFIED
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-4
+    phase: 06
+
+  # ===== الأذكار والأدعية =====
+  - asset_id: azkar-hisn
+    asset_type: text
+    name: "حصن المسلم"
+    provider: "د. سعيد بن علي بن وهف القحطاني"
+    source_url: "https://risala.prh.gov.sa"
+    license_type: "UNKNOWN"
+    redistribution_allowed: false
+    attribution_required: true
+    status: NEEDS_REVIEW
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-1
+    phase: 05
+
+  - asset_id: azkar-json-dataset
+    asset_type: data
+    name: "Adhkar JSON Dataset"
+    provider: "GitHub community"
+    source_url: "TBD"
+    license_type: "UNKNOWN"
+    redistribution_allowed: false
+    attribution_required: true
+    status: NEEDS_REVIEW
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-1
+    phase: 05
+
+  # ===== الحديث =====
+  - asset_id: hadith-dorar
+    asset_type: data
+    name: "Dorar.net Hadith Dataset"
+    provider: "Dorar.net"
+    source_url: "https://dorar.net"
+    license_type: "API use, check terms"
+    redistribution_allowed: false
+    attribution_required: true
+    status: NEEDS_REVIEW
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-3
+    phase: 18
+
+  - asset_id: hadith-hadeethenc
+    asset_type: data
+    name: "HadeethEnc Dataset"
+    provider: "HadeethEnc.com"
+    source_url: "https://hadeethenc.com"
+    license_type: "Free with attribution"
+    redistribution_allowed: true
+    attribution_required: true
+    status: SOURCE_IDENTIFIED
+    reviewed_at: null
+    evidence: []
+    reviewer: shaykh-3
+    phase: 18
+
+  # ===== بيانات مساعدة =====
+  - asset_id: cities-major
+    asset_type: data
+    name: "بيانات المدن الكبرى"
+    provider: "GeoNames"
+    source_url: "https://geonames.org"
+    license_type: "CC BY 4.0"
+    redistribution_allowed: true
+    attribution_required: true
+    status: APPROVED
+    reviewed_at: "2026-01-01"
+    evidence: ["https://www.geonames.org/export/"]
+    reviewer: null
+    phase: 02
+
+  - asset_id: prayer-methods
+    asset_type: code
+    name: "PrayTimes.org"
+    provider: "PrayTimes.org"
+    source_url: "http://praytimes.org"
+    license_type: "LGPL"
+    redistribution_allowed: true
+    attribution_required: true
+    status: APPROVED
+    reviewed_at: "2026-01-01"
+    evidence: []
+    reviewer: null
+    phase: 02
+
+  # ===== الصوت =====
+  - asset_id: adhan-audio-cc0
+    asset_type: audio
+    name: "أذان CC0"
+    provider: "Wikimedia Commons"
+    source_url: "https://commons.wikimedia.org"
+    license_type: "CC0"
+    redistribution_allowed: true
+    attribution_required: false
+    status: APPROVED
+    reviewed_at: "2026-01-01"
+    evidence: []
+    reviewer: null
+    phase: 04
+
+  - asset_id: quran-recitation
+    asset_type: audio
+    name: "تلاوة القرآن"
+    provider: "TBD"
+    source_url: "TBD"
+    license_type: "UNKNOWN"
+    redistribution_allowed: false
+    attribution_required: true
+    status: BLOCKED
+    reviewed_at: null
+    evidence: []
+    reviewer: null
+    phase: 07
+
+  # ===== الخطوط =====
+  - asset_id: amiri-quran-font
+    asset_type: font
+    name: "Amiri Quran"
+    provider: "Amiri Project"
+    source_url: "https://github.com/aliftype/amiri"
+    license_type: "OFL"
+    redistribution_allowed: true
+    attribution_required: true
+    status: LICENSE_REVIEW
+    reviewed_at: null
+    evidence: []
+    reviewer: null
+    phase: 06

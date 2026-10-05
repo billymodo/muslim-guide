@@ -1,0 +1,14 @@
+# DEC-0011: very_good_analysis (إصدار مثبت في pubspec.yaml) — لا warnings، لا infos.
+# الإلزامي في CI: flutter analyze --fatal-infos (CI-009)
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+
+linter:
+  rules:
+    # جميع قواعد very_good_analysis مفعّلة ضمن ملف الـ include.
+    # أي استثناء (// ignore) يتطلب تعليقًا يشرح السبب (quality/02-static-analysis.md).
+

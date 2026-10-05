@@ -1,0 +1,44 @@
+version: 1
+
+# الغرض: آلية اعتماد قابلة للتحقق بدل الاعتماد على عبارة في محادثة.
+# يمنع على الـAI تعديل هذا الملف (Rule 020). التعديل بشري فقط.
+
+rules:
+  - "لا يُنفَّذ طور مقفل إلا إذا وُجد له سجل بحالة APPROVED في هذا الملف."
+  - "العبارة النصية وحدها لا تكفي؛ يلزم commit موقّع أو tag موقّع يشير إليه السجل."
+  - "CI يفشل إذا وُجد عمل على مرحلة LOCKED لا يطابق سجلًا معتمدًا هنا."
+  - "تعديل هذا الملف يتطلب PR منفصلًا لا يحتوي كودًا."
+  - "للمطوّر الوحيد: بديل مراجعة PR هو tag موقّع بمفتاح GPG/SSH + مرور CI."
+
+phase_definitions:
+  # تعريف «المرحلة A» غير محسوم حاليًا (README يقول Foundation، والجدول 00→27C).
+  # الاقتراح أدناه يحتاج قرارًا بشريًا قبل التفعيل، ويُسجَّل في 03-decisions.md.
+  phase_A:
+    definition_status: PROPOSED
+    proposed_includes: ["00", "00B"]
+    approval_unlocks: ["01"]
+  phase_B:
+    proposed_includes: ["01", "02", "03", "04", "05", "06", "07", "08", "09"]
+    status: LOCKED
+
+approvals:
+  - approval_id: APR-0001
+    target: phase_A
+    status: PENDING             # PENDING | APPROVED | REVOKED
+    approval_phrase_required: "اعتماد المرحلة A"
+    approved_by: null
+    approved_at: null
+    approved_commit: null       # SHA كامل
+    signed_tag: null            # مثال: approval/phase-A-v1
+    spec_checksum: null         # sha256 لمجلد MASTER_SPEC وقت الاعتماد
+    evidence:
+      - kind: ci_run
+        ref: null
+      - kind: output_report
+        ref: null               # governance/05-output-report-template.md مملوء
+    preconditions:
+      - "CON-001..CON-00N كلها RESOLVED (بما فيها تعارض ترقيم SCREEN-003)"
+      - "OD-0001, OD-0006, OD-0018, OD-0019 محسومة وموثقة في 03-decisions.md"
+      - "assets.yaml لا يحوي APPROVED بلا evidence"
+      - "policy.yaml وschema يمرّان فحص CI-001..CI-008"
+      - "تعريف phase_A مُعتمد (definition_status: APPROVED)"

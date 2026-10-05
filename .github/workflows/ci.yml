@@ -1,0 +1,156 @@
+# CI — Phase 00 (DEC-0018 / CR-0001)
+# الفحوصات المفعّلة: CI-002, CI-009, CI-010, CI-011, CI-018
+# أسماء الـjobs ثابتة (عقد مع branch protection — ci/00-ci-policy.md).
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  # CI-018 + ADR-0001: إصدار Flutter مثبت (يجب أن يطابق .fvmrc — لا latest).
+  PINNED_FLUTTER_VERSION: '3.47.5'
+
+jobs:
+  asset-scan:
+    name: asset-scan
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Flutter (pinned)
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+
+      - name: 'CI-018: Flutter version pinned'
+        shell: bash
+        run: |
+          set -euo pipefail
+          INSTALLED=$(flutter --version 2>/dev/null | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          PINNED=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          echo "installed=$INSTALLED pinned=$PINNED workflow=$PINNED_FLUTTER_VERSION"
+          if [ "$INSTALLED" != "$PINNED" ] || [ "$PINNED" != "$PINNED_FLUTTER_VERSION" ]; then
+            echo 'CI-018 FAIL: version mismatch'
+            exit 1
+          fi
+          echo 'CI-018 OK'
+
+      - name: 'CI-002: asset scan (أساسي — لا أصول مُشحونة بلا سجل)'
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXTRA=$(find assets -type f ! -name '.gitkeep' 2>/dev/null || true)
+          if [ -n "$EXTRA" ]; then
+            echo 'CI-002 FAIL: ملفات في assets/ غير مسجلة في legal/assets.yaml:'
+            echo "$EXTRA"
+            exit 1
+          fi
+          echo 'CI-002 OK: assets/ لا يحتوي إلا .gitkeep (لا محتوى مُشحون بعد)'
+
+  analyze:
+    name: analyze
+    needs: asset-scan
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Flutter (pinned)
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+
+      - name: 'CI-018: Flutter version pinned'
+        shell: bash
+        run: |
+          set -euo pipefail
+          INSTALLED=$(flutter --version 2>/dev/null | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          PINNED=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          if [ "$INSTALLED" != "$PINNED" ] || [ "$PINNED" != "$PINNED_FLUTTER_VERSION" ]; then
+            echo "CI-018 FAIL: installed=$INSTALLED pinned=$PINNED"
+            exit 1
+          fi
+          echo 'CI-018 OK'
+
+      - name: Get dependencies (enforce lockfile)
+        run: flutter pub get --enforce-lockfile
+
+      - name: 'CI-009: flutter analyze --fatal-infos'
+        run: flutter analyze --fatal-infos
+
+  test:
+    name: test
+    needs: analyze
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Flutter (pinned)
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+
+      - name: 'CI-018: Flutter version pinned'
+        shell: bash
+        run: |
+          set -euo pipefail
+          INSTALLED=$(flutter --version 2>/dev/null | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          PINNED=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          if [ "$INSTALLED" != "$PINNED" ] || [ "$PINNED" != "$PINNED_FLUTTER_VERSION" ]; then
+            echo "CI-018 FAIL: installed=$INSTALLED pinned=$PINNED"
+            exit 1
+          fi
+          echo 'CI-018 OK'
+
+      - name: Get dependencies (enforce lockfile)
+        run: flutter pub get --enforce-lockfile
+
+      - name: 'CI-010: flutter test'
+        run: flutter test
+
+  build-debug:
+    name: build-debug
+    needs: test
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup Flutter (pinned)
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version: '3.47.5'
+          channel: stable
+          cache: true
+
+      - name: 'CI-018: Flutter version pinned'
+        shell: bash
+        run: |
+          set -euo pipefail
+          INSTALLED=$(flutter --version 2>/dev/null | head -n 1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          PINNED=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' .fvmrc | head -n 1)
+          if [ "$INSTALLED" != "$PINNED" ] || [ "$PINNED" != "$PINNED_FLUTTER_VERSION" ]; then
+            echo "CI-018 FAIL: installed=$INSTALLED pinned=$PINNED"
+            exit 1
+          fi
+          echo 'CI-018 OK'
+
+      - name: Get dependencies (enforce lockfile)
+        run: flutter pub get --enforce-lockfile
+
+      - name: 'CI-011: flutter build apk --debug'
+        run: flutter build apk --debug

@@ -1,0 +1,76 @@
+schema_version: 2
+
+# يحل محل schema_version: 1
+# كل الحقول الواردة في assets.yaml معرّفة هنا (لا حقول غير معرّفة).
+
+fields:
+  asset_id:                { type: string, required: true, pattern: "^[a-z0-9-]+$" }
+  asset_type:              { type: enum, required: true, allowed: [text, audio, font, image, data, code] }
+  name:                    { type: string, required: true }
+  provider:                { type: string, required: true }
+  source_url:              { type: string, required: true }   # "TBD" مسموح فقط في الحالات المبكرة (انظر rules)
+  version:                 { type: string, required: true, nullable_until: SOURCE_IDENTIFIED }
+  license_type:            { type: string, required: true }   # "UNKNOWN" مسموح فقط في الحالات المبكرة
+  license_text_ref:        { type: string, required: false }  # مسار نسخة نص الترخيص المحفوظة
+  redistribution_allowed:  { type: enum, required: true, allowed: [true, false, UNKNOWN] }
+  modification_allowed:    { type: enum, required: true, allowed: [true, false, UNKNOWN] }
+  attribution_required:    { type: enum, required: true, allowed: [true, false, UNKNOWN] }
+  conditions:              { type: list, required: true }      # قائمة فارغة إن لم توجد شروط
+  checksum:                { type: string, required: false, pattern: "^sha256:[0-9a-f]{64}$" }
+  checksum_method:         { type: string, required: false }   # يشير إلى قاعدة التوحيد (canonicalization)
+  status:                  { type: enum, required: true }
+  reviewed_at:             { type: date, required: true, nullable: true }
+  review_expires_at:       { type: date, required: true, nullable: true }
+  evidence:                { type: list, required: true }      # عناصر: {kind, ref, captured_at, sha256}
+  reviewer:                { type: string, required: false, nullable: true }  # معرّف من content/reviewers.yaml
+  phase:                   { type: integer_or_code, required: true }
+  notes:                   { type: string, required: false }
+
+evidence_item:
+  required: [kind, ref, captured_at]
+  kind_allowed: [license_text_snapshot, written_permission, page_snapshot, repo_license_file]
+  rules:
+    - "رابط حي وحده ليس دليلًا؛ يجب حفظ نسخة (snapshot) مع sha256."
+
+status:
+  allowed:
+    - PROPOSED
+    - SOURCE_IDENTIFIED
+    - LICENSE_REVIEW
+    - CONTENT_REVIEW
+    - TECHNICAL_REVIEW
+    - APPROVED
+    - APPROVED_WITH_CONDITIONS
+    - INTEGRATED
+    - VERIFIED_IN_BUILD
+    - BLOCKED
+    - REJECTED
+    - NEEDS_REVIEW
+  early:        [PROPOSED, SOURCE_IDENTIFIED, LICENSE_REVIEW, NEEDS_REVIEW, BLOCKED, REJECTED]
+  approved_set: [APPROVED, APPROVED_WITH_CONDITIONS, INTEGRATED, VERIFIED_IN_BUILD]
+
+rules:
+  - id: S-001
+    when: "status in approved_set"
+    require:
+      - "evidence غير فارغ"
+      - "license_type != UNKNOWN"
+      - "redistribution_allowed == true"
+      - "modification_allowed != UNKNOWN"
+      - "attribution_required != UNKNOWN"
+      - "version غير فارغ"
+      - "reviewed_at غير فارغ"
+      - "review_expires_at غير فارغ وفي المستقبل"
+  - id: S-002
+    when: "status == APPROVED_WITH_CONDITIONS"
+    require: ["conditions غير فارغ"]
+  - id: S-003
+    when: "asset_type in [text, audio, font, data] and status in approved_set"
+    require: ["checksum غير فارغ", "checksum_method غير فارغ"]
+  - id: S-004
+    when: "asset_type in [text] and religious_content"
+    require: ["reviewer غير فارغ ويطابق scope في content/reviewers.yaml"]
+  - id: S-005
+    when: "status in early"
+    allow: ["license_type == UNKNOWN", "source_url == TBD"]
+    note: "الحالات المبكرة لا تُشحن؛ بوابة الإصدار ترفضها."

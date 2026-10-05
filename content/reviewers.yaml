@@ -1,0 +1,45 @@
+version: 1
+
+reviewers:
+  - id: shaykh-1
+    role: "مراجع شرعي — أذكار وأدعية"
+    scope:
+      - azkar-hisn
+      - duas-quranic
+      - duas-nabawi
+      - learning-new-muslim
+    contact: "TBD"
+    approved_at: null
+
+  - id: shaykh-2
+    role: "مراجع شرعي — أسماء الله وحقوق المسلم"
+    scope:
+      - allah-names
+      - muslim-rights
+    contact: "TBD"
+    approved_at: null
+
+  - id: shaykh-3
+    role: "مراجع شرعي — فقه وحديث ومناسك"
+    scope:
+      - fiqh-muyassar
+      - hadith-six-books
+      - hajj-umrah
+    contact: "TBD"
+    approved_at: null
+
+  - id: shaykh-4
+    role: "مراجع شرعي — نص قرآني وترجمة"
+    scope:
+      - quran-uthmani
+      - quran-translation-en
+      - quran-tafsir-ar
+      - quran-tafsir-en
+    contact: "TBD"
+    approved_at: null
+
+rules:
+  - "كل مراجع مسؤول عن pack(s) محددة."
+  - "لا يمكن لمراجع واحد اعتماد pack خارج نطاقه."
+  - "الاعتماد يُوثَّق في legal/assets.yaml بحقل approval."
+  - "المراجعة تجري عبر HTML + JSON (content/08-review-workflow.md)."

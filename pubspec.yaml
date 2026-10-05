@@ -1,0 +1,24 @@
+name: muslim_guide
+description: "دليل المسلم — تطبيق Flutter إسلامي يعمل دون اتصال (Offline)."
+publish_to: 'none'
+# الإصدار يطابق جدول المراحل (phases/README.md — v0.1)
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # DEC-0002 + DEC-0016 — تحقق pub.dev 2026-10-05 (MIT): آخر إصدار 2.x ثابت
+  flutter_riverpod: 2.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # DEC-0011 — تحقق pub.dev 2026-10-05 (MIT)
+  very_good_analysis: 11.0.0
+
+flutter:
+  uses-material-design: true
+

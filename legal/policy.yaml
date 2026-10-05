@@ -1,0 +1,65 @@
+version: 2
+
+app:
+  name: "دليل المسلم"
+  languages: [ar, en]
+  default_language: ar
+  language_selection_on_first_run: true
+
+  distribution:
+    user_price: 0
+    advertising: false
+    donations: false
+    subscriptions: false
+    in_app_purchases: false
+    third_party_monetization: false
+    developer_funded: true
+
+  content_model:
+    redistribution_to_users: true
+    offline_content: true
+    network_exception_phase: 07
+    # استثناء Spike: وحدة تجريبية تُحذف قبل نهاية 00B، وتُستثنى من CI-015/CI-016 بمسار محدد
+    network_exception_spike:
+      phase: 00B
+      allowed_paths: ["spike/"]
+      must_be_removed_before: "اعتماد 00B"
+
+policy:
+  unknown_license: BLOCK
+  missing_manifest: BLOCK
+  unapproved_asset: BLOCK
+  unmet_condition: BLOCK
+  hash_mismatch: BLOCK
+  missing_attribution: BLOCK
+  expired_review: BLOCK
+  missing_evidence: BLOCK
+  placeholder_in_main: BLOCK
+  unverified_redistribution: BLOCK   # redistribution_allowed == UNKNOWN
+
+  # الحالات المسموح بها لأصل مُشحون في بناء release
+  allowed_statuses:
+    - APPROVED
+    - APPROVED_WITH_CONDITIONS
+    - INTEGRATED
+    - VERIFIED_IN_BUILD
+
+  # بوابة الإصدار: أصل مستخدم في البناء يجب أن يكون INTEGRATED أو VERIFIED_IN_BUILD
+  release_gate:
+    required_status_for_shipped_assets: [INTEGRATED, VERIFIED_IN_BUILD]
+    shipped_asset_detection: "الأصول المشار إليها في pubspec.yaml (assets/fonts) + حزم الكود"
+
+  review:
+    # قيمة مقترحة، تحتاج DEC معتمدًا قبل التفعيل (Rule 020)
+    validity_days: 365
+    validity_days_status: PROPOSED
+    expired_review: BLOCK
+
+  evidence:
+    live_url_only_is_evidence: false
+    require_snapshot_with_sha256: true
+
+  development_mode:
+    enabled_in: [dev, test]
+    placeholders_allowed: true
+    placeholders_pattern: "^\\[PLACEHOLDER-[A-Z0-9-]+\\]$"
