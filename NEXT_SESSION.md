@@ -1,7 +1,7 @@
 # NEXT\_SESSION — اقرأني أولاً
 
 > \*\*آخر تحديث:\*\* 2026-10-06
-> \*\*الحالة:\*\* Phase 00B — الخطوة 3 (pending push)
+> \*\*الحالة:\*\* Phase 00B — الخطوة 4 (بناء Spike — الموافقات حُصل عليها، الكود pending)
 
 \---
 
@@ -78,7 +78,7 @@
 ## الملفات المرتبطة بهذه اللحظة
 
 * **المرحلة النشطة:** `phases/00b-spike.md`
-* **آخر CR مفتوح:** `governance/cr/CR-0005-ci-job-names-expanded.md` (pending push)
+* **آخر CR:** `governance/cr/CR-0005-ci-job-names-expanded.md` — APPROVED ومرفوع (PR #2: 9/9 success)
 * **آخر DEC:** DEC-0018 (Phase-Aware CI Rollout)
 * **آخر commit:** (سيُحدَّث في PHASE\_PROGRESS.md)
 

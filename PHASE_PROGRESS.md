@@ -2,7 +2,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 00B, step 3 — pending push)
+> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 00B, step 4 — في التنفيذ)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -28,7 +28,7 @@
 
 | Started | 2026-10-06 |
 
-| Current Step | 3 / 6 — CI jobs (pending push) |
+| Current Step | 4 / 6 — بناء Spike (pending push) |
 
 | Blockers | لا OD تعطّل — لكن جهاز فيزيائي مطلوب للخطوة 6 |
 
@@ -48,7 +48,7 @@
 
 | 2 | CR-0004 + تحديث phases | ✅ |
 
-| 3 | CI jobs (CI-012/014/015/016/017) | ⏳ pending push |
+| 3 | CI jobs (CI-012/014/015/016/017) | ✅ PR #2 — 9/9 success |
 
 | 4 | بناء Spike كامل | ⏳ |
 
@@ -172,7 +172,7 @@ text
 
 | CR-0004 | audio\_service + just\_audio في spike | ✅ APPROVED |
 
-| CR-0005 | توسيع عقد أسماء CI jobs | ⏳ pending push |
+| CR-0005 | توسيع عقد أسماء CI jobs | ✅ APPROVED |
 
 
 

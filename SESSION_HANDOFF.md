@@ -5,6 +5,62 @@
 
 \---
 
+## Session 8 — 2026-10-06 (Phase 00B: step 3 pushed + step 4 approvals)
+
+### ما نُفِّذ
+
+**Step 3 — مدفوع ومُتحقق منه**
+
+* commit `1a60965` (45 ملفًا) إلى `main` + فرع `test/ci-step-3` (`31bae1a`)
+* **PR #2** → **run `37390142312` = success (9/9 jobs)**
+* `tool/test_count_baseline.txt = 2` مع تعليق التبرير
+* CR-0004 + CR-0005 مرفوعان + قائمة CRs في `03-decisions.md`
+
+**Approvals للخطوة 4 (هذه الجلسة)**
+
+* `path_provider` **exact 2.1.6** — داخل `spike/` فقط + توثيق (BSD-3-Clause)
+* **VGA في spike**: `very_good_analysis 11.0.0` exact + حذف flutter_lints
+* beep.wav: توليد ذاتي (440Hz sine، 2–3 ثوانٍ) — بلا تنزيل
+* manifest spike فقط: service + receiver حرفًا من README audio_service
+
+**بحث APIs (من مصادر الحزم المثبّتة — لا ذاكرة)**
+
+* fln 22.3.1: `zonedSchedule(..., androidScheduleMode: exactAllowWhileIdle)` + `requestNotificationsPermission()` + `requestExactAlarmsPermission()`
+* audio_service 0.18.19: `AudioService.init(builder:, config:)` + `BaseAudioHandler with QueueHandler, SeekHandler`
+* just_audio 0.10.6: `AudioPlayer` + `setAsset()` + `LoopMode{off,one,all}`
+* timezone 0.11.1: `package:timezone/data/latest.dart` + `TZDateTime.from(dt, tz.UTC)`
+* hive_ce 2.20.1: `Hive.init(String? path)` — يحتاج path_provider
+* (التفاصيل في `NEXT_SESSION.md`)
+
+### ما توقف
+
+* **بانتظار:** كتابة كود الخطوة 4 ثم `analyze/test/build` ثم إذن push
+* **السبب:** قاعدة «لا تدفع حتى أرد» + Stop Rule 15 حُلّ بموافقة path_provider
+
+### الملفات المتأثرة
+
+جديد:
+
+* (كود الخطوة 4 لم يُكتب بعد)
+
+معدّل:
+
+* `NEXT_SESSION.md`, `PHASE_PROGRESS.md`, `SESSION_HANDOFF.md` (هذا الإدخال)
+
+### القرارات المتخذة
+
+* path_provider مسموح داخل spike فقط ويُحذف معه
+* VGA في spike (الخيار أ)
+* لا OD جديدة
+
+### للجلسة القادمة
+
+1. كتابة `spike/lib/{main.dart, services/*, widgets/log_viewer.dart}` + `spike/test/*`
+2. `cd spike && flutter pub get && flutter analyze --fatal-infos && flutter test && flutter build apk --debug`
+3. اطلب إذن push — لا push قبله
+
+---
+
 ## Session 7 — 2026-10-06 (Phase 00B: steps 1-3)
 
 ### ما نُفِّذ
