@@ -36,9 +36,11 @@
 
 | البند | القيمة |
 |---|---|
-| Status | IN PROGRESS |
+| Status | 🟢 ACTIVE |
 | Started | 2026-10-06 |
-| Current Step | Data layer complete: type IDs, migrations, Hive store, settings repository, local error log |
+| Done | Data layer (5 files + tests) |
+| Next | UI layer (Splash + Onboarding + Settings) |
+| Progress | ~30% |
 | Blockers | لا يوجد — قرارات Phase 01 المطلوبة محسومة |
 | Validation | `flutter analyze --fatal-infos` بلا مشاكل؛ جميع الاختبارات نجحت؛ APK debug بُني بعد CR-0007 |
 

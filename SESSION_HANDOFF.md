@@ -8,23 +8,31 @@
 ## Session 10 — 2026-10-06 (Phase 01: data layer)
 
 ### ما نُفِّذ
-- أُضيف سجل `TypeAdapter` المركزي، مع عدم حجز typeId للقيم البدائية.
-- أُضيفت migrations للانتقال من schema v0 إلى v1، وافتتاح وإغلاق Hive بأمان.
-- أُضيف مستودع إعدادات اللغة وحالة onboarding والثيم.
-- أُضيف سجل أخطاء JSONL مع تنقية بيانات حساسة، حد 1 MB، والاحتفاظ بأحدث 1,000 حدث.
-- أُضيفت اختبارات migration وHiveStore وSettingsRepository وLocalErrorLog.
-- سُجّل CR-0006 وصُحح OD-0006، ووُثقت التبعيات.
-- بعد تعذر build بسبب حاجة `share_plus 13.3.1` إلى SDK 36، اعتُمد CR-0007 وارتفع `compileSdk` إلى 36 دون تغيير `minSdk` أو `targetSdk`.
-- `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: نجحت جميع الاختبارات.
+- اكتملت طبقة بيانات Phase 01 (5 ملفات):
+  - `lib/data/storage/type_ids.dart` — سجل TypeAdapters، بلا typeIds معيّنة بعد.
+  - `lib/data/storage/migrations.dart` — ترحيل schema بسيط ومُرقّم.
+  - `lib/data/storage/hive_store.dart` — تهيئة Hive وإدارة الصندوق.
+  - `lib/data/settings/settings_repository.dart` — اللغة وonboarding والثيم.
+  - `lib/core/logging/local_error_log.dart` — سجل JSON Lines محلي.
+- أُضيفت 4 ملفات اختبار data layer، والعدد الكلي مع اختبار الجذر 5 اختبارات.
+- اعتُمد CR-0006 لـ`path_provider` في التطبيق الرئيسي، وصُحح OD-0006 (minSdk 24).
+- أُضيفت تبعيات: `hive_ce`, `hive_ce_flutter`, `path_provider`, `intl`, `share_plus`.
+- `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 5/5 ناجحة.
+- CR-0007: `share_plus 13.3.1` هو أحدث إصدار مستقر، نُشر 2026-10-01. فشل 13.2.0 مع compileSdk 35، وفشل 11.1.0 مع AGP 9.1 بسبب class مسجل غير موجود؛ Android SDK 36 مثبت، وبناء APK نجح مع 13.3.1 وcompileSdk 36. التفاصيل موثقة في CR-0007.
 
-### ما لم يُنفَّذ
-- لم يُضف UI أو Riverpod providers، ولم يُدفع أي تغيير.
+### القرارات
+- استخدام Riverpod Classic دون code generation في Phase 01.
+- typeId مخصص لـTypeAdapters فقط؛ القيم البدائية تحفظ في `Box<dynamic>`.
+- `compileSdk 36` وفق CR-0007، مع `minSdk 24` و`targetSdk 34`.
 
 ### ما للجلسة القادمة
-- مراجعة ملفات طبقة البيانات ثم متابعة بقية Phase 01 حسب الموافقة.
+- ابدأ طبقة UI: Splash وLanguage Selection.
+- اقرأ `product/06-onboarding.md` و`product/02-screens.md`.
+- استهدف SCREEN-001 وSCREEN-002 وSCREEN-003 shell.
 
 ### Commit
-- سجل التنفيذ هذا داخل commit المحلي الذي تبلغ SHA الخاص به نهاية الجلسة.
+- `a7a71f5` — Phase 01 data layer (محلي).
+- تُسجّل SHA الخاصة بالدفع بعد اكتماله.
 
 ---
 
