@@ -7,19 +7,24 @@ environment:
   sdk: ^3.13.4
 
 dependencies:
+  audio_service: 0.18.19 # CR-0004 — تحقق 2026-10-06 — MIT (+Apache-2.0 ExoPlayer)
   flutter:
     sdk: flutter
-  # معتمد ضمن موافقات Phase 00B (2026-10-06) — إصدارات exact بلا ^:
-  flutter_local_notifications: 22.3.1 # تحقق pub.dev 2026-10-06 — BSD-3-Clause
-  timezone: 0.11.1 # تحقق pub.dev 2026-10-06 — BSD-2-Clause
-  hive_ce: 2.20.1 # تحقق pub.dev 2026-10-06 — BSD-3-Clause (+Apache-2.0 لجزء مدمج)
-  audio_service: 0.18.19 # CR-0004 — تحقق 2026-10-06 — MIT (+Apache-2.0 ExoPlayer)
+  # معتمد ضمن موافقات Phase 00B — إصدارات exact بلا ^:
+  flutter_local_notifications: 22.3.1 # تحقق 2026-10-06 — BSD-3-Clause
+  hive_ce: 2.20.1 # تحقق 2026-10-06 — BSD-3-Clause (+Apache-2.0 لجزء مدمج)
   just_audio: 0.10.6 # CR-0004 — تحقق 2026-10-06 — MIT (+Apache-2.0 ExoPlayer)
+  # موافقة Step 4 (2026-10-06): مسار hive — تابعة سابقة عبر just_audio
+  path_provider: 2.1.6 # تحقق من LICENSE في pub cache — BSD-3-Clause
+  timezone: 0.11.1 # تحقق 2026-10-06 — BSD-2-Clause
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
+  # VGA في spike — موافقة Step 4 (2026-10-06)
+  very_good_analysis: 11.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/beep.wav

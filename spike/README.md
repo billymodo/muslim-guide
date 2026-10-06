@@ -12,6 +12,7 @@
 | hive_ce | 2.20.1 | BSD-3-Clause (+ Apache-2.0 لجزء مدمج commit `4eb0dbc…`) | LICENSE — "Copyright 2025 Aaron DeLory" |
 | audio_service | 0.18.19 | MIT (+ Apache-2.0 لـExoPlayer المدمج) | LICENSE — "MIT License / Ryan Heise" (CR-0004) |
 | just_audio | 0.10.6 | MIT (+ Apache-2.0 لـExoPlayer المدمج) | LICENSE — "MIT License / Ryan Heise" (CR-0004) |
+| path_provider | 2.1.6 | BSD-3-Clause | LICENSE في pub cache — "Copyright 2013 The Flutter Authors" + نص BSD بنود 3 (تحقق 2026-10-06) — موافقة Step 4 |
 
 - `flutter` / `flutter_test`: BSD-3-Clause (Flutter SDK — `LICENSE` محلي).
 - `flutter_lints`: MIT (dev فقط).
@@ -46,3 +47,10 @@ flutter run
 ```
 
 النتائج: `RESULTS.md` — الأدلة: `evidence/` — النسخة الدائمة: `docs/phase-00b/`.
+
+## Testing Strategy
+
+- Widget tests: UI only، بلا audio (FakeAsync + MethodChannel = deadlock)
+- Audio: يُختبر على جهاز حقيقي فقط (Step 5)
+- Notification: unit test للـscheduling logic فقط
+- Hive isolate: unit test على الجهاز (يحتاج path_provider)

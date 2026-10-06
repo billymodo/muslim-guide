@@ -67,7 +67,20 @@
 - `cupertino_icons` — لا استخدام لها ولا قرار بـها.
 - `flutter_lints` — استُبدلت بـ `very_good_analysis` (DEC-0011).
 
-## 7. ملاحظات
+## 7. حزم Spike المؤقتة (Phase 00B — تُحذف مع spike/)
+
+موثّقة بالتفصيل في `spike/README.md`؛ كلها exact بلا `^`:
+
+| الحزمة | الإصدار | الترخيص | التحقق |
+|---|---|---|---|
+| flutter_local_notifications | 22.3.1 | BSD-3-Clause | أرشيف pub.dev LICENSE — 2026-10-06 |
+| timezone | 0.11.1 | BSD-2-Clause | أرشيف pub.dev LICENSE (نص بشرطين) — 2026-10-06 |
+| hive_ce | 2.20.1 | BSD-3-Clause (+Apache-2.0 مدمج) | أرشيف pub.dev LICENSE — 2026-10-06 |
+| audio_service | 0.18.19 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
+| just_audio | 0.10.6 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
+| path_provider | 2.1.6 | BSD-3-Clause | LICENSE في pub cache (Flutter Authors) — 2026-10-06 — موافقة Step 4 |
+
+## 8. ملاحظات
 
 - توليد `THIRD_PARTY_NOTICES` الكامل عند الإصدار (ci/01 — On main، Phase 09).
 - لا حزمة شبكة (لا `http`/`dio`/…) — الشبكة ممنوعة حتى Phase 07 (Rule 008).

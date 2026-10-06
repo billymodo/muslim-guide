@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- صلاحيات Spike المؤقتة — معتمدة لـ Phase 00B داخل spike/ فقط (2026-10-06).
          ممنوع نقلها إلى التطبيق الرئيسي. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -14,7 +15,7 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
-            android:name=".MainActivity"
+            android:name="com.ryanheise.audioservice.AudioServiceActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:taskAffinity=""
@@ -40,6 +41,23 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+        <!-- audio_service README (0.18.19) — ADD THIS "SERVICE" element -->
+        <service android:name="com.ryanheise.audioservice.AudioService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="true" tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!-- audio_service README (0.18.19) — ADD THIS "RECEIVER" element -->
+        <receiver android:name="com.ryanheise.audioservice.MediaButtonReceiver"
+            android:exported="true" tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
