@@ -94,9 +94,9 @@
 ## DEC-0015 — Platforms (v1.0)
 - **Status**: APPROVED
 - **Title**: Android فقط في v1.0
-- **Decision**: Android فقط في v1.0 — `minSdk 24`، `compileSdk 35`، `targetSdk 34`.
+- **Decision**: Android فقط في v1.0 — `minSdk 24`، `compileSdk 36`، `targetSdk 34`.
 - **Note**: Flutter 3.47.5 enforces minSdk 24.
-- **Amended**: CR-0003 (2026-10-06) — كان `minSdk 23`.
+- **Amended**: CR-0003 (2026-10-06) — كان `minSdk 23`؛ CR-0007 (2026-10-06) — كان `compileSdk 35`.
 - **Consequences**: iOS مؤجل إلى v2.0+ وسُجّل كـ OD-0021.
 - **Decided**: 2026-10-05 (حسم OD-0006)
 - **Affected Documents**: `pubspec.yaml`, `android/`, `phases/00-foundation.md`
@@ -183,3 +183,5 @@
 - CR-0003 — minSdk 24 — APPROVED (2026-10-06) — `governance/cr/CR-0003-minsdk-24.md`
 - CR-0004 — audio_service + just_audio داخل spike — APPROVED (2026-10-06) — `governance/cr/CR-0004-audio-in-spike.md`
 - CR-0005 — توسيع عقد أسماء jobs في CI — APPROVED (2026-10-06) — `governance/cr/CR-0005-ci-job-names-expanded.md`
+- CR-0006 — path_provider في التطبيق الرئيسي — APPROVED (2026-10-06) — `governance/cr/CR-0006-path-provider-main-app.md`
+- CR-0007 — compileSdk 36 لدعم share_plus — APPROVED (2026-10-06) — `governance/cr/CR-0007-compilesdk-36-share-plus.md`

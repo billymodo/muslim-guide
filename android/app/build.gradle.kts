@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.muslimguide.app.muslim_guide"
-    compileSdk = 35 // DEC-0015
+    compileSdk = 36 // DEC-0015, amended by CR-0007
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

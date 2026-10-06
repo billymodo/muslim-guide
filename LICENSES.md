@@ -21,6 +21,12 @@
 | الحزمة | الإصدار | السبب (DEC) | الترخيص | أداة التحقق |
 |---|---|---|---|---|
 | flutter_riverpod | 2.6.1 (exact) | إدارة الحالة — DEC-0002، DEC-0016 | MIT | pub.dev صفحة الإصدار + API — https://pub.dev/packages/flutter_riverpod/versions/2.6.1 |
+| flutter_localizations | Flutter SDK | الترجمة وتهيئة ARB | BSD-style (BSD-3-Clause text) | Flutter SDK |
+| hive_ce | 2.20.1 (exact) | تخزين الإعدادات والبيانات المحلية — DEC-0024، DEC-0027 | BSD-3-Clause (+ Apache-2.0 لجزء مدمج) | pub.dev — https://pub.dev/packages/hive_ce/versions/2.20.1 |
+| hive_ce_flutter | 2.4.0 (exact) | تهيئة Hive لتطبيق Flutter | BSD-3-Clause؛ يتضمن أجزاء أقدم بترخيص Apache-2.0 | pub.dev — https://pub.dev/packages/hive_ce_flutter/versions/2.4.0 |
+| intl | 0.20.3 (exact) | تنسيق الأرقام حسب اللغة — DEC-0026 | BSD-3-Clause | pub.dev — https://pub.dev/packages/intl/versions/0.20.3 |
+| path_provider | 2.1.6 (exact) | مسارات Hive وسجل الأخطاء — CR-0006 | BSD-3-Clause | pub.dev — https://pub.dev/packages/path_provider/versions/2.1.6 |
+| share_plus | 13.3.1 (exact) | تصدير سجل الأخطاء عبر مشاركة النظام — DEC-0025 | BSD-3-Clause | pub.dev — https://pub.dev/packages/share_plus/versions/13.3.1 |
 | very_good_analysis | 11.0.0 (exact, dev) | قواعد التحليل الساكن — DEC-0011 | MIT | pub.dev — https://pub.dev/packages/very_good_analysis |
 
 ## 4. تبعيات `pubspec.lock` (كلها — غير مباشرة)
@@ -75,10 +81,8 @@
 |---|---|---|---|
 | flutter_local_notifications | 22.3.1 | BSD-3-Clause | أرشيف pub.dev LICENSE — 2026-10-06 |
 | timezone | 0.11.1 | BSD-2-Clause | أرشيف pub.dev LICENSE (نص بشرطين) — 2026-10-06 |
-| hive_ce | 2.20.1 | BSD-3-Clause (+Apache-2.0 مدمج) | أرشيف pub.dev LICENSE — 2026-10-06 |
 | audio_service | 0.18.19 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
 | just_audio | 0.10.6 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
-| path_provider | 2.1.6 | BSD-3-Clause | LICENSE في pub cache (Flutter Authors) — 2026-10-06 — موافقة Step 4 |
 
 ## 8. ملاحظات
 

@@ -67,7 +67,7 @@
 |Dart|3.13.4|
 |minSdk|24|
 |targetSdk|34|
-|compileSdk|35|
+|compileSdk|36|
 |Riverpod|2.6.1|
 |Hive CE|2.20.1 (user data only)|
 |GitHub|`billymodo/muslim-guide`|
@@ -115,4 +115,3 @@ text
 
 
 \*\*مرحباً بك في المشروع. عندما تكون جاهزاً، أرسل الأسئلة الخمسة.\*\*
-

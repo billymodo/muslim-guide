@@ -31,7 +31,7 @@
 ## OD-0006 — المنصات
 - **Question**: Android min SDK؟ iOS ضمن v1؟
 - **Blocking Phase**: قبل Phase 01
-- **Status**: DECIDED — Android فقط في v1.0 (minSdk 23, compileSdk 35, targetSdk 34)؛ iOS مؤجل إلى v2.0+ → OD-0021 (DEC-0015، 2026-10-05)
+- **Status**: DECIDED — Android فقط في v1.0 (minSdk 24, compileSdk 36, targetSdk 34)؛ iOS مؤجل إلى v2.0+ → OD-0021 (DEC-0015، 2026-10-05؛ minSdk amended by CR-0003 وcompileSdk amended by CR-0007 on 2026-10-06)
 
 ## OD-0007 — مصدر صوت التلاوة
 - **Question**: من القارئ؟ ما شروط ترخيصه؟

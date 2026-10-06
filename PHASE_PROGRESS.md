@@ -18,7 +18,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 00B مكتملة مع تحفظات Phase 04)
+> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 01 data layer implemented; 00B deferrals remain for Phase 04)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -31,6 +31,18 @@
 \## المرحلة الحالية
 
 
+
+\*\*Phase 01 — Foundation\*\*
+
+| البند | القيمة |
+|---|---|
+| Status | IN PROGRESS |
+| Started | 2026-10-06 |
+| Current Step | Data layer complete: type IDs, migrations, Hive store, settings repository, local error log |
+| Blockers | لا يوجد — قرارات Phase 01 المطلوبة محسومة |
+| Validation | `flutter analyze --fatal-infos` بلا مشاكل؛ جميع الاختبارات نجحت؛ APK debug بُني بعد CR-0007 |
+
+## Phase 00B — سجل الإغلاق
 
 \*\*Phase 00B — Spike: الإشعارات والصوت\*\*
 
@@ -122,7 +134,7 @@
 
 |---|---|---|---|
 
-| Phase 01 — Foundation | v0.1 | 00B مكتملة | None — OD-0008, OD-0010, OD-0012, OD-0013 decided (DEC-0024–0027) |
+| Phase 01 — Foundation | v0.1 | 00B مكتملة | IN PROGRESS — data layer complete; OD-0008, OD-0010, OD-0012, OD-0013 decided (DEC-0024–0027) |
 
 | Phase 02 — Prayer | v0.2 | 01 | OD-0011 |
 
@@ -191,8 +203,9 @@ text
 | CR-0003 | minSdk 24 (تعديل DEC-0015) | ✅ APPROVED |
 
 | CR-0004 | audio\_service + just\_audio في spike | ✅ APPROVED |
-
 | CR-0005 | توسيع عقد أسماء CI jobs | ✅ APPROVED |
+| CR-0006 | path_provider في التطبيق الرئيسي | ✅ APPROVED |
+| CR-0007 | compileSdk 36 لدعم share_plus | ✅ APPROVED |
 
 
 

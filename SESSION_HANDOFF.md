@@ -5,6 +5,29 @@
 
 \---
 
+## Session 10 — 2026-10-06 (Phase 01: data layer)
+
+### ما نُفِّذ
+- أُضيف سجل `TypeAdapter` المركزي، مع عدم حجز typeId للقيم البدائية.
+- أُضيفت migrations للانتقال من schema v0 إلى v1، وافتتاح وإغلاق Hive بأمان.
+- أُضيف مستودع إعدادات اللغة وحالة onboarding والثيم.
+- أُضيف سجل أخطاء JSONL مع تنقية بيانات حساسة، حد 1 MB، والاحتفاظ بأحدث 1,000 حدث.
+- أُضيفت اختبارات migration وHiveStore وSettingsRepository وLocalErrorLog.
+- سُجّل CR-0006 وصُحح OD-0006، ووُثقت التبعيات.
+- بعد تعذر build بسبب حاجة `share_plus 13.3.1` إلى SDK 36، اعتُمد CR-0007 وارتفع `compileSdk` إلى 36 دون تغيير `minSdk` أو `targetSdk`.
+- `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: نجحت جميع الاختبارات.
+
+### ما لم يُنفَّذ
+- لم يُضف UI أو Riverpod providers، ولم يُدفع أي تغيير.
+
+### ما للجلسة القادمة
+- مراجعة ملفات طبقة البيانات ثم متابعة بقية Phase 01 حسب الموافقة.
+
+### Commit
+- سجل التنفيذ هذا داخل commit المحلي الذي تبلغ SHA الخاص به نهاية الجلسة.
+
+---
+
 ## Session 9 — 2026-10-06 (Phase 00B: closure)
 
 ### ما نُفِّذ
