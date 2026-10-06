@@ -111,3 +111,20 @@
 - **Blocking Phase**: قبل v2.0
 - **Status**: OPEN
 - **Origin**: DEC-0015 (أُجّل iOS إلى v2.0+، 2026-10-05)
+
+## OD-0022 — جهاز اختبار Phase 00B
+
+**Question:** ما الجهاز المتاح لتنفيذ Step 5؟
+
+**Why It Matters:** 60% من مخاطر الإشعارات لا تكتشف على المحاكي.
+
+**Options:**
+- A: Pixel 6a (المفضل — بلا تحسينات بطارية)
+- B: أي Android 7+ (كافٍ للاختبار الأساسي)
+- C: تأجيل إلى Phase 04
+
+**Blocking Phase:** Phase 04 (الأذان)
+
+**Status:** OPEN
+
+**Deadline:** قبل بدء Phase 04

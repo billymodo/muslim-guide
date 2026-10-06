@@ -1,7 +1,11 @@
 # Phase 00B — Spike: الإشعارات والصوت الخلفي
 
 ## Status
-PLANNED (يبدأ بعد اعتماد Phase 00)
+ACTIVE — Steps 1-4 ✅ / Step 5 pending (device)
+
+## Blockers
+- Step 5: يتطلب جهاز Android فيزيائي (Pixel 6a أو بديل)
+- السبب: 60% من الاختبارات لا يمكن إجراؤها على محاكي
 
 ## Objective
 اكتشاف سلوك الإشعارات والصوت في الخلفية **قبل** بناء أي شيء عليه.
