@@ -131,12 +131,50 @@
 - **Status**: APPROVED
 - **Date**: 2026-10-06
 - **Decision**: Declare `ScheduledNotificationReceiver` and `ScheduledNotificationBootReceiver` explicitly in the Android Manifest for `flutter_local_notifications` 22.3.1.
-- **Reason**: The built merged manifest did not contain either receiver until the declarations were added manually; notification scheduling was accepted but notifications were not delivered before the fix. Delivery and reboot persistence passed after adding them.
+- **Reason**: In the Phase 00B build, `flutter_local_notifications` 22.x did not add either receiver to the merged manifest. The missing declarations were confirmed in the built manifest; scheduling was accepted but notifications were not delivered until the receivers were added manually.
 - **Consequences**:
   - Phase 04 must include the required receiver declarations in the main app Manifest.
   - Document the integration in `phases/04` and related documentation.
   - Verify the merged manifest after any `flutter_local_notifications` upgrade.
 - **Evidence**: `spike/RESULTS.md` — Step 5 final results, plus `spike/evidence/merged_manifest_with_receivers.xml`.
+
+## DEC-0024 — User data migrations
+- **Status**: APPROVED
+- **Date**: 2026-10-06
+- **Decision**:
+  - Add an integer `schemaVersion` to each Hive box.
+  - Implement migrations manually, without a migration library.
+  - Test migrations from every prior production version, starting with v1.
+- **Reason**: Simple, dependency-free, and sufficient for the requirements.
+
+## DEC-0025 — Local error log
+- **Status**: APPROVED
+- **Date**: 2026-10-06
+- **Decision**:
+  - Store JSON Lines at `{app_documents}/logs/errors.jsonl`.
+  - Record `timestamp`, `level`, `message`, optional `stack`, and `context`.
+  - Rotate at 1 MB, retaining the latest 1,000 events.
+  - Export manually through the system share sheet.
+  - Do not record personal information.
+- **Reason**: JSONL is simple, machine-readable, and requires no additional library.
+
+## DEC-0026 — Numerals
+- **Status**: APPROVED
+- **Date**: 2026-10-06
+- **Decision**:
+  - Use Latin numerals (0-9) in interface values such as times, counters, and settings.
+  - Preserve Arabic-Indic numerals (٠-٩) in Quranic text.
+  - Use `intl` `NumberFormat` according to locale where localized formatting is needed.
+- **Reason**: Latin numerals are universal for interface values and simplify bidirectional layout; Quranic text retains its source convention.
+
+## DEC-0027 — Hive encryption
+- **Status**: APPROVED
+- **Date**: 2026-10-06
+- **Decision**:
+  - Do not encrypt Hive data in v1.
+  - Stored data is limited to settings, onboarding state, and last-read position; it does not include sensitive personal information.
+  - Revisit encryption through a new open decision if requirements change; `flutter_secure_storage` may then be evaluated for key storage.
+- **Reason**: The current stored data is not sensitive, and encryption can be added later if needed.
 
 ## Change Requests (CRs)
 

@@ -42,7 +42,7 @@
 ## OD-0008 — ترحيل بيانات المستخدم
 - **Question**: آلية schemaVersion وmigration؟
 - **Blocking Phase**: Phase 01
-- **Status**: OPEN
+- **Status**: DECIDED — simple versioned migrations (DEC-0024، 2026-10-06)
 
 ## OD-0009 — النشر على المتاجر
 - **Question**: توقيع، Data Safety، سياسة خصوصية؟
@@ -52,7 +52,7 @@
 ## OD-0010 — سجل الأخطاء المحلي
 - **Question**: صيغة وتصدير؟
 - **Blocking Phase**: Phase 01
-- **Status**: OPEN
+- **Status**: DECIDED — JSON Lines in Documents with bounded rotation and manual share export (DEC-0025، 2026-10-06)
 
 ## OD-0011 — طريقة حساب المواقيت
 - **Question**: الطريقة الافتراضية وخيارات المستخدم؟
@@ -62,12 +62,12 @@
 ## OD-0012 — الأرقام
 - **Question**: عربية هندية أم لاتينية؟
 - **Blocking Phase**: Phase 01
-- **Status**: OPEN
+- **Status**: DECIDED — Latin numerals in UI; Arabic-Indic numerals in Quranic text (DEC-0026، 2026-10-06)
 
 ## OD-0013 — تشفير Hive
 - **Question**: اختياري؟ أين يُخزن المفتاح؟
 - **Blocking Phase**: Phase 01
-- **Status**: OPEN
+- **Status**: DECIDED — no encryption in v1; revisit through a new OD if data sensitivity changes (DEC-0027، 2026-10-06)
 
 ## OD-0014 — cache eviction للصوت
 - **Question**: سياسة الحدود والتحميل؟

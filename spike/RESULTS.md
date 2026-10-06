@@ -17,10 +17,10 @@
 | 6 | Hive: isolate خلفي → رئيسي | جهاز فيزيائي | CPH2365 / Android 13 / API 33 | ✅ نجح | LogViewer أكد `isolate→main OK` باستخدام IsolateNameServer + SendPort وACK. |
 | 7 | سلوك OEM (OnePlus/OPPO) | جهاز OEM | CPH2365 / Android 13 / API 33 | ⏭️ مؤجل إلى Phase 04 | اختبار طويل 30+ دقيقة وعلى أجهزة OEM إضافية لم يُنفذ. |
 
-> ملخص الإغلاق: 6 من 9 تحققّات ناجحة عند احتساب تشغيل الصوت منفصلًا عن Audio Focus،
-> مع ثلاثة تحفظات مؤجلة: Audio Focus بمكالمة حقيقية، مراقبة OEM طويلة المدى،
-> وتأكيد سمعي بشري للصوت (LogViewer أكد اكتمال التشغيل دون استثناء، لكن لا يمكن
-> التحقق من سماع الصوت عبر ADB).
+> ملخص الإغلاق: الاختبارات الأساسية الستة ناجحة: الإشعار في الواجهة، الإشعار في
+> الخلفية، الاستعادة بعد reboot، exact alarm، تشغيل الصوت، وHive bridge.
+> بقي Audio Focus بمكالمة حقيقية ومراقبة OEM طويلة المدى مؤجلين إلى Phase 04.
+> التأكيد السمعي البشري موثق أدناه.
 
 ## ملاحظات واقعية
 
@@ -153,3 +153,9 @@ Additional evidence:
 - بدأ Android تشغيل `ScheduledNotificationBootReceiver` الخاص بالتطبيق بعد
   الإقلاع، ثم ظهر إشعار `Spike 00B` في notification shade و`dumpsys notification`.
 - الدليل المنقح: [reboot_test_summary.txt](./evidence/reboot_test_summary.txt).
+
+### Human Audio Verification
+
+- **النتيجة:** ✅ أكد المستخدم سماع صوت Beep عند اختباره يدويًا.
+- **التاريخ:** 2026-10-06.
+- هذا التأكيد يكمل تحقق تشغيل الصوت؛ يبقى اختبار Audio Focus أثناء مكالمة حقيقية مؤجلًا إلى Phase 04 (OD-0023).

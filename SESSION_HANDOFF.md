@@ -5,6 +5,34 @@
 
 \---
 
+## Session 9 — 2026-10-06 (Phase 00B: closure)
+
+### ما نُفِّذ
+- Step 5 closed: 6/6 core tests passed.
+- DEC-0023 recorded for manual notification receiver declarations.
+- DEC-0024 through DEC-0027 recorded for migrations, local error log, numerals, and Hive encryption.
+- OD-0023 and OD-0024 remain open as Phase 04 deferrals.
+- Phase 00B officially closed.
+- Human Audio Verification: user manually tested and confirmed hearing the Beep; recorded in `spike/RESULTS.md`.
+
+### Lessons Learned
+1. `flutter_local_notifications` 22.x did not add the required receivers to the merged manifest in the tested setup.
+2. ColorOS/Oppo may require Don't optimize, background-running, and auto-launch settings.
+3. The `IsolateNameServer` + `SendPort` bridge keeps Hive operations in the main isolate.
+
+### للجلسة القادمة (2026-10-07)
+1. ابدأ Phase 01 بعد مراجعة الخطة والموافقة.
+2. اقرأ `phases/01.md`.
+3. تحقق من ODs المتبقية.
+4. ابنِ Splash → Onboarding → Settings.
+5. استخدم DEC-0024 إلى DEC-0027.
+
+### Commit SHA
+- Step 5: `9087c49`
+- Session 9 closure: راجع أحدث commit في `main` بعد هذه الجلسة.
+
+---
+
 ## Session 8 — 2026-10-06 (Phase 00B: step 3 pushed + step 4 approvals)
 
 ### ما نُفِّذ
@@ -321,4 +349,3 @@ Select-String -Path \*.md -Pattern 'ط¸|ط§|â€' | Select-Object -First 5
 
 
 لا نتائج للبحث العربي المشوّه
-

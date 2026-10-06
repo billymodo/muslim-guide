@@ -1,3 +1,19 @@
+## Phase 00B — ✅ COMPLETED (2026-10-06)
+
+**Summary:**
+- Steps 1-5 ✅
+- 6/6 core tests passed on CPH2365 / Android 13 / API 33.
+- Human audio verification: ✅ user confirmed the Beep was audible.
+- Remaining deferrals to Phase 04: Audio Focus (OD-0023) and long-term OEM behavior (OD-0024).
+- Duration: 1 day.
+
+**Key lessons:**
+1. Notification receivers must be declared manually for the tested plugin setup (DEC-0023).
+2. ColorOS/Oppo may require battery optimization, background-running, and auto-launch settings.
+3. Hive access across isolates uses an `IsolateNameServer` + `SendPort` bridge.
+
+**Phase 01 preparation decisions:** OD-0008, OD-0010, OD-0012, and OD-0013 are decided by DEC-0024 through DEC-0027.
+
 \# Phase Progress — Snapshot
 
 
@@ -29,7 +45,7 @@
 | Started | 2026-10-06 |
 
 | Current Step | 6 / 6 ✅ — Step 5 device testing and closeout complete |
-| Blockers | لا يوجد لـ00B؛ Audio Focus وlong-term OEM/cross-device والصوت المسموع فعليًا deferred to Phase 04 |
+| Blockers | لا يوجد لإغلاق 00B؛ Audio Focus (OD-0023) وlong-term OEM (OD-0024) مؤجلان إلى Phase 04 |
 | Exit Criteria | اختبار جهاز حقيقي CPH2365 / Android 13 + جدول نتائج |
 
 
@@ -53,11 +69,10 @@
 | 5 | اختبار وظيفي (جهاز فقط) | ✅ مكتمل — foreground/background/reboot/permissions/Hive |
 | 6 | توثيق النتائج + إغلاق 00B | ✅ مكتمل — 2026-10-06 |
 
-## Blockers
-- لا يوجد blocker لإغلاق Phase 00B.
+## Remaining Deferrals
 - Audio Focus أثناء مكالمة حقيقية: OD-0023 (Phase 04).
 - سلوك OEM طويل المدى: OD-0024 (Phase 04).
-- تأكيد سمعي بشري للصوت: Phase 04.
+- اكتمل التأكيد السمعي البشري للصوت: ✅ المستخدم أكد سماعه في 2026-10-06؛ موثق في `spike/RESULTS.md`.
 
 
 
@@ -107,7 +122,7 @@
 
 |---|---|---|---|
 
-| Phase 01 — Foundation | v0.1 | 00B مكتملة | OD-0008, OD-0010, OD-0012, OD-0013 |
+| Phase 01 — Foundation | v0.1 | 00B مكتملة | None — OD-0008, OD-0010, OD-0012, OD-0013 decided (DEC-0024–0027) |
 
 | Phase 02 — Prayer | v0.2 | 01 | OD-0011 |
 
@@ -141,8 +156,11 @@ text
 
 | DEC | التاريخ | الموضوع |
 |---|---|---|
+| DEC-0027 | 2026-10-06 | Hive encryption |
+| DEC-0026 | 2026-10-06 | Numerals |
+| DEC-0025 | 2026-10-06 | Local error log |
+| DEC-0024 | 2026-10-06 | User data migrations |
 | DEC-0023 | 2026-10-06 | Notification receivers manual addition |
-| DEC-0018 | 2026-10-06 | Phase-Aware CI Rollout |
 
 | DEC-0017 | 2026-10-06 | Pixel 6a (reference device) |
 
@@ -190,21 +208,18 @@ text
 
 
 
-\### OD التالية للـPhase 01
+### OD-0008/0010/0012/0013 — DECIDED for Phase 01
 
 
 
-| OD | الموضوع | Blocking |
+| OD | الموضوع | Status |
 
 |---|---|---|
 
-| OD-0008 | ترحيل بيانات المستخدم (schemaVersion + migrations) | Phase 01 |
-
-| OD-0010 | سجل الأخطاء المحلي (صيغة + تصدير) | Phase 01 |
-
-| OD-0012 | الأرقام (عربية هندية أم لاتينية) | Phase 01 |
-
-| OD-0013 | تشفير Hive (اختياري + تخزين المفتاح) | Phase 01 |
+| OD-0008 | ترحيل بيانات المستخدم (schemaVersion + migrations) | DECIDED — DEC-0024 |
+| OD-0010 | سجل الأخطاء المحلي (صيغة + تصدير) | DECIDED — DEC-0025 |
+| OD-0012 | الأرقام (عربية هندية أم لاتينية) | DECIDED — DEC-0026 |
+| OD-0013 | تشفير Hive (اختياري + تخزين المفتاح) | DECIDED — DEC-0027 |
 
 
 
