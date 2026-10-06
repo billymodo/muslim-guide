@@ -1,84 +1,184 @@
+import 'dart:async';
 import 'dart:isolate';
+import 'dart:ui' as ui;
 
 import 'package:hive_ce/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
-/// نتيجة اختبار Hive عبر isolates.
+/// Result of a Hive isolate bridge test.
 class HiveIsolateResult {
   /// Creates a result with [ok] and a human-readable [message].
   const new({required this.ok, required this.message});
 
-  /// true إذا نجحت القراءة بعد كتابة الـisolate.
+  /// Whether the background isolate write was visible in the main isolate.
   final bool ok;
 
-  /// وصف النتيجة للمستخدم.
+  /// Human-readable result for the LogViewer.
   final String message;
 }
 
-/// سيناريو: كتابة من isolate خلفي ثم قراءة من isolate رئيسي.
-///
-/// الوصول المتزامن لنفس الـbox من عزلتين هو ما يُختبر؛ الفشل مُتوقع
-/// ويُوثَّق في spike/RESULTS.md (هذا هو هدف الاختبار).
-class HiveIsolateTest {
-  /// Creates the test; [pathResolver] يحقن مسار التخزين في الاختبارات.
-  new({Future<String> Function()? pathResolver})
-      : _pathResolver = pathResolver ?? _defaultPath;
+/// Keeps Hive access on the main isolate and accepts writes over a named port.
+class HiveIsolateBridge {
+  /// Creates a bridge for an open Hive box and its receive port.
+  new(this._box, this._receivePort);
 
-  final Future<String> Function() _pathResolver;
+  /// Isolate-name registration used by this bridge.
+  static const String portName = 'hive_bridge';
+  static const String _boxName = 'spike_hive_test';
+  static const Duration _requestTimeout = Duration(seconds: 5);
 
-  static Future<String> _defaultPath() async {
-    final dir = await getApplicationDocumentsDirectory();
-    return dir.path;
+  final Box<dynamic> _box;
+  final ReceivePort _receivePort;
+  bool _disposed = false;
+
+  /// Initializes Hive and registers the main-isolate write endpoint.
+  static Future<HiveIsolateBridge> initialize({
+    Future<String> Function()? pathResolver,
+  }) async {
+    final path = await (pathResolver ?? _defaultPath)();
+    Hive.init(path);
+    final box = await Hive.openBox<dynamic>(_boxName);
+    final receivePort = ReceivePort();
+
+    ui.IsolateNameServer.removePortNameMapping(portName);
+    if (!ui.IsolateNameServer.registerPortWithName(
+      receivePort.sendPort,
+      portName,
+    )) {
+      receivePort.close();
+      await box.close();
+      throw StateError('Could not register the Hive isolate bridge.');
+    }
+
+    final bridge = HiveIsolateBridge(box, receivePort);
+    receivePort.listen(bridge._handleMessage);
+    return bridge;
   }
 
-  /// ينفّذ: (1) كتابة في الرئيسي (2) كتابة من isolate (3) قراءة في الرئيسي.
-  Future<HiveIsolateResult> run() async {
-    final path = await _pathResolver();
-    Hive.init(path);
+  static Future<String> _defaultPath() async {
+    final directory = await getApplicationDocumentsDirectory();
+    return directory.path;
+  }
 
-    final mainBox = await Hive.openBox<dynamic>('spike_hive_test');
-    await mainBox.put('from_main', DateTime.now().toIso8601String());
+  Future<void> _handleMessage(Object? message) async {
+    if (message is! Map) {
+      return;
+    }
 
-    // الاختبار الحقيقي: isolate ثانية تفتح نفس المجلد ونفس اسم الـbox.
-    final outcome = await Isolate.run<String>(() async {
-      try {
-        Hive.init(path);
-        final box = await Hive.openBox<dynamic>('spike_hive_test');
-        await box.put(
-          'from_isolate',
-          DateTime.now().toIso8601String(),
-        );
-        await box.close();
-        return 'ok';
-      } on Exception catch (e) {
-        return 'error: $e';
-      }
-    });
+    final replyPort = message['replyPort'];
+    if (replyPort is! SendPort) {
+      return;
+    }
 
-    String? value;
     try {
-      value = mainBox.get('from_isolate') as String?;
-    } on Exception catch (e) {
-      await mainBox.close();
-      return HiveIsolateResult(ok: false, message: 'read failed: $e');
+      if (message['action'] != 'write' ||
+          message['key'] is! String ||
+          message['value'] is! String) {
+        throw const FormatException('Invalid Hive bridge request.');
+      }
+      final key = message['key']! as String;
+      final value = message['value']! as String;
+      await _box.put(key, value);
+      replyPort.send(<String, Object?>{'status': 'ok', 'value': value});
+    } on Exception catch (error) {
+      replyPort.send(<String, Object?>{
+        'status': 'error',
+        'error': error.toString(),
+      });
     }
-    await mainBox.close();
+  }
 
-    if (outcome != 'ok') {
-      return HiveIsolateResult(
-        ok: false,
-        message: 'isolate write failed: $outcome',
-      );
+  /// Sends a write request and waits for its main-isolate ACK.
+  Future<String> writeFromIsolate(String key, String value) async {
+    if (_disposed) {
+      return 'ERROR: Hive bridge is disposed';
     }
-    if (value == null) {
+
+    final replyPort = ReceivePort();
+    final replySendPort = replyPort.sendPort;
+    try {
+      final mainPort = ui.IsolateNameServer.lookupPortByName(portName);
+      if (mainPort == null) {
+        return 'ERROR: main isolate bridge not registered';
+      }
+
+      await Isolate.run<void>(() {
+        final port = ui.IsolateNameServer.lookupPortByName(portName);
+        if (port == null) {
+          throw StateError('main isolate bridge not registered');
+        }
+        port.send(<String, Object?>{
+          'action': 'write',
+          'key': key,
+          'value': value,
+          'replyPort': replySendPort,
+        });
+      });
+
+      final response = await replyPort.first.timeout(_requestTimeout);
+      if (response is Map && response['status'] == 'ok') {
+        return 'SUCCESS: wrote $key=$value';
+      }
+      if (response is Map && response['status'] == 'error') {
+        return 'ERROR: ${response['error']}';
+      }
+      return 'ERROR: invalid response from main isolate';
+    } on TimeoutException {
+      return 'ERROR: Hive bridge ACK timed out after '
+          '${_requestTimeout.inSeconds}s';
+    } on Exception catch (error) {
+      return 'ERROR: $error';
+    } finally {
+      replyPort.close();
+    }
+  }
+
+  /// Reads a value from the box owned by the main isolate.
+  String? read(String key) => _box.get(key) as String?;
+
+  /// Unregisters the port and closes the main-isolate box.
+  Future<void> dispose() async {
+    if (_disposed) {
+      return;
+    }
+    _disposed = true;
+    ui.IsolateNameServer.removePortNameMapping(portName);
+    _receivePort.close();
+    await _box.close();
+  }
+}
+
+/// Tests writing through the main-isolate Hive bridge.
+class HiveIsolateTest {
+  /// Creates the test with the initialized main-isolate [bridge].
+  const new({required this.bridge});
+
+  /// Main-isolate Hive bridge; null disables the test when not initialized.
+  final HiveIsolateBridge? bridge;
+
+  /// Requests a background-isolate write and verifies it through the main box.
+  Future<HiveIsolateResult> run() async {
+    final hiveBridge = bridge;
+    if (hiveBridge == null) {
       return const HiveIsolateResult(
         ok: false,
-        message: 'main read null — النمط غير موثوق',
+        message: 'Hive main-isolate bridge is not initialized',
       );
     }
-    return HiveIsolateResult(
-      ok: true,
-      message: 'isolate→main OK: $value',
-    );
+
+    final value = DateTime.now().toIso8601String();
+    final outcome = await hiveBridge.writeFromIsolate('from_isolate', value);
+    if (!outcome.startsWith('SUCCESS:')) {
+      return HiveIsolateResult(ok: false, message: outcome);
+    }
+
+    final readValue = hiveBridge.read('from_isolate');
+    if (readValue != value) {
+      return HiveIsolateResult(
+        ok: false,
+        message: 'main isolate read mismatch: $readValue',
+      );
+    }
+    return HiveIsolateResult(ok: true, message: 'isolate→main OK: $readValue');
   }
 }

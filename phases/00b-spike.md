@@ -1,11 +1,11 @@
 # Phase 00B — Spike: الإشعارات والصوت الخلفي
 
 ## Status
-ACTIVE — Steps 1-4 ✅ / Step 5 pending (device)
+APPROVED — Steps 1-5 completed on a physical device (2026-10-06), with audio-focus, long-term OEM/cross-device, and independent audible confirmation deferred to Phase 04.
 
 ## Blockers
-- Step 5: يتطلب جهاز Android فيزيائي (Pixel 6a أو بديل)
-- السبب: 60% من الاختبارات لا يمكن إجراؤها على محاكي
+- لا يوجد blocker لإغلاق Phase 00B.
+- Audio focus, long-term OEM/cross-device, and independent audible confirmation remain deferred to Phase 04 (OD-0023/OD-0024).
 
 ## Objective
 اكتشاف سلوك الإشعارات والصوت في الخلفية **قبل** بناء أي شيء عليه.
@@ -37,10 +37,22 @@ ACTIVE — Steps 1-4 ✅ / Step 5 pending (device)
 - سجل الأخطاء.
 - قرار موثق.
 - Build Issues في spike/RESULTS.md (desugaring)
-- اختبار audio focus (مكالمة + تشغيل خلفي)
+- Audio focus is deferred to Phase 04 (OD-0023).
 
 ## Deviations from Specification
 (يُملأ عند التنفيذ)
 
 ## Human Review Points
 - هل النتائج كافية لـ Phase 04؟
+
+## Step 5 Results
+
+- [x] Foreground notification
+- [x] Background notification (with battery-optimization exemption)
+- [x] Reboot persistence (scheduled notification restored after boot)
+- [x] Exact alarm on Android 13+
+- [x] Hive isolate write pattern (`IsolateNameServer` + `SendPort` + ACK)
+- [ ] Audio focus during an incoming call — deferred to Phase 04 (OD-0023)
+- [ ] Long-term OEM behavior — deferred to Phase 04 (OD-0024)
+
+Detailed results and evidence: `spike/RESULTS.md` § Step 5 — النتائج النهائية.

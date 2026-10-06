@@ -25,12 +25,22 @@ WAKE_LOCK, FOREGROUND_SERVICE, FOREGROUND_SERVICE_MEDIA_PLAYBACK, VIBRATE
 
 > ممنوع إضافتها إلى `lib/` أو Manifest الرئيسي للتطبيق الأساسي.
 
+## Android scheduled-notification receivers
+
+For `flutter_local_notifications` 22.3.1, the plugin README's scheduled
+notification setup requires explicitly declaring
+`ScheduledNotificationReceiver` and `ScheduledNotificationBootReceiver` under
+`<application>` in the Spike manifest. They were absent from the merged
+manifest until declared manually. Verify the merged manifest after builds and
+after every plugin upgrade; see `RESULTS.md` and decision DEC-0023.
+
 ## سيناريوهات الاختبار
 
 1. إشعار مجدول يصل بعد إغلاق التطبيق (جهاز فيزيائي).
 2. إشعار بعد إعادة تشغيل الجهاز (جهاز حقيقي فقط).
 3. exact alarms على Android 12+.
-4. Hive: كتابة من isolate خلفي → قراءة من isolate رئيسي.
+4. Hive: يرسل isolate خلفي طلب كتابة عبر `IsolateNameServer` و`SendPort`؛
+   الـmain isolate وحده يفتح Hive ويكتب، ثم يعيد ACK ويُتحقق من القيمة.
 5. صوت في الخلفية + audio focus + مقاطعة (جهاز حقيقي).
 
 ## الاختبار (Testing)
@@ -53,4 +63,5 @@ flutter run
 - Widget tests: UI only، بلا audio (FakeAsync + MethodChannel = deadlock)
 - Audio: يُختبر على جهاز حقيقي فقط (Step 5)
 - Notification: unit test للـscheduling logic فقط
-- Hive isolate: unit test على الجهاز (يحتاج path_provider)
+- Hive isolate: اختبار آلي لمسار الجسر والـACK، ثم تحقق إضافي على جهاز حقيقي
+  (تهيئة مسار Hive الرئيسي تحتاج `path_provider`)

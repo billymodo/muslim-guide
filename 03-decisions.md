@@ -127,6 +127,17 @@
 - **Decided**: 2026-10-05 — `governance/cr/CR-0001-phase-aware-ci-rollout.md`
 - **Affected Documents**: `ci/00-ci-policy.md`, `ci/01-ci-checks.md`, `phases/00-foundation.md`, `.github/workflows/ci.yml`
 
+## DEC-0023 — Notification receivers manual addition
+- **Status**: APPROVED
+- **Date**: 2026-10-06
+- **Decision**: Declare `ScheduledNotificationReceiver` and `ScheduledNotificationBootReceiver` explicitly in the Android Manifest for `flutter_local_notifications` 22.3.1.
+- **Reason**: The built merged manifest did not contain either receiver until the declarations were added manually; notification scheduling was accepted but notifications were not delivered before the fix. Delivery and reboot persistence passed after adding them.
+- **Consequences**:
+  - Phase 04 must include the required receiver declarations in the main app Manifest.
+  - Document the integration in `phases/04` and related documentation.
+  - Verify the merged manifest after any `flutter_local_notifications` upgrade.
+- **Evidence**: `spike/RESULTS.md` — Step 5 final results, plus `spike/evidence/merged_manifest_with_receivers.xml`.
+
 ## Change Requests (CRs)
 
 - CR-0001 — Phase-Aware CI Rollout — APPROVED (2026-10-05) — `governance/cr/CR-0001-phase-aware-ci-rollout.md`

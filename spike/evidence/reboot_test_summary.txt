@@ -1,0 +1,19 @@
+Step 5 reboot-persistence test — 2026-10-06
+Device: CPH2365 / Android 13 / API 33
+
+Schedule accepted: 2026-10-06 14:50:51 local
+Scheduled fire time: 2026-10-06 14:53:51 local
+Pre-reboot alarm: RTC_WAKEUP for com.muslimguide.app.muslim_guide_spike,
+  component ScheduledNotificationReceiver.
+
+The device was rebooted immediately after scheduling. The Spike app was not
+launched after reboot. Android boot completed; logcat recorded starting the
+app process for ScheduledNotificationBootReceiver at 14:54:21.
+
+At 14:55:36, dumpsys notification contained:
+  package: com.muslimguide.app.muslim_guide_spike
+  notification title: Spike 00B
+The notification shade hierarchy also contained the visible text "Spike 00B".
+
+Result: PASS — notification persisted through reboot and was delivered without
+manually opening the app.

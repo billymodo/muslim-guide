@@ -2,7 +2,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 00B, step 4 — في التنفيذ)
+> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 00B مكتملة مع تحفظات Phase 04)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -24,15 +24,13 @@
 
 |---|---|
 
-| Status | 🟢 ACTIVE |
+| Status | ✅ COMPLETED (with deferred items) |
 
 | Started | 2026-10-06 |
 
-| Current Step | 4 / 6 ✅ — Step 5 مؤجّل (جهاز) |
-
-| Blockers | Step 5 يحتاج جهاز فيزيائي — الحل: OD-0022 (Deadline: قبل Phase 04) |
-
-| Exit Criteria | اختبار على جهاز حقيقي (Pixel 6a) + جدول نتائج |
+| Current Step | 6 / 6 ✅ — Step 5 device testing and closeout complete |
+| Blockers | لا يوجد لـ00B؛ Audio Focus وlong-term OEM/cross-device والصوت المسموع فعليًا deferred to Phase 04 |
+| Exit Criteria | اختبار جهاز حقيقي CPH2365 / Android 13 + جدول نتائج |
 
 
 
@@ -52,15 +50,14 @@
 
 | 4 | بناء Spike كامل | ✅ |
 
-| 5 | اختبار وظيفي (جهاز فقط) | ⏳ مؤجّل — OD-0022 |
-
-| 6 | توثيق النتائج + إغلاق 00B (سيُدمج مع Step 5) | ⏳ |
+| 5 | اختبار وظيفي (جهاز فقط) | ✅ مكتمل — foreground/background/reboot/permissions/Hive |
+| 6 | توثيق النتائج + إغلاق 00B | ✅ مكتمل — 2026-10-06 |
 
 ## Blockers
-
-- Step 5: يحتاج جهاز Android فيزيائي
-- **الحل:** OD-0022
-- **Deadline:** قبل Phase 04
+- لا يوجد blocker لإغلاق Phase 00B.
+- Audio Focus أثناء مكالمة حقيقية: OD-0023 (Phase 04).
+- سلوك OEM طويل المدى: OD-0024 (Phase 04).
+- تأكيد سمعي بشري للصوت: Phase 04.
 
 
 
@@ -143,9 +140,8 @@ text
 
 
 | DEC | التاريخ | الموضوع |
-
 |---|---|---|
-
+| DEC-0023 | 2026-10-06 | Notification receivers manual addition |
 | DEC-0018 | 2026-10-06 | Phase-Aware CI Rollout |
 
 | DEC-0017 | 2026-10-06 | Pixel 6a (reference device) |
@@ -301,4 +297,3 @@ Phase 00B step 6 → جهاز فيزيائي
 ↓
 
 Phase 00B مكتملة → Phase 01
-

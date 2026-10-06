@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,7 @@ import 'package:muslim_guide_spike/widgets/log_viewer.dart';
 /// نقطة الدخول — تهيّئ خدمة الصوت ثم تشغّل واجهة Spike.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  final hiveBridge = await HiveIsolateBridge.initialize();
   final handler = await AudioService.init(
     builder: SpikeAudioHandler.new,
     config: const AudioServiceConfig(
@@ -16,22 +19,42 @@ Future<void> main() async {
       androidNotificationChannelName: 'Spike 00B audio',
     ),
   );
-  runApp(SpikeApp(handler: handler));
+  runApp(SpikeApp(handler: handler, hiveBridge: hiveBridge));
 }
 
 /// تطبيق Spike — واجهة اختبار Phase 00B (تُحذف بعد الاعتماد).
-class SpikeApp extends StatelessWidget {
+class SpikeApp extends StatefulWidget {
   /// Creates the spike shell; [handler] اختياري (null في الاختبار).
-  const new({required this.handler, super.key});
+  const new({required this.handler, this.hiveBridge, super.key});
 
   /// معالج الصوت — null في اختبارات الواجهة (Option A، 2026-10-06).
   final SpikeAudioHandler? handler;
+
+  /// جسر Hive المسجل في الـmain isolate.
+  final HiveIsolateBridge? hiveBridge;
+
+  @override
+  State<SpikeApp> createState() => _SpikeAppState();
+}
+
+class _SpikeAppState extends State<SpikeApp> {
+  @override
+  void dispose() {
+    final bridge = widget.hiveBridge;
+    if (bridge != null) {
+      unawaited(bridge.dispose());
+    }
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SpikeHomePage(handler: handler),
+      home: SpikeHomePage(
+        handler: widget.handler,
+        hiveBridge: widget.hiveBridge,
+      ),
     );
   }
 }
@@ -39,10 +62,13 @@ class SpikeApp extends StatelessWidget {
 /// الصفحة الرئيسية: ثلاثة أزرار اختبار + سجل عمليات حيّ.
 class SpikeHomePage extends StatefulWidget {
   /// Creates the home page; [handler] null يعطل زر الصوت فقط.
-  const new({required this.handler, super.key});
+  const new({required this.handler, this.hiveBridge, super.key});
 
   /// معالج الصوت المستخدم في زر التشغيل (اختياري).
   final SpikeAudioHandler? handler;
+
+  /// جسر Hive المستخدم في الاختبار من isolate.
+  final HiveIsolateBridge? hiveBridge;
 
   @override
   State<SpikeHomePage> createState() => _SpikeHomePageState();
@@ -50,7 +76,6 @@ class SpikeHomePage extends StatefulWidget {
 
 class _SpikeHomePageState extends State<SpikeHomePage> {
   final NotificationService _notifications = NotificationService();
-  final HiveIsolateTest _hiveTest = HiveIsolateTest();
   final List<String> _log = <String>[];
 
   void _addLog(String operation, String result, String message) {
@@ -85,12 +110,9 @@ class _SpikeHomePageState extends State<SpikeHomePage> {
 
   Future<void> _runHiveTest() async {
     try {
-      final result = await _hiveTest.run();
-      _addLog(
-        'Hive isolate',
-        result.ok ? 'نجاح' : 'فشل',
-        result.message,
-      );
+      final hiveTest = HiveIsolateTest(bridge: widget.hiveBridge);
+      final result = await hiveTest.run();
+      _addLog('Hive isolate', result.ok ? 'نجاح' : 'فشل', result.message);
     } on Exception catch (e) {
       _addLog('Hive isolate', 'خطأ', '$e');
     }
@@ -116,9 +138,7 @@ class _SpikeHomePageState extends State<SpikeHomePage> {
               child: const Text('اختبار Hive من isolate'),
             ),
             const Divider(height: 24),
-            Expanded(
-              child: LogViewer(entries: _log),
-            ),
+            Expanded(child: LogViewer(entries: _log)),
           ],
         ),
       ),

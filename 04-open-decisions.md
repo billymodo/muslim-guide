@@ -125,6 +125,30 @@
 
 **Blocking Phase:** Phase 04 (الأذان)
 
-**Status:** OPEN
+**Status:** CLOSED — Step 5 completed on CPH2365 / Android 13 on 2026-10-06.
 
 **Deadline:** قبل بدء Phase 04
+
+## OD-0023 — Audio focus verification
+
+**Question:** Does playback stop or resume correctly when an incoming phone call interrupts it?
+
+**Blocking Phase:** 04
+
+**Status:** OPEN
+
+**Context:** Audio focus could not be tested without a real incoming call.
+
+**Action:** Verify interruption and resume behavior during Phase 04 using a real call.
+
+## OD-0024 — OEM long-term behavior
+
+**Question:** Do notifications remain reliable under long-term ColorOS and other OEM background restrictions?
+
+**Blocking Phase:** 04
+
+**Status:** OPEN
+
+**Context:** Step 5 verified foreground, background-with-exemption, and reboot delivery on one CPH2365 device, but did not run for 30+ minutes or test additional OEM devices.
+
+**Action:** Run a 30+ minute test on multiple OEM devices during Phase 04 and document the required battery, background-running, and auto-launch guidance.

@@ -13,7 +13,7 @@ class SpikeAudioHandler extends BaseAudioHandler
 
   /// يشغّل beep.wav من الأصول بحلقة متكررة ثم يتوقف بعد [duration].
   Future<void> playBeepFor(Duration duration) async {
-    await _player.setAsset('beep.wav');
+    await _player.setAsset('assets/beep.wav');
     await _player.setLoopMode(LoopMode.all);
     unawaited(_player.play());
     await Future<void>.delayed(duration);
