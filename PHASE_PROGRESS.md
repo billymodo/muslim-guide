@@ -18,7 +18,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-06 (Phase 01 data layer implemented; 00B deferrals remain for Phase 04)
+> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 UI foundation complete; 00B deferrals remain for Phase 04)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -38,9 +38,10 @@
 |---|---|
 | Status | 🟢 ACTIVE |
 | Started | 2026-10-06 |
-| Done | Data layer (5 files + tests) |
-| Next | UI layer (Splash + Onboarding + Settings) |
-| Progress | ~30% |
+| Data layer | ✅ (5 files + tests) |
+| UI foundation | ✅ (l10n + theme + go_router) |
+| UI screens | ⏳ التالي |
+| Progress | ~50% |
 | Blockers | لا يوجد — قرارات Phase 01 المطلوبة محسومة |
 | Validation | `flutter analyze --fatal-infos` بلا مشاكل؛ جميع الاختبارات نجحت؛ APK debug بُني بعد CR-0007 |
 

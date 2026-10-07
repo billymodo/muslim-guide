@@ -5,6 +5,42 @@
 
 \---
 
+## Session 11 — 2026-10-07 (Phase 01: UI foundation)
+
+### ما نُفِّذ
+- go_router 18.0.2 (BSD-3-Clause, exact pin).
+- `l10n.yaml` + ملفات ARB للعربية والإنجليزية (11 مفتاحًا).
+- `AppColors`, `AppSpacing`, `AppTypography`, و`AppTheme`.
+- Material 3 مع ثيمي Light وDark؛ يدعم التطبيق اختيار System عبر `ThemeMode.system`.
+- تفعيل توليد الترجمة عبر `flutter: generate: true`.
+- `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 5/5؛
+  `flutter build apk --debug`: نجح.
+
+### القرارات
+- go_router 18.0.2 (DEC-0003).
+- رموز تصميم أولية قابلة للتوسع.
+
+### الملفات المتأثرة
+- جديد: `l10n.yaml`, `lib/l10n/app_ar.arb`, `lib/l10n/app_en.arb`.
+- جديد: `lib/app/theme/app_colors.dart`, `app_spacing.dart`,
+  `app_typography.dart`, `app_theme.dart`.
+- معدّل: `pubspec.yaml`, `pubspec.lock`, `LICENSES.md`,
+  `security/02-dependencies.md`.
+
+### Commit
+- `b4bed71fd0279fad44d6d4e27afaa46d4ecf182a` — UI foundation.
+
+### للجلسة القادمة
+ابدأ شاشات UI:
+- `lib/features/splash/presentation/splash_screen.dart`
+- `lib/features/onboarding/presentation/language_selection_screen.dart`
+- `lib/app/providers/bootstrap_provider.dart`
+- `lib/app/router.dart`
+- `lib/main.dart`
+- راجع `docs/UI_VISION.md` §3 وتفاصيل onboarding قبل التنفيذ.
+
+---
+
 ## Session 10 — 2026-10-06 (Phase 01: data layer)
 
 ### ما نُفِّذ
