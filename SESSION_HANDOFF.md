@@ -5,6 +5,28 @@
 
 \---
 
+## Session 13 — 2026-10-07 (Phase 01: UI screens)
+
+### ما نُفِّذ
+- `splash_screen.dart` — خلفية gradient بلا تأخير اصطناعي، وتستمع إلى bootstrap.
+- `language_selection_screen.dart` — اختيار AR/EN وحفظ اللغة في Hive.
+- `router.dart` — ثلاثة مسارات مع منطق redirect.
+- `home_placeholder.dart` — شاشة مؤقتة حتى Phase 10.
+- `main.dart` — `ProviderScope` مع `MaterialApp.router`.
+- `muslim_guide_app.dart` — واجهة presentational تستقبل router.
+- إضافة `home_greeting` إلى ملفات ARB.
+- إعادة هيكلة widget test؛ 7/7 اختبارات ناجحة.
+
+### القرارات
+- تأجيل Welcome Shell (SCREEN-003)؛ TODO في router.
+- Splash يستخدم gradient لعدم توفر الصورة.
+- `MuslimGuideApp` presentational لتبسيط الاختبار.
+
+### Commit
+- `e5e2f9c` — Phase 01 UI screens.
+
+---
+
 ## Session 12 — 2026-10-07 (Phase 01: timezone + bootstrap)
 
 ### ما نُفِّذ
@@ -14,6 +36,7 @@
 - أُنشئ `bootstrap_provider.dart` لتهيئة Hive والترحيلات وسجل الأخطاء والمنطقة
   الزمنية، واستعادة لغة الواجهة المحفوظة.
 - أُضيف `LocalErrorLog.init()` لإنشاء مجلد السجل، مع اختبار لذلك.
+- أُصلح استيراد timezone واستخدام `.new` غير الضروري في `local_error_log.dart`.
 - لم تُنفذ شاشات Splash أو اختيار اللغة أو Router أو `main.dart`؛ تظل الخطوة
   التالية بعد هذه الجلسة.
 - `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 6/6؛
@@ -32,7 +55,8 @@
   `test/core/logging/local_error_log_test.dart`.
 
 ### Commit
-- `8baeb1c9fc89f51d43a1bbf955dcc6d2dd739e88` — timezone bootstrap.
+- `8baeb1c9fc89f51d43a1bbf955dcc6d2dd739e88` — timezone bootstrap؛
+  `17457cf` — توثيق تقدم Phase 01.
 
 ### للجلسة القادمة
 - تابع تنفيذ شاشات Phase 01 بعد مراجعة المدير: Splash، Language Selection،

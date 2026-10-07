@@ -176,6 +176,44 @@
   - Revisit encryption through a new open decision if requirements change; `flutter_secure_storage` may then be evaluated for key storage.
 - **Reason**: The current stored data is not sensitive, and encryption can be added later if needed.
 
+## DEC-0028 — Prayer calculation method
+
+**Status:** APPROVED
+**Date:** 2026-10-07
+
+**Decision:**
+- **Default calculation method:** Muslim World League (MWL).
+- **User options:** MWL, Egyptian, Umm al-Qura, Karachi, ISNA, Tehran, Jafari.
+- **Default Asr method:** Standard (Shafi'i/Maliki/Hanbali).
+- **Alternative Asr method:** Hanafi.
+- **Default high-latitude rule:** MiddleOfNight.
+- **High-latitude options:** MiddleOfNight, SeventhOfNight, TwilightAngle, None.
+
+**Reason:** MWL is broadly used internationally; the available options cover the principal calculation conventions.
+
+**Consequences:**
+- Persist the selected method and related settings in `SettingsRepository`.
+- Expose the options in `PrayerTimesScreen` and `SettingsScreen`.
+- The domain calculator accepts a `CalculationMethod` parameter.
+
+## DEC-0029 — Automatic timezone detection
+
+**Status:** APPROVED
+**Date:** 2026-10-07
+
+**Decision:**
+- Use `flutter_timezone` to read the device's timezone.
+- Replace the temporary Phase 01 `Asia/Riyadh` timezone.
+- On detection failure, fall back to `Asia/Riyadh` and write a warning to the local log.
+
+**Reason:** `flutter_timezone` reads the system timezone; `DateTime.now().timeZoneName` may return ambiguous or platform-dependent abbreviations.
+
+**Consequences:**
+- Approve CR-0010 for `flutter_timezone`, including pub.dev verification, license review, and an exact version pin, before adding the dependency.
+- Update `bootstrap_provider.dart` to resolve the system timezone and set the timezone database's local location.
+
+**Package:** `flutter_timezone` — verify on pub.dev before CR-0010 approval and implementation.
+
 ## Change Requests (CRs)
 
 - CR-0001 — Phase-Aware CI Rollout — APPROVED (2026-10-05) — `governance/cr/CR-0001-phase-aware-ci-rollout.md`

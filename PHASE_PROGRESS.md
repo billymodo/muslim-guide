@@ -18,7 +18,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 bootstrap + timezone complete; UI screens remain)
+> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 UI screens complete; Phase 02 planned)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -32,18 +32,25 @@
 
 
 
-\*\*Phase 01 — Foundation\*\*
-
+\*\*Phase 01 — Foundation (2026-10-07)\*\*
 | البند | القيمة |
 |---|---|
 | Status | 🟢 ACTIVE |
 | Started | 2026-10-06 |
-| Data layer | ✅ (5 files + tests) |
-| UI foundation | ✅ (l10n + theme + go_router) |
-| UI screens | ⏳ Bootstrap مكتمل؛ Splash + Language Selection + Router + main التالي |
-| Progress | ~60% |
-| Blockers | لا يوجد في Phase 01؛ OD-0025 يحسم قبل Phase 02 |
-| Validation | `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 6/6؛ `flutter build apk --debug`: نجح |
+| Data layer | ✅ (Session 10) |
+| UI foundation | ✅ l10n + theme + go_router (Session 11) |
+| Bootstrap | ✅ timezone + Hive + error log (Session 12) |
+| UI screens | ✅ Splash + Language + Router + main (Session 13) |
+| Status | ~85% — يتبقى Welcome Shell (اختياري) + integration tests |
+| Last Phase 01 commit | `e5e2f9c` |
+| Validation | `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 7/7؛ `flutter build apk --debug`: نجح |
+
+## Phase 02 — Prayer Times & Location (planned)
+- **Status:** 🟡 PLANNED
+- **Start:** 2026-10-07
+- **Estimate:** 7-8 days
+- **Blocking ODs:** ✅ resolved (DEC-0028, DEC-0029); OD-0019 resolved by DEC-0017
+- **Next:** Begin Task 1 (Domain — PrayerCalculator) after approval
 
 ## Phase 00B — سجل الإغلاق
 
@@ -139,7 +146,7 @@
 
 | Phase 01 — Foundation | v0.1 | 00B مكتملة | IN PROGRESS — data layer complete; OD-0008, OD-0010, OD-0012, OD-0013 decided (DEC-0024–0027) |
 
-| Phase 02 — Prayer | v0.2 | 01 | OD-0011 |
+| Phase 02 — Prayer | v0.2 | 01 | ✅ OD-0011/OD-0025 resolved; package CRs remain before package use |
 
 
 
@@ -222,8 +229,7 @@ text
 
 \*\*لا OD تعطّل Phase 00B حالياً.\*\*
 
-**OD-0025 — Automatic timezone detection:** OPEN، لا يمنع Phase 01؛ يجب حسمه
-قبل Phase 02. المنطقة `Asia/Riyadh` مؤقتة.
+**Phase 02:** OD-0011 وOD-0025 حُسمتا في DEC-0028 وDEC-0029؛ OD-0019 محسومة في DEC-0017.
 
 
 

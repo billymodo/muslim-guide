@@ -57,7 +57,7 @@
 ## OD-0011 — طريقة حساب المواقيت
 - **Question**: الطريقة الافتراضية وخيارات المستخدم؟
 - **Blocking Phase**: قبل Phase 02
-- **Status**: OPEN
+- **Status**: DECIDED — MWL default, seven calculation methods, Standard/Hanafi Asr, and MiddleOfNight default (DEC-0028، 2026-10-07)
 
 ## OD-0012 — الأرقام
 - **Question**: عربية هندية أم لاتينية؟
@@ -98,7 +98,9 @@
 ## OD-0019 — الجهاز المرجعي
 - **Question**: ما الطراز والمواصفات؟
 - **Blocking Phase**: Phase 00
-- **Status**: DECIDED — Pixel 6a أساسي، Redmi Note 12 ثانوي → DEC-0017
+- **Status**: DECIDED (DEC-0017)
+- **Decision**: Pixel 6a أساسي + Redmi Note 12 ثانوي
+- **Date**: 2026-10-06
 - **Proposal**: Pixel 6a أو Redmi Note 12.
 
 ## OD-0020 — Amiri Quran License
@@ -155,7 +157,7 @@
 
 ## OD-0025 — Automatic timezone detection
 
-**Status:** OPEN
+**Status:** DECIDED — use `flutter_timezone`, with `Asia/Riyadh` fallback and a local warning on failure (DEC-0029، 2026-10-07)
 **Blocking Phase:** 02
 
 **Question:** How should the user's timezone be detected automatically?
@@ -168,4 +170,4 @@
 **Current (Phase 01):** `Asia/Riyadh` is temporary and must be replaced before
 production.
 
-**Deadline:** Before Phase 02.
+**Decision:** `flutter_timezone` (DEC-0029). CR-0010, package/license verification, and exact version pin are required before adding the dependency.
