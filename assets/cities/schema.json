@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:muslim-guide:cities:schema:v1",
+  "title": "Muslim Guide major cities",
+  "description": "Offline city data sourced from GeoNames cities15000 and Arabic alternate names.",
+  "type": "object",
+  "required": [
+    "version",
+    "generated_at",
+    "source",
+    "license",
+    "attribution_url",
+    "cities"
+  ],
+  "properties": {
+    "version": { "const": 1 },
+    "generated_at": { "type": "string", "format": "date" },
+    "source": { "const": "GeoNames" },
+    "license": { "const": "CC BY 4.0" },
+    "attribution_url": { "type": "string", "format": "uri" },
+    "cities": {
+      "type": "array",
+      "minItems": 100,
+      "items": { "$ref": "#/$defs/city" }
+    }
+  },
+  "$defs": {
+    "city": {
+      "type": "object",
+      "required": [
+        "id",
+        "name_ar",
+        "name_en",
+        "country_ar",
+        "country_en",
+        "country_code",
+        "lat",
+        "lng",
+        "timezone",
+        "elevation"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name_ar": { "type": "string", "minLength": 1 },
+        "name_en": { "type": "string", "minLength": 1 },
+        "country_ar": { "type": "string", "minLength": 1 },
+        "country_en": { "type": "string", "minLength": 1 },
+        "country_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lng": { "type": "number", "minimum": -180, "maximum": 180 },
+        "timezone": { "type": "string", "minLength": 1 },
+        "elevation": { "type": ["number", "null"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

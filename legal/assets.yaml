@@ -124,15 +124,26 @@ assets:
     asset_type: data
     name: "بيانات المدن الكبرى"
     provider: "GeoNames"
-    source_url: "https://geonames.org"
+    source_url: "https://www.geonames.org/export/"
+    version: "cities15000 and alternateNamesV2, 2026-10-08"
     license_type: "CC BY 4.0"
     redistribution_allowed: true
+    modification_allowed: true
     attribution_required: true
+    conditions: []
+    checksum: "sha256:2236885df7fc77e33f0db58e048bd906ac945c17801ca631325083a58d83f76d"
+    checksum_method: "SHA-256 of the raw UTF-8 major_cities.json bytes"
     status: APPROVED
-    reviewed_at: "2026-01-01"
-    evidence: ["https://www.geonames.org/export/"]
+    reviewed_at: "2026-10-08"
+    review_expires_at: "2027-10-08"
+    evidence:
+      - kind: license_text_snapshot
+        ref: legal/evidence/geonames-export-terms-2026-10-08.txt
+        captured_at: "2026-10-08"
+        sha256: "ffde3495171b5166ed74d22f9c327f414b9c6df8d79ee583304f635f0a30d894"
     reviewer: null
     phase: 02
+    notes: "Attribution required: GeoNames, https://www.geonames.org/. Six missing Arabic alternate names use documented manual transliterations."
 
   - asset_id: prayer-methods
     asset_type: code

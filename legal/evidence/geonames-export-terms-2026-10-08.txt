@@ -1,0 +1,15 @@
+GeoNames export terms snapshot
+Captured: 2026-10-08
+Source: https://www.geonames.org/export/
+
+Terms and Conditions (relevant excerpt):
+
+GeoNames data is free and available without costs.
+GeoNames data is available under the CC-BY licence (Creative Commons
+Attribution license). Users should credit GeoNames when using the data with a
+link or another reference to GeoNames.
+The data is provided "as is" without warranty or representation of accuracy,
+timeliness, or completeness.
+
+This excerpt is retained as license evidence for the GeoNames-derived city
+dataset. Attribution: GeoNames, https://www.geonames.org/.

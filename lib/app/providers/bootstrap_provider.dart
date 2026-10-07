@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_guide/core/logging/local_error_log.dart';
 import 'package:muslim_guide/data/settings/settings_repository.dart';
 import 'package:muslim_guide/data/storage/hive_store.dart';
-import 'package:timezone/data/latest.dart' as tz_data;
+import 'package:timezone/data/latest_all.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
 /// Holds the initialized Hive store for application providers.
