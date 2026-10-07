@@ -5,6 +5,41 @@
 
 \---
 
+## Session 12 — 2026-10-07 (Phase 01: timezone + bootstrap)
+
+### ما نُفِّذ
+- أُضيفت `timezone 0.11.1` كتَبعية مباشرة مثبتة، ووُثّقت في سجلّي التراخيص
+  والتبعيات.
+- اعتُمد CR-0008، وسُجل OD-0025 لاكتشاف المنطقة الزمنية تلقائيًا قبل Phase 02.
+- أُنشئ `bootstrap_provider.dart` لتهيئة Hive والترحيلات وسجل الأخطاء والمنطقة
+  الزمنية، واستعادة لغة الواجهة المحفوظة.
+- أُضيف `LocalErrorLog.init()` لإنشاء مجلد السجل، مع اختبار لذلك.
+- لم تُنفذ شاشات Splash أو اختيار اللغة أو Router أو `main.dart`؛ تظل الخطوة
+  التالية بعد هذه الجلسة.
+- `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 6/6؛
+  `flutter build apk --debug`: نجح.
+
+### القرارات
+- timezone 0.11.1، BSD-2-Clause، مثبت بدقة — CR-0008.
+- `Asia/Riyadh` مؤقتة حتى حسم OD-0025 قبل Phase 02.
+
+### الملفات المتأثرة
+- جديد: `governance/cr/CR-0008-timezone-package.md`,
+  `lib/app/providers/bootstrap_provider.dart`.
+- معدّل: `pubspec.yaml`, `pubspec.lock`, `LICENSES.md`,
+  `security/02-dependencies.md`, `04-open-decisions.md`,
+  `lib/core/logging/local_error_log.dart`,
+  `test/core/logging/local_error_log_test.dart`.
+
+### Commit
+- `8baeb1c9fc89f51d43a1bbf955dcc6d2dd739e88` — timezone bootstrap.
+
+### للجلسة القادمة
+- تابع تنفيذ شاشات Phase 01 بعد مراجعة المدير: Splash، Language Selection،
+  Router، و`main.dart`، إضافة إلى Home placeholder وARB keys حسب الموافقة.
+
+\---
+
 ## Session 11 — 2026-10-07 (Phase 01: UI foundation)
 
 ### ما نُفِّذ
@@ -34,7 +69,6 @@
 ابدأ شاشات UI:
 - `lib/features/splash/presentation/splash_screen.dart`
 - `lib/features/onboarding/presentation/language_selection_screen.dart`
-- `lib/app/providers/bootstrap_provider.dart`
 - `lib/app/router.dart`
 - `lib/main.dart`
 - راجع `docs/UI_VISION.md` §3 وتفاصيل onboarding قبل التنفيذ.

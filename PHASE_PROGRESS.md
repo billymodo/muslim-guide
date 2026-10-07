@@ -18,7 +18,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 UI foundation complete; 00B deferrals remain for Phase 04)
+> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 bootstrap + timezone complete; UI screens remain)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -40,10 +40,10 @@
 | Started | 2026-10-06 |
 | Data layer | ✅ (5 files + tests) |
 | UI foundation | ✅ (l10n + theme + go_router) |
-| UI screens | ⏳ التالي |
-| Progress | ~50% |
-| Blockers | لا يوجد — قرارات Phase 01 المطلوبة محسومة |
-| Validation | `flutter analyze --fatal-infos` بلا مشاكل؛ جميع الاختبارات نجحت؛ APK debug بُني بعد CR-0007 |
+| UI screens | ⏳ Bootstrap مكتمل؛ Splash + Language Selection + Router + main التالي |
+| Progress | ~60% |
+| Blockers | لا يوجد في Phase 01؛ OD-0025 يحسم قبل Phase 02 |
+| Validation | `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 6/6؛ `flutter build apk --debug`: نجح |
 
 ## Phase 00B — سجل الإغلاق
 
@@ -221,6 +221,9 @@ text
 
 
 \*\*لا OD تعطّل Phase 00B حالياً.\*\*
+
+**OD-0025 — Automatic timezone detection:** OPEN، لا يمنع Phase 01؛ يجب حسمه
+قبل Phase 02. المنطقة `Asia/Riyadh` مؤقتة.
 
 
 
