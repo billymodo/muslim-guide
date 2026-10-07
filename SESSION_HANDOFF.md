@@ -24,6 +24,9 @@
 - استخدام Riverpod Classic دون code generation في Phase 01.
 - typeId مخصص لـTypeAdapters فقط؛ القيم البدائية تحفظ في `Box<dynamic>`.
 - `compileSdk 36` وفق CR-0007، مع `minSdk 24` و`targetSdk 34`.
+- إضافات إغلاق: `docs/PROJECT_STORY.md` (سياق المشروع)،
+  `docs/DIRECTOR_PLAYBOOK.md` (أسلوب التوجيه)، و`.gitignore` (استثناء سجلات
+  Spike الخام).
 
 ### ما للجلسة القادمة
 - ابدأ طبقة UI: Splash وLanguage Selection.
