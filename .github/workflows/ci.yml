@@ -44,17 +44,39 @@ jobs:
           fi
           echo 'CI-018 OK'
 
-      - name: 'CI-002: asset scan (أساسي — لا أصول مُشحونة بلا سجل)'
+      - name: 'CI-002 Asset scan'
         shell: bash
         run: |
           set -euo pipefail
-          EXTRA=$(find assets -type f ! -name '.gitkeep' 2>/dev/null || true)
-          if [ -n "$EXTRA" ]; then
-            echo 'CI-002 FAIL: ملفات في assets/ غير مسجلة في legal/assets.yaml:'
-            echo "$EXTRA"
+
+          if [ ! -f legal/assets.yaml ]; then
+            echo 'CI-002 FAIL: legal/assets.yaml not found'
             exit 1
           fi
-          echo 'CI-002 OK: assets/ لا يحتوي إلا .gitkeep (لا محتوى مُشحون بعد)'
+
+          # Extract all registered paths from legal/assets.yaml
+          REGISTERED=$(grep -oP 'path:\s*"\K[^"]+' legal/assets.yaml || true)
+
+          # Find all real asset files (excluding .gitkeep)
+          UNREGISTERED=""
+          while IFS= read -r file; do
+            rel="${file#./}"
+
+            if ! echo "$REGISTERED" | grep -qxF "$rel"; then
+              UNREGISTERED="${UNREGISTERED}${rel}"$'\n'
+            fi
+          done < <(find assets -type f ! -name '.gitkeep')
+
+          if [ -n "$UNREGISTERED" ]; then
+            echo 'CI-002 FAIL: assets not registered in legal/assets.yaml:'
+            printf '%s' "$UNREGISTERED"
+            echo ''
+            echo 'Fix: add path: field to each asset entry in legal/assets.yaml'
+            exit 1
+          fi
+
+          COUNT=$(printf '%s\n' "$REGISTERED" | grep -c '^assets/' || echo 0)
+          echo "CI-002 OK: $COUNT registered asset file(s)"
 
   analyze:
     name: analyze

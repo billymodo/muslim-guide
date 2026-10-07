@@ -57,7 +57,7 @@ for display and are not represented as GeoNames alternate names:
 ## Generation and loading
 
 The bundled file has schema version 1 and was generated on 2026-10-08. Its
-shape is described by [`assets/cities/schema.json`](../assets/cities/schema.json).
+shape is described by [`cities.schema.json`](schemas/cities.schema.json).
 `City` is a pure-Dart domain model; `CitiesLoader` loads the bundled JSON through
 an injected `AssetBundle` and caches its parsed immutable list in memory. App
 bootstrap initializes the full timezone database so every GeoNames IANA

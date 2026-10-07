@@ -123,6 +123,7 @@ assets:
   - asset_id: cities-major
     asset_type: data
     name: "بيانات المدن الكبرى"
+    path: "assets/cities/major_cities.json"
     provider: "GeoNames"
     source_url: "https://www.geonames.org/export/"
     version: "cities15000 and alternateNamesV2, 2026-10-08"

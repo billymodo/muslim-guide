@@ -59,7 +59,8 @@ VERIFIED_IN_BUILD
 ## Rules
 
 - كل أصل له `asset_id` فريد.
-
+- كل أصل له ملف فعلي داخل `assets/` يسجل مساره في `path: "assets/.../file.ext"`.
+- الأصول التي لا تُشحن، مثل المخططات والتوثيق، توضع خارج `assets/`.
 - كل أصل له `provider` و`source_url`.
 
 - كل أصل له `license_type` موثق.
@@ -93,4 +94,3 @@ VERIFIED_IN_BUILD
 - `legal/02-attribution-policy.md`
 
 - `legal/03-review-policy.md`
-

@@ -7,6 +7,7 @@ fields:
   asset_id:                { type: string, required: true, pattern: "^[a-z0-9-]+$" }
   asset_type:              { type: enum, required: true, allowed: [text, audio, font, image, data, code] }
   name:                    { type: string, required: true }
+  path:                    { type: string, required: false } # مسار الأصل المحلي داخل assets/ عند شحن ملف
   provider:                { type: string, required: true }
   source_url:              { type: string, required: true }   # "TBD" مسموح فقط في الحالات المبكرة (انظر rules)
   version:                 { type: string, required: true, nullable_until: SOURCE_IDENTIFIED }
