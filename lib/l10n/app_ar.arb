@@ -1,0 +1,13 @@
+{
+  "@@locale": "ar",
+  "app_name": "دليل المسلم",
+  "app_tagline": "رفيقك في العبادة",
+  "btn_start": "ابدأ الآن",
+  "onboarding_choose_language": "اختر اللغة",
+  "onboarding_continue": "متابعة",
+  "language_arabic": "العربية",
+  "language_english": "English",
+  "splash_loading": "جاري التهيئة",
+  "splash_error": "فشل التهيئة",
+  "splash_retry": "إعادة المحاولة"
+}

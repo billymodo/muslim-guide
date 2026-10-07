@@ -1,0 +1,13 @@
+{
+  "@@locale": "en",
+  "app_name": "Muslim Guide",
+  "app_tagline": "Your worship companion",
+  "btn_start": "Get Started",
+  "onboarding_choose_language": "Choose Language",
+  "onboarding_continue": "Continue",
+  "language_arabic": "العربية",
+  "language_english": "English",
+  "splash_loading": "Initializing",
+  "splash_error": "Initialization failed",
+  "splash_retry": "Retry"
+}

@@ -22,6 +22,7 @@
 |---|---|---|---|---|
 | flutter_riverpod | 2.6.1 (exact) | إدارة الحالة — DEC-0002، DEC-0016 | MIT | pub.dev صفحة الإصدار + API — https://pub.dev/packages/flutter_riverpod/versions/2.6.1 |
 | flutter_localizations | Flutter SDK | الترجمة وتهيئة ARB | BSD-style (BSD-3-Clause text) | Flutter SDK |
+| go_router | 18.0.2 (exact) | التنقل — DEC-0003 | BSD-3-Clause | pub.dev — https://pub.dev/packages/go_router/versions/18.0.2 (نُشر 2026-09-28؛ تحقق 2026-10-07) |
 | hive_ce | 2.20.1 (exact) | تخزين الإعدادات والبيانات المحلية — DEC-0024، DEC-0027 | BSD-3-Clause (+ Apache-2.0 لجزء مدمج) | pub.dev — https://pub.dev/packages/hive_ce/versions/2.20.1 |
 | hive_ce_flutter | 2.4.0 (exact) | تهيئة Hive لتطبيق Flutter | BSD-3-Clause؛ يتضمن أجزاء أقدم بترخيص Apache-2.0 | pub.dev — https://pub.dev/packages/hive_ce_flutter/versions/2.4.0 |
 | intl | 0.20.3 (exact) | تنسيق الأرقام حسب اللغة — DEC-0026 | BSD-3-Clause | pub.dev — https://pub.dev/packages/intl/versions/0.20.3 |
