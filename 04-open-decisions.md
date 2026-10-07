@@ -171,3 +171,34 @@
 production.
 
 **Decision:** `flutter_timezone` (DEC-0029). CR-0010, package/license verification, and exact version pin are required before adding the dependency.
+
+## OD-0026 — Diyanet calculation method
+
+**Status:** OPEN
+**Blocking Phase:** None (deferred)
+**Type:** Future enhancement
+
+**Question:** Should Diyanet be added as an eighth calculation method?
+
+**Why It Matters:**
+- Diyanet is the official prayer-time authority in Turkey and may serve Turkish communities.
+
+**Current Blocker:** No verified official or peer-reviewed source documents the complete calculation profile:
+- Fajr angle.
+- Isha angle.
+- Dhuhr offset.
+- Asr method.
+- High-latitude rule.
+
+**Available but Insufficient:**
+- Aladhan lists Turkey as experimental with Fajr 18° and Isha 17° only.
+- Diyanet's public pages describe astronomical calculation but do not publish the complete parameters.
+
+**Resolution Path:**
+- [ ] Find an official Diyanet document with the complete parameters.
+- [ ] Or find a peer-reviewed paper documenting them.
+- [ ] Or contact Diyanet directly.
+- [ ] Record the verified values in a new DEC before implementation.
+
+**Decision Required From:** User
+**Deadline:** None — deferred.

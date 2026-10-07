@@ -148,6 +148,21 @@ assets:
     reviewer: null
     phase: 02
 
+  - asset_id: kemenag-jakarta-times
+    asset_type: data
+    name: "Kemenag Prayer Times — Jakarta"
+    provider: "Kementerian Agama Republik Indonesia"
+    source_url: "https://bimasislam.kemenag.go.id"
+    license_type: "Government public data"
+    redistribution_allowed: false
+    attribution_required: true
+    status: SOURCE_IDENTIFIED
+    reviewed_at: null
+    evidence: []
+    reviewer: null
+    phase: 02
+    note: "Used as reference for testing only — not redistributed."
+
   # ===== الصوت =====
   - asset_id: adhan-audio-cc0
     asset_type: audio
