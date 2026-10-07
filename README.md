@@ -73,7 +73,9 @@
 
 - `00-integrity-rules.md` — قواعد التكامل 001–020
 - `00-project-charter.md` — هوية المشروع وحدوده
-- `docs/PROJECT_STORY.md` — خلفية المشروع ورؤيته ودروس التنفيذ
+- `docs/PROJECT_STORY.md` — خلفية المشروع ورؤيته ودروس 
+- `docs/UI_VISION.md` — رؤية تصميم الواجهات (طويلة المدى)
+التنفيذ
 - `docs/DIRECTOR_PLAYBOOK.md` — أسلوب توجيه الوكيل
 - `01-requirements.md` — المتطلبات
 - `02-scope-and-boundaries.md` — النطاق
