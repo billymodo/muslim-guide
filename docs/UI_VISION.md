@@ -1,13 +1,13 @@
 # UI Vision — دليل المسلم
 
-> \*\*النوع:\*\* رؤية تصميمية بعيدة المدى (لا تُنفَّذ دفعة واحدة).
-> \*\*الحالة:\*\* VISION — مرجع للتصميم النهائي.
-> \*\*التنفيذ:\*\* مرحلي وفق `phases/NN.md`.
-> \*\*آخر تحديث:\*\* 2026-10-07
+> **النوع:** رؤية تصميمية بعيدة المدى (لا تُنفَّذ دفعة واحدة).
+> **الحالة:** VISION — مرجع للتصميم النهائي.
+> **التنفيذ:** مرحلي وفق `phases/NN.md`.
+> **آخر تحديث:** 2026-10-07
 
-\---
+---
 
-## 0\. القواعد الحاكمة
+## 0. القواعد الحاكمة
 
 هذه الوثيقة تلتزم بـ:
 
@@ -20,15 +20,15 @@
 
 ### ⛔ ممنوعات صارمة
 
-1. **لا نص قرآني/حديث/دعاء حرفي** — يُستخدم `\[PLACEHOLDER-AYAH-XXX]`
+1. **لا نص قرآني/حديث/دعاء حرفي** — يُستخدم `[PLACEHOLDER-AYAH-XXX]`
 2. **لا نص عربي مضمّن في الكود** — ARB keys فقط
 3. **لا صورة بلا ترخيص** — كل صورة في `legal/assets.yaml`
 4. **لا provider بلا تحديد** — `autoDispose` أم `keepAlive`
 5. **لا شاشة بلا 5 حالات** — Loading / Empty / Error / Success / Refreshing
 
-\---
+---
 
-## 1\. المبادئ التصميمية
+## 1. المبادئ التصميمية
 
 ### 1.1 الرؤية
 
@@ -39,9 +39,9 @@
 
 ### 1.2 Design Tokens
 
-* `AppColors.\*` — لا ألوان صريحة
-* `AppSpacing.\*` — لا أرقام صريحة
-* `AppTypography.\*` — من Material 3
+* `AppColors.*` — لا ألوان صريحة
+* `AppSpacing.*` — لا أرقام صريحة
+* `AppTypography.*` — من Material 3
 * `AppStrings.of(context, 'key')` — ARB keys فقط
 
 ### 1.3 اللغات والاتجاه
@@ -65,9 +65,9 @@
 * البيانات المحلية أولاً
 * الشبكة فقط في Phase 07 (التلاوة)
 
-\---
+---
 
-## 2\. هيكل الرئيسية (Live Dashboard)
+## 2. هيكل الرئيسية (Live Dashboard)
 
 ### 2.1 الفكرة
 
@@ -108,7 +108,7 @@
 
 |الخاصية|التفاصيل|
 |-|-|
-|**ARB Keys**|`home\_next\_prayer\_title`, `home\_prayer\_remaining`, `view\_all\_prayer\_times`|
+|**ARB Keys**|`home_next_prayer_title`, `home_prayer_remaining`, `view_all_prayer_times`|
 |**البيانات**|Countdown, Prayer name, Time, Hijri date|
 |**المصدر**|`nextPrayerProvider` (Stream, autoDispose)|
 |**الحالات**|Loading / Success / Error (لا موقع) / Empty (لا مواقيت)|
@@ -121,7 +121,7 @@
 
 |الخاصية|التفاصيل|
 |-|-|
-|**ARB Keys**|`home\_last\_read\_title`, `continue\_reading`, `home\_no\_reading\_yet`, `start\_reading`|
+|**ARB Keys**|`home_last_read_title`, `continue_reading`, `home_no_reading_yet`, `start_reading`|
 |**البيانات**|Surah, Ayah, Progress %|
 |**المصدر**|`lastReadProvider` (Notifier, keepAlive)|
 |**الحالات**|Loading / Empty (لم يقرأ بعد) / Success / Error|
@@ -133,7 +133,7 @@
 
 |الخاصية|التفاصيل|
 |-|-|
-|**ARB Keys**|`home\_azkar\_title`, `home\_azkar\_progress`, `home\_azkar\_morning`, `home\_azkar\_evening`, `home\_azkar\_complete`|
+|**ARB Keys**|`home_azkar_title`, `home_azkar_progress`, `home_azkar_morning`, `home_azkar_evening`, `home_azkar_complete`|
 |**البيانات**|Completed, Total, Period (صباح/مساء)|
 |**المصدر**|`todayAzkarProvider` (AsyncNotifier, autoDispose)|
 |**الحالات**|Loading / Empty (لا تقدم) / Success / Complete|
@@ -145,7 +145,7 @@
 
 |الخاصية|التفاصيل|
 |-|-|
-|**ARB Keys**|`home\_hijri\_date`, `home\_next\_event`, `home\_days\_remaining`|
+|**ARB Keys**|`home_hijri_date`, `home_next_event`, `home_days_remaining`|
 |**البيانات**|Hijri date, Next event, Countdown|
 |**المصدر**|`hijriDateProvider` (Notifier, autoDispose)|
 |**الحالات**|Loading / Success / Error|
@@ -158,7 +158,7 @@
 
 |الخاصية|التفاصيل|
 |-|-|
-|**ARB Keys**|`home\_weekly\_stats`, `home\_weekly\_prayers`, `home\_weekly\_azkar`, `home\_weekly\_quran`|
+|**ARB Keys**|`home_weekly_stats`, `home_weekly_prayers`, `home_weekly_azkar`, `home_weekly_quran`|
 |**البيانات**|Neutral stats (لا أهداف، لا streaks)|
 |**المصدر**|`weeklyStatsProvider` (AsyncNotifier, keepAlive)|
 |**الحالات**|Loading / Empty / Success|
@@ -172,14 +172,14 @@
 |الميزة|التنفيذ|ملاحظة|
 |-|-|-|
 |**Drag-to-Reorder**|`ReorderableSliverList` **فقط** في "وضع التحرير" (زر AppBar)|يمنع تعارض الإيماءات|
-|**Hide/Show Cards**|من الإعدادات → `home\_visible\_cards`|يُحفظ في Hive|
+|**Hide/Show Cards**|من الإعدادات → `home_visible_cards`|يُحفظ في Hive|
 |**Live Countdown**|`Timer.periodic(1s)` **فقط** عند `AppLifecycleState.resumed`|يُلغى عند background (توفير بطارية)|
 |**Pull-to-Refresh**|`RefreshIndicator` — **معطّل** في وضع التحرير|لا تعارض|
 |**Haptic Feedback**|`HapticFeedback.lightImpact()` عند اكتمال ذكر|`SystemCapabilities` check|
 
-\---
+---
 
-## 3\. وصفات الشاشات (Widget Recipes)
+## 3. وصفات الشاشات (Widget Recipes)
 
 ### 🎴 وصفة 1: SplashScreen
 
@@ -187,7 +187,7 @@
 
 **المدة:** حتى اكتمال التهيئة (عادة < 500ms). إن < 300ms → cross-fade مباشر بلا عرض Splash.
 
-**الخلفية:** `assets/images/splash\_bg.webp` (أصل معتمد — انظر §4).
+**الخلفية:** `assets/images/splash_bg.webp` (أصل معتمد — انظر §4).
 
 **الحالة:**
 
@@ -206,7 +206,7 @@ Scaffold
       Text(AppStrings.of(context, 'app\_tagline'), style: bodyMedium)
 ```
 
-**ARB Keys:** `app\_name`, `app\_tagline`
+**ARB Keys:** `app_name`, `app_tagline`
 
 **الحالات:**
 
@@ -218,8 +218,8 @@ Scaffold
 
 * `goToNext()`:
 
-  * إن `!onboarding\_completed` → `/onboarding/language`
-  * إن `onboarding\_completed` → `/home`
+  * إن `!onboarding_completed` → `/onboarding/language`
+  * إن `onboarding_completed` → `/home`
 
 **ملاحظات:**
 
@@ -227,7 +227,7 @@ Scaffold
 * إن فشل تحميل الصورة → fallback إلى `IslamicSceneBanner` (رسم برمجي).
 * لا تأخير ثابت (لا `Future.delayed(2s)`).
 
-\---
+---
 
 ### 🎴 وصفة 2: LanguageSelectionScreen (Onboarding)
 
@@ -256,7 +256,7 @@ Scaffold
       )
 ```
 
-**ARB Keys:** `onboarding\_choose\_language`, `onboarding\_continue`, `language\_arabic`, `language\_english`
+**ARB Keys:** `onboarding_choose_language`, `onboarding_continue`, `language_arabic`, `language_english`
 
 **الحالات:**
 
@@ -279,7 +279,7 @@ Scaffold
 
 **Offline:** ✅
 
-\---
+---
 
 ### 🎴 وصفة 3: HomeScreen
 
@@ -318,7 +318,7 @@ Scaffold
       SliverToBoxAdapter: QuickAccessGrid
 ```
 
-**ARB Keys:** `home\_greeting`, `home\_favorites`, `home\_quick\_access`، وكل مفاتيح الكروت
+**ARB Keys:** `home_greeting`, `home_favorites`, `home_quick_access`، وكل مفاتيح الكروت
 
 **الحالات:**
 
@@ -342,13 +342,13 @@ Scaffold
 
 **Offline:** ✅ (كل شيء محلي)
 
-\---
+---
 
 ### 🎴 وصفة 4: PrayerTimesScreen
 
 **الهدف:** عرض المواقيت الخمس + الشروق + عدّاد.
 
-**الخلفية:** `assets/images/prayer\_hero\_haram.webp` (أصل معتمد — §4).
+**الخلفية:** `assets/images/prayer_hero_haram.webp` (أصل معتمد — §4).
 
 **الحالة:**
 
@@ -373,7 +373,7 @@ Scaffold (بلا AppBar — صورة full-bleed)
       NotificationSettingsButton
 ```
 
-**ARB Keys:** `prayer\_fajr`, `prayer\_dhuhr`, `prayer\_asr`, `prayer\_maghrib`, `prayer\_isha`, `sunrise\_not\_prayer`, `prayer\_notification\_settings`
+**ARB Keys:** `prayer_fajr`, `prayer_dhuhr`, `prayer_asr`, `prayer_maghrib`, `prayer_isha`, `sunrise_not_prayer`, `prayer_notification_settings`
 
 **الحالات:**
 
@@ -406,13 +406,13 @@ Scaffold (بلا AppBar — صورة full-bleed)
 
 **مرجع:** REQ-PRAYER-001, OD-0011
 
-\---
+---
 
 ### 🎴 وصفة 5: QiblaScreen
 
 **الهدف:** بوصلة تفاعلية للقبلة.
 
-**الخلفية:** `CustomPainter` (بوصلة) + `assets/images/qibla\_bg.webp` (أصل معتمد — §4).
+**الخلفية:** `CustomPainter` (بوصلة) + `assets/images/qibla_bg.webp` (أصل معتمد — §4).
 
 **الحالة:**
 
@@ -438,7 +438,7 @@ Scaffold
       PrimaryButton(text: AppStrings.of(context, 'qibla\_calibrate'))
 ```
 
-**ARB Keys:** `qibla\_title`, `qibla\_direction\_label`, `qibla\_calibrate`, `qibla\_no\_sensor`, `qibla\_calibrating`
+**ARB Keys:** `qibla_title`, `qibla_direction_label`, `qibla_calibrate`, `qibla_no_sensor`, `qibla_calibrating`
 
 **الحالات:**
 
@@ -461,13 +461,13 @@ Scaffold
 
 **مرجع:** REQ-QIBLA-001
 
-\---
+---
 
 ### 🎴 وصفة 6: QuranScreen
 
 **الهدف:** فهرس السور + متابعة القراءة.
 
-**الخلفية:** gradient + (اختياري) `assets/images/quran\_book.webp`.
+**الخلفية:** gradient + (اختياري) `assets/images/quran_book.webp`.
 
 **الحالة:**
 
@@ -497,7 +497,7 @@ Scaffold
       DownloadIcon
 ```
 
-**ARB Keys:** `quran\_title`, `quran\_subtitle`, `continue\_reading`, `listen`, `surah\_ayah\_count`
+**ARB Keys:** `quran_title`, `quran_subtitle`, `continue_reading`, `listen`, `surah_ayah_count`
 
 **مصدر النص القرآني:**
 
@@ -527,7 +527,7 @@ Scaffold
 
 **مرجع:** REQ-QURAN-001, OD-0003
 
-\---
+---
 
 ### 🎴 وصفة 7: AzkarScreen
 
@@ -543,7 +543,7 @@ Scaffold
 
 **مصدر الأذكار:**
 
-* Pack: `azkar-hisn` (حصن المسلم — حالة: NEEDS\_REVIEW)
+* Pack: `azkar-hisn` (حصن المسلم — حالة: NEEDS_REVIEW)
 * **⚠️ المراجعة الشرعية إلزامية قبل الاعتماد**
 * **لا نصوص حرفية في الوصفة**
 
@@ -566,7 +566,7 @@ Scaffold
         PrimaryButton('azkar\_done')
 ```
 
-**ARB Keys:** `azkar\_title`, `azkar\_morning`, `azkar\_evening`, `azkar\_general`, `azkar\_done`
+**ARB Keys:** `azkar_title`, `azkar_morning`, `azkar_evening`, `azkar_general`, `azkar_done`
 
 **الحالات:**
 
@@ -590,7 +590,7 @@ Scaffold
 
 **مرجع:** REQ-AZKAR-001
 
-\---
+---
 
 ### 🎴 وصفة 8: HijriCalendarScreen
 
@@ -620,7 +620,7 @@ Scaffold
       EventCard × N
 ```
 
-**ARB Keys:** `hijri\_calendar\_title`, `hijri\_month\_format`, `hijri\_today`, `hijri\_event\_days\_remaining`
+**ARB Keys:** `hijri_calendar_title`, `hijri_month_format`, `hijri_today`, `hijri_event_days_remaining`
 
 **الحالات:**
 
@@ -642,7 +642,7 @@ Scaffold
 
 **مرجع:** REQ-HIJRI-001
 
-\---
+---
 
 ### 🎴 وصفة 9: FavoritesScreen
 
@@ -672,7 +672,7 @@ Scaffold
         Dismissible (swipe to delete)
 ```
 
-**ARB Keys:** `favorites\_title`, `favorites\_all`, `favorites\_azkar`, `favorites\_quran`, `favorites\_duas`, `favorites\_empty`
+**ARB Keys:** `favorites_title`, `favorites_all`, `favorites_azkar`, `favorites_quran`, `favorites_duas`, `favorites_empty`
 
 **الحالات:**
 
@@ -684,7 +684,7 @@ Scaffold
 **الأحداث:**
 
 * `onItemTap(item)` → فتح العنصر
-* `onSwipeDelete(item)` → حذف + SnackBar "undo\_favorite\_delete"
+* `onSwipeDelete(item)` → حذف + SnackBar "undo_favorite_delete"
 
 **الوصولية:**
 
@@ -695,7 +695,7 @@ Scaffold
 
 **مرجع:** REQ-FAV-001
 
-\---
+---
 
 ### 🎴 وصفة 10: SearchScreen
 
@@ -725,12 +725,12 @@ Scaffold
         GoButton
 ```
 
-**ARB Keys:** `search\_title`, `search\_placeholder`, `search\_category\_all`, `search\_no\_results`, `search\_results\_count`
+**ARB Keys:** `search_title`, `search_placeholder`, `search_category_all`, `search_no_results`, `search_results_count`
 
 **الحالات:**
 
 * **Loading:** LinearProgress
-* **Empty:** "لا نتائج لـ «\[query]»" + suggestions
+* **Empty:** "لا نتائج لـ «[query]»" + suggestions
 * **Error:** خطأ + retry
 * **Success:** عرض طبيعي
 * **Typing:** Debounce 300ms
@@ -749,7 +749,7 @@ Scaffold
 
 **مرجع:** REQ-SEARCH-001
 
-\---
+---
 
 ### 🎴 وصفة 11: SettingsScreen
 
@@ -812,7 +812,7 @@ Scaffold
 
 **مرجع:** REQ-SETTINGS-001
 
-\---
+---
 
 ### 🎴 وصفة 12: JumuahCard (Dialog)
 
@@ -838,11 +838,11 @@ Dialog
       PrimaryButton('jumuah\_read\_dua')
 ```
 
-**ARB Keys:** `jumuah\_greeting`, `jumuah\_read\_dua`, `jumuah\_dont\_show\_again`
+**ARB Keys:** `jumuah_greeting`, `jumuah_read_dua`, `jumuah_dont_show_again`
 
 **المحتوى الديني:**
 
-* ⛔ **لا آية حرفية** — `\[PLACEHOLDER-AYAH-JUMUAH-001]`
+* ⛔ **لا آية حرفية** — `[PLACEHOLDER-AYAH-JUMUAH-001]`
 * المصدر: pack معتمد (quran-uthmani)
 * المراجع: `content/reviewers.yaml` (shaykh-4)
 * الحالة: pending
@@ -861,7 +861,7 @@ Dialog
 **قواعد:**
 
 * تظهر **مرة واحدة** يوم الجمعة
-* الإعدادات: `settings\_jumuah\_card\_enabled` = ON/OFF
+* الإعدادات: `settings_jumuah_card_enabled` = ON/OFF
 * لا Timer خلفي — تُفحص عند فتح التطبيق
 
 **الوصولية:**
@@ -870,34 +870,34 @@ Dialog
 
 **Offline:** ✅
 
-\---
+---
 
-## 4\. الأصول (Assets Inventory)
+## 4. الأصول (Assets Inventory)
 
 **كل أصل يجب تسجيله في `legal/assets.yaml`.**
 
 |Asset ID|النوع|المسار|المصدر|الترخيص|الحالة|
 |-|-|-|-|-|-|
-|`splash-bg`|image|`assets/images/splash\_bg.webp`|**TBD**|**TBD**|PROPOSED|
-|`app-logo-mark`|image|`assets/images/app\_logo\_mark.png`|فريق التطوير|MIT (تطبيق)|PROPOSED|
-|`prayer-hero-haram`|image|`assets/images/prayer\_hero\_haram.webp`|**TBD**|**TBD**|PROPOSED|
-|`qibla-bg`|image|`assets/images/qibla\_bg.webp`|**TBD**|**TBD**|PROPOSED|
-|`kaaba-badge`|image|`assets/images/kaaba\_badge.webp`|**TBD**|**TBD**|PROPOSED|
-|`quran-book`|image|`assets/images/quran\_book.webp`|**TBD**|**TBD**|PROPOSED|
+|`splash-bg`|image|`assets/images/splash_bg.webp`|**TBD**|**TBD**|PROPOSED|
+|`app-logo-mark`|image|`assets/images/app_logo_mark.png`|فريق التطوير|MIT (تطبيق)|PROPOSED|
+|`prayer-hero-haram`|image|`assets/images/prayer_hero_haram.webp`|**TBD**|**TBD**|PROPOSED|
+|`qibla-bg`|image|`assets/images/qibla_bg.webp`|**TBD**|**TBD**|PROPOSED|
+|`kaaba-badge`|image|`assets/images/kaaba_badge.webp`|**TBD**|**TBD**|PROPOSED|
+|`quran-book`|image|`assets/images/quran_book.webp`|**TBD**|**TBD**|PROPOSED|
 |`islamic-scene-banner`|code|CustomPainter|فريق التطوير|MIT (تطبيق)|APPROVED|
-|`quran-uthmani`|text|`assets/quran/`|Tanzil|CC BY 3.0|SOURCE\_IDENTIFIED|
-|`azkar-hisn`|text|`assets/azkar/`|حصن المسلم|**NEEDS\_REVIEW**|NEEDS\_REVIEW|
-|`amiri-quran-font`|font|`assets/fonts/`|Amiri|OFL|LICENSE\_REVIEW|
+|`quran-uthmani`|text|`assets/quran/`|Tanzil|CC BY 3.0|SOURCE_IDENTIFIED|
+|`azkar-hisn`|text|`assets/azkar/`|حصن المسلم|**NEEDS_REVIEW**|NEEDS_REVIEW|
+|`amiri-quran-font`|font|`assets/fonts/`|Amiri|OFL|LICENSE_REVIEW|
 
 **القواعد:**
 
 * ⛔ لا صورة `TBD` تُشحن. يجب حسم مصدرها وترخيصها أولاً.
 * ✅ الرسومات البرمجية (`CustomPainter`) لا تحتاج ترخيصاً خارجياً.
-* 📋 كل صورة تُسجَّل مع: source\_url, license\_type, checksum.
+* 📋 كل صورة تُسجَّل مع: source_url, license_type, checksum.
 
-\---
+---
 
-## 5\. Riverpod Providers
+## 5. Riverpod Providers
 
 |Provider|النوع|Lifecycle|التبرير|
 |-|-|-|-|
@@ -920,9 +920,9 @@ Dialog
 * لا provider يعتمد دائرياً على آخر
 * كل provider قابل للـ override في الاختبار
 
-\---
+---
 
-## 6\. مصفوفة الحالات
+## 6. مصفوفة الحالات
 
 |الشاشة|Loading|Empty|Error|Success|Refreshing|
 |-|-|-|-|-|-|
@@ -939,9 +939,9 @@ Dialog
 |Settings|✅|—|—|✅|—|
 |Jumuah Card|—|—|—|✅|—|
 
-\---
+---
 
-## 7\. مصفوفة الوصولية
+## 7. مصفوفة الوصولية
 
 |الشاشة|Touch 48dp|Semantic|Text 200%|TalkBack|Reduced Motion|
 |-|-|-|-|-|-|
@@ -958,9 +958,9 @@ Dialog
 |Settings|✅|✅|✅|✅|—|
 |Jumuah Card|✅|✅|✅|✅|—|
 
-\---
+---
 
-## 8\. مصفوفة Offline
+## 8. مصفوفة Offline
 
 |الشاشة|Offline|يحتاج شبكة|
 |-|-|-|
@@ -978,9 +978,9 @@ Dialog
 |Settings|✅|❌|
 |Jumuah Card|✅|❌|
 
-\---
+---
 
-## 9\. خارطة التنفيذ المرحلية
+## 9. خارطة التنفيذ المرحلية
 
 |#|الشاشة|المرحلة|الحالة|
 |-|-|-|-|
@@ -1001,9 +1001,9 @@ Dialog
 
 **⚠️ لا تُنفَّذ شاشة قبل مرحلتها.** هذا التصميم رؤية، وليس تسلسلاً تنفيذياً.
 
-\---
+---
 
-## 10\. المراجع
+## 10. المراجع
 
 * `README.md`
 * `00-integrity-rules.md`
@@ -1016,6 +1016,6 @@ Dialog
 * `03-decisions.md` (DEC-0024 → DEC-0027)
 * `04-open-decisions.md` (OD-0008, OD-0010, OD-0012, OD-0013)
 
-\---
+---
 
 **نهاية الوثيقة — UI Vision v1.0**

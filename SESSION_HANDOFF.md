@@ -1,9 +1,9 @@
 # Session Handoff Log
 
-> \*\*سجل تراكمي. آخر إدخال في الأعلى.\*\*
+> **سجل تراكمي. آخر إدخال في الأعلى.**
 > لا تحذف الإدخالات القديمة — هي ذاكرة المشروع.
 
-\---
+---
 
 ## Session 13 — 2026-10-07 (Phase 01: UI screens)
 
@@ -62,7 +62,7 @@
 - تابع تنفيذ شاشات Phase 01 بعد مراجعة المدير: Splash، Language Selection،
   Router، و`main.dart`، إضافة إلى Home placeholder وARB keys حسب الموافقة.
 
-\---
+---
 
 ## Session 11 — 2026-10-07 (Phase 01: UI foundation)
 
@@ -224,17 +224,17 @@
 **Step 1 — إنشاء `spike/`**
 
 * مشروع Flutter مستقل داخل `spike/` (Android فقط)
-* اسم: `muslim\_guide\_spike`
+* اسم: `muslim_guide_spike`
 * 5 حزم exact (بلا `^`):
 
-  * `flutter\_local\_notifications 22.3.1`
+  * `flutter_local_notifications 22.3.1`
   * `timezone 0.11.1`
-  * `hive\_ce 2.20.1`
-  * `audio\_service 0.18.19`
-  * `just\_audio 0.10.6`
+  * `hive_ce 2.20.1`
+  * `audio_service 0.18.19`
+  * `just_audio 0.10.6`
 * 8 صلاحيات Android في manifest الـspike فقط
-* `analysis\_options.yaml` يستثني `spike/\*\*`
-* إصلاح build error: `isCoreLibraryDesugaringEnabled=true` + `desugar\_jdk\_libs:2.1.4`
+* `analysis_options.yaml` يستثني `spike/**`
+* إصلاح build error: `isCoreLibraryDesugaringEnabled=true` + `desugar_jdk_libs:2.1.4`
 * `spike/README.md`, `RESULTS.md`, `evidence/.gitkeep`
 
 **Step 2 — CR-0004 + phases update**
@@ -247,17 +247,17 @@
 
 * 5 سكربتات في `tool/`:
 
-  * `check\_test\_count.sh` (CI-012)
-  * `check\_no\_print.sh` (CI-014)
-  * `check\_no\_internet.sh` (CI-015)
-  * `check\_no\_network\_pkg.sh` (CI-016)
-  * `check\_no\_placeholder.sh` (CI-017)
+  * `check_test_count.sh` (CI-012)
+  * `check_no_print.sh` (CI-014)
+  * `check_no_internet.sh` (CI-015)
+  * `check_no_network_pkg.sh` (CI-016)
+  * `check_no_placeholder.sh` (CI-017)
 * `.github/workflows/ci.yml`: +5 jobs (SHA-pinned, ubuntu-24.04)
 * `ci/01-ci-checks.md`: +عمود Phase
 * `ci/00-ci-policy.md`: تحديث
 * `legal/policy.yaml`: قسم `ci.exemptions`
-* `.gitattributes`: `\*.sh text eol=lf`
-* `tool/test\_count\_baseline.txt = 2`
+* `.gitattributes`: `*.sh text eol=lf`
+* `tool/test_count_baseline.txt = 2`
 * `governance/cr/CR-0005-ci-job-names-expanded.md` (pending push)
 
 ### ما توقف
@@ -270,9 +270,9 @@
 جديد:
 
 * `spike/` (35+ ملف من flutter create + main.dart + test)
-* `tool/\*.sh` (5 سكربتات)
-* `tool/test\_count\_baseline.txt`
-* `governance/cr/CR-0004-\*.md`, `CR-0005-\*.md`
+* `tool/*.sh` (5 سكربتات)
+* `tool/test_count_baseline.txt`
+* `governance/cr/CR-0004-*.md`, `CR-0005-*.md`
 * `.gitattributes`
 
 معدّل:
@@ -283,7 +283,7 @@
 * `phases/00b-spike.md`
 * `spike/android/app/src/main/AndroidManifest.xml`
 * `spike/android/app/build.gradle.kts`
-* `analysis\_options.yaml` (الجذر)
+* `analysis_options.yaml` (الجذر)
 
 ### القرارات المتخذة
 
@@ -299,7 +299,7 @@
 3. راقب CI (9 jobs كلها ✅)
 4. ابدأ Step 4 — بناء Spike كامل
 
-\---
+---
 
 ## Session 6 — 2026-10-06 (Phase 00: closed)
 
@@ -308,7 +308,7 @@
 * تنفيذ كامل لـ Phase 00
 * Flutter 3.47.5 مثبت, Dart 3.13.4
 * `pubspec.yaml` + `pubspec.lock`
-* `analysis\_options.yaml` (very\_good\_analysis 11.0.0)
+* `analysis_options.yaml` (very_good_analysis 11.0.0)
 * `.github/workflows/ci.yml` (4 jobs: asset-scan, analyze, test, build-debug)
 * `LICENSES.md`
 * هيكل مجلدات + `.gitkeep`
@@ -334,40 +334,40 @@
 * CR-0002: Phase A → 00
 * CR-0003: minSdk 24
 
-\---
+---
 
-## Session 5 — 2026-10-05/06 (MASTER\_SPEC finalized)
+## Session 5 — 2026-10-05/06 (MASTER_SPEC finalized)
 
 ### ما نُفِّذ
 
 * إصلاح 5 ملفات بترميز مزدوج (CP1256 → UTF-8)
 * اختبار 5 جولات فحص
-* تجهيز MASTER\_SPEC النهائي (70 ملف)
+* تجهيز MASTER_SPEC النهائي (70 ملف)
 
 ### القرارات
 
 * Phase A = Phase 00 (توحيد التسمية)
 
-\---
+---
 
-## Session 4 — 2026-10-05 (MASTER\_SPEC structure)
+## Session 4 — 2026-10-05 (MASTER_SPEC structure)
 
 ### ما نُفِّذ
 
-* بناء هيكل `MASTER\_SPEC/` كامل (70 ملف)
+* بناء هيكل `MASTER_SPEC/` كامل (70 ملف)
 * 10 مجلدات فرعية
 * شجرة كاملة
 
-\---
+---
 
 ## Session 1-3 — 2026-10-04/05 (Planning)
 
 ### ما نُفِّذ
 
-* تقييم `MASTER\_ROADMAP v3.0`
+* تقييم `MASTER_ROADMAP v3.0`
 * مراجعة `Master Specification` المقترح
 * Audit شامل
-* دمج `CONTENT\_REGISTRY` مع `legal/assets.yaml`
+* دمج `CONTENT_REGISTRY` مع `legal/assets.yaml`
 
 ### القرارات
 
@@ -376,7 +376,7 @@
 * مراجع شرعي عبر HTML + JSON
 * AR + EN مع اختيار عند التنصيب
 
-\---
+---
 
 ## قالب الإدخال (للجلسات القادمة)
 
@@ -442,31 +442,31 @@ text
 
 ```powershell
 
-cd C:\\Users\\Abdo\\Desktop\\Muslim\_Guide
+cd C:\\Users\\Abdo\\Desktop\\Muslim_Guide
 
-git add NEXT\_SESSION.md PHASE\_PROGRESS.md SESSION\_HANDOFF.md
+git add NEXT_SESSION.md PHASE_PROGRESS.md SESSION_HANDOFF.md
 
 git commit -m "governance: add session continuity protocol (3 files)"
 
 git push
 
-3\. تحقق من سلامة الملفات
+3. تحقق من سلامة الملفات
 
 powershell
 
-\# عدد الأسطر
+# عدد الأسطر
 
-Write-Host "NEXT\_SESSION: $((Get-Content NEXT\_SESSION.md).Count) lines"
+Write-Host "NEXT_SESSION: $((Get-Content NEXT_SESSION.md).Count) lines"
 
-Write-Host "PHASE\_PROGRESS: $((Get-Content PHASE\_PROGRESS.md).Count) lines"
+Write-Host "PHASE_PROGRESS: $((Get-Content PHASE_PROGRESS.md).Count) lines"
 
-Write-Host "SESSION\_HANDOFF: $((Get-Content SESSION\_HANDOFF.md).Count) lines"
+Write-Host "SESSION_HANDOFF: $((Get-Content SESSION_HANDOFF.md).Count) lines"
 
 
 
-\# تأكد من عدم وجود تشويه عربي
+# تأكد من عدم وجود تشويه عربي
 
-Select-String -Path \*.md -Pattern 'ط¸|ط§|â€' | Select-Object -First 5
+Select-String -Path *.md -Pattern 'ط¸|ط§|â€' | Select-Object -First 5
 
 المتوقع:
 
