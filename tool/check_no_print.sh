@@ -5,8 +5,10 @@ if grep -rn "print(" lib/ test/ 2>/dev/null; then
   echo "FAIL: print() found in lib/ or test/"
   FAIL=1
 fi
+# Check ignore (both // ignore: and // ignore_for_file:)
+# Must match: // ignore(_for_file)?: rule1, rule2 // reason or — reason
 while IFS= read -r line; do
-  if ! printf '%s' "$line" | grep -qE "// ignore: [A-Za-z0-9_]+"; then
+  if ! printf '%s' "$line" | grep -qE '//\s*ignore(_for_file)?:\s*[a-zA-Z0-9_,\s]+\s*(//|—|--).+'; then
     echo "FAIL: ignore without reason: $line"
     FAIL=1
   fi
