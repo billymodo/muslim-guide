@@ -73,6 +73,8 @@
 
 - `00-integrity-rules.md` — قواعد التكامل 001–020
 - `00-project-charter.md` — هوية المشروع وحدوده
+- `docs/PROJECT_STORY.md` — خلفية المشروع ورؤيته ودروس التنفيذ
+- `docs/DIRECTOR_PLAYBOOK.md` — أسلوب توجيه الوكيل
 - `01-requirements.md` — المتطلبات
 - `02-scope-and-boundaries.md` — النطاق
 - `03-decisions.md` — القرارات المعتمدة

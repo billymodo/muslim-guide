@@ -46,3 +46,8 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Spike evidence — raw logs (contains device info)
+spike/evidence/*.txt
+spike/evidence/*.xml
+!spike/evidence/.gitkeep
