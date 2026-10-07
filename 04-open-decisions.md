@@ -225,3 +225,32 @@ adjust times when the relevant sunrise/sunset anchors exist.
 **Resolution required before:** Any future implementation of substitute
 prayer times. Record the religious/legal review and UX decision before
 changing this behavior.
+
+## OD-0028 — Asr at high latitudes (>66°N)
+
+**Status:** OPEN
+**Blocking Phase:** None
+**Type:** Verification
+**Priority:** Low
+
+**Context:** Tromsø (69.65°N), 2026-10-07:
+- Our Asr: `14:37:23`
+- Aladhan MWL: `14:43:00`
+- Difference (`ours - reference`): `-5m37s`, 37 seconds beyond the ±5-minute
+  high-latitude tolerance.
+
+**Analysis:** The project owner reports an independent Meeus-based manual Asr
+calculation of approximately `14:36`, close to the calculator output. Aladhan
+may apply a high-latitude Asr adjustment. Its value is a secondary reference,
+not an official determination.
+
+**Action:**
+- Verify against additional high-latitude cities, including Reykjavík and
+  Murmansk.
+- Cross-check with an independent source or calculation.
+- Decide whether the difference reflects the reference convention or requires
+  a code change; do not change the algorithm based only on this one secondary
+  comparison.
+
+**Resolution required before:** Any change to Asr calculation behavior for
+high latitudes.
