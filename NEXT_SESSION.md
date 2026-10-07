@@ -1,7 +1,7 @@
 # NEXT\_SESSION — اقرأني أولاً
 
 > \*\*آخر تحديث:\*\* 2026-10-06
-> \*\*الحالة:\*\* Phase 00B — الخطوة 4 (بناء Spike — الموافقات حُصل عليها، الكود pending)
+> \*\*الحالة:\*\* Phase 01 — ACTIVE (Data layer مكتمل؛ UI layer قيد البدء)
 
 \---
 
@@ -15,14 +15,15 @@
 اقرأ الملفات التالية **بالترتيب الإلزامي**:
 
 1. `PHASE\_PROGRESS.md` — أين نحن الآن (لقطة شاملة)
-2. `SESSION\_HANDOFF.md` — سجل الجلسات السابقة (أول 3 إدخالات)
-3. `README.md` — نظرة عامة على المشروع
-4. `00-integrity-rules.md` — القواعد فوق كل شيء (Rules 001-020)
-5. `governance/01-ai-development-rules.md` — قواعدك أنت
-6. `03-decisions.md` — القرارات المعتمدة (DECs)
-7. `04-open-decisions.md` — القرارات المفتوحة (ODs)
-8. `phases/<current-phase>.md` — المرحلة الحالية
-9. `05-conflicts-and-gaps.md` — ما هو معلّق
+2. `docs/DIRECTOR_PLAYBOOK.md` — أسلوب التوجيه
+3. `SESSION\_HANDOFF.md` — سجل الجلسات السابقة (أول 3 إدخالات)
+4. `README.md` — نظرة عامة على المشروع
+5. `00-integrity-rules.md` — القواعد فوق كل شيء (Rules 001-020)
+6. `governance/01-ai-development-rules.md` — قواعدك أنت
+7. `03-decisions.md` — القرارات المعتمدة (DECs)
+8. `04-open-decisions.md` — القرارات المفتوحة (ODs)
+9. `phases/<current-phase>.md` — المرحلة الحالية
+10. `05-conflicts-and-gaps.md` — ما هو معلّق
 
 ## بعد القراءة — أجب
 
@@ -57,6 +58,12 @@
 
 ثم حدّث `PHASE\_PROGRESS.md` (اللقطة الشاملة).
 
+## حالة Phase 01
+
+- **Phase 01:** ACTIVE
+- **Data layer:** ✅ مكتمل
+- **UI layer:** قيد البدء
+
 ## معلومات المشروع الأساسية
 
 |البند|القيمة|
@@ -77,7 +84,7 @@
 
 ## الملفات المرتبطة بهذه اللحظة
 
-* **المرحلة النشطة:** `phases/00b-spike.md`
+* **المرحلة النشطة:** `phases/01.md` — UI layer قيد البدء
 * **آخر CR:** `governance/cr/CR-0005-ci-job-names-expanded.md` — APPROVED ومرفوع (PR #2: 9/9 success)
 * **آخر DEC:** DEC-0018 (Phase-Aware CI Rollout)
 * **آخر commit:** (سيُحدَّث في PHASE\_PROGRESS.md)
@@ -89,12 +96,14 @@
 اقرأ PHASE\_PROGRESS.md
 
 
+اقرأ docs/DIRECTOR_PLAYBOOK.md
+
 
 اقرأ SESSION\_HANDOFF.md (أول 3 إدخالات)
 
 
 
-اقرأ الملفات 3-9
+اقرأ الملفات 3-10
 
 
 
