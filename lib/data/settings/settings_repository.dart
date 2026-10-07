@@ -37,7 +37,7 @@ class SettingsRepository {
   }
 
   /// Saves whether onboarding has been completed.
-  // ignore: avoid_positional_boolean_parameters
+  // ignore: avoid_positional_boolean_parameters // Keep the documented bool setter API.
   Future<void> setOnboardingCompleted(bool completed) async {
     await _box.put('onboarding_completed', completed);
   }

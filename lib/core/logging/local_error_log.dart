@@ -5,8 +5,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
-// File operations remain asynchronous to avoid blocking the UI thread.
-// ignore_for_file: avoid_slow_async_io // File I/O in error logging must remain async
+// ignore_for_file: avoid_slow_async_io // File I/O must remain async to avoid blocking UI
 
 /// Writes a bounded, privacy-filtered JSON Lines error log to local storage.
 class LocalErrorLog {
