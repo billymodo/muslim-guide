@@ -38,4 +38,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get splash_retry => 'إعادة المحاولة';
+
+  @override
+  String get home_greeting => 'السلام عليكم';
+
+  @override
+  String get onboarding_save_error => 'تعذر حفظ الإعدادات. حاول مرة أخرى.';
+
+  @override
+  String get language_arabic_semantics => 'اختر اللغة العربية';
+
+  @override
+  String get language_english_semantics => 'اختر اللغة الإنجليزية';
 }

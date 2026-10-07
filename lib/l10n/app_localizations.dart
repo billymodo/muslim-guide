@@ -157,6 +157,30 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'إعادة المحاولة'**
   String get splash_retry;
+
+  /// No description provided for @home_greeting.
+  ///
+  /// In ar, this message translates to:
+  /// **'السلام عليكم'**
+  String get home_greeting;
+
+  /// No description provided for @onboarding_save_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر حفظ الإعدادات. حاول مرة أخرى.'**
+  String get onboarding_save_error;
+
+  /// No description provided for @language_arabic_semantics.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر اللغة العربية'**
+  String get language_arabic_semantics;
+
+  /// No description provided for @language_english_semantics.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر اللغة الإنجليزية'**
+  String get language_english_semantics;
 }
 
 class _AppLocalizationsDelegate

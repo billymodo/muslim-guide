@@ -9,5 +9,9 @@
   "language_english": "English",
   "splash_loading": "جاري التهيئة",
   "splash_error": "فشل التهيئة",
-  "splash_retry": "إعادة المحاولة"
+  "splash_retry": "إعادة المحاولة",
+  "home_greeting": "السلام عليكم",
+  "onboarding_save_error": "تعذر حفظ الإعدادات. حاول مرة أخرى.",
+  "language_arabic_semantics": "اختر اللغة العربية",
+  "language_english_semantics": "اختر اللغة الإنجليزية"
 }

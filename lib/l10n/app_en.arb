@@ -9,5 +9,9 @@
   "language_english": "English",
   "splash_loading": "Initializing",
   "splash_error": "Initialization failed",
-  "splash_retry": "Retry"
+  "splash_retry": "Retry",
+  "home_greeting": "Peace be upon you",
+  "onboarding_save_error": "Could not save your settings. Please try again.",
+  "language_arabic_semantics": "Select Arabic language",
+  "language_english_semantics": "Select English language"
 }

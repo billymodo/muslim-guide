@@ -38,4 +38,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get splash_retry => 'Retry';
+
+  @override
+  String get home_greeting => 'Peace be upon you';
+
+  @override
+  String get onboarding_save_error =>
+      'Could not save your settings. Please try again.';
+
+  @override
+  String get language_arabic_semantics => 'Select Arabic language';
+
+  @override
+  String get language_english_semantics => 'Select English language';
 }

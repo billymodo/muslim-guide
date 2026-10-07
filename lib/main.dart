@@ -1,23 +1,19 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:muslim_guide/app/muslim_guide_app.dart';
+import 'package:muslim_guide/app/router.dart';
 
-/// التطبيق الجذري — Phase 00: أساس فارغ بلا أي شاشات.
-///
-/// خارج النطاق حاليًا: Splash، Theme، Localization، Hive، الشبكة،
-/// وأي ميزة إسلامية (انظر `phases/00-foundation.md`).
-class MuslimGuideApp extends StatelessWidget {
-  /// يُنشئ التطبيق الجذري مع [ProviderScope] (DEC-0002).
-  const new({super.key});
+class _AppBootstrap extends ConsumerWidget {
+  const new();
 
   @override
-  Widget build(BuildContext context) {
-    return const ProviderScope(
-      child: SizedBox.expand(),
-    );
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
+    return MuslimGuideApp(router: router);
   }
 }
 
-/// نقطة تشغيل التطبيق.
+/// Entry point for the application.
 void main() {
-  runApp(const MuslimGuideApp());
+  runApp(const ProviderScope(child: _AppBootstrap()));
 }
