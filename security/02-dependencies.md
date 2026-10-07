@@ -28,6 +28,7 @@
 | intl | Locale-aware number formatting (DEC-0026) | `0.20.3` (exact) | BSD-3-Clause | 2026-10-06 — https://pub.dev/packages/intl/versions/0.20.3 | `pubspec.yaml` dependencies |
 | path_provider | Hive and local error-log paths (CR-0006) | `2.1.6` (exact) | BSD-3-Clause | 2026-10-06 — https://pub.dev/packages/path_provider/versions/2.1.6 | `pubspec.yaml` dependencies |
 | share_plus | Export local error log (DEC-0025) | `13.3.1` (exact) | BSD-3-Clause | 2026-10-06 — https://pub.dev/packages/share_plus/versions/13.3.1 | `pubspec.yaml` dependencies |
+| timezone | IANA timezone database for Phase 01 bootstrap (CR-0008) | `0.11.1` (exact) | BSD-2-Clause | 2026-10-07 — https://pub.dev/packages/timezone/versions/0.11.1 (published 2026-06-29) | `pubspec.yaml`; `lib/app/providers/bootstrap_provider.dart` |
 | very_good_analysis | قواعد التحليل الساكن (DEC-0011) | `11.0.0` (exact) | MIT | 2026-10-05 — https://pub.dev/packages/very_good_analysis | `pubspec.yaml` dev_dependencies |
 
 تبعيات غير مباشرة (تُستنتَج فعليًا من `pubspec.lock`):

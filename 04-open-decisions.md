@@ -152,3 +152,20 @@
 **Context:** Step 5 verified foreground, background-with-exemption, and reboot delivery on one CPH2365 device, but did not run for 30+ minutes or test additional OEM devices.
 
 **Action:** Run a 30+ minute test on multiple OEM devices during Phase 04 and document the required battery, background-running, and auto-launch guidance.
+
+## OD-0025 — Automatic timezone detection
+
+**Status:** OPEN
+**Blocking Phase:** 02
+
+**Question:** How should the user's timezone be detected automatically?
+
+**Options:**
+- A: `flutter_timezone` (reads the system timezone)
+- B: `DateTime.now().timeZoneName` (may be inaccurate)
+- C: User-configurable setting
+
+**Current (Phase 01):** `Asia/Riyadh` is temporary and must be replaced before
+production.
+
+**Deadline:** Before Phase 02.

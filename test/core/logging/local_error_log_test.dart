@@ -15,6 +15,21 @@ void main() {
     await tempDirectory.delete(recursive: true);
   });
 
+  test('init creates the local log directory', () async {
+    final errorLog = LocalErrorLog(
+      documentsDirectoryProvider: () async => tempDirectory,
+    );
+
+    await errorLog.init();
+
+    expect(
+      Directory(
+        '${tempDirectory.path}${Platform.pathSeparator}logs',
+      ).existsSync(),
+      isTrue,
+    );
+  });
+
   test('redacts personal data and clears the JSONL file', () async {
     final errorLog = LocalErrorLog(
       documentsDirectoryProvider: () async => tempDirectory,

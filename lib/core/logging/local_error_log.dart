@@ -14,6 +14,9 @@ class LocalErrorLog {
     : _documentsDirectoryProvider =
           documentsDirectoryProvider ?? getApplicationDocumentsDirectory;
 
+  /// The application-wide error log.
+  static final LocalErrorLog instance = LocalErrorLog();
+
   static const int _maxBytes = 1024 * 1024;
   static const int _maxEvents = 1000;
 
@@ -28,6 +31,12 @@ class LocalErrorLog {
 
   final Future<Directory> Function() _documentsDirectoryProvider;
   Future<void> _operationQueue = Future<void>.value();
+
+  /// Creates the log directory before the application starts using the log.
+  Future<void> init() async {
+    final file = await _logFile();
+    await file.parent.create(recursive: true);
+  }
 
   /// Appends a privacy-filtered event to `logs/errors.jsonl`.
   Future<void> log({
