@@ -202,3 +202,26 @@ production.
 
 **Decision Required From:** User
 **Deadline:** None — deferred.
+
+## OD-0027 — Alternative prayer times when astronomical events are unavailable
+
+**Status:** OPEN — deferred; no blocker for the current Domain behavior
+**Blocking Phase:** Future enhancement
+
+**Question:** Should the product offer a non-astronomical substitute for a
+prayer time when the sun does not reach the required position at the user's
+location?
+
+**Options to evaluate:**
+- Keep the affected times unavailable and show an explanation.
+- Offer a neighboring-location rule (Aqrab al-Bilad).
+- Offer a neighboring-day rule (Aqrab al-Ayyam).
+
+**Current Phase 02 behavior:** The Domain returns `null` for an event that
+cannot be determined astronomically. It does not substitute another day or
+location. Other calculable times remain available. High-latitude rules only
+adjust times when the relevant sunrise/sunset anchors exist.
+
+**Resolution required before:** Any future implementation of substitute
+prayer times. Record the religious/legal review and UX decision before
+changing this behavior.
