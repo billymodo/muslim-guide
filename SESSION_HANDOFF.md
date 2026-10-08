@@ -5,6 +5,54 @@
 
 ---
 
+## Session 16 — 2026-10-08 (Phase 02: Task 5 — Screens)
+
+### ما نُفِّذ
+- 23 مفتاح ARB (`prayer_*` + `sunrise_not_prayer` + `location_picker_*` +
+  `prayer_settings_coming_soon`) + `flutter gen-l10n`
+- 3 widgets:
+  - `PrayerTimeRow` — 4 حالات (عادي/التالي/null/ملاحظة) + Semantics موحّد
+  - `CountdownTimer` — ConsumerWidget، `HH:MM:SS`، ورسالة "لا صلاة قادمة اليوم"
+  - `PrayerHeroCard` — gradient + اسم المدينة + countdown + settings
+- `PrayerTimesScreen` (ConsumerWidget): 5 حالات + pull-to-refresh + RTL/LTR +
+  text scale 200%
+- `LocationPickerScreen` (ConsumerStatefulWidget): بحث فوري + GPS + صلاحيات +
+  رسائل خطأ
+- Router: `/prayer` و `/location-picker`
+- 25 widget tests (4+3+3+8+7) — إجمالي المشروع 256/256
+- `nextPrayerTime` أصبح public (تتطلبه طبقة العرض)
+
+### القرارات / الانحرافات (معتمدة من المدير في هذه الجلسة)
+- MenuButton حُذف — Drawer مؤجل إلى Phase 10؛ settings في hero معطّل
+  (Tooltip "قريباً")؛ زر "إعدادات التنبيه" معطّل حتى Phase 04
+- CitySelection → اسم المدينة من الحزمة؛ Coordinates → "الموقع الحالي"
+- ARB: 21 مفتاحاً معتمداً + 2 (`location_picker_gps_error`,
+  `prayer_settings_coming_soon`) = 23
+- hero: gradient (صورة Haram TBD)
+- حالات null (OD-0027): "غير متاح" — لا وقت بديل إطلاقاً
+- أخطاء تحميل مدن الشاشة: `splash_error`/`splash_retry` (بلا مفتاح جديد)
+- Dart 3.10: `const new(...)` لمنشئات widget (dart fix)
+
+### للجلسة القادمة (Task 6 — Device Testing)
+- Pixel 6a + Redmi Note 12: 5 مدن مرجعية، انتقال DST، وضع الطيران،
+  رفض صلاحية الموقع، حالات القطبية
+- بعد Task 6: Phase 02 ✅ → Phase 03 (Qibla)
+
+### Commit
+سيُدوَّن بعد الالتزام (commit مرجعي)
+
+### Lessons (من هذه الجلسة)
+- `find.byIcon` يعيد الـ`Icon` وليس `IconButton` — استخدم
+  `find.ancestor(of: ..., matching: find.byType(IconButton))`
+- SemanticsHandle: أغلقه يدوياً في نهاية جسم الاختبار؛ `addTearDown`
+  يُنفَّذ بعد فحوصات flutter_test فيصبح التركيد نشطاً
+- lint `unused_result` على `ref.refresh(...)`: `await` لا يكفي في هذا
+  الإصدار — الحل: `.then<void>(...).catchError(...)`
+- `const DateTime(...)` غير صالح (DateTime ليس const) — استخدم `DateTime(y, m)`
+  غير const داخل `LocationResult`
+
+---
+
 ## Session 15 — 2026-10-08 (Phase 02: Task 4 — Riverpod Providers)
 
 ### ما نُفِّذ

@@ -181,6 +181,144 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'اختر اللغة الإنجليزية'**
   String get language_english_semantics;
+
+  /// No description provided for @prayer_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'مواقيت الصلاة'**
+  String get prayer_title;
+
+  /// No description provided for @prayer_fajr.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفجر'**
+  String get prayer_fajr;
+
+  /// No description provided for @prayer_sunrise.
+  ///
+  /// In ar, this message translates to:
+  /// **'الشروق'**
+  String get prayer_sunrise;
+
+  /// No description provided for @prayer_dhuhr.
+  ///
+  /// In ar, this message translates to:
+  /// **'الظهر'**
+  String get prayer_dhuhr;
+
+  /// No description provided for @prayer_asr.
+  ///
+  /// In ar, this message translates to:
+  /// **'العصر'**
+  String get prayer_asr;
+
+  /// No description provided for @prayer_maghrib.
+  ///
+  /// In ar, this message translates to:
+  /// **'المغرب'**
+  String get prayer_maghrib;
+
+  /// No description provided for @prayer_isha.
+  ///
+  /// In ar, this message translates to:
+  /// **'العشاء'**
+  String get prayer_isha;
+
+  /// No description provided for @sunrise_not_prayer.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليست صلاة فرض'**
+  String get sunrise_not_prayer;
+
+  /// No description provided for @prayer_no_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يتم تحديد الموقع'**
+  String get prayer_no_location;
+
+  /// No description provided for @prayer_set_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحديد الموقع'**
+  String get prayer_set_location;
+
+  /// No description provided for @prayer_calc_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'فشل حساب المواقيت'**
+  String get prayer_calc_error;
+
+  /// No description provided for @prayer_retry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get prayer_retry;
+
+  /// No description provided for @prayer_no_next_today.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا صلاة قادمة اليوم'**
+  String get prayer_no_next_today;
+
+  /// No description provided for @prayer_time_unavailable.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير متاح'**
+  String get prayer_time_unavailable;
+
+  /// No description provided for @prayer_current_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'الموقع الحالي'**
+  String get prayer_current_location;
+
+  /// No description provided for @prayer_notification_settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعدادات التنبيه'**
+  String get prayer_notification_settings;
+
+  /// No description provided for @location_picker_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختيار الموقع'**
+  String get location_picker_title;
+
+  /// No description provided for @location_picker_search_hint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن مدينة'**
+  String get location_picker_search_hint;
+
+  /// No description provided for @location_picker_use_gps.
+  ///
+  /// In ar, this message translates to:
+  /// **'استخدام موقعي'**
+  String get location_picker_use_gps;
+
+  /// No description provided for @location_picker_permission_denied.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم رفض صلاحية الموقع'**
+  String get location_picker_permission_denied;
+
+  /// No description provided for @location_picker_empty.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا نتائج'**
+  String get location_picker_empty;
+
+  /// No description provided for @location_picker_gps_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تحديد موقعك'**
+  String get location_picker_gps_error;
+
+  /// No description provided for @prayer_settings_coming_soon.
+  ///
+  /// In ar, this message translates to:
+  /// **'قريباً'**
+  String get prayer_settings_coming_soon;
 }
 
 class _AppLocalizationsDelegate

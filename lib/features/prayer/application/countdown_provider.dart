@@ -15,68 +15,70 @@ import 'package:muslim_guide/features/prayer/domain/models/prayer_times_result.d
 /// the remainder from the wall clock, so ticks never drift.
 final AutoDisposeStreamProvider<Duration> countdownProvider =
     StreamProvider.autoDispose<Duration>((ref) {
-  final times = ref.watch(prayerTimesProvider).valueOrNull;
-  if (times == null) {
-    return const Stream<Duration>.empty();
-  }
-  final target = nextPrayerTime(times, DateTime.now());
-  if (target == null) {
-    return const Stream<Duration>.empty();
-  }
+      final times = ref.watch(prayerTimesProvider).valueOrNull;
+      if (times == null) {
+        return const Stream<Duration>.empty();
+      }
+      final target = nextPrayerTime(times, DateTime.now());
+      if (target == null) {
+        return const Stream<Duration>.empty();
+      }
 
-  final controller = StreamController<Duration>();
-  final binding = WidgetsBinding.instance;
-  Timer? timer;
+      final controller = StreamController<Duration>();
+      final binding = WidgetsBinding.instance;
+      Timer? timer;
 
-  void tick() {
-    if (controller.isClosed) return;
-    final now = DateTime.now();
-    final remaining = target.isAfter(now)
-        ? target.difference(now)
-        : Duration.zero;
-    controller.add(remaining);
-    if (remaining == Duration.zero) {
-      timer?.cancel();
-      timer = null;
-    }
-  }
+      void tick() {
+        if (controller.isClosed) return;
+        final now = DateTime.now();
+        final remaining = target.isAfter(now)
+            ? target.difference(now)
+            : Duration.zero;
+        controller.add(remaining);
+        if (remaining == Duration.zero) {
+          timer?.cancel();
+          timer = null;
+        }
+      }
 
-  void startTicker() {
-    timer ??= Timer.periodic(const Duration(seconds: 1), (_) => tick());
-  }
+      void startTicker() {
+        timer ??= Timer.periodic(const Duration(seconds: 1), (_) => tick());
+      }
 
-  void stopTicker() {
-    timer?.cancel();
-    timer = null;
-  }
+      void stopTicker() {
+        timer?.cancel();
+        timer = null;
+      }
 
-  tick();
-  final observer = _CountdownLifecycleObserver(
-    onResume: startTicker,
-    onPause: stopTicker,
-  );
-  binding.addObserver(observer);
-  final lifecycleState = binding.lifecycleState;
-  if (lifecycleState == null ||
-      lifecycleState == AppLifecycleState.resumed ||
-      lifecycleState == AppLifecycleState.inactive) {
-    startTicker();
-  }
+      tick();
+      final observer = _CountdownLifecycleObserver(
+        onResume: startTicker,
+        onPause: stopTicker,
+      );
+      binding.addObserver(observer);
+      final lifecycleState = binding.lifecycleState;
+      if (lifecycleState == null ||
+          lifecycleState == AppLifecycleState.resumed ||
+          lifecycleState == AppLifecycleState.inactive) {
+        startTicker();
+      }
 
-  ref.onDispose(() {
-    binding.removeObserver(observer);
-    stopTicker();
-    unawaited(controller.close());
-  });
-  return controller.stream;
-});
+      ref.onDispose(() {
+        binding.removeObserver(observer);
+        stopTicker();
+        unawaited(controller.close());
+      });
+      return controller.stream;
+    });
 
 /// Returns the earliest prayer time in [times] that is strictly after
 /// [now], or `null` when every prayer for the day has passed.
 ///
+/// Used by the countdown provider and by the presentation layer to detect
+/// the after-Isha state (`null`) and to highlight the next prayer row.
+///
 /// Sunrise is intentionally excluded: the countdown targets the five
 /// prayers, and sunrise is only a reference time.
-@visibleForTesting
 DateTime? nextPrayerTime(PrayerTimesResult times, DateTime now) {
   DateTime? target;
   final candidates = <DateTime?>[
