@@ -48,17 +48,9 @@
 ## Phase 02 — Prayer Times & Location
 - **Status:** 🟢 ACTIVE
 - **Progress:** ~95%
-- **Start:** 2026-10-07
-- **Estimate:** 7-8 days
-- **Blocking ODs:** ✅ resolved (DEC-0028, DEC-0029); OD-0019 resolved by DEC-0017
 - **Tasks:**
-  - [x] Task 1 (Domain — 177 tests)
-  - [x] Task 1.5 (Verification)
-  - [x] Task 2 (Cities — 120)
-  - [x] Task 3 (Location Service)
-  - [x] Task 4 (Riverpod providers — 231 tests)
-  - [x] Task 5 (Screens — 25 widget tests; 256 total)
-  - [ ] Task 6 (Device testing) ← التالي
+  - [x] 1, 1.5, 2, 3, 4, 5
+  - [ ] Task 6 (Device Testing) ← التالي
 - **Last commit:** `88a7081`
 
 ## Phase 00B — سجل الإغلاق
