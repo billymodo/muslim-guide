@@ -1,4 +1,7 @@
 import 'package:hive_ce/hive.dart';
+import 'package:muslim_guide/features/prayer/domain/models/asr_method.dart';
+import 'package:muslim_guide/features/prayer/domain/models/calculation_method.dart';
+import 'package:muslim_guide/features/prayer/domain/models/high_latitude_rule.dart';
 
 /// Reads and writes persisted application settings.
 class SettingsRepository {
@@ -62,6 +65,165 @@ class SettingsRepository {
       );
     }
     await _box.put('theme', theme);
+  }
+
+  /// Returns the saved manually selected city ID, or null when unset.
+  Future<String?> getSelectedCityId() async {
+    final value = _boxOrNull?.get('selected_city_id');
+    if (value == null) {
+      return null;
+    }
+    if (value is! String || value.trim().isEmpty) {
+      throw FormatException(
+        'Invalid stored selected_city_id value: $value',
+      );
+    }
+    return value;
+  }
+
+  /// Saves the manually selected city ID; null clears the selection.
+  Future<void> setSelectedCityId(String? cityId) async {
+    if (cityId == null) {
+      await _box.delete('selected_city_id');
+      return;
+    }
+    if (cityId.trim().isEmpty) {
+      throw ArgumentError.value(
+        cityId,
+        'cityId',
+        'Expected a non-empty city ID.',
+      );
+    }
+    await _box.put('selected_city_id', cityId);
+  }
+
+  /// Returns the saved GPS coordinates, or null when unset.
+  Future<(double, double)?> getSelectedCoordinates() async {
+    final value = _boxOrNull?.get('selected_coordinates');
+    if (value == null) {
+      return null;
+    }
+    if (value is! String) {
+      throw FormatException(
+        'Invalid stored selected_coordinates value: $value',
+      );
+    }
+    final parts = value.split(',');
+    if (parts.length != 2) {
+      throw FormatException(
+        'Stored selected_coordinates must be "latitude,longitude": $value',
+      );
+    }
+    final latitude = double.tryParse(parts[0]);
+    final longitude = double.tryParse(parts[1]);
+    if (latitude == null ||
+        longitude == null ||
+        latitude < -90 ||
+        latitude > 90 ||
+        longitude < -180 ||
+        longitude > 180) {
+      throw FormatException(
+        'Stored selected_coordinates out of range: $value',
+      );
+    }
+    return (latitude, longitude);
+  }
+
+  /// Saves the GPS coordinates; null/null clears the selection.
+  Future<void> setSelectedCoordinates(
+    double? latitude,
+    double? longitude,
+  ) async {
+    if (latitude == null && longitude == null) {
+      await _box.delete('selected_coordinates');
+      return;
+    }
+    if (latitude == null || longitude == null) {
+      throw ArgumentError(
+        'Both latitude and longitude must be provided together.',
+      );
+    }
+    if (latitude < -90 || latitude > 90) {
+      throw ArgumentError.value(
+        latitude,
+        'latitude',
+        'Expected a value between -90 and 90.',
+      );
+    }
+    if (longitude < -180 || longitude > 180) {
+      throw ArgumentError.value(
+        longitude,
+        'longitude',
+        'Expected a value between -180 and 180.',
+      );
+    }
+    await _box.put('selected_coordinates', '$latitude,$longitude');
+  }
+
+  /// Returns the saved calculation method, or MWL (DEC-0028).
+  Future<CalculationMethod> getCalculationMethod() async {
+    final value =
+        _boxOrNull?.get('calculation_method') ?? CalculationMethod.mwl.name;
+    if (value is! String) {
+      throw FormatException(
+        'Invalid stored calculation_method value: $value',
+      );
+    }
+    for (final method in CalculationMethod.values) {
+      if (method.name == value) {
+        return method;
+      }
+    }
+    throw FormatException('Invalid stored calculation_method value: $value');
+  }
+
+  /// Saves the selected calculation method.
+  Future<void> setCalculationMethod(CalculationMethod method) async {
+    await _box.put('calculation_method', method.name);
+  }
+
+  /// Returns the saved Asr method, or Standard (DEC-0028).
+  Future<AsrMethod> getAsrMethod() async {
+    final value = _boxOrNull?.get('asr_method') ?? AsrMethod.standard.name;
+    if (value is! String) {
+      throw FormatException('Invalid stored asr_method value: $value');
+    }
+    for (final asrMethod in AsrMethod.values) {
+      if (asrMethod.name == value) {
+        return asrMethod;
+      }
+    }
+    throw FormatException('Invalid stored asr_method value: $value');
+  }
+
+  /// Saves the selected Asr method.
+  Future<void> setAsrMethod(AsrMethod asrMethod) async {
+    await _box.put('asr_method', asrMethod.name);
+  }
+
+  /// Returns the saved high-latitude rule, or MiddleOfNight (DEC-0028).
+  Future<HighLatitudeRule> getHighLatitudeRule() async {
+    final value =
+        _boxOrNull?.get('high_latitude_rule') ??
+        HighLatitudeRule.middleOfNight.name;
+    if (value is! String) {
+      throw FormatException(
+        'Invalid stored high_latitude_rule value: $value',
+      );
+    }
+    for (final rule in HighLatitudeRule.values) {
+      if (rule.name == value) {
+        return rule;
+      }
+    }
+    throw FormatException(
+      'Invalid stored high_latitude_rule value: $value',
+    );
+  }
+
+  /// Saves the selected high-latitude rule.
+  Future<void> setHighLatitudeRule(HighLatitudeRule rule) async {
+    await _box.put('high_latitude_rule', rule.name);
   }
 
   Box<dynamic>? get _boxOrNull =>
