@@ -29,6 +29,8 @@
 | path_provider | Hive and local error-log paths (CR-0006) | `2.1.6` (exact) | BSD-3-Clause | 2026-10-06 — https://pub.dev/packages/path_provider/versions/2.1.6 | `pubspec.yaml` dependencies |
 | share_plus | Export local error log (DEC-0025) | `13.3.1` (exact) | BSD-3-Clause | 2026-10-06 — https://pub.dev/packages/share_plus/versions/13.3.1 | `pubspec.yaml` dependencies |
 | timezone | IANA timezone database for Phase 01 bootstrap (CR-0008) | `0.11.1` (exact) | BSD-2-Clause | 2026-10-07 — https://pub.dev/packages/timezone/versions/0.11.1 (published 2026-06-29) | `pubspec.yaml`; `lib/app/providers/bootstrap_provider.dart` |
+| geolocator | GPS and location services for Task 3 (CR-0009) | `14.1.1` (exact) | MIT | 2026-10-08 — https://pub.dev/packages/geolocator/versions/14.1.1 | `pubspec.yaml` dependencies |
+| geolocator_platform_interface | Test-only fake platform contract for geolocator | `4.4.0` (exact, dev) | BSD-3-Clause | 2026-10-08 — https://pub.dev/packages/geolocator_platform_interface/versions/4.4.0 | `pubspec.yaml` dev_dependencies; `test/features/location/fakes/fake_geolocator_platform.dart` |
 | very_good_analysis | قواعد التحليل الساكن (DEC-0011) | `11.0.0` (exact) | MIT | 2026-10-05 — https://pub.dev/packages/very_good_analysis | `pubspec.yaml` dev_dependencies |
 
 تبعيات غير مباشرة (تُستنتَج فعليًا من `pubspec.lock`):

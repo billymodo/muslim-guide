@@ -29,6 +29,8 @@
 | path_provider | 2.1.6 (exact) | مسارات Hive وسجل الأخطاء — CR-0006 | BSD-3-Clause | pub.dev — https://pub.dev/packages/path_provider/versions/2.1.6 |
 | share_plus | 13.3.1 (exact) | تصدير سجل الأخطاء عبر مشاركة النظام — DEC-0025 | BSD-3-Clause | pub.dev — https://pub.dev/packages/share_plus/versions/13.3.1 |
 | timezone | 0.11.1 (exact) | قاعدة المناطق الزمنية لتهيئة Phase 01 — CR-0008 | BSD-2-Clause | pub.dev — https://pub.dev/packages/timezone/versions/0.11.1 (نُشر 2026-06-29؛ تحقق 2026-10-07) |
+| geolocator | 14.1.1 (exact) | خدمة الموقع (GPS + fallback) — CR-0009 | MIT | pub.dev — https://pub.dev/packages/geolocator/versions/14.1.1 |
+| geolocator_platform_interface | 4.4.0 (exact, dev) | Fake platform في اختبارات Location Service | BSD-3-Clause | pub.dev — https://pub.dev/packages/geolocator_platform_interface/versions/4.4.0 |
 | very_good_analysis | 11.0.0 (exact, dev) | قواعد التحليل الساكن — DEC-0011 | MIT | pub.dev — https://pub.dev/packages/very_good_analysis |
 
 ## 4. تبعيات `pubspec.lock` (كلها — غير مباشرة)

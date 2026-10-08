@@ -223,3 +223,5 @@
 - CR-0005 — توسيع عقد أسماء jobs في CI — APPROVED (2026-10-06) — `governance/cr/CR-0005-ci-job-names-expanded.md`
 - CR-0006 — path_provider في التطبيق الرئيسي — APPROVED (2026-10-06) — `governance/cr/CR-0006-path-provider-main-app.md`
 - CR-0007 — compileSdk 36 لدعم share_plus — APPROVED (2026-10-06) — `governance/cr/CR-0007-compilesdk-36-share-plus.md`
+- CR-0008 — timezone package — APPROVED (2026-10-07) — `governance/cr/CR-0008-timezone-package.md`
+- CR-0009 — geolocator package — APPROVED (2026-10-08) — `governance/cr/CR-0009-geolocator.md`

@@ -14,10 +14,12 @@ dependencies:
     sdk: flutter
   # DEC-0002 + DEC-0016 — تحقق pub.dev 2026-10-05 (MIT): آخر إصدار 2.x ثابت
   flutter_riverpod: 2.6.1
+  geolocator: 14.1.1
   go_router: 18.0.2
   hive_ce: 2.20.1
   hive_ce_flutter: 2.4.0
   intl: 0.20.3
+  meta: ^1.15.0
   path_provider: 2.1.6
   share_plus: 13.3.1
   timezone: 0.11.1
@@ -25,6 +27,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  geolocator_platform_interface: 4.4.0
   # DEC-0011 — تحقق pub.dev 2026-10-05 (MIT)
   very_good_analysis: 11.0.0
 
