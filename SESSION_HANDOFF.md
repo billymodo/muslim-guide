@@ -39,7 +39,7 @@
 - بعد Task 6: Phase 02 ✅ → Phase 03 (Qibla)
 
 ### Commit
-سيُدوَّن بعد الالتزام (commit مرجعي)
+88a7081 — phase-02(task-5): prayer times + location picker screens (محلي، بلا push)
 
 ### Lessons (من هذه الجلسة)
 - `find.byIcon` يعيد الـ`Icon` وليس `IconButton` — استخدم

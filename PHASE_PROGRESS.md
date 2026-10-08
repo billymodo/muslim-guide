@@ -59,7 +59,7 @@
   - [x] Task 4 (Riverpod providers — 231 tests)
   - [x] Task 5 (Screens — 25 widget tests; 256 total)
   - [ ] Task 6 (Device testing) ← التالي
-- **Last commit:** `5c0f46a`
+- **Last commit:** `88a7081`
 
 ## Phase 00B — سجل الإغلاق
 
