@@ -5,6 +5,52 @@
 
 ---
 
+## Session 15 — 2026-10-08 (Phase 02: Task 4 — Riverpod Providers)
+
+### ما نُفِّذ
+- 6 providers + 3 مساندة
+  - locationServiceProvider, citiesLoaderProvider, prayerTimesRepositoryProvider
+  - locationProvider (Notifier, keepAlive)
+  - calculationMethodProvider (Notifier, keepAlive)
+  - asrMethodProvider (Notifier, keepAlive)
+  - highLatitudeRuleProvider (Notifier, keepAlive)
+  - prayerTimesProvider (AsyncNotifier, autoDispose)
+  - countdownProvider (StreamProvider, autoDispose + Timer)
+- PrayerTimesRepository (interface) + Impl
+- SettingsRepository: 5 حقول + 10 methods
+- LocationSelection sealed class (City | Coordinates)
+- GPS timezone via nearest city
+- ~26 اختبار (231 إجمالي)
+- commit 5c0f46a
+
+### القرارات
+- AutoDisposeAsyncNotifier (Riverpod 2.6 requirement)
+- Hydration via hiveStoreProvider gate (avoid catch StateError)
+- Riverpod 2.6 test gotchas documented
+
+### للجلسة القادمة (Task 5)
+Screens:
+1. lib/features/prayer/presentation/screens/prayer_times_screen.dart
+2. lib/features/prayer/presentation/screens/location_picker_screen.dart
+3. lib/features/prayer/presentation/widgets/prayer_time_row.dart
+4. lib/features/prayer/presentation/widgets/prayer_hero_card.dart
+5. lib/features/prayer/presentation/widgets/countdown_timer.dart
+6. Router update: /prayer route
+
+**مهم:**
+- countdownProvider stream فارغ بعد صلاة العشاء → شاشة يجب أن تعرض "لا صلاة قادمة اليوم"
+- sunrise مستبعد من countdown (يُعرض بـsunrise_not_prayer)
+
+### Commit
+5c0f46a — Task 4
+
+### Lessons (من الاختبارات)
+- `container.listen` needs `fireImmediately: true` in Riverpod 2.6
+- `pump()` without duration doesn't flush Riverpod tasks — `pump(100ms)` works
+- Dispose container before testWidgets end
+
+---
+
 ## Session 13 — 2026-10-07 (Phase 01: UI screens)
 
 ### ما نُفِّذ

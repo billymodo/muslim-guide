@@ -45,12 +45,21 @@
 | Last Phase 01 commit | `e5e2f9c` |
 | Validation | `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 7/7؛ `flutter build apk --debug`: نجح |
 
-## Phase 02 — Prayer Times & Location (planned)
-- **Status:** 🟡 PLANNED
+## Phase 02 — Prayer Times & Location
+- **Status:** 🟢 ACTIVE
+- **Progress:** ~85%
 - **Start:** 2026-10-07
 - **Estimate:** 7-8 days
 - **Blocking ODs:** ✅ resolved (DEC-0028, DEC-0029); OD-0019 resolved by DEC-0017
-- **Next:** Begin Task 1 (Domain — PrayerCalculator) after approval
+- **Tasks:**
+  - [x] Task 1 (Domain — 177 tests)
+  - [x] Task 1.5 (Verification)
+  - [x] Task 2 (Cities — 120)
+  - [x] Task 3 (Location Service)
+  - [x] Task 4 (Riverpod providers — 231 tests)
+  - [ ] Task 5 (Screens) ← التالي
+  - [ ] Task 6 (Device testing)
+- **Last commit:** `5c0f46a`
 
 ## Phase 00B — سجل الإغلاق
 
