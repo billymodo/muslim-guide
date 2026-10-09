@@ -61,3 +61,10 @@
 | BUG-2 | No UI path to change city after successful load | P2 | T7-02 — Oppo A95 (2026-10-09) | **FIXED in `fc2e479`** — device-verified 2026-10-09 (Step 0 PASS) | Registered 2026-10-09; Option C approved؛ **إثبات الجهاز:** `t-bug2-01..04` (4 صور) — زر `clickable=true` → picker → كابل: كل الصفوف أُعيد حسابها → settings `enabled=false`؛ logcat نظيف |
 | BUG-5 | Splash deadlock — bootstrap gate (`4ba60bd`) causes splash to never navigate when bootstrap already complete (normal startup broken; only deep link works) | P0 | T0 — Oppo A95 (2026-10-09) | **FIXED in `862376e`** — analyze ✅ tests 262/262 | `t-bug2-00-fail-splash-deadlock.png` + logcat؛ regression test في `splash_screen_test.dart` |
 | BUG-6 | Location picker opened via `context.go` from Prayer hero — no AppBar back button; system BACK exits app instead of returning to /prayer | P3 | M5 — Oppo A95 (2026-10-09) | **OPEN** (backlog — Phase 05+) | `t8c-03` observation + report M5 deviation #2 |
+
+## Known Gaps (pre-Phase 03)
+
+| ID | Gap | Severity | Found In | Status |
+|---|---|---|---|---|
+| GAP-meta-caret | `meta: ^1.15.0` يستخدم `^` بدل exact pin — Rule 019 audit | P3 | Pre-existing | **OPEN** (Phase 03 sub-task — pin إلى `1.15.0` exact) |
+| GAP-license-page | لا يوجد `showLicensePage`/`LicenseRegistry` في `lib/` — سياسة `legal/02-attribution-policy.md` تتوقع عرض تراخيص الحزم (مثل flutter_timezone Apache-2.0) | P3 | CR-0010 review (2026-10-09) | **OPEN** (Phase 03 — بند UX صغير) |
