@@ -151,6 +151,33 @@ route-level test for "bootstrap already complete when splash mounts".
   `flutter test` **262/262** (3 new regression tests in
   `test/features/splash/presentation/splash_screen_test.dart`), debug APK built.
 
+### Step 0 retry — BUG-2 device verification (2026-10-09): **PASS**
+
+Sequence (locked recipe; interrupted once by a USB disconnect and resumed
+with app state preserved):
+
+1. Normal start → onboarding (Arabic) → `/home` → deep link → `/prayer`
+   Empty state → تحديد الموقع → picker → **Riyadh** → times rendered.
+   [t-bug2-01-before.png](evidence/phase-02/t-bug2-01-before.png)
+   (Fajr 04:57 / Dhuhr 12:05 / Asr 15:27 / Maghrib 17:57 / Isha 19:08).
+2. Change-city button (`Icons.edit_location_alt`, content-desc
+   «تغيير المدينة»): uiautomator node = **`clickable="true"
+   enabled="true"`**; motionevent tap → **picker opened**.
+   [t-bug2-02-picker-open.png](evidence/phase-02/t-bug2-02-picker-open.png)
+3. Selected **Kabul** → returned to `/prayer`; **all rows recalculated**:
+   04:30 / 11:40 / 14:57 / 17:26 / 18:45.
+   [t-bug2-03-times-updated.png](evidence/phase-02/t-bug2-03-times-updated.png)
+4. Hero settings button unchanged: content-desc «قريباً», node =
+   **`clickable="false" enabled="false"`**.
+   [t-bug2-04-settings-disabled.png](evidence/phase-02/t-bug2-04-settings-disabled.png)
+5. logcat during the whole sequence: **no Flutter exceptions**.
+
+Note: `pm grant` is blocked on ColorOS (SecurityException, as with
+`pm revoke`); runtime permission was not needed for this verification
+(manual-city flow) and remains `granted=false` — revisit for M2.
+
+**Step 0 result: PASS — BUG-2 verified fixed on device (4/4 screenshots).**
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
