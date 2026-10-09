@@ -100,6 +100,57 @@ and T8c:
 | M4 | Set **2026-06-21**, then restore automatic date | T5 (Tromsø polar day) |
 | M5 | Settings → Display → Font size → **Largest (≈200 %)**, then restore | T8c |
 
+## Manual session attempt — 2026-10-09 (BUG-2 verify + M1–M5) — **ABORTED at Step 0**
+
+> Session aborted per Stop Rule: no step skipped, no code changed, no commit.
+
+### Step 0 — BUG-2 device verification: **FAIL (blocked before start)**
+
+- App reinstalled with the BUG-2 build (`flutter install --debug`, `fc2e479`);
+  the install wiped app data (fresh onboarding state).
+- **Normal start** (`force-stop` → `am start` → 6 s, per locked recipe): the app
+  reaches `SplashScreen` and **never leaves it** (observed > 60 s; re-dumped
+  3×). No Flutter exception in logcat — the process is alive and rendering.
+- **Deep-link start** (`muslimguide://test/prayer`): reaches `/prayer` Empty
+  state normally ("مواقيت الصلاة / لم يتم تحديد الموقع"). The app itself works;
+  only the normal-start path deadlocks.
+- Evidence:
+  - [t-bug2-00-fail-splash-deadlock.png](evidence/phase-02/t-bug2-00-fail-splash-deadlock.png)
+  - [t-bug2-00-fail-logcat.txt](evidence/phase-02/t-bug2-00-fail-logcat.txt)
+    (no Flutter errors; only system noise)
+
+**Root-cause hypothesis (regression from the BUG-3 gate, `4ba60bd`):**
+`splash_screen.dart` navigates to `/home` **only** inside
+`ref.listen(bootstrapProvider, …)` → `whenData(…)` — i.e. it relies on the
+provider *changing* to `data`. Before the gate, splash itself triggered
+bootstrap (loading → data transition fired the listener). After the gate,
+`_AppBootstrap` completes bootstrap **before** the router/`SplashScreen`
+is ever built, so the listener is registered on an already-`data` value,
+never fires, and navigation never happens.
+**Fix direction (NOT applied — out of this session's scope):** splash must
+navigate when `bootstrap` is *already* `data` (e.g. check
+`bootstrap.whenData`/`hasValue` in `build`, or `fireImmediately: true`).
+**Regression class:** BUG-3's gate broke the path it preserved; needs a
+route-level test for "bootstrap already complete when splash mounts".
+
+### Steps M1–M5: **not started** (aborted with Step 0).
+
+### BUG-2 verification status: **not verified on device** (blocked).
+
+### BUG-5 hotfix verification (2026-10-09, same device): **PASS**
+
+- Fix commit `862376e` (splash `initState` post-frame state check +
+  existing `ref.listen` for later transitions); register commit `e5d6895`.
+- **Normal start** after reinstall: left Splash within ~6 s → Onboarding
+  language screen (fresh data) — no deadlock
+  ([t-bug5-01-fixed-startup.png](evidence/phase-02/t-bug5-01-fixed-startup.png)).
+- **Deep-link cold start:** `muslimguide://test/prayer` → `/prayer` opens —
+  BUG-3 still fixed.
+- logcat: **clean** on both paths (no Flutter exceptions).
+- Local verification before install: `flutter analyze --fatal-infos` clean,
+  `flutter test` **262/262** (3 new regression tests in
+  `test/features/splash/presentation/splash_screen_test.dart`), debug APK built.
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
