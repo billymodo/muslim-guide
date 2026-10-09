@@ -1,0 +1,30 @@
+{
+  "generator": {
+    "source": "PrayTimes.js v2.5",
+    "source_url": "https://praytimes.org/code/v2/js/PrayTimes.js",
+    "sha256": "f0e8442410446b1bf2db613bdebd3aa3aef5cdf5483068fbd9212d5acaa180fd",
+    "generated_at": "2026-10-09",
+    "method": "MWL",
+    "asr": "Standard",
+    "note": "golden_asr = PrayTimes.js output (HH:mm:ss local). reference_* = comparison values (official or secondary Aladhan, minute resolution) — informational only, NOT asserted (secondary instability documented in docs/od-0028-asr-investigation.md)."
+  },
+  "cases": [
+    {"name": "Cairo-2026-10-09", "date": "2026-10-09", "lat": 30.06263, "lng": 31.24967, "timezone": "Africa/Cairo", "golden_asr": "16:01:48", "reference_asr": "16:02", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Mecca-2026-10-09", "date": "2026-10-09", "lat": 21.42664, "lng": 39.82563, "timezone": "Asia/Riyadh", "golden_asr": "15:30:01", "reference_asr": "15:31", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Riyadh-2026-10-09", "date": "2026-10-09", "lat": 24.68773, "lng": 46.72185, "timezone": "Asia/Riyadh", "golden_asr": "15:01:57", "reference_asr": "15:03", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Karachi-2026-10-09", "date": "2026-10-09", "lat": 24.8608, "lng": 67.0104, "timezone": "Asia/Karachi", "golden_asr": "15:40:47", "reference_asr": "15:41", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Jakarta-2026-10-09", "date": "2026-10-09", "lat": -6.21462, "lng": 106.84513, "timezone": "Asia/Jakarta", "golden_asr": "14:41:12", "reference_asr": "14:42", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "London-2026-10-09", "date": "2026-10-09", "lat": 51.50853, "lng": -0.12574, "timezone": "Europe/London", "golden_asr": "15:42:45", "reference_asr": "15:44", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Istanbul-2026-10-09", "date": "2026-10-09", "lat": 41.01384, "lng": 28.94966, "timezone": "Europe/Istanbul", "golden_asr": "16:02:11", "reference_asr": "16:03", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Tromso-2026-10-09", "date": "2026-10-09", "lat": 69.6489, "lng": 18.95508, "timezone": "Europe/Oslo", "golden_asr": "14:31:10", "reference_asr": "14:35", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "London-M3-DST-end-2026-10-25", "date": "2026-10-25", "lat": 51.50853, "lng": -0.12574, "timezone": "Europe/London", "golden_asr": "14:16:32", "reference_asr": "14:19", "reference_source": "Aladhan via M3 device test (secondary)", "reference_kind": "secondary"},
+    {"name": "Tromso-M4-polar-day-2026-06-21", "date": "2026-06-21", "lat": 69.6489, "lng": 18.95508, "timezone": "Europe/Oslo", "golden_asr": "17:57:45", "reference_asr": null, "reference_source": "device M4 showed 17:57 (floor)", "reference_kind": "device"},
+    {"name": "Reykjavik-2026-10-09", "date": "2026-10-09", "lat": 64.1466, "lng": -21.9426, "timezone": "Atlantic/Reykjavik", "golden_asr": "15:36:52", "reference_asr": "15:39", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Murmansk-2026-10-09", "date": "2026-10-09", "lat": 68.9585, "lng": 33.0827, "timezone": "Europe/Moscow", "golden_asr": "14:37:59", "reference_asr": "14:42", "reference_source": "Aladhan timings API (secondary)", "reference_kind": "secondary"},
+    {"name": "Mecca-2026-10-07-official", "date": "2026-10-07", "lat": 21.42664, "lng": 39.82563, "timezone": "Asia/Riyadh", "golden_asr": "15:31:02", "reference_asr": "15:32", "reference_source": "Umm al-Qura Calendar (official)", "reference_kind": "official"},
+    {"name": "Cairo-2026-10-07", "date": "2026-10-07", "lat": 30.06263, "lng": 31.24967, "timezone": "Africa/Cairo", "golden_asr": "16:03:24", "reference_asr": "16:04", "reference_source": "Aladhan Egyptian method (secondary; official outcome PASS reported by owner)", "reference_kind": "secondary"},
+    {"name": "Riyadh-2026-10-07", "date": "2026-10-07", "lat": 24.68773, "lng": 46.72185, "timezone": "Asia/Riyadh", "golden_asr": "15:03:10", "reference_asr": "15:04", "reference_source": "Aladhan Umm al-Qura method (secondary; official outcome PASS reported by owner)", "reference_kind": "secondary"},
+    {"name": "Karachi-2026-10-07", "date": "2026-10-07", "lat": 24.8608, "lng": 67.0104, "timezone": "Asia/Karachi", "golden_asr": "15:42:01", "reference_asr": "15:43", "reference_source": "Aladhan Karachi method (secondary; official outcome PASS reported by owner)", "reference_kind": "secondary"},
+    {"name": "Jakarta-2026-10-07", "date": "2026-10-07", "lat": -6.21462, "lng": 106.84513, "timezone": "Asia/Jakarta", "golden_asr": "14:42:53", "reference_asr": "14:42", "reference_source": "Aladhan MWL (secondary; Kemenag values withheld by redistribution policy)", "reference_kind": "secondary"}
+  ]
+}
