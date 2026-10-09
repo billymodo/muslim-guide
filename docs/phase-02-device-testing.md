@@ -46,7 +46,7 @@ Method notes (binding for reproducing the results):
 | 7b | Permission **denial dialog** flow | **PASS** (2026-10-09) — Settings-deny ⇒ Android 13 auto-denies silently (no system dialog possible); in-app rejection «تعذر تحديد موقعك» + manual city fallback verified | [t7b-01](evidence/phase-02/t7b-01-rejection-dialog.png), [t7b-02](evidence/phase-02/t7b-02-manual-fallback.png) |
 | 8a | RTL Arabic rendering on device | PASS | [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png), [t3-*](evidence/phase-02/t3-01-cairo.png) |
 | 8b | LTR English via onboarding selection | **FAIL** — BUG-4: English selection does not apply | [t8-06](evidence/phase-02/t8-06-en-selected.png), [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png) |
-| 8c | Text scale 200 % | BLOCKED — `font_scale` write denied (manual Settings) | — |
+| 8c | Text scale 200 % | **PASS at device max** (2026-10-09) — ColorOS Largest = `font_scale 1.6` (160 %; 2.0 unreachable via Settings): no overflow, no truncation, buttons ≥48dp, scrollable | [t8c-01](evidence/phase-02/t8c-01-prayer-large-font.png), [t8c-02](evidence/phase-02/t8c-02-picker-large-font.png), [t8c-03](evidence/phase-02/t8c-03-return-large-font.png) |
 | 9 | Countdown/next-prayer badge live across all screens | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png) (03:52:31 while offline) |
 | 10 | Screenshot capture for each state | PASS | all `evidence/phase-02/*.png` (34 files, 2026-10-09) |
 | 11 | This documentation | PASS | this file |
@@ -273,6 +273,31 @@ Setup verified from shell **before** any capture: `auto_time=0`,
 
 **T5 result: PASS.**
 
+### M5 / T8c — text scale Largest (2026-10-09): **PASS (at device max)**
+
+Setup verified from shell **before** capture: `font_scale = 1.6` —
+ColorOS "Largest" maps to 1.6 (160 %); the nominal 200 % target is not
+reachable through this device's Settings.
+
+Screens exercised (cold restart → `/splash` → `/prayer` → picker →
+return): **no overflow** (logcat free of `RenderFlex`/exceptions), **no
+truncated text** (full ARB strings, no ellipsis), **no mojibake** (BUG-1
+regression check — Arabic city/prayer labels clean), buttons ≥ 48 dp
+(change-city 162 px ≈ 59 dp; GPS 162 px; alert-tools 918×162 px), and
+prayer list **scrollable** so content below the fold stays reachable.
+
+- Evidence: [t8c-01-prayer-large-font.png](evidence/phase-02/t8c-01-prayer-large-font.png),
+  [t8c-02-picker-large-font.png](evidence/phase-02/t8c-02-picker-large-font.png),
+  [t8c-03-return-large-font.png](evidence/phase-02/t8c-03-return-large-font.png);
+  logcat: **clean**.
+- Observation (not font-related, applies at 1.0 too): the picker opened via
+  the change-city button (`context.go`) has **no AppBar back button and the
+  system BACK key exits the app** (history replaced, `canPop=false`);
+  returning happens by selecting a city. Recorded as a UX note for a
+  future decision (push vs go) — not a T8c failure.
+
+**T8c result: PASS at `font_scale 1.6` (device maximum).**
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
@@ -295,6 +320,8 @@ Setup verified from shell **before** any capture: `auto_time=0`,
   no hour shift — `t4-01/02`).
 - [x] Tromsø polar day (T5) — **PASS** 2026-10-09 (M4; 2026-06-21 —
   Fajr/Sunrise/Maghrib/Isha «غير متاح», Dhuhr+Asr shown — `t5-01`).
-- [ ] 200 % font scale — **BLOCKED** on manual step M5.
+- [x] Text scale (T8c) — **PASS at device max 1.6/160 %** 2026-10-09 (M5;
+  no overflow/truncation — `t8c-01..03`). Nominal 200 % unreachable via
+  ColorOS Settings.
 - Pending owner decisions: none for BUGs (1, 2, 3, 4, 5 all FIXED and
   device-verified); T8b re-verification (BUG-4 on device) still open.
