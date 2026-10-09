@@ -50,9 +50,10 @@
 ## Phase 02 — Device Testing Bugs
 
 > المصدر: `docs/phase-02-device-testing.md` — Rule 011 (Evidence Required).
-> BUG-1 و BUG-2 **غير مسجَّلين بعد** — بانتظار قرار المالك بعد مراجعة التفاصيل.
+> BUG-2 **غير مسجَّل بعد** — بانتظار قرار المالك.
 
 | ID | Bug | Severity | Found In | Status | Evidence |
 |---|---|---|---|---|---|
+| BUG-1 | `major_cities.json` — mojibake في `name_ar`/`country_ar` (double-UTF-8 عبر cp1256) | P1 | T2 — Oppo A95 (2026-10-09) | **FIXED in `c88cc97`** — verified | استبدال جراحي 234 قيمة؛ diff ‎234±234؛ checksum محدّث في `legal/assets.yaml` ‎(sha256:3eedc611…)؛ تحقق بصري: دبي/أبوظبي/لندن/ترومسو ✓ |
 | BUG-3 | Cold-start deep link يتجاوز bootstrap في `/splash` → `selectCity` يرمي «Settings are unavailable before app initialization» (فشل صامت بلا تنقل) | P1 | T2 — Oppo A95 (2026-10-09) | OPEN | logcat `E flutter` 09:31:01 — `location_provider.dart:110` + `bootstrap_provider.dart:16` |
 | BUG-4 | اختيار الإنجليزية في Onboarding لا يُطبَّق؛ `/prayer` يظل عربياً (تعذر الوصول لمسار LTR) | P1 | T8b — Oppo A95 (2026-10-09) | OPEN | `docs/evidence/phase-02/t8-06-en-selected.png` مقابل `t8-07-empty-en-ltr.png` |
