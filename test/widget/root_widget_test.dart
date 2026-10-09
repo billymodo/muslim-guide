@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muslim_guide/app/muslim_guide_app.dart';
+import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
 
 void main() {
   testWidgets('renders MaterialApp with router', (tester) async {
@@ -15,7 +17,9 @@ void main() {
     );
     addTearDown(router.dispose);
 
-    await tester.pumpWidget(MuslimGuideApp(router: router));
+    await tester.pumpWidget(
+      ProviderScope(child: MuslimGuideApp(router: router)),
+    );
     await tester.pump();
 
     expect(tester.takeException(), isNull);
@@ -39,9 +43,40 @@ void main() {
     );
     addTearDown(router.dispose);
 
-    await tester.pumpWidget(MuslimGuideApp(router: router));
+    await tester.pumpWidget(
+      ProviderScope(child: MuslimGuideApp(router: router)),
+    );
     await tester.pump();
 
     expect(find.text('ar'), findsOneWidget);
+  });
+
+  testWidgets('applies the locale from appLocaleProvider', (tester) async {
+    final router = GoRouter(
+      routes: [
+        GoRoute(
+          path: '/',
+          builder: (context, state) => Scaffold(
+            body: Builder(
+              builder: (context) =>
+                  Text(Localizations.localeOf(context).languageCode),
+            ),
+          ),
+        ),
+      ],
+    );
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          appLocaleProvider.overrideWith((ref) => const Locale('en')),
+        ],
+        child: MuslimGuideApp(router: router),
+      ),
+    );
+    await tester.pump();
+
+    expect(find.text('en'), findsOneWidget);
   });
 }

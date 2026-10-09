@@ -28,6 +28,7 @@ class _LanguageSelectionScreenState
     try {
       final settings = ref.read(settingsRepositoryProvider);
       await settings.setLanguage(language);
+      ref.read(appLocaleProvider.notifier).state = Locale(language);
       await settings.setOnboardingCompleted(true);
       if (!mounted) return;
       context.go('/home');
