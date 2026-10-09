@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
 import 'package:muslim_guide/features/qibla/application/qibla_state.dart';
@@ -74,6 +76,19 @@ class QiblaNotifier extends AutoDisposeAsyncNotifier<QiblaState> {
           onError: (Object error, StackTrace stack) {
             current = _withSensorStatus(current, SensorStatus.error);
             state = AsyncData(current);
+          },
+          onDone: () {
+            if (current.sensorStatus == SensorStatus.initializing) {
+              scheduleMicrotask(() {
+                if (current.sensorStatus == SensorStatus.initializing) {
+                  current = _withSensorStatus(
+                    current,
+                    SensorStatus.unavailable,
+                  );
+                  state = AsyncData(current);
+                }
+              });
+            }
           },
         );
     ref.onDispose(subscription.cancel);
