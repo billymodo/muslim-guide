@@ -61,3 +61,10 @@ domain النقي (بديل هجين — عمل أكبر لكن بلا اعتم�
 - **Failure**: انقطاع/خطأ stream → حالة Error + لا crash.
 
 **Approved By:** Abdo (Owner) + Director — 2026-10-09 (E-10)
+
+## Execution
+- Added: `flutter_compass: 0.8.1` (exact pin) — 2026-10-09
+- LICENSES.md updated ✅
+- security/02-dependencies.md updated ✅
+- Native integration verified via `flutter build apk --debug` ✅
+- commit: this commit (Task 4)

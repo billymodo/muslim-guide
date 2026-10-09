@@ -87,6 +87,9 @@
 
 ## 8. الأثر الشرعي
 
+- App vs official sources: consistent −30..−60s offset across 5 cities
+  (Mecca −58s, Cairo −36s, Riyadh −50s, Karachi −59s; Jakarta +53s) —
+  property of PrayTimes reference calculation, not app bug.
 - **المدن (altitude ≥21°):** فرق ≤1 دقيقة عملياً مقابل Aladhan و≤±1m مقابل الرسميات — ضمن تفاوت الفقهيات المقبول (لا يترتب تغيير صلاة).
 - **عالي latitude (Tromsø/Murmansk/Reykjavík):** فرق ≤4 دقائق قابلة للتكرار — أوقات العصر القطبية أصلاً محكومة بنماذج فلكية تتباين بين المصادر؛ لا يوجد تحديد رسمي يعارضنا؛ المخاطر موثقة.
 - **الأسبقية:** أي مصداق رسمي مستقبلي يخالفنا بـ>2m ⇒ إعادة فتح (المعيار أدناه).

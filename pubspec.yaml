@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_compass: 0.8.1
   flutter_localizations:
     sdk: flutter
   # DEC-0002 + DEC-0016 — تحقق pub.dev 2026-10-05 (MIT): آخر إصدار 2.x ثابت
