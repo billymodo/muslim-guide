@@ -46,6 +46,7 @@
 | D-18 | لا تقدير جهد | أحجام S/M/L |
 | D-23 | شبكة بلا تحقق | CI |
 | D-24 | fatal-infos | CI |
+| OD-0028 | Asr systematic shift −2/−3m across cities, −8m Tromsø | **ESCALATED to P2 by Director 2026-10-09** — investigation required in Phase 03 before close |
 
 ## Phase 02 — Device Testing Bugs
 
@@ -59,3 +60,4 @@
 | BUG-4 | اختيار الإنجليزية في Onboarding لا يُطبَّق؛ `/prayer` يظل عربياً (تعذر الوصول لمسار LTR) | P1 | T8b — Oppo A95 (2026-10-09) | **FIXED in `cedbbac`** — analyze ✅ tests 257/257 | `docs/evidence/phase-02/t8-06-en-selected.png` مقابل `t8-07-empty-en-ltr.png`؛ **الإصلاح:** `MuslimGuideApp` تستهلك `appLocaleProvider` (ConsumerWidget) + `LanguageSelectionScreen` تحدّثها فور حفظها في Hive |
 | BUG-2 | No UI path to change city after successful load | P2 | T7-02 — Oppo A95 (2026-10-09) | **FIXED in `fc2e479`** — device-verified 2026-10-09 (Step 0 PASS) | Registered 2026-10-09; Option C approved؛ **إثبات الجهاز:** `t-bug2-01..04` (4 صور) — زر `clickable=true` → picker → كابل: كل الصفوف أُعيد حسابها → settings `enabled=false`؛ logcat نظيف |
 | BUG-5 | Splash deadlock — bootstrap gate (`4ba60bd`) causes splash to never navigate when bootstrap already complete (normal startup broken; only deep link works) | P0 | T0 — Oppo A95 (2026-10-09) | **FIXED in `862376e`** — analyze ✅ tests 262/262 | `t-bug2-00-fail-splash-deadlock.png` + logcat؛ regression test في `splash_screen_test.dart` |
+| BUG-6 | Location picker opened via `context.go` from Prayer hero — no AppBar back button; system BACK exits app instead of returning to /prayer | P3 | M5 — Oppo A95 (2026-10-09) | **OPEN** (backlog — Phase 05+) | `t8c-03` observation + report M5 deviation #2 |

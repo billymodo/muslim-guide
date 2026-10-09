@@ -228,16 +228,23 @@ changing this behavior.
 
 ## OD-0028 — Asr at high latitudes (>66°N)
 
-**Status:** OPEN
+**Status:** ESCALATED — P2 (Director, 2026-10-09)
+**Target Phase:** 03
 **Blocking Phase:** None
 **Type:** Verification
-**Priority:** Low
+**Priority:** P2 (escalated from Low — systematic pattern confirmed)
 
 **Context:** Tromsø (69.65°N), 2026-10-07:
 - Our Asr: `14:37:23`
 - Aladhan MWL: `14:43:00`
 - Difference (`ours - reference`): `-5m37s`, 37 seconds beyond the ±5-minute
   high-latitude tolerance.
+
+**Escalation basis (2026-10-09 device testing):** the shift is systematic,
+not a one-off — Asr ran `-2m`/`-3m` early across the eight-city matrix
+(T3, 42/48; every breach is Asr), `-8m` in Tromsø on 2026-10-09 (T3), and
+`-3m` in London DST (M3/T4). Investigation required in Phase 03 before
+that phase closes.
 
 **Analysis:** The project owner reports an independent Meeus-based manual Asr
 calculation of approximately `14:36`, close to the calculator output. Aladhan
