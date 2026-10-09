@@ -46,14 +46,14 @@
 | Validation | `flutter analyze --fatal-infos`: بلا مشاكل؛ `flutter test`: 7/7؛ `flutter build apk --debug`: نجح |
 
 ## Phase 02 — Prayer Times & Location
-- **Status:** 🟢 ACTIVE
-- **Progress:** ~97%
-- **Tasks:**
-  - [x] 1, 1.5, 2, 3, 4, 5
-  - [~] Task 6 (Device Testing) — PARTIAL (M1–M5 pending)
-- **Last commit:** `9b7e17a`
-- **Bugs:** BUG-1 ✅ FIXED (`c88cc97`) · BUG-3 ✅ FIXED (`4ba60bd`) · BUG-4 ✅ FIXED (`cedbbac`) · BUG-2 OPEN (P2, fix in progress)
-- **Next:** M1–M5 device testing + BUG-2 fix verification
+- **Status:** ✅ COMPLETED (2026-10-09)
+- **Duration:** 3 days (2026-10-07 → 2026-10-09)
+- **Tests:** 262/262
+- **Bugs:** 1, 2, 3, 4, 5 ✅ FIXED
+- **Output Report:** docs/phase-02-output-report.md
+
+## Phase 03 — Qibla (next)
+- **Status:** ⏳ NOT STARTED — بانتظار فتح ODs/CRs
 
 ## Phase 00B — سجل الإغلاق
 
@@ -98,6 +98,11 @@
 - Audio Focus أثناء مكالمة حقيقية: OD-0023 (Phase 04).
 - سلوك OEM طويل المدى: OD-0024 (Phase 04).
 - اكتمل التأكيد السمعي البشري للصوت: ✅ المستخدم أكد سماعه في 2026-10-06؛ موثق في `spike/RESULTS.md`.
+- **OD-0028 Asr — Phase 03 (P2)** — إزاحة منهجية −2/−3m (−8m Tromsø)؛ تحقيق مطلوب قبل إغلاق Phase 03.
+- **BUG-6 picker back nav — Phase 05+ (P3)** — لا AppBar back + BACK يخرج التطبيق.
+- **Permission-deny-only path — Phase 05+ (P3)** — (Location ON + Deny فقط) غير مُختبَر.
+- **Minor-1 overflow @ 200% — Phase 10 (P3)**.
+- **flutter_timezone (DEC-0029) غير مُضاف** — `tz.local` ثابت Asia/Riyadh (`bootstrap_provider:36` TODO مُعلن)؛ الحسابات تعمل عبر city timezone وDST نجح — يتبع CR-0010 قبل الإضافة.
 
 
 
