@@ -39,7 +39,7 @@ Method notes (binding for reproducing the results):
 | 1 | Smoke: launch → onboarding → `/prayer` Success + GPS (2026-10-08) | PASS | [dt-01-onboard](evidence/phase-02/dt-01-onboard.png), [dt-01e](evidence/phase-02/dt-01e.png) |
 | 2 | Location picker: search, empty result, select → recompute | PASS | [t2-01](evidence/phase-02/t2-01-picker.png), [t2-02](evidence/phase-02/t2-02-search-empty.png), [t2-03](evidence/phase-02/t2-03-search-cairo.png), [t2-04](evidence/phase-02/t2-04-selected-cairo.png) |
 | 3 | Eight reference cities vs documented margins (2026-10-09) | **FAIL** (42/48 within margin; all 6 breaches are Asr) | [t3-01](evidence/phase-02/t3-01-cairo.png) … [t3-08](evidence/phase-02/t3-08-tromso.png) |
-| 4 | DST transition, London `2026-10-25` (`Europe/London`) | BLOCKED — manual date change required (see below) | — |
+| 4 | DST transition, London `2026-10-25` (`Europe/London`) | **PASS** (2026-10-09) — no hour shift; Dhuhr 11:44 GMT vs 11:45 ref; 5/6 rows within ±2 min (Asr −3, known OD-0028 pattern) | [t4-01](evidence/phase-02/t4-01-london-dst-end.png), [t4-02](evidence/phase-02/t4-02-post-transition.png) |
 | 5 | Tromsø polar day `2026-06-21` (`Europe/Oslo`) | BLOCKED — manual date change required | — |
 | 6 | Airplane mode: offline recalculation + cold restart | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png), [t6-02](evidence/phase-02/t6-02-offline-restart.png) |
 | 7a | No location services → error message + manual fallback to Success | PASS | [t7-01](evidence/phase-02/t7-01-permission-dialog.png), [t7-02](evidence/phase-02/t7-02-manual-fallback.png) |
@@ -212,6 +212,39 @@ change-city button → picker → tap «استخدام موقعي» (`_useGps`):
 
 **T7b result: PASS (documented alternative — no system dialog possible).**
 
+### M3 / T4 — DST London end (2026-10-25) (2026-10-09): **PASS**
+
+**First attempt aborted** — shell verification showed the manual setup was
+NOT active (`auto_time=1`, tz `Africa/Cairo`, date Oct 9). No screenshot
+taken (no false evidence). Owner re-applied manually; second attempt
+verified from shell **before** any capture:
+
+`auto_time=0` · `auto_time_zone=0` · `persist.sys.timezone=Europe/London` ·
+`date=Sun Oct 25 14:25 GMT 2026` (wall time differs from the suggested
+00:30; irrelevant to the day's timetable — and the clock was already past
+the 01:00 UTC transition, so the run is inherently post-transition).
+
+**Results vs Aladhan method=3, 25-10-2026, Europe/London (margin ±2 min):**
+
+| Prayer | Device | Reference | Δ | Status |
+|---|---|---|---|---|
+| Fajr | 04:49 | 04:49 | 0 | ✅ |
+| Sunrise | 06:41 | 06:42 | −1 | ✅ |
+| Dhuhr | **11:44** | 11:45 | −1 | ✅ |
+| Asr | 14:16 | 14:19 | −3 | ⚠️ known Asr pattern (OD-0028) |
+| Maghrib | 16:46 | 16:47 | −1 | ✅ |
+| Isha | 18:32 | 18:32 | 0 | ✅ |
+
+- **No 1-hour shift:** Dhuhr renders 11:44 **GMT** (post BST→GMT); the same
+  city rendered 12:47 on 2026-10-09 (BST) — the transition is applied.
+- Evidence: [t4-01-london-dst-end.png](evidence/phase-02/t4-01-london-dst-end.png),
+  [t4-02-post-transition.png](evidence/phase-02/t4-02-post-transition.png)
+  (device clock 14:32 GMT — post-transition).
+- logcat: **clean**.
+
+**T4 result: PASS** (Asr −3 min recorded against the known OD-0028 review
+pattern; every other row within ±2 min).
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
@@ -230,7 +263,9 @@ change-city button → picker → tap «استخدام موقعي» (`_useGps`):
 - [x] Airplane mode (PASS), smoke/GPS (PASS), screenshots (PASS).
 - [x] Permission-denial flow (T7b) — **PASS** 2026-10-09 (M2; rejection
   without dialog + manual fallback — `t7b-01/02`).
-- [ ] DST transition, Tromsø polar day, 200 % font scale — **BLOCKED** on
-  manual steps M3–M5 above.
+- [x] DST transition (T4) — **PASS** 2026-10-09 (M3; London 2026-10-25,
+  no hour shift — `t4-01/02`).
+- [ ] Tromsø polar day, 200 % font scale — **BLOCKED** on manual steps
+  M4–M5 above.
 - Pending owner decisions: none for BUGs (1, 2, 3, 4, 5 all FIXED and
   device-verified); T8b re-verification (BUG-4 on device) still open.
