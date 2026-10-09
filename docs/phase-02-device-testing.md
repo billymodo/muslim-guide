@@ -40,7 +40,7 @@ Method notes (binding for reproducing the results):
 | 2 | Location picker: search, empty result, select → recompute | PASS | [t2-01](evidence/phase-02/t2-01-picker.png), [t2-02](evidence/phase-02/t2-02-search-empty.png), [t2-03](evidence/phase-02/t2-03-search-cairo.png), [t2-04](evidence/phase-02/t2-04-selected-cairo.png) |
 | 3 | Eight reference cities vs documented margins (2026-10-09) | **FAIL** (42/48 within margin; all 6 breaches are Asr) | [t3-01](evidence/phase-02/t3-01-cairo.png) … [t3-08](evidence/phase-02/t3-08-tromso.png) |
 | 4 | DST transition, London `2026-10-25` (`Europe/London`) | **PASS** (2026-10-09) — no hour shift; Dhuhr 11:44 GMT vs 11:45 ref; 5/6 rows within ±2 min (Asr −3, known OD-0028 pattern) | [t4-01](evidence/phase-02/t4-01-london-dst-end.png), [t4-02](evidence/phase-02/t4-02-post-transition.png) |
-| 5 | Tromsø polar day `2026-06-21` (`Europe/Oslo`) | BLOCKED — manual date change required | — |
+| 5 | Tromsø polar day `2026-06-21` (`Europe/Oslo`) | **PASS** (2026-10-09) — polar day correct: Fajr/Sunrise/Maghrib/Isha = «غير متاح» (no substituted times); Dhuhr 12:46 + Asr 17:57 shown | [t5-01](evidence/phase-02/t5-01-tromso-polar.png) |
 | 6 | Airplane mode: offline recalculation + cold restart | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png), [t6-02](evidence/phase-02/t6-02-offline-restart.png) |
 | 7a | No location services → error message + manual fallback to Success | PASS | [t7-01](evidence/phase-02/t7-01-permission-dialog.png), [t7-02](evidence/phase-02/t7-02-manual-fallback.png) |
 | 7b | Permission **denial dialog** flow | **PASS** (2026-10-09) — Settings-deny ⇒ Android 13 auto-denies silently (no system dialog possible); in-app rejection «تعذر تحديد موقعك» + manual city fallback verified | [t7b-01](evidence/phase-02/t7b-01-rejection-dialog.png), [t7b-02](evidence/phase-02/t7b-02-manual-fallback.png) |
@@ -245,6 +245,34 @@ the 01:00 UTC transition, so the run is inherently post-transition).
 **T4 result: PASS** (Asr −3 min recorded against the known OD-0028 review
 pattern; every other row within ±2 min).
 
+### M4 / T5 — Tromsø polar day (2026-06-21) (2026-10-09): **PASS**
+
+Setup verified from shell **before** any capture: `auto_time=0`,
+`auto_time_zone=0`, `persist.sys.timezone=Europe/Oslo`,
+`date=Sun Jun 21 12:01 CEST 2026`.
+
+**Device results (city Tromsø, 69.65°N, mid polar day):**
+
+| Prayer | Device | Correct behavior |
+|---|---|---|
+| Fajr | **غير متاح** | ✅ sun never drops far enough |
+| Sunrise | **غير متاح** | ✅ sun never rises (continuous day) |
+| Dhuhr | 12:46 | ✅ shown |
+| Asr | 17:57 | ✅ shown |
+| Maghrib | **غير متاح** | ✅ sun never sets |
+| Isha | **غير متاح** | ✅ sun never sets |
+
+- **No substituted/stale times** for the impossible rows; **available rows
+  are not hidden** — the critical condition holds.
+- Note: the hotfix brief (§3.4) assumed Sunrise/Maghrib would render; that
+  is astronomically wrong for a polar day — the ORIGINAL M4 spec
+  ("Fajr/Sunrise/Maghrib/Isha = unavailable, no replacement time") is what
+  the device matches.
+- Evidence: [t5-01-tromso-polar.png](evidence/phase-02/t5-01-tromso-polar.png);
+  logcat: **clean**.
+
+**T5 result: PASS.**
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
@@ -265,7 +293,8 @@ pattern; every other row within ±2 min).
   without dialog + manual fallback — `t7b-01/02`).
 - [x] DST transition (T4) — **PASS** 2026-10-09 (M3; London 2026-10-25,
   no hour shift — `t4-01/02`).
-- [ ] Tromsø polar day, 200 % font scale — **BLOCKED** on manual steps
-  M4–M5 above.
+- [x] Tromsø polar day (T5) — **PASS** 2026-10-09 (M4; 2026-06-21 —
+  Fajr/Sunrise/Maghrib/Isha «غير متاح», Dhuhr+Asr shown — `t5-01`).
+- [ ] 200 % font scale — **BLOCKED** on manual step M5.
 - Pending owner decisions: none for BUGs (1, 2, 3, 4, 5 all FIXED and
   device-verified); T8b re-verification (BUG-4 on device) still open.
