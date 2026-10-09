@@ -32,6 +32,7 @@
 **وصفة التنقل (مقفلة):** `force-stop` → `am start` عادي (6 ث — bootstrap) → deep link (4 ث) → `KEYCODE_WAKEUP` → `input motionevent DOWN/UP` (150ms) → `uiautomator dump` للتحقق → `adb pull`
 
 ## Commit HEAD
+c391a48 — phase-02(task-6): register BUG-3/BUG-4 in defect register
+98e3984 — phase-02(task-6): device testing results + documentation (42 ملفاً)
 88a7081 — phase-02(task-5): prayer times + location picker screens
-> **ملاحظة:** تغييرات الجلسة الحالية (وثائق + OD-0029) **غير مُلزمة (غير committed)** —
-> بانتظار مراجعة المستخدم؛ لا push بدون موافقة.
+> **ملاحظة:** كل ما سبق **committed محلياً فقط — لا push بعد** (بانتظار مراجعة المستخدم).
