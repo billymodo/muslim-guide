@@ -46,7 +46,7 @@
 | D-18 | لا تقدير جهد | أحجام S/M/L |
 | D-23 | شبكة بلا تحقق | CI |
 | D-24 | fatal-infos | CI |
-| OD-0028 | Asr systematic shift −2/−3m across cities, −8m Tromsø | **ESCALATED to P2 by Director 2026-10-09** — investigation required in Phase 03 before close |
+| OD-0028 | Asr systematic shift −2/−3m across cities, −8m Tromsø | **CLOSED — accept-as-known-limitation (2026-10-09)** — no calculator defect (app == PrayTimes.js v2.5 golden, 0s × 12/12); offset is Aladhan-side (low-sun divergence ∝ zenith + unstable refs); reproducible Tromsø −4m within ±5m — `docs/od-0028-asr-investigation.md` |
 
 ## Phase 02 — Device Testing Bugs
 

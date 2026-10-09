@@ -228,7 +228,7 @@ changing this behavior.
 
 ## OD-0028 — Asr at high latitudes (>66°N)
 
-**Status:** ESCALATED — P2 (Director, 2026-10-09)
+**Status:** CLOSED — accept-as-known-limitation (2026-10-09, Phase 03 Task 3)
 **Target Phase:** 03
 **Blocking Phase:** None
 **Type:** Verification
@@ -251,13 +251,26 @@ calculation of approximately `14:36`, close to the calculator output. Aladhan
 may apply a high-latitude Asr adjustment. Its value is a secondary reference,
 not an official determination.
 
-**Action:**
+**Action:** (all completed 2026-10-09 — see Resolution)
 - Verify against additional high-latitude cities, including Reykjavík and
   Murmansk.
 - Cross-check with an independent source or calculation.
 - Decide whether the difference reflects the reference convention or requires
   a code change; do not change the algorithm based only on this one secondary
   comparison.
+
+**Resolution (2026-10-09 — Phase 03 Task 3):** **CLOSED —
+accept-as-known-limitation.** The calculator is not defective: app output
+equals the PrayTimes.js v2.5 original at **0s across 12/12 probes**
+(Tromsø included), corroborated by the owner's independent Meeus check
+(≈14:36 vs app 14:37:25) and by all official-source Asr comparisons
+(±1m PASS). The observed offset originates entirely from the secondary
+Aladhan reference: minute truncation plus a low-sun divergence that grows
+as solar altitude drops (−12s at 32° ⇐ −241s at ~11°), with reference
+values observed to shift between fetches (Tromsø 10-07: 14:43→14:41).
+Reproducible Tromsø delta is −4m, inside the ±5m high-latitude margin.
+No code change; no CR-0012. Full evidence: `docs/od-0028-asr-investigation.md`
+(re-open if an official — not secondary — source contradicts by >2m).
 
 **Resolution required before:** Any change to Asr calculation behavior for
 **Resolution required before:** Any change to Asr calculation behavior for
