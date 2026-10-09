@@ -17,6 +17,22 @@ class SplashScreen extends ConsumerStatefulWidget {
 
 class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    // BUG-5: the _AppBootstrap gate completes bootstrap before the router
+    // (and this screen) is ever built, so the build-time ref.listen below
+    // would register on an already-complete value and never fire. Check the
+    // current state once after the first frame; the listener in build()
+    // still covers transitions that complete later.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (ref.read(bootstrapProvider).hasValue) {
+        context.go('/home');
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     ref.listen<AsyncValue<void>>(bootstrapProvider, (previous, next) {
       next.whenData((_) {
