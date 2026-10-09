@@ -1,0 +1,122 @@
+# Phase 02 — Real-Device Testing Record (Task 6)
+
+## Scope, device and method
+
+| Item | Value |
+|---|---|
+| Test dates | 2026-10-08 (T1–T2 start), 2026-10-09 (T2–T11) |
+| Device | Oppo A95 (CPH2365), Android 13 (API 33), ColorOS — **OD-0029 Option A** |
+| Package / version | `com.muslimguide.app` 0.1.0 (debug) |
+| APK | `flutter build apk --debug` (Step 0, installed via `flutter install`) |
+| Status values | PASS / FAIL / BLOCKED only |
+| Evidence | `evidence/phase-02/*.png` (linked per test) |
+
+Method notes (binding for reproducing the results):
+
+- **Navigation:** the app has no UI entry to `/prayer` (BUG-2) and the picker is
+  only reachable from the Empty state. Tests used explicit deep links:
+  `adb shell am start -a android.intent.action.VIEW -d "muslimguide://test/<route>" com.muslimguide.app/.muslim_guide.MainActivity`.
+- **BUG-3 (discovered this session):** a deep link that *cold-starts* the app
+  skips `/splash` bootstrap, so `settingsRepository` is uninitialized and
+  `LocationNotifier.selectCity` throws. Recipe used everywhere: normal
+  `am start` first (bootstrap completes), *then* the deep link.
+- **State authority:** `uiautomator dump` text/semantics; screenshots are the
+  visual record (ColorOS sometimes captures a stale frame — dumps prevail).
+- **Runtime calculation method:** MWL (DEC-0028) for every city; device date
+  `2026-10-09`; comparison reference = Aladhan **secondary** readings for
+  `09-10-2026`, method 3, margins as declared in
+  [`phase-02-reference-cities.md`](phase-02-reference-cities.md).
+- **ColorOS limits (shell denied):** `date` set, `settings put`,
+  `pm clear`, `pm revoke`, `svc power stayon`, `cmd location
+  set-location-enabled` — all require manual Settings actions or root.
+  Screen timeout = 60 s; every interaction block starts with
+  `input keyevent KEYCODE_WAKEUP`.
+
+## Results summary
+
+| # | Test | Status | Evidence |
+|---|---|---|---|
+| 1 | Smoke: launch → onboarding → `/prayer` Success + GPS (2026-10-08) | PASS | [dt-01-onboard](evidence/phase-02/dt-01-onboard.png), [dt-01e](evidence/phase-02/dt-01e.png) |
+| 2 | Location picker: search, empty result, select → recompute | PASS | [t2-01](evidence/phase-02/t2-01-picker.png), [t2-02](evidence/phase-02/t2-02-search-empty.png), [t2-03](evidence/phase-02/t2-03-search-cairo.png), [t2-04](evidence/phase-02/t2-04-selected-cairo.png) |
+| 3 | Eight reference cities vs documented margins (2026-10-09) | **FAIL** (42/48 within margin; all 6 breaches are Asr) | [t3-01](evidence/phase-02/t3-01-cairo.png) … [t3-08](evidence/phase-02/t3-08-tromso.png) |
+| 4 | DST transition, London `2026-10-25` (`Europe/London`) | BLOCKED — manual date change required (see below) | — |
+| 5 | Tromsø polar day `2026-06-21` (`Europe/Oslo`) | BLOCKED — manual date change required | — |
+| 6 | Airplane mode: offline recalculation + cold restart | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png), [t6-02](evidence/phase-02/t6-02-offline-restart.png) |
+| 7a | No location services → error message + manual fallback to Success | PASS | [t7-01](evidence/phase-02/t7-01-permission-dialog.png), [t7-02](evidence/phase-02/t7-02-manual-fallback.png) |
+| 7b | Permission **denial dialog** flow | BLOCKED — requires location services ON (manual toggle) | — |
+| 8a | RTL Arabic rendering on device | PASS | [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png), [t3-*](evidence/phase-02/t3-01-cairo.png) |
+| 8b | LTR English via onboarding selection | **FAIL** — BUG-4: English selection does not apply | [t8-06](evidence/phase-02/t8-06-en-selected.png), [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png) |
+| 8c | Text scale 200 % | BLOCKED — `font_scale` write denied (manual Settings) | — |
+| 9 | Countdown/next-prayer badge live across all screens | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png) (03:52:31 while offline) |
+| 10 | Screenshot capture for each state | PASS | all `evidence/phase-02/*.png` (34 files, 2026-10-09) |
+| 11 | This documentation | PASS | this file |
+
+## T3 — eight cities, device vs reference (2026-10-09, MWL)
+
+Margins (declared): Fajr ±3 min, Sunrise ±1 min, Dhuhr ±1 min published,
+Asr ±1 min (±5 min high-latitude Tromsø), Maghrib ±1 min, Isha ±3 min.
+Reference: Aladhan timings API — **secondary only**, `09-10-2026`, method 3.
+
+| City | Fajr Δ | Sunrise Δ | Dhuhr Δ | Asr Δ | Maghrib Δ | Isha Δ | Within margin |
+|---|---|---|---|---|---|---|---|
+| Cairo | -1 m | 0 | 0 | **-2 m ✗** | 0 | -1 m | 5/6 |
+| Mecca | 0 | 0 | -1 m | -1 m | 0 | 0 | 6/6 |
+| Riyadh | -1 m | 0 | -1 m | **-2 m ✗** | 0 | -1 m | 5/6 |
+| Karachi | 0 | 0 | 0 | **-2 m ✗** | -1 m | 0 | 5/6 |
+| Jakarta | 0 | -1 m | -1 m | **-2 m ✗** | 0 | -1 m | 5/6 |
+| London | 0 | 0 | -1 m | **-3 m ✗** | 0 | -1 m | 5/6 |
+| Istanbul | 0 | -1 m | 0 | -1 m | 0 | 0 | 6/6 |
+| Tromsø | 0 | 0 | 0 | **-8 m ✗** (±5 m) | 0 | 0 | 5/6 |
+
+**Result: 42/48 prayers within the declared margins → test status FAIL**
+(no partial pass claimed). Every breach is Asr and every breach is *earlier*
+than the reference; the Tromsø Asr difference extends the existing OD-0028
+observation from -5 m 37 s (2026-10-07) to -8 min (2026-10-09). One
+systematic secondary-source deviation cannot be declared a calculator defect
+or dismissed — record and continue (Rule: secondary ≠ official).
+
+## Defects found on device
+
+| ID | Severity | Summary | Evidence / proof |
+|---|---|---|---|
+| BUG-1 | High | `assets/cities/major_cities.json` double-encoded UTF-8: 114/120 `name_ar`, 120/120 `country_ar` mojibake; only the 6 manual transliterations are correct. Fix needs re-encode + `legal/assets.yaml` checksum update + provenance re-review. | [t2-01](evidence/phase-02/t2-01-picker.png), [t3-08](evidence/phase-02/t3-08-tromso.png) |
+| BUG-2 | Medium | No UI navigation to `/prayer`; picker reachable only from Empty state. Re-tested today: Empty → picker → select → `/prayer` works **when bootstrap ran**; the "nothing navigates" impression is explained by BUG-3 and by deep-link-only testing. | [t7-02](evidence/phase-02/t7-02-manual-fallback.png) |
+| BUG-3 | High | Deep link that cold-starts the app skips `/splash` bootstrap → `Bad state: Settings are unavailable before app initialization.` at `location_provider.dart:110` (`selectCity`); selection silently fails, no navigation. | logcat `E flutter` 2026-10-09 09:31:01 (stack includes `bootstrap_provider.dart:16`) |
+| BUG-4 | Medium | Onboarding language = English (verified `selected=true`) still yields Arabic strings after continue + restart; LTR path unreachable → T8b FAIL. | [t8-06](evidence/phase-02/t8-06-en-selected.png) vs [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png) |
+| Minor-1 | Low | Home placeholder text overflows the right edge in RTL — Phase 10 scope. | [t8-08](evidence/phase-02/t8-08-state.png) |
+
+## BLOCKED tests — manual device steps required
+
+These cannot be done from adb on this ColorOS build (each command was tried
+and denied: `WRITE_SETTINGS`, `WRITE_SECURE_SETTINGS`, `REVOKE_RUNTIME_PERMISSIONS`,
+`CLEAR_APP_USER_DATA`, root-less `date`). One owner pass completes T4, T5, T7b
+and T8c:
+
+| Step | Action (owner, on device) | Unblocks |
+|---|---|---|
+| M1 | Settings → Display & Brightness → Auto screen off → **30 minutes** (currently 60 s) | all automation reliability |
+| M2 | Quick Settings → enable **Location** (currently `location_mode=0`) | T7b (permission dialog → Deny) |
+| M3 | Settings → System → Date & time → disable automatic → set **2026-10-25**, then restore | T4 (DST London end) |
+| M4 | Set **2026-06-21**, then restore automatic date | T5 (Tromsø polar day) |
+| M5 | Settings → Display → Font size → **Largest (≈200 %)**, then restore | T8c |
+
+## Lessons recorded
+
+1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
+   so a corrupted shipped asset passed CI. Device testing caught it.
+2. **Deep links skip bootstrap (BUG-3):** route-level test coverage must
+   include the cold-start-via-intent path, or initialization order bugs ship.
+3. **uiautomator dumps over screenshots** when ColorOS returns stale/black
+   frames; screenshot immediately after the wake, never across long sleeps.
+4. `input tap` (0 ms) is unreliable for Flutter gestures — use
+   `input motionevent DOWN/…/UP` with ~150 ms hold.
+
+## Mapping to Exit Criteria (`phases/02.md`)
+
+- [x] Eight-city device comparison executed and documented — result **FAIL**
+  (42/48; Asr breaches recorded here and against OD-0028).
+- [x] Airplane mode (PASS), smoke/GPS (PASS), screenshots (PASS).
+- [ ] DST transition, Tromsø polar day, permission-denial dialog, 200 % font
+  scale — **BLOCKED** on manual steps M2–M5 above.
+- Pending owner decisions: BUG-1 data fix (yes/no), and whether BUG-3/BUG-4
+  are fixed now or logged into `06-defect-register.md` next.

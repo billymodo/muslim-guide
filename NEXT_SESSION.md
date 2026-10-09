@@ -1,31 +1,37 @@
 # NEXT_SESSION — اقرأني أولاً
 
-> **آخر تحديث:** 2026-10-08
-> **الحالة:** Phase 02 — Task 6 (Device Testing)
+> **آخر تحديث:** 2026-10-09
+> **الحالة:** Phase 02 — Task 6 (Device Testing) — أُنجزت جزئياً ومُوثقة
 
 ## المرحلة الحالية
-- Phase 02: ACTIVE (~95%)
+- Phase 02: ACTIVE (~97%)
 - Tasks 1, 1.5, 2, 3, 4, 5 ✅ مكتملة
-- **Task 6 (Device Testing)** ← التالي
+- **Task 6:** منفَّذ 2026-10-09: T1 ✅ T2 ✅ T3 ❌(42/48 موثق) T6 ✅ T7a ✅ T8a ✅ T9–T11 ✅
+  — T4/T5/T7b/T8c = BLOCKED (خطوات يدوية أدناه)
+- الدليل الكامل: `docs/phase-02-device-testing.md` (34 صورة في `docs/evidence/phase-02/`)
 
 ## المطلوب في الجلسة القادمة
 
-### Task 6 — Device Testing
-1. اختبار PrayerTimesScreen على جهاز حقيقي
-2. 5 مدن مرجعية (Mecca, Cairo, Riyadh, Karachi, Jakarta)
-3. DST transition (London)
-4. Tromsø (polar)
-5. وضع طيران
-6. رفض صلاحية الموقع
-7. توثيق النتائج في `docs/phase-02-device-testing.md`
+### 1) يحاول المستخدم خطوات يدوية على الجهاز (M1–M5)
+| # | الإجراء | يفكّ |
+|---|---|---|
+| M1 | شاشة أطول من 60 ث | موثوقية الأتمتة كلها |
+| M2 | تفعيل خدمة الموقع | T7b (حوار الرفض) |
+| M3 | التاريخ → 2026-10-25 | T4 (DST لندن) |
+| M4 | التاريخ → 2026-06-21 | T5 (ترومسو قطبية) |
+| M5 | حجم الخط → Largest | T8c (200%) |
 
-**الجهاز المتاح:** Oppo A95 (CPH2365, Android 13)
-(ملاحظة: DEC-0017 يذكر Pixel 6a — غير متوفر حالياً)
+### 2) قرارات معلّقة للمالك
+- BUG-1: إصلاح الأصل (تشفير + checksum في `legal/assets.yaml` + إعادة إثبات مصدر)؟
+- BUG-3 / BUG-4: تسجيل في `06-defect-register.md` أم إصلاح مباشرة؟
 
-### قبل البدء
-- وصّل الجهاز (USB + Developer Options)
-- `flutter devices` للتأكد
-- افتح OD-0029 (device testing substitution — إن لزم)
+### 3) إغلاق المرحلة
+- تعبئة `docs/phase-02-output-report.md` ثم APPROVED في `phases/02.md`
+
+**الجهاز:** Oppo A95 (CPH2365, Android 13) — OD-0029 الخيار A (DECIDED 2026-10-09)
+**وصفة التنقل (مقفلة):** `force-stop` → `am start` عادي (6 ث — bootstrap) → deep link (4 ث) → `KEYCODE_WAKEUP` → `input motionevent DOWN/UP` (150ms) → `uiautomator dump` للتحقق → `adb pull`
 
 ## Commit HEAD
 88a7081 — phase-02(task-5): prayer times + location picker screens
+> **ملاحظة:** تغييرات الجلسة الحالية (وثائق + OD-0029) **غير مُلزمة (غير committed)** —
+> بانتظار مراجعة المستخدم؛ لا push بدون موافقة.

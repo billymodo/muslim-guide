@@ -253,4 +253,42 @@ not an official determination.
   comparison.
 
 **Resolution required before:** Any change to Asr calculation behavior for
+**Resolution required before:** Any change to Asr calculation behavior for
+high latitudes.
+
+## OD-0029 — Device substitution for Task 6 testing
+
+**Status:** DECIDED — Option A (2026-10-09)
+**Blocking Phase:** Phase 02 (Task 6)
+**Type:** Device / testing
+**Priority:** High
+
+**Question:**
+هل نستخدم Oppo A95 (CPH2365, Android 13) بدل Pixel 6a / Redmi Note 12؟
+
+**Context:**
+- DEC-0017: Pixel 6a (primary) + Redmi Note 12 (secondary).
+- **لا يُوجد أي منهما** حالياً.
+- Oppo A95 متصل ويعمل (`db692b78`, Android 13 / API 33).
+
+**Options:**
+- A: Oppo A95 للـ Task 6 + Pixel 6a لـ performance testing (Phase 09+).
+- B: انتظر Pixel 6a → تأجيل Task 6.
+- C: اختبار على محاكي (مرفوض — نسبة كبيرة من الاختبارات لا تعمل عليه).
+
+**Decision:** A — Oppo A95 لتنفيذ اختبارات Task 6.
+
+**Reason:**
+- اختبارات Task 6 = logic + UI + permissions — لا حساسية لطراز الجهاز.
+- Pixel 6a يهم لـ cold start / memory (Phase 09+)؛ أداء البداية الباردة
+  يُقاس على الجهاز المرجعي لاحقاً وفق DEC-0017 دون تغيير.
+
+**Caveat (ColorOS قد يخالف Stock Android في):**
+- Permission prompts
+- Battery optimization
+- Notifications (لا مهمة في Task 6)
+
+**Affected Documents:** `NEXT_SESSION.md`, `docs/phase-02-device-testing.md`,
+`phases/02.md` (Deviations).
+
 high latitudes.
