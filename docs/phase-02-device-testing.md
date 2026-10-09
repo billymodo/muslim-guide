@@ -43,7 +43,7 @@ Method notes (binding for reproducing the results):
 | 5 | Tromsø polar day `2026-06-21` (`Europe/Oslo`) | BLOCKED — manual date change required | — |
 | 6 | Airplane mode: offline recalculation + cold restart | PASS | [t6-01](evidence/phase-02/t6-01-airplane.png), [t6-02](evidence/phase-02/t6-02-offline-restart.png) |
 | 7a | No location services → error message + manual fallback to Success | PASS | [t7-01](evidence/phase-02/t7-01-permission-dialog.png), [t7-02](evidence/phase-02/t7-02-manual-fallback.png) |
-| 7b | Permission **denial dialog** flow | BLOCKED — requires location services ON (manual toggle) | — |
+| 7b | Permission **denial dialog** flow | **PASS** (2026-10-09) — Settings-deny ⇒ Android 13 auto-denies silently (no system dialog possible); in-app rejection «تعذر تحديد موقعك» + manual city fallback verified | [t7b-01](evidence/phase-02/t7b-01-rejection-dialog.png), [t7b-02](evidence/phase-02/t7b-02-manual-fallback.png) |
 | 8a | RTL Arabic rendering on device | PASS | [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png), [t3-*](evidence/phase-02/t3-01-cairo.png) |
 | 8b | LTR English via onboarding selection | **FAIL** — BUG-4: English selection does not apply | [t8-06](evidence/phase-02/t8-06-en-selected.png), [t8-07](evidence/phase-02/t8-07-empty-en-ltr.png) |
 | 8c | Text scale 200 % | BLOCKED — `font_scale` write denied (manual Settings) | — |
@@ -186,6 +186,32 @@ Note: `pm grant` is blocked on ColorOS (SecurityException, as with
   not the requested 10 minutes, but well above the 60 s requirement;
   automation stability needs are met.
 
+### M2 / T7b — permission rejection + manual fallback (2026-10-09): **PASS**
+
+Setup (owner, manual): Settings → Location = **OFF**; app Location
+permission = **Deny** (`pm grant`/`pm revoke` are blocked on ColorOS —
+Settings only).
+
+Sequence (locked recipe): cold start (6 s) → deep link `/prayer` →
+change-city button → picker → tap «استخدام موقعي» (`_useGps`):
+
+- **No system permission dialog.** Android 13 auto-denies silently after a
+  Settings denial (and the shell cannot grant/deny on ColorOS). This is the
+  documented operating behavior for T7b (alternative accepted by the
+  director: rejection without dialog).
+- **In-app rejection message shown:** «تعذر تحديد موقعك»
+  (`location_picker_gps_error`, error color) — node
+  [380,824][700,898].
+- **Manual fallback works:** the city list stayed interactive below the
+  message; selected **Riyadh** → `/prayer` recomputed
+  (Kabul Dhuhr 11:40 → Riyadh 12:05).
+- Evidence:
+  [t7b-01-rejection-dialog.png](evidence/phase-02/t7b-01-rejection-dialog.png),
+  [t7b-02-manual-fallback.png](evidence/phase-02/t7b-02-manual-fallback.png).
+- logcat during the sequence: **clean** (no exceptions).
+
+**T7b result: PASS (documented alternative — no system dialog possible).**
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
@@ -202,7 +228,9 @@ Note: `pm grant` is blocked on ColorOS (SecurityException, as with
 - [x] Eight-city device comparison executed and documented — result **FAIL**
   (42/48; Asr breaches recorded here and against OD-0028).
 - [x] Airplane mode (PASS), smoke/GPS (PASS), screenshots (PASS).
-- [ ] DST transition, Tromsø polar day, permission-denial dialog, 200 % font
-  scale — **BLOCKED** on manual steps M2–M5 above.
-- Pending owner decisions: BUG-1 data fix (yes/no), and whether BUG-3/BUG-4
-  are fixed now or logged into `06-defect-register.md` next.
+- [x] Permission-denial flow (T7b) — **PASS** 2026-10-09 (M2; rejection
+  without dialog + manual fallback — `t7b-01/02`).
+- [ ] DST transition, Tromsø polar day, 200 % font scale — **BLOCKED** on
+  manual steps M3–M5 above.
+- Pending owner decisions: none for BUGs (1, 2, 3, 4, 5 all FIXED and
+  device-verified); T8b re-verification (BUG-4 on device) still open.
