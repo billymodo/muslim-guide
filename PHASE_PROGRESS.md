@@ -47,11 +47,13 @@
 
 ## Phase 02 — Prayer Times & Location
 - **Status:** 🟢 ACTIVE
-- **Progress:** ~95%
+- **Progress:** ~97%
 - **Tasks:**
   - [x] 1, 1.5, 2, 3, 4, 5
-  - [ ] Task 6 (Device Testing) ← التالي
-- **Last commit:** `88a7081`
+  - [~] Task 6 (Device Testing) — PARTIAL (M1–M5 pending)
+- **Last commit:** `9b7e17a`
+- **Bugs:** BUG-1 ✅ FIXED (`c88cc97`) · BUG-3 ✅ FIXED (`4ba60bd`) · BUG-4 ✅ FIXED (`cedbbac`) · BUG-2 OPEN (P2, fix in progress)
+- **Next:** M1–M5 device testing + BUG-2 fix verification
 
 ## Phase 00B — سجل الإغلاق
 

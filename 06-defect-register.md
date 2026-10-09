@@ -30,7 +30,7 @@
 | D-10 | مصدر التلاوة | OD-0007 |
 | D-19 | المراجع الشرعي غير محدد | content/reviewers.yaml |
 | D-20 | تحقق بعدد السور فقط | عدد الآيات + checksum |
-| D-25 | تراخيص pending | بدء مسار الاعتماد الآن |
+| D-25 | تراخيص pending | GeoNames APPROVED 2026-10-08 · PrayTimes APPROVED — FIXED |
 
 ## 6.4 مخاطر تقنية
 
@@ -50,10 +50,11 @@
 ## Phase 02 — Device Testing Bugs
 
 > المصدر: `docs/phase-02-device-testing.md` — Rule 011 (Evidence Required).
-> BUG-2 **غير مسجَّل بعد** — بانتظار قرار المالك.
+> BUG-2 مسجَّل — **OPEN** (P2) — Option C approved 2026-10-09.
 
 | ID | Bug | Severity | Found In | Status | Evidence |
 |---|---|---|---|---|---|
 | BUG-1 | `major_cities.json` — mojibake في `name_ar`/`country_ar` (double-UTF-8 عبر cp1256) | P1 | T2 — Oppo A95 (2026-10-09) | **FIXED in `c88cc97`** — verified | استبدال جراحي 234 قيمة؛ diff ‎234±234؛ checksum محدّث في `legal/assets.yaml` ‎(sha256:3eedc611…)؛ تحقق بصري: دبي/أبوظبي/لندن/ترومسو ✓ |
 | BUG-3 | Cold-start deep link يتجاوز bootstrap في `/splash` → `selectCity` يرمي «Settings are unavailable before app initialization» (فشل صامت بلا تنقل) | P1 | T2 — Oppo A95 (2026-10-09) | **FIXED in `4ba60bd`** — analyze ✅ tests 256/256 | logcat `E flutter` 09:31:01 — `location_provider.dart:110` + `bootstrap_provider.dart:16`؛ **الإصلاح:** بوابة `bootstrapProvider` في `_AppBootstrap` (`lib/main.dart`) قبل بناء router — كل مسار (deep link / cold start / splash) ينتظر اكتمال bootstrap؛ شاشات loading وerror+retry بنفس ARB keys |
 | BUG-4 | اختيار الإنجليزية في Onboarding لا يُطبَّق؛ `/prayer` يظل عربياً (تعذر الوصول لمسار LTR) | P1 | T8b — Oppo A95 (2026-10-09) | **FIXED in `cedbbac`** — analyze ✅ tests 257/257 | `docs/evidence/phase-02/t8-06-en-selected.png` مقابل `t8-07-empty-en-ltr.png`؛ **الإصلاح:** `MuslimGuideApp` تستهلك `appLocaleProvider` (ConsumerWidget) + `LanguageSelectionScreen` تحدّثها فور حفظها في Hive |
+| BUG-2 | No UI path to change city after successful load | P2 | T7-02 — Oppo A95 (2026-10-09) | **OPEN** (fix in progress) | Registered 2026-10-09; Option C approved |

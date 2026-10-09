@@ -11,7 +11,7 @@
 - **BUG-1 ✅ FIXED** (`c88cc97`)
 - **BUG-3 ✅ FIXED** (`4ba60bd`) — بوابة bootstrap في `_AppBootstrap`
 - **BUG-4 ✅ FIXED** (`cedbbac`) — `appLocaleProvider` مُستهلكة في `MaterialApp`
-- **BUG-2 ⏳ P2** (city change UI) — موثّق في `06-defect-register.md`
+- **BUG-2 → OPEN/P2** (registered in `06-defect-register.md`) — city change UI
 - الدليل الكامل: `docs/phase-02-device-testing.md` (34 صورة في `docs/evidence/phase-02/`)
 
 ## المتبقي
@@ -26,7 +26,7 @@
 | M5 | حجم الخط → Largest | T8c (200%) |
 
 ### BUG-2 (P2)
-- city change UI من شاشة Prayer — **بعد M1–M5**
+- city change UI من شاشة Prayer — **fix in progress** (Option A: زر تغيير المدينة في `PrayerHeroCard`)
 
 ### إغلاق المرحلة
 - تعبئة `docs/phase-02-output-report.md` ثم APPROVED في `phases/02.md`
