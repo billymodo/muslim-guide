@@ -67,4 +67,6 @@
 | ID | Gap | Severity | Found In | Status |
 |---|---|---|---|---|
 | GAP-meta-caret | `meta: ^1.15.0` يستخدم `^` بدل exact pin — Rule 019 audit | P3 | Pre-existing | **OPEN** (Phase 03 sub-task — pin إلى `1.15.0` exact) |
-| GAP-license-page | لا يوجد `showLicensePage`/`LicenseRegistry` في `lib/` — سياسة `legal/02-attribution-policy.md` تتوقع عرض تراخيص الحزم (مثل flutter_timezone Apache-2.0) | P3 | CR-0010 review (2026-10-09) | **OPEN** (Phase 03 — بند UX صغير) |
+| GAP-license-page | لا يوجد `showLicensePage`/`LicenseRegistry` في `lib/` — سياسة `legal/02-attribution-policy.md` تتوقع عرض تراخيص الحزم (مثل flutter_timezone Apache-2.0) | P3 | CR-0010 review (2026-10-09) | **OPEN** (Phase 05+ — قرار Decisions 5؛ LICENSES.md + legal/CI يكفيان مؤقتاً) |
+| GAP-compass-maintenance | flutter_compass 0.8.1 — maintenance stopped ~23 months; migration to sensors_plus if critical | P3 | CR-0011 (Phase 03) | **OPEN** (Phase 05+ audit) |
+| GAP-qibla-bg | `assets/images/qibla_bg.webp` — license TBD — deferred | P3 | UI_VISION §4 (PROPOSED) | **OPEN** (Phase 05+ — UI polish؛ Phase 03 يستخدم gradient placeholder) |
