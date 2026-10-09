@@ -1,0 +1,201 @@
+﻿--------- beginning of main
+10-10 00:24:02.061 I/muslimguide.app( 3752): Late-enabling -Xcheck:jni
+10-10 00:24:02.096 E/muslimguide.app( 3752): Unknown bits set in runtime_flags: 0x40000000
+10-10 00:24:02.097 I/muslimguide.app( 3752): Using generational CollectorTypeCC GC.
+10-10 00:24:02.111 D/nativeloader( 3752): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+10-10 00:24:02.129 I/OneTrace( 3752): Mark active for pid=3752? true
+10-10 00:24:02.129 D/cutils-dev( 3752): otrace_set_tracing_enabled? true
+10-10 00:24:02.129 D/cutils-dev( 3752): properties changed in otrace_seq_number_changed!
+10-10 00:24:02.162 D/CompatibilityChangeReporter( 3752): Compat change id reported: 171979766; UID 10341; state: ENABLED
+10-10 00:24:02.164 I/oplus.android.OplusFrameworkFactoryImpl( 3752): get feature:IOplusAutoResolutionFeature
+10-10 00:24:02.164 I/oplus.android.OplusFrameworkFactoryImpl( 3752): getOplusAutoResolutionFeature
+10-10 00:24:02.244 I/OplusFeatureCache( 3752): Milliseconds spent on init(): 79
+10-10 00:24:02.246 D/CompactWindowAppManager( 3752): initCompactApplicationInfo
+10-10 00:24:02.264 W/libc    ( 3752): Access denied finding property "ro.odm.prev.product.name"
+10-10 00:24:02.268 D/LoadedApk( 3752): mApplicationInfo overrideDisplayId:null
+10-10 00:24:02.274 D/nativeloader( 3752): Configuring clns-4 for other apk /system_ext/framework/androidx.window.extensions.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/lib/arm64:/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.muslimguide.app
+10-10 00:24:02.274 D/nativeloader( 3752): Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libSloganJni.oplus.so:libsuperNight.oplus.so:libupdateprof.qti.so:libQOC.qti.so:libthermalclient.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+10-10 00:24:02.279 D/nativeloader( 3752): Configuring clns-5 for other apk /system_ext/framework/androidx.window.sidecar.jar. target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/lib/arm64:/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.muslimguide.app
+10-10 00:24:02.279 D/nativeloader( 3752): Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libSloganJni.oplus.so:libsuperNight.oplus.so:libupdateprof.qti.so:libQOC.qti.so:libthermalclient.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+10-10 00:24:02.453 D/nativeloader( 3752): Configuring clns-6 for other apk /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/lib/arm64:/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.muslimguide.app
+10-10 00:24:02.465 D/nativeloader( 3752): Load libframework-connectivity-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity.jar: ok
+10-10 00:24:02.475 V/GraphicsEnvironment( 3752): ANGLE Developer option for 'com.muslimguide.app' set to: 'default'
+10-10 00:24:02.475 V/GraphicsEnvironment( 3752): ANGLE GameManagerService for com.muslimguide.app: false
+10-10 00:24:02.475 V/GraphicsEnvironment( 3752): Neither updatable production driver nor prerelease driver is supported.
+10-10 00:24:02.481 D/NetworkSecurityConfig( 3752): No Network Security Config specified, using platform default
+10-10 00:24:02.482 D/NetworkSecurityConfig( 3752): No Network Security Config specified, using platform default
+10-10 00:24:02.494 D/nativeloader( 3752): Load libSchedAssistJni.so using system ns (caller=/system/framework/oplus-framework.jar): ok
+10-10 00:24:02.494 D/ExtensionsLoader( 3752): createInstance(64bit) : createExtendedFactory
+10-10 00:24:02.495 D/ExtensionsLoader( 3752): Opened libSchedAssistExtImpl.so
+10-10 00:24:02.495 E/muslimguide.app( 3752): ofbOpen failed with error=No such file or directory
+10-10 00:24:02.495 E/muslimguide.app( 3752): sysOpen failed with error=No such file or directory
+10-10 00:24:02.493 W/muslimguide.app( 3752): type=1400 audit(0.0:425760): avc: denied { search } for name="sched_assist" dev="proc" ino=4026532185 scontext=u:r:untrusted_app:s0:c85,c257,c512,c768 tcontext=u:object_r:oplus_scheduler_sched_assist_proc:s0 tclass=dir permissive=0 app=com.muslimguide.app
+10-10 00:24:02.497 D/OplusGraphicsEvent( 3752): OplusGraphicsEventListener create now!
+10-10 00:24:02.498 D/OplusGraphicsEvent( 3752): addEventListener success!
+10-10 00:24:02.516 D/OplusActivityManager( 3752): get AMS extension: android.os.BinderProxy@e459788
+10-10 00:24:02.570 D/FlutterJNI( 3752): Beginning load of flutter...
+10-10 00:24:02.570 I/ResourceExtractor( 3752): Resource version mismatch res_timestamp-1-1791577191588
+10-10 00:24:02.586 D/nativeloader( 3752): Load /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a/libflutter.so using class loader ns clns-6 (caller=/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk): ok
+10-10 00:24:02.588 D/FlutterJNI( 3752): flutter (null) was loaded normally!
+10-10 00:24:02.593 D/skia    ( 3752): [SkFontMgr Android Parser] '/product/etc/fonts_customization.xml' could not be opened
+10-10 00:24:03.696 I/ResourceExtractor( 3752): Extracted baseline resource assets/flutter_assets/kernel_blob.bin
+10-10 00:24:03.697 I/ResourceExtractor( 3752): Extracted baseline resource assets/flutter_assets/vm_snapshot_data
+10-10 00:24:03.815 I/ResourceExtractor( 3752): Extracted baseline resource assets/flutter_assets/isolate_snapshot_data
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getTouchX()F (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getTouchY()F (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getProgress()F (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getProgress()F (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.843 E/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/window/BackEvent;->getSwipeEdge()I (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+10-10 00:24:03.853 W/muslimguide.app( 3752): type=1400 audit(0.0:425761): avc: denied { read } for name="max_map_count" dev="proc" ino=7717426 scontext=u:r:untrusted_app:s0:c85,c257,c512,c768 tcontext=u:object_r:proc_max_map_count:s0 tclass=file permissive=0 app=com.muslimguide.app
+10-10 00:24:03.861 W/libc    ( 3752): Access denied finding property "ro.vendor.mediatek.platform"
+10-10 00:24:03.877 D/vulkan  ( 3752): searching for layers in '/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/lib/arm64'
+10-10 00:24:03.877 D/vulkan  ( 3752): searching for layers in '/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a'
+10-10 00:24:03.883 D/vulkan  ( 3752): added global layer 'VK_LAYER_KHRONOS_validation' from library '/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a/libVkLayer_khronos_validation.so'
+10-10 00:24:03.901 I/AdrenoVK-0( 3752): ===== BEGIN DUMP OF OVERRIDDEN SETTINGS =====
+10-10 00:24:03.901 I/AdrenoVK-0( 3752): ===== END DUMP OF OVERRIDDEN SETTINGS =====
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): QUALCOMM build          : 704ecd9a2b, Ib3f3e69395
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Build Date              : 12/29/20
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Shader Compiler Version : EV031.32.02.06
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Local Branch            :
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Remote Branch           :
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Remote Branch           :
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Reconstruct Branch      :
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Build Config            : S P 10.0.7 AArch64
+10-10 00:24:03.902 I/AdrenoVK-0( 3752): Driver Path             : /vendor/lib64/hw/vulkan.adreno.so
+10-10 00:24:03.915 I/flutter ( 3752): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): QUALCOMM build                   : 704ecd9a2b, Ib3f3e69395
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Build Date                       : 12/29/20
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): OpenGL ES Shader Compiler Version: EV031.32.02.06
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Local Branch                     :
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Remote Branch                    :
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Remote Branch                    :
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Reconstruct Branch               :
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Build Config                     : S P 10.0.7 AArch64
+10-10 00:24:03.917 I/AdrenoGLES-0( 3752): Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+10-10 00:24:03.921 I/AdrenoGLES-0( 3752): PFP: 0x016ee190, ME: 0x00000000
+10-10 00:24:03.943 I/flutter ( 3752): [IMPORTANT:flutter/shell/platform/android/android_context_gl_impeller.cc(104)] Using the Impeller rendering backend (OpenGLES).
+10-10 00:24:04.124 I/flutter ( 3752): The Dart VM service is listening on http://127.0.0.1:39219/oj1HYCixl7g=/
+10-10 00:24:04.798 D/FlutterGeolocator( 3752): Attaching Geolocator to activity
+10-10 00:24:04.800 D/nativeloader( 3752): Load /data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!/lib/arm64-v8a/libdartjni.so using class loader ns clns-6 (caller=/data/app/~~ETBOB4N9Gwepz6DEL6yLJQ==/com.muslimguide.app-n-6Hh29EINg3xbYaPWx8gg==/base.apk!classes3.dex): ok
+10-10 00:24:04.825 I/oplus.android.OplusFrameworkFactoryImpl( 3752): Unknow feature:IOplusTextViewRTLUtilForUG
+--------- beginning of system
+10-10 00:24:04.845 D/OplusInputMethodUtil( 3752): init sDebug to false, init sDebugIme to false, init sAlwaysOn to false
+10-10 00:24:04.845 D/OplusInputMethodUtil( 3752): updateDebugToClass InputMethodManager.DEBUG = false
+10-10 00:24:04.845 D/OplusInputMethodUtil( 3752): updateDebugToClass ImeFocusController.DEBUG = false
+10-10 00:24:04.845 D/OplusInputMethodUtil( 3752): updateDebugToClass BaseInputConnection.DEBUG = false
+10-10 00:24:04.845 D/OplusInputMethodUtil( 3752): updateDebugToClass ImeFocusController.sDebugIme = false
+10-10 00:24:04.879 I/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityNodeInfo;->getSourceNodeId()J (runtime_flags=0, domain=platform, api=unsupported,test-api) from Lio/flutter/view/AccessibilityViewEmbedder$ReflectionAccessors; (domain=app, TargetSdkVersion=34) using reflection: allowed
+10-10 00:24:04.879 I/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/view/accessibility/AccessibilityRecord;->getSourceNodeId()J (runtime_flags=0, domain=platform, api=unsupported) from Lio/flutter/view/AccessibilityViewEmbedder$ReflectionAccessors; (domain=app, TargetSdkVersion=34) using reflection: allowed
+10-10 00:24:04.879 I/muslimguide.app( 3752): hiddenapi: Accessing hidden field Landroid/view/accessibility/AccessibilityNodeInfo;->mChildNodeIds:Landroid/util/LongArray; (runtime_flags=0, domain=platform, api=unsupported) from Lio/flutter/view/AccessibilityViewEmbedder$ReflectionAccessors; (domain=app, TargetSdkVersion=34) using reflection: allowed
+10-10 00:24:04.879 I/muslimguide.app( 3752): hiddenapi: Accessing hidden method Landroid/util/LongArray;->get(I)J (runtime_flags=0, domain=platform, api=unsupported) from Lio/flutter/view/AccessibilityViewEmbedder$ReflectionAccessors; (domain=app, TargetSdkVersion=34) using reflection: allowed
+10-10 00:24:04.886 D/AccessibilityBridge( 3752): Setting not found: accessibility_display_inversion_enabled, using default: 0
+10-10 00:24:04.906 D/FlutterRenderer( 3752): Width is zero. 0,0
+10-10 00:24:04.924 I/Quality ( 3752): ActivityThread: activityStart delay 2405 com.muslimguide.app 3752
+10-10 00:24:04.938 D/WindowManager( 3752): Add to mViews: DecorView@7b496eb[MainActivity],pkg= com.muslimguide.app
+10-10 00:24:04.938 I/OplusSlideAnimOptHelper( 3752): checkListMode: is blacklist mode = true
+10-10 00:24:04.941 D/ExtensionsLoader( 3752): createInstance(64bit) : createExtendedFactory
+10-10 00:24:04.943 D/OplusSlideAnimOptHelper( 3752): com.muslimguide.app scrollEffectOpt enable = true
+10-10 00:24:04.949 D/ExtensionsLoader( 3752): Opened libhwuiextimpl.so
+10-10 00:24:04.950 D/ExtensionsLoader( 3752): createInstance(64bit) : createExtendedFactory
+10-10 00:24:04.950 D/ExtensionsLoader( 3752): Opened libSchedAssistExtImpl.so
+10-10 00:24:04.969 D/ViewRootImplExtImpl( 3752): onDisplayChanged -1 for VRI android.view.ViewRootImpl@efa4f4
+10-10 00:24:04.969 D/InputEventReceiver( 3752): Input log is disabled
+10-10 00:24:04.971 E/ANR_LOG ( 3752): >>> msg's executing time is too long
+10-10 00:24:04.971 E/ANR_LOG ( 3752): Blocked msg = { when=-2s806ms what=159 target=android.app.ActivityThread$H obj=android.app.servertransaction.ClientTransaction@699a0996 } , cost  = 2453 ms
+10-10 00:24:04.971 E/ANR_LOG ( 3752): >>>Current msg List is:
+10-10 00:24:04.971 E/ANR_LOG ( 3752): Current msg <1> = { when=-2s804ms what=159 target=android.app.ActivityThread$H obj=android.app.servertransaction.ClientTransaction@138ee420 }
+10-10 00:24:04.971 E/ANR_LOG ( 3752): Current msg <2> = { when=-2s618ms what=149 target=android.app.ActivityThread$H obj=android.os.BinderProxy@2fd2521 }
+10-10 00:24:04.971 E/ANR_LOG ( 3752): Current msg <3> = { when=-2s487ms what=164 target=android.app.ActivityThread$H obj=com.muslimguide.app }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): Current msg <4> = { when=-2s458ms what=0 target=android.view.Choreographer$FrameHandler callback=android.view.Choreographer$FrameDisplayEventReceiver }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): Current msg <5> = { when=-178ms what=114 target=android.app.ActivityThread$H obj=CreateServiceData{token=android.os.BinderProxy@edc1c60 className=com.baseflow.geolocator.GeolocatorLocationService packageName=com.muslimguide.app intent=null} }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): Current msg <6> = { when=-178ms what=121 target=android.app.ActivityThread$H obj=BindServiceData{token=android.os.BinderProxy@edc1c60 intent=Intent { cmp=com.muslimguide.app/com.baseflow.geolocator.GeolocatorLocationService }} }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): Current msg <7> = { when=-35ms what=0 target=android.view.ViewRootImpl$ViewRootHandler callback=android.view.ViewRootImpl$7 }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): Current msg <8> = { when=-13ms barrier=0 }
+10-10 00:24:04.972 E/ANR_LOG ( 3752): >>>CURRENT MSG DUMP OVER<<<
+10-10 00:24:04.972 I/Quality ( 3752): ActivityThread: activityLifecycle delay 2455 com.muslimguide.app 3752
+10-10 00:24:04.974 I/Quality ( 3752): Blocked msg = Package name: com.muslimguide.app [ schedGroup: 5 schedPolicy: 0 ] process the message: { when=-2s808ms what=159 target=android.app.ActivityThread$H obj=android.app.servertransaction.ClientTransaction@699a0996 } took 2455 ms
+10-10 00:24:07.896 I/Choreographer( 3752): Skipped 324 frames!  The application may be doing too much work on its main thread.
+10-10 00:24:07.897 I/Quality ( 3752): Skipped: false 178 cost 2969.8206 refreshRate 16599017 bit true processName com.muslimguide.app
+10-10 00:24:07.944 I/SurfaceView( 3752): 148120743 onAttachedToWindow
+10-10 00:24:07.947 D/FlutterRenderer( 3752): Width is zero. 0,0
+10-10 00:24:07.976 D/BufferQueueConsumer( 3752): [](id:ea800000000,api:0,p:-1,c:3752) connect: controlledByApp=false
+10-10 00:24:07.977 D/ExtensionsLoader( 3752): createInstance(64bit) : createExtendedFactory
+10-10 00:24:07.977 I/muslimguide.app( 3752): Compiler allocated 4871KB to compile void android.view.ViewRootImpl.performTraversals()
+10-10 00:24:07.977 D/ExtensionsLoader( 3752): Opened libSchedAssistExtImpl.so
+10-10 00:24:07.979 V/ZoomWindowDecorView( 3752): setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.129275627
+10-10 00:24:07.981 D/FlutterJNI( 3752): Sending viewport metrics to the engine.
+10-10 00:24:07.991 D/BufferQueueProducer( 3752): [VRI[MainActivity]#0(BLAST Consumer)0](id:ea800000000,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:24:08.004 D/BufferQueueConsumer( 3752): [](id:ea800000001,api:0,p:-1,c:3752) connect: controlledByApp=false
+10-10 00:24:08.006 I/SurfaceView( 3752): 148120743 visibleChanged -- surfaceCreated
+10-10 00:24:08.006 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:24:09.271 I/SurfaceView( 3752): 148120743 surfaceChanged -- format=4 w=1080 h=2268
+10-10 00:24:09.271 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:1,p:3752,c:3752) disconnect: api 1
+10-10 00:24:09.271 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:24:09.280 I/Quality ( 3752): ActivityThread: doFrame delay 1383 com.muslimguide.app 3752
+10-10 00:24:09.282 D/FlutterGeolocator( 3752): Creating service.
+10-10 00:24:09.283 I/Quality ( 3752): Blocked msg = Package name: com.muslimguide.app [ schedGroup: 5 schedPolicy: 0 ] process the message: { when=-6s767ms what=0 target=android.view.Choreographer$FrameHandler callback=android.view.Choreographer$FrameDisplayEventReceiver } took 1383 ms
+10-10 00:24:09.357 D/FlutterGeolocator( 3752): Binding to location service.
+10-10 00:24:09.875 I/Choreographer( 3752): Skipped 115 frames!  The application may be doing too much work on its main thread.
+10-10 00:24:09.875 I/Quality ( 3752): Skipped: false 115 cost 1919.1276 refreshRate 16591514 bit true processName com.muslimguide.app
+10-10 00:24:09.894 D/FlutterJNI( 3752): Sending viewport metrics to the engine.
+10-10 00:24:09.900 D/VRI[MainActivity]( 3752): registerCallbacksForSync syncBuffer=false
+10-10 00:24:09.948 D/VRI[MainActivity]( 3752): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true syncBuffer=false
+10-10 00:24:09.951 W/Parcel  ( 3752): Expecting binder but got null!
+10-10 00:24:09.952 D/VRI[MainActivity]( 3752): draw finished.
+10-10 00:24:09.954 I/OpenGLRenderer( 3752): Davey! duration=1993ms; Flags=1, FrameTimelineVsyncId=13650577, IntendedVsync=168021162426513, Vsync=168023070450623, InputEventId=0, HandleInputStart=168023081956673, AnimationStart=168023081961569, PerformTraversalsStart=168023081964278, DrawStart=168023106680840, FrameDeadline=168021179093179, FrameInterval=168023081554017, FrameStartTime=16591514, SyncQueued=168023110059694, SyncStart=168023110231048, IssueDrawCommandsStart=168023111422194, SwapBuffers=168023152051778, FrameCompleted=168023156149746, DequeueBufferDuration=24199740, QueueBufferDuration=489010, GpuCompleted=168023156149746, SwapBuffersCompleted=168023154482923, DisplayPresentTime=0, CommandSubmissionCompleted=168023152051778,
+10-10 00:24:09.954 D/FlutterGeolocator( 3752): Geolocator foreground service connected
+10-10 00:24:09.954 D/FlutterGeolocator( 3752): Initializing Geolocator services
+10-10 00:24:09.954 D/FlutterGeolocator( 3752): Flutter engine connected. Connected engine count 1
+10-10 00:24:10.440 D/VRI[MainActivity]( 3752): onFocusEvent true
+10-10 00:24:10.440 I/Quality ( 3752): Skipped: false 28 cost 475.10785 refreshRate 16599924 bit true processName com.muslimguide.app
+10-10 00:24:10.449 D/FlutterJNI( 3752): Sending viewport metrics to the engine.
+10-10 00:24:10.450 D/VRI[MainActivity]( 3752): registerCallbacksForSync syncBuffer=false
+10-10 00:24:10.461 D/VRI[MainActivity]( 3752): Received frameCommittedCallback lastAttemptedDrawFrameNum=2 didProduceBuffer=true syncBuffer=false
+10-10 00:24:10.461 D/VRI[MainActivity]( 3752): draw finished.
+10-10 00:24:10.566 D/FlutterJNI( 3752): Sending viewport metrics to the engine.
+10-10 00:24:10.569 V/SystemSensorManagerExtImpl( 3752): RegisterListener Rotation Vector  Non-wakeup type:11 delay:30000us by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1
+10-10 00:24:10.582 V/SystemSensorManagerExtImpl( 3752): RegisterListener bmi26x Accelerometer Non-wakeup type:1 delay:30000us by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1
+10-10 00:24:10.587 V/SystemSensorManagerExtImpl( 3752): RegisterListener mmc5603x Magnetometer Non-wakeup type:2 delay:30000us by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1
+10-10 00:24:10.681 D/FlutterJNI( 3752): Sending viewport metrics to the engine.
+10-10 00:24:12.165 W/FinalizerDaemon( 3752): type=1400 audit(0.0:425764): avc: denied { getopt } for path="/dev/socket/usap_pool_primary" scontext=u:r:untrusted_app:s0:c85,c257,c512,c768 tcontext=u:r:zygote:s0 tclass=unix_stream_socket permissive=0 app=com.muslimguide.app
+10-10 00:24:13.307 D/ProfileInstaller( 3752): Installing profile for com.muslimguide.app
+10-10 00:24:28.148 V/AutofillManager( 3752): requestHideFillUi(null): anchor = null
+10-10 00:24:28.160 D/OplusSystemUINavigationGestureExtImpl( 3752): regionString = null
+10-10 00:24:28.352 D/OplusInputMethodManagerInternal( 3752): get inputMethodManager extension: com.android.internal.view.IInputMethodManager$Stub$Proxy@6346725
+10-10 00:24:28.937 I/Choreographer( 3752): Skipped 35 frames!  The application may be doing too much work on its main thread.
+10-10 00:24:28.937 I/Quality ( 3752): Skipped: false 35 cost 582.1482 refreshRate 16596989 bit true processName com.muslimguide.app
+10-10 00:24:29.466 V/SystemSensorManagerExtImpl( 3752): unRegisterListener by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1 and its name is Rotation Vector  Non-wakeup
+10-10 00:24:29.470 V/SystemSensorManagerExtImpl( 3752): unRegisterListener by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1 and its name is bmi26x Accelerometer Non-wakeup
+10-10 00:24:29.472 V/SystemSensorManagerExtImpl( 3752): unRegisterListener by com.hemanthraj.fluttercompass.FlutterCompassPlugin$1 and its name is mmc5603x Magnetometer Non-wakeup
+10-10 00:25:44.906 D/VRI[MainActivity]( 3752): onFocusEvent false
+10-10 00:25:46.748 D/VRI[MainActivity]( 3752): onFocusEvent true
+10-10 00:25:46.765 D/VRI[MainActivity]( 3752): onFocusEvent false
+10-10 00:25:47.182 D/VRI[MainActivity]( 3752): dispatchAppVisibility visible:false
+10-10 00:25:47.194 I/SurfaceView( 3752): 148120743 surfaceDestroyed
+10-10 00:25:47.204 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:1,p:3752,c:3752) disconnect: api 1
+10-10 00:25:47.205 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:0,p:-1,c:3752) disconnect: api -1
+10-10 00:25:47.206 D/BufferQueueConsumer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#1(BLAST Consumer)1](id:ea800000001,api:0,p:-1,c:3752) disconnect
+10-10 00:25:47.207 D/SurfaceView( 3752): 168744587positionLost mSurfaceControl is null return;
+10-10 00:25:47.207 D/BufferQueueProducer( 3752): [VRI[MainActivity]#0(BLAST Consumer)0](id:ea800000000,api:1,p:3752,c:3752) disconnect: api 1
+10-10 00:25:47.218 D/BufferQueueConsumer( 3752): [VRI[MainActivity]#0(BLAST Consumer)0](id:ea800000000,api:0,p:-1,c:3752) disconnect
+10-10 00:25:47.695 D/VRI[MainActivity]( 3752): setWindowStopped stopped:true
+10-10 00:26:15.446 D/ActivityThread( 3752): do gfx trim 40 success
+10-10 00:26:38.037 D/VRI[MainActivity]( 3752): dispatchAppVisibility visible:true
+10-10 00:26:38.046 D/VRI[MainActivity]( 3752): setWindowStopped stopped:false
+10-10 00:26:38.081 I/Quality ( 3752): Skipped: false 1 cost 29.647291 refreshRate 16605864 bit true processName com.muslimguide.app
+10-10 00:26:38.102 D/BufferQueueConsumer( 3752): [](id:ea800000002,api:0,p:-1,c:3752) connect: controlledByApp=false
+10-10 00:26:38.103 E/IPCThreadState( 3752): attemptIncStrongHandle(58): Not supported
+10-10 00:26:38.105 D/BufferQueueProducer( 3752): [VRI[MainActivity]#2(BLAST Consumer)2](id:ea800000002,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:26:38.109 D/BufferQueueConsumer( 3752): [](id:ea800000003,api:0,p:-1,c:3752) connect: controlledByApp=false
+10-10 00:26:38.110 I/SurfaceView( 3752): 148120743 visibleChanged -- surfaceCreated
+10-10 00:26:38.111 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:ea800000003,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:26:38.115 I/SurfaceView( 3752): 148120743 surfaceChanged -- format=4 w=1080 h=2268
+10-10 00:26:38.121 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:ea800000003,api:1,p:3752,c:3752) disconnect: api 1
+10-10 00:26:38.121 D/BufferQueueProducer( 3752): [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:ea800000003,api:1,p:3752,c:3752) connect: api=1 producerControlledByApp=true
+10-10 00:26:38.122 D/VRI[MainActivity]( 3752): registerCallbacksForSync syncBuffer=false
+10-10 00:26:38.127 D/VRI[MainActivity]( 3752): Received frameCommittedCallback lastAttemptedDrawFrameNum=1 didProduceBuffer=true syncBuffer=false
+10-10 00:26:38.161 D/VRI[MainActivity]( 3752): draw finished.
+10-10 00:26:38.185 D/VRI[MainActivity]( 3752): onFocusEvent true
+10-10 00:27:19.198 D/VRI[MainActivity]( 3752): onFocusEvent false
+10-10 00:27:22.970 D/VRI[MainActivity]( 3752): onFocusEvent true

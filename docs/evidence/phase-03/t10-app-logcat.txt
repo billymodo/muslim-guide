@@ -1,0 +1,97 @@
+﻿--------- beginning of system
+10-09 23:19:58.439  8770  8770 D OplusInputMethodUtil: init sDebug to false, init sDebugIme to false, init sAlwaysOn to false
+10-09 23:19:58.439  8770  8770 D OplusInputMethodUtil: updateDebugToClass InputMethodManager.DEBUG = false
+10-09 23:19:58.439  8770  8770 D OplusInputMethodUtil: updateDebugToClass ImeFocusController.DEBUG = false
+10-09 23:19:58.440  8770  8770 D OplusInputMethodUtil: updateDebugToClass BaseInputConnection.DEBUG = false
+10-09 23:19:58.440  8770  8770 D OplusInputMethodUtil: updateDebugToClass ImeFocusController.sDebugIme = false
+10-09 23:19:58.562  8770  8770 I Quality : ActivityThread: activityStart delay 4719 com.muslimguide.app 8770
+10-09 23:19:58.625  8770  8770 I Quality : ActivityThread: activityLifecycle delay 4784 com.muslimguide.app 8770
+10-09 23:19:58.626  8770 22712 I Quality : Blocked msg = Package name: com.muslimguide.app [ schedGroup: 5 schedPolicy: 0 ] process the message: { when=-5s297ms what=159 target=android.app.ActivityThread$H obj=android.app.servertransaction.ClientTransaction@4e30f63d } took 4784 ms
+10-09 23:20:02.618  8770  8770 I Quality : Skipped: false 244 cost 4053.1414 refreshRate 16596716 bit true processName com.muslimguide.app
+10-09 23:20:02.755  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.129275627
+10-09 23:20:04.133  8770 22714 I Quality : stackInfo :----- pid 8770 at 2026-10-09 23:20:04.118 -----;Cmd line: com.muslimguide.app;"main" prio=5 tid=2 RUNNABLE sysTid=8770;  at io.flutter.embedding.engine.FlutterJNI.nativeSurfaceCreated(Native Method);  at io.flutter.embedding.engine.FlutterJNI.onSurfaceCreated(FlutterJNI.java:619);  at io.flutter.embedding.engine.renderer.FlutterRenderer.startRenderingToSurface(FlutterRenderer.java:1158);  at io.flutter.embedding.android.FlutterSurfaceView.connectSurfaceToRenderer(FlutterSurfaceView.java:268);  at io.flutter.embedding.android.FlutterSurfaceView.access$200(FlutterSurfaceView.java:35);  at io.flutter.embedding.android.FlutterSurfaceView$1.surfaceCreated(FlutterSurfaceView.java:62);  at io.flutter.embedding.android.SurfaceHolderCallbackCompat.surfaceCreated(SurfaceHolderCallbackCompat.java:112);  at android.view.SurfaceView.updateSurface(SurfaceView.java:1148);  at android.view.SurfaceView.lambda$new$0$android-view-SurfaceView(SurfaceView.java:190);  at android.view.SurfaceView$$ExternalSyntheticLambda5.onPreDraw(D8$$SyntheticClass:2);  at android.view.ViewTreeObserver.dispatchOnPreDraw(ViewTreeObserver.java:1093);  at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:3724);  at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:2458);  at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:9415);  at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1388);  at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1396);  at android.view.Choreographer.doCallbacks(Choreographer.java:1033);  at android.view.ChoreographerExtImpl.checkScrollOptSceneEnable(ChoreographerExtImpl.java:420);  at android.view.Choreographer.doFrame(Choreographer.java:900);  at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1371);  at android.os.Handler.handleCallback(Handler.java:942);  at android.os.Handler.dispatchMessage(Handler.java:99);  at android.os.Looper.loopOnce(Looper.java:240);  at android.os.Looper.loop(Looper.java:351);  at android.app.ActivityThread.main(ActivityThread.java:8377);  at java.lang.reflect.Method.invoke(Native Method);  at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:584);  at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1013);
+10-09 23:20:04.702  8770  8770 I Quality : ActivityThread: doFrame delay 2085 com.muslimguide.app 8770
+10-09 23:20:04.704  8770 22712 I Quality : Blocked msg = Package name: com.muslimguide.app [ schedGroup: 5 schedPolicy: 0 ] process the message: { when=-10s887ms what=0 target=android.view.Choreographer$FrameHandler callback=android.view.Choreographer$FrameDisplayEventReceiver } took 2085 ms
+10-09 23:20:04.999  8770  8770 V ZoomWindowDecorView: removeZoomView
+10-09 23:20:06.073  8770  8770 I Quality : ActivityThread: activityLifecycle delay 1250 com.muslimguide.app 8770
+10-09 23:20:06.073  8770 22712 I Quality : Blocked msg = Package name: com.muslimguide.app [ schedGroup: 5 schedPolicy: 0 ] process the message: { when=-11s525ms what=159 target=android.app.ActivityThread$H obj=android.app.servertransaction.ClientTransaction@4c1c896e } took 1250 ms
+10-09 23:20:09.734  8770  8770 I Quality : Skipped: false 220 cost 3673.435 refreshRate 16666666 bit true processName com.muslimguide.app
+10-09 23:20:09.761  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+10-09 23:20:10.138  8770  8770 I Quality : Skipped: false 23 cost 389.5045 refreshRate 16595742 bit true processName com.muslimguide.app
+10-09 23:20:11.070  8770  8770 I Quality : Skipped: false 29 cost 490.72137 refreshRate 16599521 bit true processName com.muslimguide.app
+10-09 23:20:11.244  8770  8770 I Quality : Skipped: false 1 cost 17.703964 refreshRate 16597687 bit true processName com.muslimguide.app
+10-09 23:20:11.536  8770  8770 I Quality : Skipped: false 2 cost 44.413944 refreshRate 16597823 bit true processName com.muslimguide.app
+10-09 23:20:48.062  8770  8770 D OplusInputMethodManagerInternal: get inputMethodManager extension: com.android.internal.view.IInputMethodManager$Stub$Proxy@f715075
+10-09 23:20:48.097  8770  8770 I Quality : Skipped: false 1 cost 23.994066 refreshRate 16597637 bit true processName com.muslimguide.app
+10-09 23:21:04.204  8770  8770 I Quality : Skipped: false 1 cost 31.503838 refreshRate 16666666 bit true processName com.muslimguide.app
+10-09 23:23:24.922  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:23:24.938  8770  8770 I Quality : Skipped: false 1 cost 19.277058 refreshRate 16598396 bit true processName com.muslimguide.app
+10-09 23:25:08.230  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+10-09 23:25:08.291  8770  8770 I Quality : Skipped: false 1 cost 18.864912 refreshRate 16597043 bit true processName com.muslimguide.app
+10-09 23:25:28.465  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:25:33.448  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+10-09 23:25:52.437  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:25:52.439  8770  8770 I Quality : Skipped: false 1 cost 17.787592 refreshRate 16597135 bit true processName com.muslimguide.app
+10-09 23:26:06.645  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+10-09 23:26:06.647  8770  8770 I Quality : Skipped: false 1 cost 17.896635 refreshRate 16597230 bit true processName com.muslimguide.app
+10-09 23:27:36.053  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:27:36.109  8770  8770 I Quality : Skipped: false 1 cost 19.720608 refreshRate 16596219 bit true processName com.muslimguide.app
+10-09 23:27:36.769  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:27:56.556  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+--------- beginning of main
+10-09 23:27:56.588  8770 22716 D VRI[MainActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=28 didProduceBuffer=true syncBuffer=false
+10-09 23:27:56.588  8770  8770 D VRI[MainActivity]: draw finished.
+10-09 23:28:32.231  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 1080 getDecorView.15580031
+10-09 23:28:32.232  8770  8770 D ViewRootImplExtImpl: onDisplayChanged 0 for VRI android.view.ViewRootImpl@d2c909b
+10-09 23:28:32.241  8770  8770 D FlutterJNI: Sending viewport metrics to the engine.
+10-09 23:28:32.252  8770  8770 D FlutterJNI: Sending viewport metrics to the engine.
+10-09 23:28:32.252  8770 22716 D BufferQueueProducer: [VRI[MainActivity]#2(BLAST Consumer)2](id:224200000002,api:1,p:8770,c:8770) disconnect: api 1
+10-09 23:28:32.253  8770 22716 D BufferQueueProducer: [VRI[MainActivity]#2(BLAST Consumer)2](id:224200000002,api:1,p:8770,c:8770) connect: api=1 producerControlledByApp=true
+10-09 23:28:32.253  8770  8770 I SurfaceView: 37135377 surfaceChanged -- format=4 w=2153 h=1080
+10-09 23:28:32.254  8770 23070 D BufferQueueProducer: [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:224200000003,api:1,p:8770,c:8770) disconnect: api 1
+10-09 23:28:32.255  8770 23070 D BufferQueueProducer: [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:224200000003,api:1,p:8770,c:8770) connect: api=1 producerControlledByApp=true
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=1
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=2
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=3
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=4
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=5
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=6
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=7
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=8
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=9
+10-09 23:28:32.256  8770  8770 E SurfaceSyncer: Failed to find sync for id=10
+10-09 23:28:32.256  8770  8770 D VRI[MainActivity]: registerCallbacksForSync syncBuffer=false
+10-09 23:28:32.266  8770 22716 D VRI[MainActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=30 didProduceBuffer=true syncBuffer=false
+10-09 23:28:32.266  8770  8770 D VRI[MainActivity]: draw finished.
+10-09 23:28:39.401  8770  8770 V ZoomWindowDecorView: setLastReportedMergedConfiguration mZoomDisplayHeight: 2400 getDecorView.15580031
+10-09 23:28:39.403  8770  8770 D FlutterJNI: Sending viewport metrics to the engine.
+10-09 23:28:39.416  8770  8770 D FlutterJNI: Sending viewport metrics to the engine.
+10-09 23:28:39.416  8770 22716 D BufferQueueProducer: [VRI[MainActivity]#2(BLAST Consumer)2](id:224200000002,api:1,p:8770,c:8770) disconnect: api 1
+10-09 23:28:39.417  8770 22716 D BufferQueueProducer: [VRI[MainActivity]#2(BLAST Consumer)2](id:224200000002,api:1,p:8770,c:8770) connect: api=1 producerControlledByApp=true
+10-09 23:28:39.417  8770  8770 I SurfaceView: 37135377 surfaceChanged -- format=4 w=1080 h=2268
+10-09 23:28:39.418  8770 23070 D BufferQueueProducer: [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:224200000003,api:1,p:8770,c:8770) disconnect: api 1
+10-09 23:28:39.419  8770 23070 D BufferQueueProducer: [SurfaceView[com.muslimguide.app/com.muslimguide.app.muslim_guide.MainActivity]#3(BLAST Consumer)3](id:224200000003,api:1,p:8770,c:8770) connect: api=1 producerControlledByApp=true
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=1
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=2
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=3
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=4
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=5
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=6
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=7
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=8
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=9
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=10
+10-09 23:28:39.420  8770  8770 E SurfaceSyncer: Failed to find sync for id=11
+10-09 23:28:39.420  8770  8770 D VRI[MainActivity]: registerCallbacksForSync syncBuffer=false
+10-09 23:28:39.425  8770 22716 D VRI[MainActivity]: Received frameCommittedCallback lastAttemptedDrawFrameNum=32 didProduceBuffer=true syncBuffer=false
+10-09 23:28:39.425  8770  8770 D VRI[MainActivity]: draw finished.
+10-09 23:28:39.444  8770  8770 D ViewRootImplExtImpl: onDisplayChanged 0 for VRI android.view.ViewRootImpl@d2c909b
+10-09 23:28:39.445  8770  8770 I Quality : Skipped: false 1 cost 19.32547 refreshRate 16598335 bit true processName com.muslimguide.app
+10-09 23:30:30.838  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:31.218  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:31.366  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:31.450  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:31.615  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:32.030  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:32.581  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
+10-09 23:30:35.004  8770  8770 V AutofillManager: requestHideFillUi(null): anchor = null
