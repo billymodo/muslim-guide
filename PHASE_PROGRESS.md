@@ -18,7 +18,7 @@
 
 
 
-> \*\*آخر تحديث:\*\* 2026-10-07 (Phase 01 UI screens complete; Phase 02 planned)
+> \*\*آخر تحديث:\*\* 2026-10-10 (Phase 03 approved; Phase 04 pending specification)
 
 > \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
 
@@ -52,8 +52,12 @@
 - **Bugs:** 1, 2, 3, 4, 5 ✅ FIXED
 - **Output Report:** docs/phase-02-output-report.md
 
-## Phase 03 — Qibla (next)
-- **Status:** ⏳ NOT STARTED — بانتظار فتح ODs/CRs
+## Phase 03 — Qibla
+- **Status:** ✅ COMPLETED (2026-10-10)
+- **Duration:** 1 day (2026-10-09 → 2026-10-10)
+- **Tests:** 368/368
+- **Bugs/fixes:** BUG-5 (Phase 02 regression) + Task 9.5 no-magnetometer fix
+- **Output Report:** docs/phase-03-output-report.md
 
 ## Phase 00B — سجل الإغلاق
 
@@ -98,7 +102,11 @@
 - Audio Focus أثناء مكالمة حقيقية: OD-0023 (Phase 04).
 - سلوك OEM طويل المدى: OD-0024 (Phase 04).
 - اكتمل التأكيد السمعي البشري للصوت: ✅ المستخدم أكد سماعه في 2026-10-06؛ موثق في `spike/RESULTS.md`.
-- **OD-0028 Asr — Phase 03 (P2)** — إزاحة منهجية −2/−3m (−8m Tromsø)؛ تحقيق مطلوب قبل إغلاق Phase 03.
+- **GAP-compass-maintenance (P3)** — audit/migration review in Phase 05+.
+- **GAP-city-resolution-dup (P3)** — Phase 05+ refactor.
+- **GAP-license-page (P3)** — Phase 05+.
+- **GAP-deeplink-consolidation (P3)** — Phase 04+.
+- **GAP-qibla-bg (P3)** — Phase 05+ UI polish.
 - **BUG-6 picker back nav — Phase 05+ (P3)** — لا AppBar back + BACK يخرج التطبيق.
 - **Permission-deny-only path — Phase 05+ (P3)** — (Location ON + Deny فقط) غير مُختبَر.
 - **Minor-1 overflow @ 200% — Phase 10 (P3)**.
