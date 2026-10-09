@@ -36,5 +36,6 @@
   "location_picker_permission_denied": "تم رفض صلاحية الموقع",
   "location_picker_empty": "لا نتائج",
   "location_picker_gps_error": "تعذر تحديد موقعك",
-  "prayer_settings_coming_soon": "قريباً"
+  "prayer_settings_coming_soon": "قريباً",
+  "prayer_change_city": "تغيير المدينة"
 }

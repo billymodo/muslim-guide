@@ -319,6 +319,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'قريباً'**
   String get prayer_settings_coming_soon;
+
+  /// No description provided for @prayer_change_city.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير المدينة'**
+  String get prayer_change_city;
 }
 
 class _AppLocalizationsDelegate

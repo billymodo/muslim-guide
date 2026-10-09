@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
 import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_hero_card.dart';
@@ -63,5 +64,63 @@ void main() {
     );
     expect(button.onPressed, isNull);
     expect(find.byTooltip('قريباً'), findsOneWidget);
+  });
+
+  testWidgets('shows an enabled change-city action beside settings', (
+    tester,
+  ) async {
+    await pumpHero(tester, selection: const CitySelection('riyadh'));
+
+    // BUG-2 (Option A): change-city button present, enabled, localized (ar).
+    final changeCity = find.byIcon(Icons.edit_location_alt);
+    expect(changeCity, findsOneWidget);
+    expect(find.byTooltip('تغيير المدينة'), findsOneWidget);
+    final changeCityButton = tester.widget<IconButton>(
+      find.ancestor(of: changeCity, matching: find.byType(IconButton)),
+    );
+    expect(changeCityButton.onPressed, isNotNull);
+
+    // The disabled settings button is unchanged.
+    final settings = find.byIcon(Icons.settings);
+    expect(settings, findsOneWidget);
+    final settingsButton = tester.widget<IconButton>(
+      find.ancestor(of: settings, matching: find.byType(IconButton)),
+    );
+    expect(settingsButton.onPressed, isNull);
+  });
+
+  testWidgets('navigates to the location picker when change city is tapped', (
+    tester,
+  ) async {
+    final router = GoRouter(
+      initialLocation: '/prayer',
+      routes: [
+        GoRoute(
+          path: '/prayer',
+          builder: (_, _) => const PrayerHeroCard(),
+        ),
+        GoRoute(
+          path: '/location-picker',
+          builder: (_, _) =>
+              const Scaffold(body: Text('location picker route')),
+        ),
+      ],
+    );
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(
+      buildTestRouterApp(
+        router: router,
+        overrides: heroOverrides(const CitySelection('riyadh')),
+      ),
+    );
+    await tester.pump();
+    await tester.pump();
+
+    await tester.tap(find.byIcon(Icons.edit_location_alt));
+    await tester.pump();
+    await tester.pump();
+
+    expect(find.text('location picker route'), findsOneWidget);
   });
 }

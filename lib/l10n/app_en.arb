@@ -36,5 +36,6 @@
   "location_picker_permission_denied": "Location permission denied",
   "location_picker_empty": "No results",
   "location_picker_gps_error": "Could not determine your location",
-  "prayer_settings_coming_soon": "Coming soon"
+  "prayer_settings_coming_soon": "Coming soon",
+  "prayer_change_city": "Change city"
 }

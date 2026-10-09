@@ -119,4 +119,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get prayer_settings_coming_soon => 'قريباً';
+
+  @override
+  String get prayer_change_city => 'تغيير المدينة';
 }

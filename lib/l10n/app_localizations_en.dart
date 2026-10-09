@@ -120,4 +120,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get prayer_settings_coming_soon => 'Coming soon';
+
+  @override
+  String get prayer_change_city => 'Change city';
 }

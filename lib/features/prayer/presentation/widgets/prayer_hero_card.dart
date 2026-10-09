@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:muslim_guide/app/theme/app_colors.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
@@ -53,6 +54,12 @@ class PrayerHeroCard extends ConsumerWidget {
                     tooltip: localizations.prayer_settings_coming_soon,
                     // TODO(phase-05): open Settings when the screen exists.
                     onPressed: null,
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.edit_location_alt),
+                    color: AppColors.surface,
+                    tooltip: localizations.prayer_change_city,
+                    onPressed: () => context.go('/location-picker'),
                   ),
                 ],
               ),
