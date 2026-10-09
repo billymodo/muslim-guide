@@ -178,6 +178,14 @@ Note: `pm grant` is blocked on ColorOS (SecurityException, as with
 
 **Step 0 result: PASS — BUG-2 verified fixed on device (4/4 screenshots).**
 
+### M1 — Screen timeout (2026-10-09): ✅ **DONE**
+
+- ColorOS path/name: **Settings → Display & brightness → Auto screen off**.
+- Owner set it manually; verified from shell:
+  `settings get system screen_off_timeout` = **1800000 ms (30 minutes)** —
+  not the requested 10 minutes, but well above the 60 s requirement;
+  automation stability needs are met.
+
 ## Lessons recorded
 
 1. **CI green ≠ correct (BUG-1):** unit/widget tests use internal fixtures,
