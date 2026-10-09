@@ -37,5 +37,13 @@
   "location_picker_empty": "لا نتائج",
   "location_picker_gps_error": "تعذر تحديد موقعك",
   "prayer_settings_coming_soon": "قريباً",
-  "prayer_change_city": "تغيير المدينة"
+  "prayer_change_city": "تغيير المدينة",
+  "qibla_title": "القبلة",
+  "qibla_direction_label": "اتجاه القبلة",
+  "qibla_calibrate": "حرّك الجهاز بشكل رقم 8 للمعايرة",
+  "qibla_no_sensor": "الجهاز لا يدعم البوصلة",
+  "qibla_no_location": "لم يتم تحديد الموقع",
+  "qibla_error": "تعذّر قراءة البوصلة",
+  "qibla_retry": "إعادة المحاولة",
+  "qibla_open_settings": "تغيير المدينة"
 }

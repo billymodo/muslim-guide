@@ -123,4 +123,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get prayer_change_city => 'Change city';
+
+  @override
+  String get qibla_title => 'Qibla';
+
+  @override
+  String get qibla_direction_label => 'Qibla direction';
+
+  @override
+  String get qibla_calibrate => 'Move device in a figure-8 to calibrate';
+
+  @override
+  String get qibla_no_sensor => 'Compass not supported';
+
+  @override
+  String get qibla_no_location => 'Location not set';
+
+  @override
+  String get qibla_error => 'Failed to read compass';
+
+  @override
+  String get qibla_retry => 'Retry';
+
+  @override
+  String get qibla_open_settings => 'Change city';
 }

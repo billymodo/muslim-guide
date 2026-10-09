@@ -37,5 +37,13 @@
   "location_picker_empty": "No results",
   "location_picker_gps_error": "Could not determine your location",
   "prayer_settings_coming_soon": "Coming soon",
-  "prayer_change_city": "Change city"
+  "prayer_change_city": "Change city",
+  "qibla_title": "Qibla",
+  "qibla_direction_label": "Qibla direction",
+  "qibla_calibrate": "Move device in a figure-8 to calibrate",
+  "qibla_no_sensor": "Compass not supported",
+  "qibla_no_location": "Location not set",
+  "qibla_error": "Failed to read compass",
+  "qibla_retry": "Retry",
+  "qibla_open_settings": "Change city"
 }

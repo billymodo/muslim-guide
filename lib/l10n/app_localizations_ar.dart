@@ -122,4 +122,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get prayer_change_city => 'تغيير المدينة';
+
+  @override
+  String get qibla_title => 'القبلة';
+
+  @override
+  String get qibla_direction_label => 'اتجاه القبلة';
+
+  @override
+  String get qibla_calibrate => 'حرّك الجهاز بشكل رقم 8 للمعايرة';
+
+  @override
+  String get qibla_no_sensor => 'الجهاز لا يدعم البوصلة';
+
+  @override
+  String get qibla_no_location => 'لم يتم تحديد الموقع';
+
+  @override
+  String get qibla_error => 'تعذّر قراءة البوصلة';
+
+  @override
+  String get qibla_retry => 'إعادة المحاولة';
+
+  @override
+  String get qibla_open_settings => 'تغيير المدينة';
 }

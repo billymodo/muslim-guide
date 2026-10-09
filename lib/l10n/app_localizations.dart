@@ -325,6 +325,54 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تغيير المدينة'**
   String get prayer_change_city;
+
+  /// No description provided for @qibla_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'القبلة'**
+  String get qibla_title;
+
+  /// No description provided for @qibla_direction_label.
+  ///
+  /// In ar, this message translates to:
+  /// **'اتجاه القبلة'**
+  String get qibla_direction_label;
+
+  /// No description provided for @qibla_calibrate.
+  ///
+  /// In ar, this message translates to:
+  /// **'حرّك الجهاز بشكل رقم 8 للمعايرة'**
+  String get qibla_calibrate;
+
+  /// No description provided for @qibla_no_sensor.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجهاز لا يدعم البوصلة'**
+  String get qibla_no_sensor;
+
+  /// No description provided for @qibla_no_location.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يتم تحديد الموقع'**
+  String get qibla_no_location;
+
+  /// No description provided for @qibla_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر قراءة البوصلة'**
+  String get qibla_error;
+
+  /// No description provided for @qibla_retry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get qibla_retry;
+
+  /// No description provided for @qibla_open_settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'تغيير المدينة'**
+  String get qibla_open_settings;
 }
 
 class _AppLocalizationsDelegate

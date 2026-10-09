@@ -5,6 +5,7 @@ import 'package:muslim_guide/features/home/presentation/home_placeholder.dart';
 import 'package:muslim_guide/features/onboarding/presentation/language_selection_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/prayer_times_screen.dart';
+import 'package:muslim_guide/features/qibla/presentation/qibla_screen.dart';
 import 'package:muslim_guide/features/splash/presentation/splash_screen.dart';
 
 /// Provides the application router.
@@ -47,6 +48,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/location-picker',
         builder: (context, state) => const LocationPickerScreen(),
+      ),
+      GoRoute(
+        path: '/qibla',
+        builder: (context, state) => const QiblaScreen(),
       ),
     ],
   );

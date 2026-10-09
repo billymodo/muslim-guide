@@ -71,4 +71,5 @@
 | GAP-compass-maintenance | flutter_compass 0.8.1 — maintenance stopped ~23 months; migration to sensors_plus if critical | P3 | CR-0011 (Phase 03) | **OPEN** (Phase 05+ audit) |
 | GAP-hive-patch | hive_ce 2.20.1 → 2.20.2 patch upgrade | P3 | Phase 03 Task 2 | **CLOSED (this commit — follows f44ffc9)** |
 | GAP-compass-pinned | flutter_compass 0.8.1 (MIT, exact) — added to pubspec | — | CR-0011 (Phase 03) | **CLOSED (this commit)** |
+| GAP-city-resolution-dup | cityId → coordinates resolution duplicated in QiblaNotifier (copied from location_provider) | P3 | Phase 03 Task 6 | **OPEN (Phase 05+ refactor)** |
 | GAP-qibla-bg | `assets/images/qibla_bg.webp` — license TBD — deferred | P3 | UI_VISION §4 (PROPOSED) | **OPEN** (Phase 05+ — UI polish؛ Phase 03 يستخدم gradient placeholder) |
