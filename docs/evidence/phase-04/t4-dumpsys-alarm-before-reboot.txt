@@ -1,0 +1,557 @@
+
+        whenElapsed=+11m21s45ms maxWhenElapsed=+20m17s959ms
+        operation=PendingIntent{1cc25ba: PendingIntentRecord{9c3788f 
+com.google.android.gms/com.google.android.gms.scheduler broadcastIntent}}
+>     RTC_WAKEUP #2: Alarm{25cdae0 type 0 origWhen 1791621608000 whenElapsed 334111237 com.muslimguide.app} uid 10343 
+whenElapsed 334111237 windowLength 474989 maxWhenElapsed 334586226 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-10 11:40:08.000 window=+7m54s989ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+9m40s868ms app_standby=-52s451ms device_idle=-- battery_saver=-52s451ms 
+tare=-52s451ms alignment=--
+        whenElapsed=+9m40s868ms maxWhenElapsed=+17m35s857ms
+>       operation=PendingIntent{579a199: PendingIntentRecord{95c9c5e com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      ELAPSED #3: Alarm{2c7683f type 3 origWhen 334005052 whenElapsed 334005052 com.google.android.gms} uid 10109 
+whenElapsed 334005052 windowLength 448587 maxWhenElapsed 334453639 repeatInterval 0 action 
+GmsAlarm:FusedLocation:throttling_delivery:3 component null flags 0x8
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{9524699 num=11 start=346183237 end=346390377 flgs=0xc}:
+>     RTC_WAKEUP #1: Alarm{c9a559c type 0 origWhen 1791633680000 whenElapsed 346183237 com.muslimguide.app} uid 10343 
+whenElapsed 346183237 windowLength 3600000 maxWhenElapsed 349783237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-10 15:01:20.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3h30m52s868ms app_standby=-52s439ms device_idle=-- battery_saver=-52s439ms 
+tare=-52s439ms alignment=--
+        whenElapsed=+3h30m52s868ms maxWhenElapsed=+4h30m52s868ms
+>       operation=PendingIntent{6742ba5: PendingIntentRecord{b610b7a com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      ELAPSED #2: Alarm{42d3f2b type 3 origWhen 345812169 whenElapsed 345812169 com.google.android.gms} uid 10109 
+whenElapsed 345812169 windowLength 5400000 maxWhenElapsed 351212169 repeatInterval 7200000 action 
+com.google.android.gms.stats.eastworld.action.EASTWORLD_ALARM component 
+ComponentInfo{com.google.android.gms/com.google.android.gms.chimera.PersistentIntentOperationService} flags 0x0
+        whenElapsed=+6h14m26s55ms maxWhenElapsed=+15h14m26s55ms
+        operation=PendingIntent{5d343ce: PendingIntentRecord{8f0d2ef com.instagram.lite broadcastIntent}}
+>     RTC_WAKEUP #3: Alarm{2a8d1fc type 0 origWhen 1791642672000 whenElapsed 355175237 com.muslimguide.app} uid 10343 
+whenElapsed 355175237 windowLength 3600000 maxWhenElapsed 358775237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-10 17:31:12.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+6h0m44s868ms app_standby=-52s425ms device_idle=-- battery_saver=-52s425ms 
+tare=-52s425ms alignment=--
+        whenElapsed=+6h0m44s868ms maxWhenElapsed=+7h0m44s868ms
+>       operation=PendingIntent{6c46085: PendingIntentRecord{2e3ceda com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      ELAPSED_WAKEUP #4: Alarm{aa1af0b type 2 origWhen 355006657 whenElapsed 355006657 com.google.android.gms} uid 
+10109 whenElapsed 355006657 windowLength 3600000 maxWhenElapsed 358606657 repeatInterval 0 action 
+GmsAlarm:NetworkLocationScanner:4 component null flags 0x8
+        operation=PendingIntent{9db2e39: PendingIntentRecord{cc27854 com.whatsapp broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+>     RTC_WAKEUP #2: Alarm{37e3c7e type 0 origWhen 1791646953000 whenElapsed 359456237 com.muslimguide.app} uid 10343 
+whenElapsed 359456237 windowLength 3600000 maxWhenElapsed 363056237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-10 18:42:33.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+7h12m5s868ms app_standby=-52s410ms device_idle=-- battery_saver=-52s410ms 
+tare=-52s410ms alignment=--
+        whenElapsed=+7h12m5s868ms maxWhenElapsed=+8h12m5s868ms
+>       operation=PendingIntent{aa255df: PendingIntentRecord{6c2b22c com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      RTC_WAKEUP #3: Alarm{d3774f5 type 0 origWhen 1791646500000 whenElapsed 359003237 com.dalilmuslim.dalil_muslim} 
+uid 10328 whenElapsed 359003237 windowLength 3600000 maxWhenElapsed 362603237 repeatInterval 0 action null component 
+ComponentInfo{com.dalilmuslim.dalil_muslim/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} 
+flags 0x4
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{f07a172 num=2 start=394905236 end=396847936 flgs=0xc}:
+>     RTC_WAKEUP #1: Alarm{c9405 type 0 origWhen 1791682402000 whenElapsed 394905236 com.muslimguide.app} uid 10343 
+whenElapsed 394905236 windowLength 3600000 maxWhenElapsed 398505236 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-11 04:33:22.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+17h2m54s867ms app_standby=-52s390ms device_idle=-- battery_saver=-52s390ms 
+tare=-52s390ms alignment=--
+        whenElapsed=+17h2m54s867ms maxWhenElapsed=+18h2m54s867ms
+>       operation=PendingIntent{b52bc5a: PendingIntentRecord{f39ce8b com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      ELAPSED #2: Alarm{30d7b68 type 3 origWhen 393247936 whenElapsed 393247936 android} uid 1000 whenElapsed 
+393247936 windowLength 3600000 maxWhenElapsed 396847936 repeatInterval 0 action null component null tag Wifi Sla Daily 
+Detection flags 0x8
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{fafb958 num=1 start=420495237 end=424095237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{dab8de0 type 0 origWhen 1791707992000 whenElapsed 420495237 com.muslimguide.app} uid 10343 
+whenElapsed 420495237 windowLength 3600000 maxWhenElapsed 424095237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-11 11:39:52.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+1d0h9m24s868ms app_standby=-52s369ms device_idle=-- battery_saver=-52s369ms 
+tare=-52s369ms alignment=--
+        whenElapsed=+1d0h9m24s868ms maxWhenElapsed=+1d1h9m24s868ms
+>       operation=PendingIntent{285d899: PendingIntentRecord{a52075e com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{a5aeab1 num=1 start=424583237 end=428183237 flgs=0x4}:
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{21e0b96 num=1 start=432546237 end=436146237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{b3138f8 type 0 origWhen 1791720043000 whenElapsed 432546237 com.muslimguide.app} uid 10343 
+whenElapsed 432546237 windowLength 3600000 maxWhenElapsed 436146237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-11 15:00:43.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+1d3h30m15s868ms app_standby=-52s345ms device_idle=-- battery_saver=-52s345ms 
+tare=-52s345ms alignment=--
+        whenElapsed=+1d3h30m15s868ms maxWhenElapsed=+1d4h30m15s868ms
+>       operation=PendingIntent{b2101d1: PendingIntentRecord{441a436 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{a56d317 num=1 start=436343237 end=439943237 flgs=0x4}:
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{6131304 num=1 start=441517236 end=445117236 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{52e2f10 type 0 origWhen 1791729014000 whenElapsed 441517236 com.muslimguide.app} uid 10343 
+whenElapsed 441517236 windowLength 3600000 maxWhenElapsed 445117236 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-11 17:30:14.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+1d5h59m46s867ms app_standby=-52s318ms device_idle=-- battery_saver=-52s318ms 
+tare=-52s318ms alignment=--
+        whenElapsed=+1d5h59m46s867ms maxWhenElapsed=+1d6h59m46s867ms
+>       operation=PendingIntent{d611a09: PendingIntentRecord{43d040e com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{f0280ed num=3 start=445800237 end=448883237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{22f2c3c type 0 origWhen 1791733297000 whenElapsed 445800237 com.muslimguide.app} uid 10343 
+whenElapsed 445800237 windowLength 3600000 maxWhenElapsed 449400237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-11 18:41:37.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+1d7h11m9s868ms app_standby=-52s292ms device_idle=-- battery_saver=-52s292ms 
+tare=-52s292ms alignment=--
+        whenElapsed=+1d7h11m9s868ms maxWhenElapsed=+1d8h11m9s868ms
+>       operation=PendingIntent{ff84dc5: PendingIntentRecord{fc9531a com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      RTC_WAKEUP #2: Alarm{267e4b type 0 origWhen 1791732780000 whenElapsed 445283237 com.dalilmuslim.dalil_muslim} 
+uid 10328 whenElapsed 445283237 windowLength 3600000 maxWhenElapsed 448883237 repeatInterval 0 action null component 
+ComponentInfo{com.dalilmuslim.dalil_muslim/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} 
+flags 0x4
+        operation=PendingIntent{6b41c6c: PendingIntentRecord{2e13235 com.dalilmuslim.dalil_muslim broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+>     RTC_WAKEUP #2: Alarm{12cb6ca type 0 origWhen 1791768827000 whenElapsed 481330237 com.muslimguide.app} uid 10343 
+whenElapsed 481330237 windowLength 3600000 maxWhenElapsed 484930237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-12 04:33:47.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+1d17h3m19s868ms app_standby=-52s266ms device_idle=-- battery_saver=-52s266ms 
+tare=-52s266ms alignment=--
+        whenElapsed=+1d17h3m19s868ms maxWhenElapsed=+1d18h3m19s868ms
+>       operation=PendingIntent{9f7903b: PendingIntentRecord{4fc9358 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{f133ee9 num=1 start=486310358 end=489910358}:
+        operation=PendingIntent{bc4f517: PendingIntentRecord{c538d04 
+com.google.android.gms/com.google.android.gms.chromesync startService}}
+    Batch{992f76e num=1 start=506880236 end=510480236 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{97d5522 type 0 origWhen 1791794377000 whenElapsed 506880236 com.muslimguide.app} uid 10343 
+whenElapsed 506880236 windowLength 3600000 maxWhenElapsed 510480236 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-12 11:39:37.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+2d0h9m9s867ms app_standby=-52s239ms device_idle=-- battery_saver=-52s239ms 
+tare=-52s239ms alignment=--
+        whenElapsed=+2d0h9m9s867ms maxWhenElapsed=+2d1h9m9s867ms
+>       operation=PendingIntent{499cbb3: PendingIntentRecord{fe7570 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{80b0e0f num=1 start=510983237 end=514583237 flgs=0x4}:
+        whenElapsed=+2d4h6m58s361ms maxWhenElapsed=+2d5h6m58s361ms
+        operation=PendingIntent{3e8fe2b: PendingIntentRecord{7e78288 
+com.google.android.gms/com.google.android.gms.chromesync startService}}
+>     RTC_WAKEUP #2: Alarm{4883421 type 0 origWhen 1791806407000 whenElapsed 518910237 com.muslimguide.app} uid 10343 
+whenElapsed 518910237 windowLength 3600000 maxWhenElapsed 522510237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-12 15:00:07.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+2d3h29m39s868ms app_standby=-52s215ms device_idle=-- battery_saver=-52s215ms 
+tare=-52s215ms alignment=--
+        whenElapsed=+2d3h29m39s868ms maxWhenElapsed=+2d4h29m39s868ms
+>       operation=PendingIntent{667046: PendingIntentRecord{df75207 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{a57e0a5 num=1 start=522683237 end=526283237 flgs=0x4}:
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{27b1c7a num=1 start=527860236 end=531460236 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{7924659 type 0 origWhen 1791815357000 whenElapsed 527860236 com.muslimguide.app} uid 10343 
+whenElapsed 527860236 windowLength 3600000 maxWhenElapsed 531460236 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-12 17:29:17.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+2d5h58m49s867ms app_standby=-52s188ms device_idle=-- battery_saver=-52s188ms 
+tare=-52s188ms alignment=--
+        whenElapsed=+2d5h58m49s867ms maxWhenElapsed=+2d6h58m49s867ms
+>       operation=PendingIntent{c8d421e: PendingIntentRecord{37e7aff com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{1747c2b num=2 start=532145237 end=535223237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{c17ef15 type 0 origWhen 1791819642000 whenElapsed 532145237 com.muslimguide.app} uid 10343 
+whenElapsed 532145237 windowLength 3600000 maxWhenElapsed 535745237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-12 18:40:42.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+2d7h10m14s868ms app_standby=-52s160ms device_idle=-- battery_saver=-52s160ms 
+tare=-52s160ms alignment=--
+        whenElapsed=+2d7h10m14s868ms maxWhenElapsed=+2d8h10m14s868ms
+>       operation=PendingIntent{47622a: PendingIntentRecord{4c9c81b com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      RTC_WAKEUP #2: Alarm{4c49db8 type 0 origWhen 1791819120000 whenElapsed 531623237 com.dalilmuslim.dalil_muslim} 
+uid 10328 whenElapsed 531623237 windowLength 3600000 maxWhenElapsed 535223237 repeatInterval 0 action null component 
+ComponentInfo{com.dalilmuslim.dalil_muslim/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} 
+flags 0x4
+        whenElapsed=+2d17h26m33s290ms maxWhenElapsed=+2d18h26m33s290ms
+        operation=PendingIntent{de76fd7: PendingIntentRecord{6e850c4 android broadcastIntent}}
+>     RTC_WAKEUP #3: Alarm{528ee0b type 0 origWhen 1791855251000 whenElapsed 567754237 com.muslimguide.app} uid 10343 
+whenElapsed 567754237 windowLength 3600000 maxWhenElapsed 571354237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-13 04:34:11.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+2d17h3m43s868ms app_standby=-52s130ms device_idle=-- battery_saver=-52s130ms 
+tare=-52s130ms alignment=--
+        whenElapsed=+2d17h3m43s868ms maxWhenElapsed=+2d18h3m43s868ms
+>       operation=PendingIntent{276e4e8: PendingIntentRecord{9ce5701 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{a8e8646 num=1 start=582313402 end=582313402 flgs=0x9}:
+        operation=PendingIntent{a37a856: PendingIntentRecord{78110d7 com.facebook.services broadcastIntent}}
+    Batch{9634534 num=2 start=593265237 end=596185357 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{1fb54ad type 0 origWhen 1791880762000 whenElapsed 593265237 com.muslimguide.app} uid 10343 
+whenElapsed 593265237 windowLength 3600000 maxWhenElapsed 596865237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-13 11:39:22.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3d0h8m54s868ms app_standby=-52s89ms device_idle=-- battery_saver=-52s89ms 
+tare=-52s89ms alignment=--
+        whenElapsed=+3d0h8m54s868ms maxWhenElapsed=+3d1h8m54s868ms
+>       operation=PendingIntent{69df3e2: PendingIntentRecord{45be373 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      RTC #2: Alarm{85f1230 type 1 origWhen 1791880082120 whenElapsed 592585357 com.facebook.appmanager} uid 10238 
+whenElapsed 592585357 windowLength 3600000 maxWhenElapsed 596185357 repeatInterval 0 action backupJobSchedulerCheck 
+component ComponentInfo{com.facebook.appmanager/com.facebook.oxygen.appmanager.scheduler.schedulers.jobscheduler.JobSch
+edulerBackUpService} flags 0x0
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{81cc0d2 num=1 start=605274237 end=608874237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{f5e4deb type 0 origWhen 1791892771000 whenElapsed 605274237 com.muslimguide.app} uid 10343 
+whenElapsed 605274237 windowLength 3600000 maxWhenElapsed 608874237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-13 14:59:31.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3d3h29m3s868ms app_standby=-52s57ms device_idle=-- battery_saver=-52s57ms 
+tare=-52s57ms alignment=--
+        whenElapsed=+3d3h29m3s868ms maxWhenElapsed=+3d4h29m3s868ms
+>       operation=PendingIntent{5a6f748: PendingIntentRecord{11f69e1 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{b6a45a3 num=1 start=614204237 end=617804237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{1d1ddc7 type 0 origWhen 1791901701000 whenElapsed 614204237 com.muslimguide.app} uid 10343 
+whenElapsed 614204237 windowLength 3600000 maxWhenElapsed 617804237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-13 17:28:21.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3d5h57m53s868ms app_standby=-52s25ms device_idle=-- battery_saver=-52s25ms 
+tare=-52s25ms alignment=--
+        whenElapsed=+3d5h57m53s868ms maxWhenElapsed=+3d6h57m53s868ms
+>       operation=PendingIntent{6d83ff4: PendingIntentRecord{847c31d com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{c8980a0 num=1 start=618491237 end=622091237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{7048f63 type 0 origWhen 1791905988000 whenElapsed 618491237 com.muslimguide.app} uid 10343 
+whenElapsed 618491237 windowLength 3600000 maxWhenElapsed 622091237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-13 18:39:48.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3d7h9m20s868ms app_standby=-51s991ms device_idle=-- battery_saver=-51s991ms 
+tare=-51s991ms alignment=--
+        whenElapsed=+3d7h9m20s868ms maxWhenElapsed=+3d8h9m20s868ms
+>       operation=PendingIntent{a336760: PendingIntentRecord{5a27419 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{77cb459 num=5 start=654179237 end=657779237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{726bebf type 0 origWhen 1791941676000 whenElapsed 654179237 com.muslimguide.app} uid 10343 
+whenElapsed 654179237 windowLength 3600000 maxWhenElapsed 657779237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-14 04:34:36.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+3d17h4m8s868ms app_standby=-51s955ms device_idle=-- battery_saver=-51s955ms 
+tare=-51s955ms alignment=--
+        whenElapsed=+3d17h4m8s868ms maxWhenElapsed=+3d18h4m8s868ms
+>       operation=PendingIntent{57998c: PendingIntentRecord{45d38d5 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+      ELAPSED #2: Alarm{cc048ea type 3 origWhen 623489449 whenElapsed 623489449 com.facebook.appmanager} uid 99910238 
+whenElapsed 623489449 windowLength 226800000 maxWhenElapsed 850289449 repeatInterval 302400000 action 
+com.facebook.oxygen.appmanager.periodicwork.GUARD_CONNECTIVITY_CALLBACK component 
+ComponentInfo{com.facebook.appmanager/com.facebook.preloads.platform.common.periodicwork.PeriodicWorkGuardReceiver} 
+flags 0x0
+        operation=PendingIntent{e1f6890: PendingIntentRecord{49b9589 com.facebook.services broadcastIntent}}
+    Batch{4e2181e num=1 start=679651237 end=683251237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{252d5af type 0 origWhen 1791967148000 whenElapsed 679651237 com.muslimguide.app} uid 10343 
+whenElapsed 679651237 windowLength 3600000 maxWhenElapsed 683251237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-14 11:39:08.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+4d0h8m40s868ms app_standby=-51s917ms device_idle=-- battery_saver=-51s917ms 
+tare=-51s917ms alignment=--
+        whenElapsed=+4d0h8m40s868ms maxWhenElapsed=+4d1h8m40s868ms
+>       operation=PendingIntent{eba7dbc: PendingIntentRecord{31f0145 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{cd198ff num=1 start=691638237 end=695238237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{a011dcb type 0 origWhen 1791979135000 whenElapsed 691638237 com.muslimguide.app} uid 10343 
+whenElapsed 691638237 windowLength 3600000 maxWhenElapsed 695238237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-14 14:58:55.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+4d3h28m27s868ms app_standby=-51s878ms device_idle=-- battery_saver=-51s878ms 
+tare=-51s878ms alignment=--
+        whenElapsed=+4d3h28m27s868ms maxWhenElapsed=+4d4h28m27s868ms
+>       operation=PendingIntent{f8fb9a8: PendingIntentRecord{ab36cc1 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{61606cc num=1 start=700548237 end=704148237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{b01cba7 type 0 origWhen 1791988045000 whenElapsed 700548237 com.muslimguide.app} uid 10343 
+whenElapsed 700548237 windowLength 3600000 maxWhenElapsed 704148237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-14 17:27:25.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+4d5h56m57s868ms app_standby=-51s829ms device_idle=-- battery_saver=-51s829ms 
+tare=-51s829ms alignment=--
+        whenElapsed=+4d5h56m57s868ms maxWhenElapsed=+4d6h56m57s868ms
+>       operation=PendingIntent{5fac854: PendingIntentRecord{9c913fd com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{b3b3d15 num=1 start=704838237 end=708438237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{d757b43 type 0 origWhen 1791992335000 whenElapsed 704838237 com.muslimguide.app} uid 10343 
+whenElapsed 704838237 windowLength 3600000 maxWhenElapsed 708438237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-14 18:38:55.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+4d7h8m27s868ms app_standby=-51s789ms device_idle=-- battery_saver=-51s789ms 
+tare=-51s789ms alignment=--
+        whenElapsed=+4d7h8m27s868ms maxWhenElapsed=+4d8h8m27s868ms
+>       operation=PendingIntent{f6615c0: PendingIntentRecord{b97f2f9 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{813982a num=1 start=740604237 end=744204237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{ea889f type 0 origWhen 1792028101000 whenElapsed 740604237 com.muslimguide.app} uid 10343 
+whenElapsed 740604237 windowLength 3600000 maxWhenElapsed 744204237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-15 04:35:01.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+4d17h4m33s868ms app_standby=-51s748ms device_idle=-- battery_saver=-51s748ms 
+tare=-51s748ms alignment=--
+        whenElapsed=+4d17h4m33s868ms maxWhenElapsed=+4d18h4m33s868ms
+>       operation=PendingIntent{376cdec: PendingIntentRecord{cdbc5b5 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{330c61b num=1 start=766037237 end=769637237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{5790fbb type 0 origWhen 1792053534000 whenElapsed 766037237 com.muslimguide.app} uid 10343 
+whenElapsed 766037237 windowLength 3600000 maxWhenElapsed 769637237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-15 11:38:54.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+5d0h8m26s868ms app_standby=-51s706ms device_idle=-- battery_saver=-51s706ms 
+tare=-51s706ms alignment=--
+        whenElapsed=+5d0h8m26s868ms maxWhenElapsed=+5d1h8m26s868ms
+>       operation=PendingIntent{cf8dcd8: PendingIntentRecord{500831 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{c02c3b8 num=1 start=778002237 end=781602237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{a9eec97 type 0 origWhen 1792065499000 whenElapsed 778002237 com.muslimguide.app} uid 10343 
+whenElapsed 778002237 windowLength 3600000 maxWhenElapsed 781602237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-15 14:58:19.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+5d3h27m51s868ms app_standby=-51s662ms device_idle=-- battery_saver=-51s662ms 
+tare=-51s662ms alignment=--
+        whenElapsed=+5d3h27m51s868ms maxWhenElapsed=+5d4h27m51s868ms
+>       operation=PendingIntent{58aee84: PendingIntentRecord{eebf66d com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{d1f9591 num=1 start=786893237 end=790493237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{fdbbb33 type 0 origWhen 1792074390000 whenElapsed 786893237 com.muslimguide.app} uid 10343 
+whenElapsed 786893237 windowLength 3600000 maxWhenElapsed 790493237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-15 17:26:30.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+5d5h56m2s868ms app_standby=-51s616ms device_idle=-- battery_saver=-51s616ms 
+tare=-51s616ms alignment=--
+        whenElapsed=+5d5h56m2s868ms maxWhenElapsed=+5d6h56m2s868ms
+>       operation=PendingIntent{a6ef0: PendingIntentRecord{fde8c69 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{52b0cf6 num=1 start=791186237 end=794786237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{30cd78f type 0 origWhen 1792078683000 whenElapsed 791186237 com.muslimguide.app} uid 10343 
+whenElapsed 791186237 windowLength 3600000 maxWhenElapsed 794786237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-15 18:38:03.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+5d7h7m35s868ms app_standby=-51s572ms device_idle=-- battery_saver=-51s572ms 
+tare=-51s572ms alignment=--
+        whenElapsed=+5d7h7m35s868ms maxWhenElapsed=+5d8h7m35s868ms
+>       operation=PendingIntent{dbf8a1c: PendingIntentRecord{44a8625 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{d8ba8f7 num=1 start=827030237 end=830630237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{8895dab type 0 origWhen 1792114527000 whenElapsed 827030237 com.muslimguide.app} uid 10343 
+whenElapsed 827030237 windowLength 3600000 maxWhenElapsed 830630237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-16 04:35:27.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+5d17h4m59s868ms app_standby=-51s531ms device_idle=-- battery_saver=-51s531ms 
+tare=-51s531ms alignment=--
+        whenElapsed=+5d17h4m59s868ms maxWhenElapsed=+5d18h4m59s868ms
+>       operation=PendingIntent{a492c08: PendingIntentRecord{2c25fa1 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{7fc6364 num=1 start=852424237 end=856024237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{8fe2987 type 0 origWhen 1792139921000 whenElapsed 852424237 com.muslimguide.app} uid 10343 
+whenElapsed 852424237 windowLength 3600000 maxWhenElapsed 856024237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-16 11:38:41.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+6d0h8m13s868ms app_standby=-51s491ms device_idle=-- battery_saver=-51s491ms 
+tare=-51s491ms alignment=--
+        whenElapsed=+6d0h8m13s868ms maxWhenElapsed=+6d1h8m13s868ms
+>       operation=PendingIntent{a4900b4: PendingIntentRecord{e8454dd com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{16f9cd num=1 start=864366237 end=867966237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{109d723 type 0 origWhen 1792151863000 whenElapsed 864366237 com.muslimguide.app} uid 10343 
+whenElapsed 864366237 windowLength 3600000 maxWhenElapsed 867966237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-16 14:57:43.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+6d3h27m15s868ms app_standby=-51s450ms device_idle=-- battery_saver=-51s450ms 
+tare=-51s450ms alignment=--
+        whenElapsed=+6d3h27m15s868ms maxWhenElapsed=+6d4h27m15s868ms
+>       operation=PendingIntent{8cf7420: PendingIntentRecord{67661d9 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{b730282 num=1 start=873239237 end=876839237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{e98c27f type 0 origWhen 1792160736000 whenElapsed 873239237 com.muslimguide.app} uid 10343 
+whenElapsed 873239237 windowLength 3600000 maxWhenElapsed 876839237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-16 17:25:36.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+6d5h55m8s868ms app_standby=-51s411ms device_idle=-- battery_saver=-51s411ms 
+tare=-51s411ms alignment=--
+        whenElapsed=+6d5h55m8s868ms maxWhenElapsed=+6d6h55m8s868ms
+>       operation=PendingIntent{f87b24c: PendingIntentRecord{7e24295 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{d47dd93 num=1 start=877535237 end=881135237 flgs=0x4}:
+>     RTC_WAKEUP #1: Alarm{801079b type 0 origWhen 1792165032000 whenElapsed 877535237 com.muslimguide.app} uid 10343 
+whenElapsed 877535237 windowLength 3600000 maxWhenElapsed 881135237 repeatInterval 0 action null component 
+ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+>       tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+        type=RTC_WAKEUP origWhen=2026-10-16 18:37:12.000 window=+1h0m0s0ms exactAllowReason=permission 
+repeatInterval=0 count=0 flags=0x4
+        policyWhenElapsed: requester=+6d7h6m44s868ms app_standby=-51s371ms device_idle=-- battery_saver=-51s371ms 
+tare=-51s371ms alignment=--
+        whenElapsed=+6d7h6m44s868ms maxWhenElapsed=+6d8h6m44s868ms
+>       operation=PendingIntent{5a3a738: PendingIntentRecord{f17311 com.muslimguide.app broadcastIntent}}
+        idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, 
+android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, 
+android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0}]
+    Batch{fce51d0 num=1 start=1128764490 end=1132364490 flgs=0x8}:
+
+

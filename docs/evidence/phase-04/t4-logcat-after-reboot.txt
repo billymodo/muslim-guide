@@ -1,0 +1,37 @@
+
+10-10 11:36:25.021 13947 13947 I LTE Broadcast Receiver: Broadcast Receiver Received intent : Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.qti.ltebc/com.qualcomm.ltebc.LTEBroadcastBootReceiver 
+(has extras) }
+10-10 11:36:25.022 13947 13947 I LTE Broadcast Receiver: Received intent : android.intent.action.BOOT_COMPLETED 
+isBindCalled = false
+10-10 11:36:25.118  4024  4024 D QcDataStatusNotification BootReceiver: onReceive: Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.qti.qualcomm.datastatusnotification/.BootReceiver (has 
+extras) }
+10-10 11:36:25.337  3897  3897 D QCNEJ/CneAppReceiver: ACTION_LOCKED_BOOT_COMPLETED or ACTION_BOOT_COMPLETED received
+10-10 11:36:25.725  3904  3904 D QtiTelephonyService BootReceiver: onReceive: Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.qualcomm.qti.telephonyservice/.BootReceiver (has 
+extras) }
+10-10 11:36:25.729  3904  3904 I QtiTelephonyService BootReceiver: 
+com.qualcomm.qti.telephonyservice.QtiTelephonyService is already running. Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.qualcomm.qti.telephonyservice/.BootReceiver (has 
+extras) } ignored.
+10-10 11:36:32.406 14499 14499 E ANR_LOG : Current msg <1> = { when=-4s595ms what=113 
+target=android.app.ActivityThread$H obj=ReceiverData{intent=Intent { act=android.intent.action.BOOT_COMPLETED 
+flg=0x89000010 cmp=com.emeint.android.myservices/com.vodafone.netperform.runtime.RebootIntentReceiver (has extras) } 
+packageName=com.emeint.android.myservices resultCode=-1 resultData=null resultExtras=null} }
+10-10 11:36:33.375 14499 14499 D WM-RescheduleReceiver: Received intent Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 cmp=com.emeint.android.myservices/o.getParcelFileDescriptor 
+(has extras) }
+10-10 11:36:35.938  1914 14024 W BroadcastQueue: Permission Denial: receiving Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 (has extras) } to 
+com.google.android.apps.authenticator2/androidx.work.impl.background.systemalarm.RescheduleReceiver requires 
+android.permission.RECEIVE_BOOT_COMPLETED due to sender null (uid 1000)
+10-10 11:36:45.731 15413 15413 I TY_BootReceiver: [000:029][15413] onReceive Intent { 
+act=android.intent.action.BOOT_COMPLETED flg=0x89000010 
+cmp=com.google.android.apps.tachyon/.common.applifecycle.BootReceiver (has extras) }
+10-10 11:36:50.669 15519 15519 E ANR_LOG : Current msg <1> = { when=-1s941ms what=113 
+target=android.app.ActivityThread$H obj=ReceiverData{intent=Intent { act=android.intent.action.BOOT_COMPLETED 
+flg=0x89000010 cmp=com.google.android.apps.youtube.music/androidx.work.impl.background.systemalarm.RescheduleReceiver 
+(has extras) } packageName=com.google.android.apps.youtube.music resultCode=-1 resultData=null resultExtras=null} }
+
+

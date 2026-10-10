@@ -1,0 +1,11 @@
+Oppo A95 (CPH2365), Android 13, 2026-10-10
+
+The Flutter WAV placeholder is 8 seconds long (22050 Hz, 44100 bytes/second,
+352800 data bytes).
+
+The observed playback state at 11:42:59 EEST was approximately eight seconds
+after playback began at 11:42:51. At 11:43:19 EEST the sound had ended and the
+media session was no longer present. The Phase 04 owner reviewed this timeline
+and confirmed the behavior is expected; Task 5 device playback is approved.
+
+No source code was changed during the device session.
