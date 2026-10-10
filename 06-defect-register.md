@@ -74,3 +74,4 @@
 | GAP-city-resolution-dup | cityId → coordinates resolution duplicated in QiblaNotifier (copied from location_provider) | P3 | Phase 03 Task 6 | **OPEN (Phase 05+ refactor)** |
 | GAP-qibla-bg | `assets/images/qibla_bg.webp` — license TBD — deferred | P3 | UI_VISION §4 (PROPOSED) | **OPEN** (Phase 05+ — UI polish؛ Phase 03 يستخدم gradient placeholder) |
 | GAP-deeplink-consolidation | Deep-link intent filters path-specific (`/prayer`, `/qibla`); consider wildcard or production scheme | P3 | Phase 03 Task 10 | **CLOSED** — unified `muslimguide://<feature>/<action>` scheme and legacy aliases; unit/widget tests pass; verified on CPH2365 Android 13 (`docs/evidence/phase-04/t1-*.png`) |
+| GAP-notif-adhan-pinned | `flutter_local_notifications` 22.3.1 + `timezone` 0.11.1 + `just_audio` 0.10.6 + `audio_service` 0.18.19 (exact) — added to pubspec | — | CR-0012 (Phase 04) | **CLOSED** (pending execution commit SHA) |

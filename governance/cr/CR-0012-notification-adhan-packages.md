@@ -216,6 +216,17 @@ integration from a scheduled notification.
   conditional on the individual pub.dev publication-date verification,
   recorded above.
 
+## Execution
+
+- Added (2026-10-10): `flutter_local_notifications 22.3.1`, `timezone 0.11.1`,
+  `just_audio 0.10.6`, `audio_service 0.18.19` — exact pins (Rule 019).
+- Gradle: `isCoreLibraryDesugaringEnabled = true`, `multiDexEnabled = true`,
+  Java 17, `desugar_jdk_libs 2.1.4`.
+- `LICENSES.md` updated.
+- `security/02-dependencies.md` updated.
+- Native integration verified via `flutter build apk --debug`.
+- Commit: pending.
+
 ## References
 
 - `03-decisions.md` — DEC-0008, DEC-0009, DEC-0023.

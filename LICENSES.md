@@ -20,15 +20,18 @@
 
 | الحزمة | الإصدار | السبب (DEC) | الترخيص | أداة التحقق |
 |---|---|---|---|---|
+| audio_service | 0.18.19 (exact) | خدمة تشغيل الصوت بالخلفية — CR-0012 | MIT (+ Apache-2.0 ExoPlayer) | CR-0012 + LICENSE — https://pub.dev/packages/audio_service/versions/0.18.19 |
+| flutter_local_notifications | 22.3.1 (exact) | الإشعارات المحلية المجدولة — CR-0012 | BSD-3-Clause | أرشيف pub.dev LICENSE — https://pub.dev/packages/flutter_local_notifications/versions/22.3.1 |
 | flutter_riverpod | 2.6.1 (exact) | إدارة الحالة — DEC-0002، DEC-0016 | MIT | pub.dev صفحة الإصدار + API — https://pub.dev/packages/flutter_riverpod/versions/2.6.1 |
 | flutter_localizations | Flutter SDK | الترجمة وتهيئة ARB | BSD-style (BSD-3-Clause text) | Flutter SDK |
 | go_router | 18.0.2 (exact) | التنقل — DEC-0003 | BSD-3-Clause | pub.dev — https://pub.dev/packages/go_router/versions/18.0.2 (نُشر 2026-09-28؛ تحقق 2026-10-07) |
 | hive_ce | 2.20.2 (exact) | تخزين الإعدادات والبيانات المحلية — DEC-0024، DEC-0027 | BSD-3-Clause (+ Apache-2.0 لجزء مدمج) | pub.dev — https://pub.dev/packages/hive_ce/versions/2.20.2 |
 | hive_ce_flutter | 2.4.0 (exact) | تهيئة Hive لتطبيق Flutter | BSD-3-Clause؛ يتضمن أجزاء أقدم بترخيص Apache-2.0 | pub.dev — https://pub.dev/packages/hive_ce_flutter/versions/2.4.0 |
 | intl | 0.20.3 (exact) | تنسيق الأرقام حسب اللغة — DEC-0026 | BSD-3-Clause | pub.dev — https://pub.dev/packages/intl/versions/0.20.3 |
+| just_audio | 0.10.6 (exact) | تشغيل صوت الأذان — CR-0012 | MIT (+ Apache-2.0 ExoPlayer) | CR-0012 + LICENSE — https://pub.dev/packages/just_audio/versions/0.10.6 |
 | path_provider | 2.1.6 (exact) | مسارات Hive وسجل الأخطاء — CR-0006 | BSD-3-Clause | pub.dev — https://pub.dev/packages/path_provider/versions/2.1.6 |
 | share_plus | 13.3.1 (exact) | تصدير سجل الأخطاء عبر مشاركة النظام — DEC-0025 | BSD-3-Clause | pub.dev — https://pub.dev/packages/share_plus/versions/13.3.1 |
-| timezone | 0.11.1 (exact) | قاعدة المناطق الزمنية لتهيئة Phase 01 — CR-0008 | BSD-2-Clause | pub.dev — https://pub.dev/packages/timezone/versions/0.11.1 (نُشر 2026-06-29؛ تحقق 2026-10-07) |
+| timezone | 0.11.1 (exact) | قاعدة المناطق الزمنية لتهيئة Phase 01 والإشعارات — CR-0008، CR-0012 | BSD-2-Clause | pub.dev — https://pub.dev/packages/timezone/versions/0.11.1 (نُشر 2026-06-29؛ تحقق 2026-10-07) |
 | geolocator | 14.1.1 (exact) | خدمة الموقع (GPS + fallback) — CR-0009 | MIT | pub.dev — https://pub.dev/packages/geolocator/versions/14.1.1 |
 | flutter_compass | 0.8.1 (exact) | بوصلة القبلة (Qibla heading) — CR-0011 | MIT | pub.dev — https://pub.dev/packages/flutter_compass/versions/0.8.1 (نُشر 2024-11-17، latest؛ تحقق 2026-10-09) |
 | geolocator_platform_interface | 4.4.0 (exact, dev) | Fake platform في اختبارات Location Service | BSD-3-Clause | pub.dev — https://pub.dev/packages/geolocator_platform_interface/versions/4.4.0 |
@@ -78,16 +81,14 @@
 - `cupertino_icons` — لا استخدام لها ولا قرار بـها.
 - `flutter_lints` — استُبدلت بـ `very_good_analysis` (DEC-0011).
 
-## 7. حزم Spike المؤقتة (Phase 00B — تُحذف مع spike/)
+## 7. حزم Spike (Phase 00B)
 
-موثّقة بالتفصيل في `spike/README.md`؛ كلها exact بلا `^`:
+حزم CR-0012 أدناه اختُبرت في Spike ثم اعتُمدت كحزم مباشرة؛ السجل القانوني
+المعتمد موجود في §3. تفاصيل الاختبار موثّقة في `spike/README.md`.
 
 | الحزمة | الإصدار | الترخيص | التحقق |
 |---|---|---|---|
-| flutter_local_notifications | 22.3.1 | BSD-3-Clause | أرشيف pub.dev LICENSE — 2026-10-06 |
-| timezone | 0.11.1 | BSD-2-Clause | أرشيف pub.dev LICENSE (نص بشرطين) — 2026-10-06 |
-| audio_service | 0.18.19 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
-| just_audio | 0.10.6 | MIT (+Apache-2.0 ExoPlayer) | CR-0004 + LICENSE — 2026-10-06 |
+| حزم CR-0012 الأربع | exact pins | كما في §3 | Spike `spike/RESULTS.md`؛ CR-0012 |
 
 ## 8. ملاحظات
 
