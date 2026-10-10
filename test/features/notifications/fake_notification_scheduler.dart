@@ -12,6 +12,8 @@ class FakeNotificationScheduler implements NotificationScheduler {
   Future<ScheduleResult> schedule({
     required PrayerNotificationSchedule? schedule,
     required PermissionState permissions,
+    required String channelName,
+    required String channelDescription,
   }) async {
     scheduleRequests.add(schedule);
     if (schedule == null) return const ScheduleResult.noLocation();

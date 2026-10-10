@@ -79,3 +79,5 @@
 | GAP-methodchannel-sdkint | Custom MethodChannel to read Build.VERSION.SDK_INT — consider device_info_plus package in Phase 05+ | P3 | Phase 04 Task 3 | OPEN (Phase 05+) |
 | GAP-device-task3 | Diagnostics screen device tests deferred — bundle with Task 4 device session | P3 | Phase 04 Task 3 | OPEN (bundled with Task 4) |
 | GAP-boot-no-recalc | Plugin boot receiver restores pending alarms but does not recalculate future schedules; if user doesn't launch app for >7 days + reboot → potential missed notifications | P3 | Phase 04 Task 4 | OPEN (Phase 05+ — consider native WorkManager/AlarmManager) |
+| GAP-adhan-truncation | Android may truncate notification sound >30s — verify on Oppo A95 + document | P3 | Phase 04 Task 5 | OPEN (device test) |
+| GAP-audio-service-coloros | audio_service background play may be blocked on ColorOS 13 without battery optimization disabled | P3 | Phase 04 Task 5 | OPEN (device test) |

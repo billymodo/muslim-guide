@@ -33,6 +33,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   geolocator_platform_interface: 4.4.0
+  integration_test:
+    sdk: flutter
   # DEC-0011 — تحقق pub.dev 2026-10-05 (MIT)
   very_good_analysis: 11.0.0
 
@@ -41,3 +43,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/cities/
+    - assets/audio/adhan_placeholder.wav

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import 'package:muslim_guide/app/theme/app_colors.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
+import 'package:muslim_guide/features/adhan/presentation/adhan_player_controls.dart';
 import 'package:muslim_guide/features/prayer/application/countdown_provider.dart';
 import 'package:muslim_guide/features/prayer/application/prayer_times_provider.dart';
 import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_hero_card.dart';
@@ -92,6 +93,13 @@ class PrayerTimesScreen extends ConsumerWidget {
                         label: localizations.prayer_sunrise,
                         time: times.sunrise,
                         note: localizations.sunrise_not_prayer,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSpacing.l,
+                          vertical: AppSpacing.m,
+                        ),
+                        child: AdhanPlayerControls(),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(

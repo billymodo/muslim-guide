@@ -64,5 +64,15 @@
   "notif_prayer_title_asr": "صلاة العصر",
   "notif_prayer_title_maghrib": "صلاة المغرب",
   "notif_prayer_title_isha": "صلاة العشاء",
-  "notif_prayer_body": "حان وقت الصلاة"
+  "notif_prayer_body": "حان وقت الصلاة",
+  "notif_channel_prayer_adhan_name": "إشعارات الصلاة",
+  "notif_channel_prayer_adhan_description": "تنبيهات صوتية لمواقيت الصلاة",
+  "adhan_player_play": "تشغيل الأذان",
+  "adhan_player_stop": "إيقاف الأذان",
+  "adhan_player_state_idle": "جاهز",
+  "adhan_player_state_loading": "جارٍ تحميل الصوت",
+  "adhan_player_state_playing": "يعمل الآن",
+  "adhan_player_state_paused": "متوقف مؤقتاً",
+  "adhan_player_state_completed": "انتهى التشغيل",
+  "adhan_player_state_error": "تعذر تشغيل الصوت"
 }

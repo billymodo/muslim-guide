@@ -11,6 +11,8 @@ abstract interface class NotificationScheduler {
   Future<ScheduleResult> schedule({
     required PrayerNotificationSchedule? schedule,
     required PermissionState permissions,
+    required String channelName,
+    required String channelDescription,
   });
 
   /// Cancels all notification IDs owned by the prayer scheduler.

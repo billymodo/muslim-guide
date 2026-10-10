@@ -487,6 +487,66 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'حان وقت الصلاة'**
   String get notif_prayer_body;
+
+  /// No description provided for @notif_channel_prayer_adhan_name.
+  ///
+  /// In ar, this message translates to:
+  /// **'إشعارات الصلاة'**
+  String get notif_channel_prayer_adhan_name;
+
+  /// No description provided for @notif_channel_prayer_adhan_description.
+  ///
+  /// In ar, this message translates to:
+  /// **'تنبيهات صوتية لمواقيت الصلاة'**
+  String get notif_channel_prayer_adhan_description;
+
+  /// No description provided for @adhan_player_play.
+  ///
+  /// In ar, this message translates to:
+  /// **'تشغيل الأذان'**
+  String get adhan_player_play;
+
+  /// No description provided for @adhan_player_stop.
+  ///
+  /// In ar, this message translates to:
+  /// **'إيقاف الأذان'**
+  String get adhan_player_stop;
+
+  /// No description provided for @adhan_player_state_idle.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاهز'**
+  String get adhan_player_state_idle;
+
+  /// No description provided for @adhan_player_state_loading.
+  ///
+  /// In ar, this message translates to:
+  /// **'جارٍ تحميل الصوت'**
+  String get adhan_player_state_loading;
+
+  /// No description provided for @adhan_player_state_playing.
+  ///
+  /// In ar, this message translates to:
+  /// **'يعمل الآن'**
+  String get adhan_player_state_playing;
+
+  /// No description provided for @adhan_player_state_paused.
+  ///
+  /// In ar, this message translates to:
+  /// **'متوقف مؤقتاً'**
+  String get adhan_player_state_paused;
+
+  /// No description provided for @adhan_player_state_completed.
+  ///
+  /// In ar, this message translates to:
+  /// **'انتهى التشغيل'**
+  String get adhan_player_state_completed;
+
+  /// No description provided for @adhan_player_state_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تشغيل الصوت'**
+  String get adhan_player_state_error;
 }
 
 class _AppLocalizationsDelegate

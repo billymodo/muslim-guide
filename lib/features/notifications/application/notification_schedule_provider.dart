@@ -99,6 +99,9 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
   Future<void> _reschedule() async {
     try {
       final scheduler = ref.read(notificationSchedulerProvider);
+      final localizations = await AppLocalizations.delegate.load(
+        ref.read(appLocaleProvider),
+      );
       if (ref.read(locationProvider) == null) {
         await scheduler.cancelScheduledNotifications();
         final noLocation = await scheduler.schedule(
@@ -107,6 +110,9 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
             notifications: PermissionStatus.notApplicable,
             exactAlarms: PermissionStatus.notApplicable,
           ),
+          channelName: localizations.notif_channel_prayer_adhan_name,
+          channelDescription:
+              localizations.notif_channel_prayer_adhan_description,
         );
         if (!_disposed) state = noLocation;
         return;
@@ -121,6 +127,9 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
             notifications: PermissionStatus.notApplicable,
             exactAlarms: PermissionStatus.notApplicable,
           ),
+          channelName: localizations.notif_channel_prayer_adhan_name,
+          channelDescription:
+              localizations.notif_channel_prayer_adhan_description,
         );
         if (!_disposed) state = result;
         return;
@@ -128,9 +137,6 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
 
       final permissionService = ref.read(permissionServiceProvider);
       final permissionState = await permissionService.getStatus();
-      final localizations = await AppLocalizations.delegate.load(
-        ref.read(appLocaleProvider),
-      );
       final schedule = buildPrayerNotificationSchedule(
         calculationTemplate: calculation,
         repository: ref.read(prayerTimesRepositoryProvider),
@@ -148,6 +154,9 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
       final result = await scheduler.schedule(
         schedule: schedule,
         permissions: permissionState,
+        channelName: localizations.notif_channel_prayer_adhan_name,
+        channelDescription:
+            localizations.notif_channel_prayer_adhan_description,
       );
       if (!_disposed) state = result;
     } on Object catch (error) {

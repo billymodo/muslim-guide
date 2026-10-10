@@ -19,25 +19,53 @@ class FlutterLocalNotificationApi implements LocalNotificationApi {
   }
 
   @override
+  Future<void> createPrayerAdhanChannel({
+    required String name,
+    required String description,
+  }) async {
+    final androidPlugin = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
+    if (androidPlugin == null) {
+      throw StateError('Android notification channel is unavailable.');
+    }
+    await androidPlugin.createNotificationChannel(
+      AndroidNotificationChannel(
+        prayerAdhanNotificationChannelId,
+        name,
+        description: description,
+        importance: Importance.max,
+        sound: const RawResourceAndroidNotificationSound(
+          'adhan_placeholder',
+        ),
+      ),
+    );
+  }
+
+  @override
   Future<void> zonedSchedule({
     required int id,
     required tz.TZDateTime scheduledAt,
     required String title,
     required String body,
+    required String channelId,
   }) {
     return _plugin.zonedSchedule(
       id: id,
       scheduledDate: scheduledAt,
       title: title,
       body: body,
-      notificationDetails: const NotificationDetails(
+      notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
-          'prayer_notifications',
+          channelId,
           'Prayer notifications',
           channelDescription: 'Scheduled prayer time notifications',
           importance: Importance.max,
           priority: Priority.high,
-          playSound: false,
+          sound: const RawResourceAndroidNotificationSound(
+            'adhan_placeholder',
+          ),
         ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,

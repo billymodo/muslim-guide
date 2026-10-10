@@ -211,4 +211,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notif_prayer_body => 'Prayer time';
+
+  @override
+  String get notif_channel_prayer_adhan_name => 'Prayer notifications';
+
+  @override
+  String get notif_channel_prayer_adhan_description =>
+      'Audible notifications for prayer times';
+
+  @override
+  String get adhan_player_play => 'Play adhan';
+
+  @override
+  String get adhan_player_stop => 'Stop adhan';
+
+  @override
+  String get adhan_player_state_idle => 'Ready';
+
+  @override
+  String get adhan_player_state_loading => 'Loading audio';
+
+  @override
+  String get adhan_player_state_playing => 'Playing';
+
+  @override
+  String get adhan_player_state_paused => 'Paused';
+
+  @override
+  String get adhan_player_state_completed => 'Finished';
+
+  @override
+  String get adhan_player_state_error => 'Audio playback failed';
 }

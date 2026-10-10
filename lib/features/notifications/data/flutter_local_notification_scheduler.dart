@@ -12,11 +12,14 @@ class FlutterLocalNotificationScheduler implements NotificationScheduler {
 
   final LocalNotificationApi _api;
   Future<void>? _initialization;
+  Future<void>? _channelCreation;
 
   @override
   Future<ScheduleResult> schedule({
     required PrayerNotificationSchedule? schedule,
     required PermissionState permissions,
+    required String channelName,
+    required String channelDescription,
   }) async {
     if (schedule == null) return const ScheduleResult.noLocation();
     if (permissions.notifications == PermissionStatus.denied) {
@@ -31,7 +34,10 @@ class FlutterLocalNotificationScheduler implements NotificationScheduler {
     }
     var canCleanUp = false;
     try {
-      await _ensureInitialized();
+      await initialize(
+        channelName: channelName,
+        channelDescription: channelDescription,
+      );
       canCleanUp = true;
       await _cancelPrayerNotifications();
       if (schedule.notifications.isEmpty) {
@@ -45,6 +51,7 @@ class FlutterLocalNotificationScheduler implements NotificationScheduler {
           scheduledAt: notification.scheduledAt,
           title: notification.title,
           body: notification.body,
+          channelId: prayerAdhanNotificationChannelId,
         );
       }
       return ScheduleResult.scheduled(
@@ -76,11 +83,37 @@ class FlutterLocalNotificationScheduler implements NotificationScheduler {
     await _cancelPrayerNotifications();
   }
 
+  /// Creates the versioned prayer channel before its first scheduled use.
+  Future<void> initialize({
+    required String channelName,
+    required String channelDescription,
+  }) async {
+    await _ensureInitialized();
+    await (_channelCreation ??= _createPrayerAdhanChannel(
+      name: channelName,
+      description: channelDescription,
+    ));
+  }
+
+  Future<void> _createPrayerAdhanChannel({
+    required String name,
+    required String description,
+  }) async {
+    try {
+      await _api.createPrayerAdhanChannel(name: name, description: description);
+    } on Object {
+      _channelCreation = null;
+      rethrow;
+    }
+  }
+
   Future<void> _cancelPrayerNotifications() async {
     for (final prayer in PrayerNotification.values) {
-      for (var dayOffset = 0;
-          dayOffset < ScheduledPrayerNotification.horizonDays;
-          dayOffset++) {
+      for (
+        var dayOffset = 0;
+        dayOffset < ScheduledPrayerNotification.horizonDays;
+        dayOffset++
+      ) {
         await _api.cancel(prayer.index * 1000 + dayOffset);
       }
     }

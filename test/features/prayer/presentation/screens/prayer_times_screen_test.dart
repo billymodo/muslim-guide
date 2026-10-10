@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:muslim_guide/features/adhan/application/adhan_player_provider.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 
+import '../../../adhan/fake_adhan_player_service.dart';
 import '../presentation_test_utils.dart';
 
 void main() {
@@ -13,6 +15,7 @@ void main() {
     bool withFajr = true,
     bool failFirstBuild = false,
   }) {
+    final adhanPlayer = FakeAdhanPlayerService();
     return [
       prayerTimesOverride(
         buildTestTimes(dayOffset: dayOffset, withFajr: withFajr),
@@ -21,6 +24,7 @@ void main() {
       countdownOverride(() => const Duration(minutes: 42)),
       locationOverride(const CitySelection('riyadh')),
       citiesOverride(),
+      adhanPlayerServiceProvider.overrideWithValue(adhanPlayer),
     ];
   }
 
@@ -111,6 +115,7 @@ void main() {
     expect(find.text('الرياض'), findsOneWidget);
     expect(find.text('ليست صلاة فرض'), findsOneWidget);
     expect(find.text('إعدادات التنبيه'), findsOneWidget);
+    expect(find.text('تشغيل الأذان'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 

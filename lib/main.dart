@@ -1,3 +1,4 @@
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_guide/app/muslim_guide_app.dart';
@@ -6,6 +7,8 @@ import 'package:muslim_guide/app/router.dart';
 import 'package:muslim_guide/app/theme/app_colors.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/app/theme/app_theme.dart';
+import 'package:muslim_guide/features/adhan/application/adhan_player_provider.dart';
+import 'package:muslim_guide/features/adhan/data/audio_service_adhan_handler.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
 
 /// Gates the whole application on one-time bootstrap initialization so no
@@ -145,6 +148,26 @@ class _BootstrapErrorBody extends StatelessWidget {
 }
 
 /// Entry point for the application.
-void main() {
-  runApp(const ProviderScope(child: _AppBootstrap()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final adhanHandler =
+      await AudioService.init<AudioServiceAdhanHandler>(
+        builder: AudioServiceAdhanHandler.new,
+        config: const AudioServiceConfig(
+          androidNotificationChannelId: 'muslim_guide_audio',
+          androidNotificationChannelName: 'Prayer audio',
+          androidNotificationChannelDescription:
+              'In-app prayer audio playback controls',
+          androidNotificationOngoing: true,
+        ),
+      );
+  await adhanHandler.init();
+  runApp(
+    ProviderScope(
+      overrides: [
+        adhanPlayerServiceProvider.overrideWithValue(adhanHandler),
+      ],
+      child: const _AppBootstrap(),
+    ),
+  );
 }

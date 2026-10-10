@@ -42,10 +42,13 @@ void main() {
       final result = await scheduler.schedule(
         schedule: null,
         permissions: _granted,
+        channelName: 'Prayer Adhan',
+        channelDescription: 'Adhan alerts',
       );
 
       expect(result.status, ScheduleResultStatus.noLocation);
       expect(api.initializeCalls, 0);
+      expect(api.createChannelCalls, 0);
       expect(api.cancelCalls, 0);
       expect(api.scheduledNotifications, isEmpty);
     },
@@ -64,11 +67,14 @@ void main() {
       final result = await scheduler.schedule(
         schedule: _schedule(),
         permissions: deniedExactAlarm,
+        channelName: 'Prayer Adhan',
+        channelDescription: 'Adhan alerts',
       );
 
       expect(result.status, ScheduleResultStatus.failed);
       expect(result.reason, ScheduleFailureReason.exactAlarmsDenied);
       expect(api.initializeCalls, 0);
+      expect(api.createChannelCalls, 0);
       expect(api.cancelCalls, 0);
       expect(api.scheduledNotifications, isEmpty);
     },
@@ -85,6 +91,8 @@ void main() {
     final result = await scheduler.schedule(
       schedule: _schedule(),
       permissions: deniedNotifications,
+      channelName: 'Prayer Adhan',
+      channelDescription: 'Adhan alerts',
     );
 
     expect(result.reason, ScheduleFailureReason.notificationsDenied);
@@ -101,14 +109,20 @@ void main() {
       final result = await scheduler.schedule(
         schedule: _schedule(),
         permissions: _granted,
+        channelName: 'Prayer Adhan',
+        channelDescription: 'Adhan alerts',
       );
 
       expect(result.isScheduled, isTrue);
       expect(result.scheduledCount, 1);
       expect(api.initializeCalls, 1);
+      expect(api.createChannelCalls, 1);
+      expect(api.createdChannelName, 'Prayer Adhan');
+      expect(api.createdChannelDescription, 'Adhan alerts');
       expect(api.cancelledIds, hasLength(35));
       expect(api.cancelledIds.toSet(), hasLength(35));
       expect(api.scheduledNotifications.single.id, 0);
+      expect(api.scheduledNotifications.single.channelId, 'prayer_adhan_v1');
       expect(api.scheduledNotifications.single.title, 'Fajr Prayer');
     },
   );
@@ -140,6 +154,8 @@ void main() {
       final result = await scheduler.schedule(
         schedule: schedule,
         permissions: _granted,
+        channelName: 'Prayer Adhan',
+        channelDescription: 'Adhan alerts',
       );
 
       expect(result.reason, ScheduleFailureReason.schedulingFailed);
@@ -156,6 +172,8 @@ void main() {
     final result = await scheduler.schedule(
       schedule: _schedule(),
       permissions: _granted,
+      channelName: 'Prayer Adhan',
+      channelDescription: 'Adhan alerts',
     );
 
     expect(result.reason, ScheduleFailureReason.schedulingFailed);
@@ -176,6 +194,8 @@ void main() {
       final result = await scheduler.schedule(
         schedule: _schedule(),
         permissions: preExactAlarmApi,
+        channelName: 'Prayer Adhan',
+        channelDescription: 'Adhan alerts',
       );
 
       expect(result.isScheduled, isTrue);

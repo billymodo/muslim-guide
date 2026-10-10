@@ -4,10 +4,21 @@ import 'package:timezone/timezone.dart' as tz;
 class FakeLocalNotificationApi implements LocalNotificationApi {
   bool? initializeResult = true;
   int initializeCalls = 0;
+  int createChannelCalls = 0;
   int cancelCalls = 0;
   int? failScheduleId;
   final List<int> cancelledIds = [];
-  final List<({int id, tz.TZDateTime scheduledAt, String title, String body})>
+  String? createdChannelName;
+  String? createdChannelDescription;
+  final List<
+    ({
+      int id,
+      tz.TZDateTime scheduledAt,
+      String title,
+      String body,
+      String channelId,
+    })
+  >
   scheduledNotifications = [];
 
   @override
@@ -17,18 +28,33 @@ class FakeLocalNotificationApi implements LocalNotificationApi {
   }
 
   @override
+  Future<void> createPrayerAdhanChannel({
+    required String name,
+    required String description,
+  }) async {
+    createChannelCalls++;
+    createdChannelName = name;
+    createdChannelDescription = description;
+  }
+
+  @override
   Future<void> zonedSchedule({
     required int id,
     required tz.TZDateTime scheduledAt,
     required String title,
     required String body,
+    required String channelId,
   }) async {
     if (failScheduleId == id) throw StateError('injected schedule failure');
+    if (channelId != 'prayer_adhan_v1') {
+      throw StateError('Unexpected prayer notification channel: $channelId');
+    }
     scheduledNotifications.add((
       id: id,
       scheduledAt: scheduledAt,
       title: title,
       body: body,
+      channelId: channelId,
     ));
   }
 

@@ -205,4 +205,35 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notif_prayer_body => 'حان وقت الصلاة';
+
+  @override
+  String get notif_channel_prayer_adhan_name => 'إشعارات الصلاة';
+
+  @override
+  String get notif_channel_prayer_adhan_description =>
+      'تنبيهات صوتية لمواقيت الصلاة';
+
+  @override
+  String get adhan_player_play => 'تشغيل الأذان';
+
+  @override
+  String get adhan_player_stop => 'إيقاف الأذان';
+
+  @override
+  String get adhan_player_state_idle => 'جاهز';
+
+  @override
+  String get adhan_player_state_loading => 'جارٍ تحميل الصوت';
+
+  @override
+  String get adhan_player_state_playing => 'يعمل الآن';
+
+  @override
+  String get adhan_player_state_paused => 'متوقف مؤقتاً';
+
+  @override
+  String get adhan_player_state_completed => 'انتهى التشغيل';
+
+  @override
+  String get adhan_player_state_error => 'تعذر تشغيل الصوت';
 }

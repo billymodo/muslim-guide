@@ -4,6 +4,30 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+abstract class GenerateAdhanNotificationSound : DefaultTask() {
+    @get:InputFile
+    abstract val sourceFile: RegularFileProperty
+
+    @get:OutputDirectory
+    abstract val outputDirectory: DirectoryProperty
+
+    @TaskAction
+    fun generate() {
+        val rawDirectory = outputDirectory.get().asFile.resolve("raw")
+        rawDirectory.mkdirs()
+        sourceFile.get().asFile.copyTo(
+            rawDirectory.resolve("adhan_placeholder.wav"),
+            overwrite = true,
+        )
+    }
+}
+
+val copyAdhanNotificationSound =
+    tasks.register<GenerateAdhanNotificationSound>("copyAdhanNotificationSound") {
+        sourceFile.set(layout.projectDirectory.file("../../assets/audio/adhan_placeholder.wav"))
+        outputDirectory.set(layout.buildDirectory.dir("generated/res/adhanNotificationSound"))
+    }
+
 android {
     namespace = "com.muslimguide.app.muslim_guide"
     compileSdk = 36 // DEC-0015, amended by CR-0007
@@ -36,6 +60,16 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+}
+
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.res?.addGeneratedSourceDirectory(
+            copyAdhanNotificationSound,
+        ) { task ->
+            task.outputDirectory
         }
     }
 }

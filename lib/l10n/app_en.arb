@@ -64,5 +64,15 @@
   "notif_prayer_title_asr": "Asr Prayer",
   "notif_prayer_title_maghrib": "Maghrib Prayer",
   "notif_prayer_title_isha": "Isha Prayer",
-  "notif_prayer_body": "Prayer time"
+  "notif_prayer_body": "Prayer time",
+  "notif_channel_prayer_adhan_name": "Prayer notifications",
+  "notif_channel_prayer_adhan_description": "Audible notifications for prayer times",
+  "adhan_player_play": "Play adhan",
+  "adhan_player_stop": "Stop adhan",
+  "adhan_player_state_idle": "Ready",
+  "adhan_player_state_loading": "Loading audio",
+  "adhan_player_state_playing": "Playing",
+  "adhan_player_state_paused": "Paused",
+  "adhan_player_state_completed": "Finished",
+  "adhan_player_state_error": "Audio playback failed"
 }
