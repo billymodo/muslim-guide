@@ -76,3 +76,5 @@
 | GAP-deeplink-consolidation | Deep-link intent filters path-specific (`/prayer`, `/qibla`); consider wildcard or production scheme | P3 | Phase 03 Task 10 | **CLOSED** — unified `muslimguide://<feature>/<action>` scheme and legacy aliases; unit/widget tests pass; verified on CPH2365 Android 13 (`docs/evidence/phase-04/t1-*.png`) |
 | GAP-notif-adhan-pinned | `flutter_local_notifications` 22.3.1 + `timezone` 0.11.1 + `just_audio` 0.10.6 + `audio_service` 0.18.19 (exact) — added to pubspec | — | CR-0012 (Phase 04) | **CLOSED** (`a331b78`) |
 | GAP-notification-permission-diagnostics | Notification permission and exact-alarm status flow with diagnostics screen | — | Phase 04 Task 3 | **CLOSED-PENDING-DEVICE** (implementation and automated tests complete) |
+| GAP-methodchannel-sdkint | Custom MethodChannel to read Build.VERSION.SDK_INT — consider device_info_plus package in Phase 05+ | P3 | Phase 04 Task 3 | OPEN (Phase 05+) |
+| GAP-device-task3 | Diagnostics screen device tests deferred — bundle with Task 4 device session | P3 | Phase 04 Task 3 | OPEN (bundled with Task 4) |
