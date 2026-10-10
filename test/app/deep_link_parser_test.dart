@@ -62,10 +62,23 @@ void main() {
     });
 
     test('returns null for an unsupported scheme', () {
-      expect(
-        DeepLinkParser.parse(Uri.parse('https://prayer/now')),
-        isNull,
-      );
+      expect(DeepLinkParser.parse(Uri.parse('https://prayer/now')), isNull);
+    });
+
+    test('resolves the path-only prayer link', () {
+      expect(DeepLinkParser.parse(Uri.parse('/now')), '/prayer');
+    });
+
+    test('resolves the path-only qibla link', () {
+      expect(DeepLinkParser.parse(Uri.parse('/show')), '/qibla');
+    });
+
+    test('resolves the path-only location picker link', () {
+      expect(DeepLinkParser.parse(Uri.parse('/pick')), '/location-picker');
+    });
+
+    test('returns null for an unknown path-only link', () {
+      expect(DeepLinkParser.parse(Uri.parse('/unknown')), isNull);
     });
   });
 }

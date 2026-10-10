@@ -5,13 +5,29 @@ abstract final class DeepLinkParser {
 
   /// Resolves a supported deep link, or returns null when it is unknown.
   static String? parse(Uri uri) {
-    if (uri.scheme != scheme) return null;
+    if (uri.scheme == scheme) {
+      return _resolveHostPath(uri.host, uri.path);
+    }
+    if (uri.scheme.isNotEmpty) return null;
 
-    return switch ((uri.host, uri.path)) {
+    return _resolvePathOnly(uri.path);
+  }
+
+  static String? _resolveHostPath(String host, String path) {
+    return switch ((host, path)) {
       ('prayer', '/now') || ('test', '/prayer') => '/prayer',
       ('qibla', '/show') || ('test', '/qibla') => '/qibla',
       ('location', '/pick') => '/location-picker',
       ('diagnostics', '/notifications') => '/diagnostics/notifications',
+      _ => null,
+    };
+  }
+
+  static String? _resolvePathOnly(String path) {
+    return switch (path) {
+      '/now' => '/prayer',
+      '/show' => '/qibla',
+      '/pick' => '/location-picker',
       _ => null,
     };
   }

@@ -79,10 +79,9 @@ Future<String?> redirectDeepLink(
   Uri uri, {
   required Future<void> Function(String uri) logUnknownUri,
 }) async {
-  if (uri.scheme.toLowerCase() != DeepLinkParser.scheme) return null;
-
   final location = DeepLinkParser.parse(uri);
   if (location != null) return location;
+  if (uri.scheme.toLowerCase() != DeepLinkParser.scheme) return null;
 
   final safeUri = Uri(
     scheme: uri.scheme,

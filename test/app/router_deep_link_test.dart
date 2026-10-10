@@ -3,11 +3,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muslim_guide/app/router.dart';
 
-GoRouter _buildRouter({
+GoRouter _buildRouter(
+  String initialLocation, {
   required Future<void> Function(String uri) logUnknownUri,
 }) {
   return GoRouter(
-    initialLocation: '/prayer',
+    initialLocation: initialLocation,
     redirect: (_, state) =>
         redirectDeepLink(state.uri, logUnknownUri: logUnknownUri),
     routes: [
@@ -25,9 +26,8 @@ GoRouter _buildRouter({
       ),
       GoRoute(
         path: '/diagnostics/notifications',
-        builder: (_, _) => const Scaffold(
-          body: Text('diagnostics destination'),
-        ),
+        builder: (_, _) =>
+            const Scaffold(body: Text('diagnostics destination')),
       ),
     ],
   );
@@ -45,7 +45,7 @@ Future<void> _openDeepLink(
 
 void main() {
   testWidgets('routes prayer deep link to the prayer screen', (tester) async {
-    final router = _buildRouter(logUnknownUri: (_) async {});
+    final router = _buildRouter('/prayer', logUnknownUri: (_) async {});
     addTearDown(router.dispose);
 
     await _openDeepLink(tester, router, 'muslimguide://prayer/now');
@@ -55,7 +55,7 @@ void main() {
   });
 
   testWidgets('routes qibla deep link to the qibla screen', (tester) async {
-    final router = _buildRouter(logUnknownUri: (_) async {});
+    final router = _buildRouter('/prayer', logUnknownUri: (_) async {});
     addTearDown(router.dispose);
 
     await _openDeepLink(tester, router, 'muslimguide://qibla/show');
@@ -67,7 +67,7 @@ void main() {
   testWidgets('routes location picker deep link to the location screen', (
     tester,
   ) async {
-    final router = _buildRouter(logUnknownUri: (_) async {});
+    final router = _buildRouter('/prayer', logUnknownUri: (_) async {});
     addTearDown(router.dispose);
 
     await _openDeepLink(tester, router, 'muslimguide://location/pick');
@@ -76,10 +76,27 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('routes cold-start path-only location link without a loop', (
+    tester,
+  ) async {
+    final router = _buildRouter(
+      '/pick',
+      logUnknownUri: (_) async {},
+    );
+    addTearDown(router.dispose);
+
+    await tester.pumpWidget(MaterialApp.router(routerConfig: router));
+    await tester.pumpAndSettle();
+
+    expect(find.text('location destination'), findsOneWidget);
+    expect(router.routeInformationProvider.value.uri.path, '/location-picker');
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('routes notification diagnostics deep link to its screen', (
     tester,
   ) async {
-    final router = _buildRouter(logUnknownUri: (_) async {});
+    final router = _buildRouter('/prayer', logUnknownUri: (_) async {});
     addTearDown(router.dispose);
 
     await _openDeepLink(
@@ -97,6 +114,7 @@ void main() {
   ) async {
     final loggedUris = <String>[];
     final router = _buildRouter(
+      '/prayer',
       logUnknownUri: (uri) async => loggedUris.add(uri),
     );
     addTearDown(router.dispose);
@@ -117,6 +135,7 @@ void main() {
   ) async {
     final loggedUris = <String>[];
     final router = _buildRouter(
+      '/prayer',
       logUnknownUri: (uri) async => loggedUris.add(uri),
     );
     addTearDown(router.dispose);
