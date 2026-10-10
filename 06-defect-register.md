@@ -78,3 +78,4 @@
 | GAP-notification-permission-diagnostics | Notification permission and exact-alarm status flow with diagnostics screen | — | Phase 04 Task 3 | **CLOSED-PENDING-DEVICE** (implementation and automated tests complete) |
 | GAP-methodchannel-sdkint | Custom MethodChannel to read Build.VERSION.SDK_INT — consider device_info_plus package in Phase 05+ | P3 | Phase 04 Task 3 | OPEN (Phase 05+) |
 | GAP-device-task3 | Diagnostics screen device tests deferred — bundle with Task 4 device session | P3 | Phase 04 Task 3 | OPEN (bundled with Task 4) |
+| GAP-boot-no-recalc | Plugin boot receiver restores pending alarms but does not recalculate future schedules; if user doesn't launch app for >7 days + reboot → potential missed notifications | P3 | Phase 04 Task 4 | OPEN (Phase 05+ — consider native WorkManager/AlarmManager) |

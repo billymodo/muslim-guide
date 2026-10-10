@@ -187,4 +187,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notif_diag_error => 'تعذر قراءة حالة الأذونات. حاول مرة أخرى.';
+
+  @override
+  String get notif_prayer_title_fajr => 'صلاة الفجر';
+
+  @override
+  String get notif_prayer_title_dhuhr => 'صلاة الظهر';
+
+  @override
+  String get notif_prayer_title_asr => 'صلاة العصر';
+
+  @override
+  String get notif_prayer_title_maghrib => 'صلاة المغرب';
+
+  @override
+  String get notif_prayer_title_isha => 'صلاة العشاء';
+
+  @override
+  String get notif_prayer_body => 'حان وقت الصلاة';
 }

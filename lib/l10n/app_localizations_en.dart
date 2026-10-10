@@ -193,4 +193,22 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get notif_diag_error =>
       'Could not read permission status. Please retry.';
+
+  @override
+  String get notif_prayer_title_fajr => 'Fajr Prayer';
+
+  @override
+  String get notif_prayer_title_dhuhr => 'Dhuhr Prayer';
+
+  @override
+  String get notif_prayer_title_asr => 'Asr Prayer';
+
+  @override
+  String get notif_prayer_title_maghrib => 'Maghrib Prayer';
+
+  @override
+  String get notif_prayer_title_isha => 'Isha Prayer';
+
+  @override
+  String get notif_prayer_body => 'Prayer time';
 }

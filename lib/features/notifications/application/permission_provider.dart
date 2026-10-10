@@ -6,8 +6,14 @@ import 'package:muslim_guide/features/notifications/data/permission_service.dart
 import 'package:muslim_guide/features/notifications/domain/permission_state.dart';
 
 /// Provides the platform permission service.
+final Provider<FlutterLocalNotificationsPlugin> notificationPluginProvider =
+    Provider<FlutterLocalNotificationsPlugin>(
+      (ref) => FlutterLocalNotificationsPlugin(),
+    );
+
+/// Provides the platform permission service.
 final permissionServiceProvider = Provider<PermissionService>((ref) {
-  final plugin = FlutterLocalNotificationsPlugin();
+  final plugin = ref.watch(notificationPluginProvider);
   const sdkVersionChannel = AndroidSdkVersionChannel();
   return AndroidPermissionService(
     sdkVersionChannel.getSdkVersion,

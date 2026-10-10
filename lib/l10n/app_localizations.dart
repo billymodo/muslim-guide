@@ -451,6 +451,42 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تعذر قراءة حالة الأذونات. حاول مرة أخرى.'**
   String get notif_diag_error;
+
+  /// No description provided for @notif_prayer_title_fajr.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلاة الفجر'**
+  String get notif_prayer_title_fajr;
+
+  /// No description provided for @notif_prayer_title_dhuhr.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلاة الظهر'**
+  String get notif_prayer_title_dhuhr;
+
+  /// No description provided for @notif_prayer_title_asr.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلاة العصر'**
+  String get notif_prayer_title_asr;
+
+  /// No description provided for @notif_prayer_title_maghrib.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلاة المغرب'**
+  String get notif_prayer_title_maghrib;
+
+  /// No description provided for @notif_prayer_title_isha.
+  ///
+  /// In ar, this message translates to:
+  /// **'صلاة العشاء'**
+  String get notif_prayer_title_isha;
+
+  /// No description provided for @notif_prayer_body.
+  ///
+  /// In ar, this message translates to:
+  /// **'حان وقت الصلاة'**
+  String get notif_prayer_body;
 }
 
 class _AppLocalizationsDelegate

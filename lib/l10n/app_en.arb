@@ -58,5 +58,11 @@
   "notif_diag_request": "Request permission",
   "notif_diag_open_settings": "Open notification settings",
   "notif_diag_retry": "Retry",
-  "notif_diag_error": "Could not read permission status. Please retry."
+  "notif_diag_error": "Could not read permission status. Please retry.",
+  "notif_prayer_title_fajr": "Fajr Prayer",
+  "notif_prayer_title_dhuhr": "Dhuhr Prayer",
+  "notif_prayer_title_asr": "Asr Prayer",
+  "notif_prayer_title_maghrib": "Maghrib Prayer",
+  "notif_prayer_title_isha": "Isha Prayer",
+  "notif_prayer_body": "Prayer time"
 }
