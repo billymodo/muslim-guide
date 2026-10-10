@@ -33,22 +33,43 @@ app registered scheduled-notification alarms.
 
 - [Prayer screen after selecting Riyadh](evidence/phase-04/t4-after-city.png)
 - [Alarm dump before reboot](evidence/phase-04/t4-dumpsys-alarm-before-reboot.txt)
-- [Alarm dump after reboot and app launch](evidence/phase-04/t4-dumpsys-alarm-after-reboot-full.txt)
+- [First post-boot sample](evidence/phase-04/t4-dumpsys-alarm-reboot-90s.txt)
+- [Second post-boot sample](evidence/phase-04/t4-dumpsys-alarm-reboot-180s.txt)
+- [After-launch sample](evidence/phase-04/t4-dumpsys-alarm-after-launch-controlled.txt)
 
-The captured alarm dump had 34 entries for the app before reboot. The initial
-post-reboot observation was taken after opening the app, not at both prescribed
-90-second intervals; it therefore does not distinguish plugin boot restoration
-from app rescheduling. A controlled boot sequence remains pending.
+The earlier, pre-Dhuhr alarm dump had 34 entries for the app. In the controlled
+reboot sequence after Dhuhr had fired, the app had zero alarms at the first
+post-boot sample (>90 seconds after boot) and zero again 90 seconds later,
+without opening the app. Opening the app restored 33 future alarms. Result:
+**0 → 0 → 33**. The one-entry difference from 34 is expected because Dhuhr's
+same-day alarm had already fired. On this Oppo A95 run, alarms were not
+restored while the app remained unopened after reboot; the boot-restoration
+gap is confirmed.
 
 A Dhuhr notification appeared with title "Dhuhr Prayer", body "Prayer time",
-channel `prayer_adhan_v1`, and the generated raw placeholder sound. The
-scheduled alarm time was 11:40:08 EEST. A subsequent NotificationManager dump
-recorded `mCreationTimeMs=1791621613488`, equivalent to 11:40:13.488 EEST:
-5.488 seconds after the scheduled alarm time. This persisted system timestamp
-is within the ±60-second target, but was not captured by the prescribed
-cleared-logcat timing procedure; repeat the measurement after this commit.
-The relevant notification entry is preserved in
-[t4-notification-manager-timing-initial.txt](evidence/phase-04/t4-notification-manager-timing-initial.txt).
+channel `prayer_adhan_v1`, and the generated raw placeholder sound. Its initial
+persisted NotificationManager timestamp was 5.488 seconds after the alarm
+target, but it predates the approved evidence push. For the post-push retest,
+Tokyo was temporarily selected to bring the next prayer earlier. The Isha alarm
+target was 12:32:50.000 EEST (`origWhen=1791624770000`); NotificationManager
+recorded `mCreationTimeMs=1791624846526`, or 12:34:06.526 EEST. The measured
+delay was **+76.526 seconds**, exceeding the ±60-second limit: **FAIL**.
+
+The app requests `AndroidScheduleMode.exactAllowWhileIdle` and exact-alarm
+access was granted. The captured AlarmManager record nevertheless showed
+`windowLength=725776 ms` (12m 5.776s); ColorOS logged the app being unfrozen
+for the alarm at 12:34:06.397 EEST. These observations are consistent with
+OS/OEM deferral but do not establish its root cause. A follow-up device-state
+check confirmed `SCHEDULE_EXACT_ALARM` is granted, but
+`com.muslimguide.app` is absent from the current `dumpsys deviceidle` user
+whitelist despite the reported battery-optimization exemption. This mismatch
+needs verification in ColorOS settings; the follow-up snapshot does not prove
+the exact device-idle state at delivery time. Scheduler timing investigation
+is required before Phase 04 can proceed to Task 6. Evidence:
+[t4-timing-scheduled-alarm.txt](evidence/phase-04/t4-timing-scheduled-alarm.txt),
+[t4-timing-notification-record.txt](evidence/phase-04/t4-timing-notification-record.txt),
+[t4-timing-notification-manager.txt](evidence/phase-04/t4-timing-notification-manager.txt),
+and [t4-timing-logcat-pending.txt](evidence/phase-04/t4-timing-logcat-pending.txt).
 
 - [Notification shade](evidence/phase-04/t4-01-notification-arrived.png)
 
@@ -80,13 +101,12 @@ does not establish behavior when battery optimization is enabled.
 
 ## Pending measurements
 
-1. Repeat the timing test with a cleared logcat, recording the alarm's scheduled
-   timestamp and the system notification's actual post timestamp. The existing
-   NotificationManager timestamp is a provisional 5.488-second result.
-2. Repeat reboot validation without opening the app for 90 seconds, take an
-   alarm count, wait another 90 seconds and take a second count, then open the
-   app and take a third count.
-3. Do not treat these pending measurements as failures or as confirmed passes.
+1. Verify the ColorOS battery-optimization setting against the app's absence
+   from the current device-idle user whitelist.
+2. Investigate why AlarmManager exposed a 725,776 ms delivery window for an
+   `exactAllowWhileIdle` schedule despite exact-alarm access being granted.
+3. Keep Task 6 blocked until the scheduler timing failure is resolved.
+4. Do not treat the reboot-restoration failure as a timing-test result.
 
 ## Source changes and commit
 

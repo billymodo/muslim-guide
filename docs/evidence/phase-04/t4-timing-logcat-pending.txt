@@ -1,0 +1,408 @@
+
+         1791623821.489  6352  6352 W NotificationCenter: NotificationCenter.unregisterListener():474 Listener 
+kmd@65e725a was not registered for notification class qyn
+         1791623836.750  6386  6386 I adbd    : adbd service requested 'shell,v2,raw:dumpsys alarm'
+         1791623836.817  1914  3641 D AlarmManagerServiceExtImpl: dynamicallyConfigLogTag , opti = 0, args.length=0
+         1791623836.898  1914  3641 D AlarmManagerServiceExtImpl: dynamicallyConfigLogTag , opti = 0, args.length=1
+         1791623837.176  3134  3134 V ShadeControllerImpl: NotificationShadeWindow: 
+com.android.systemui.statusbar.phone.NotificationShadeWindowView{80e8883 I.E...... ......ID 0,0-1080,2400} 
+canPanelBeCollapsed(): false
+         1791623837.442  1914  2236 D TaskChangeNotificationControllerExtImpl: Skip pass Snapshot to 
+listener:android.app.ITaskStackListener$Stub$Proxy@3667f87
+         1791623837.545  1914  1914 I AppWidgetServiceImpl: handleNotifyUpdateAppWidget,appWidgetId: 
+4,packageName:com.coloros.alarmclock
+         1791623837.545  1914  1914 I AppWidgetServiceImpl: handleNotifyUpdateAppWidget,appWidgetId: 
+2,packageName:com.coloros.alarmclock
+         1791623837.603  6607  6748 E WeatherS_ApkSignedCheck: checkCertificateWhiteList: less os14 inWhiteList=true 
+packName=com.coloros.alarmclock
+         1791623837.604  6607  6732 E WeatherS_ApkSignedCheck: checkCertificateWhiteList: less os14 inWhiteList=true 
+packName=com.coloros.alarmclock
+         1791623842.365  6582  7050 E Battery : AppStats: Uid = 10343; pkgName = com.muslimguide.app; 
+AlarmFgWakeupCount = 0; AlarmBgWakeupCount = 0
+         1791623912.645  1914  1914 I ActivityManager: Killing 11311:com.qualcomm.qti.poweroffalarm/u0a125 (adj 999): 
+empty #100
+         1791623912.683  1914  1914 W Looper  : Slow delivery took 367ms main 
+h=com.android.server.alarm.AlarmManagerService$AlarmHandler c=null m=4
+         1791623913.361  1914  2720 D OplusUIFirst_FB: com.qualcomm.qti.poweroffalarm remove pid: 11311
+         1791623991.832  5796  5796 E oros.alarmclock: hiddenapi: Accessing hidden method 
+Landroid/graphics/Canvas;->freeTextLayoutCaches()V (runtime_flags=0, domain=platform, api=max-target-r) from 
+Lcom/oplus/alarmclock/AlarmClockApplication; (domain=app, TargetSdkVersion=34) using reflection: denied
+         1791624122.462  1914  2915 V OplusNPMS: getWarningNotification numWarningNotificaion10
+         1791624122.462  1914  2915 V OplusNPMS: getWarningNotification numWarningNotificaion10
+         1791624122.462  1914  2915 V OplusNPMS: getLimitNotificationState subID=4
+         1791624122.462  1914  2915 V OplusNPMS: getLimitNotificationState mSubidToIccId != null
+         1791624122.462  3368  3368 D ModemAciService: onReceive 
+oplus.intent.action.INTERNAL_LOOP_UPDATE_ACTIVITYINFO_ALARM
+         1791624187.075 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.analytics2.fabric.onefabric.FFAlarmUploadJobService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.075 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.registration.notification.RegistrationNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.075 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.notifications.appwidget.bugreporter.NotificationsWidgetDebugHelper is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.075 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.account.login.notification.LoginNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.088 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.compost.service.CompostNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.088 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.messaging.notify.client.MessagesNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.088 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.confirmation.notification.ConfirmationNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624187.089 18886 18935 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624188.169  1914  3346 W PackageManager: package unknown uid 10265 pid 18886 call 
+SetEnabledSetting(com.facebook.katana component = 
+com.facebook.notifications.settings.InAppNotificationSettingsActivity, 1, 0)
+         1791624198.576  1914  2781 I ActivityManager: Killing 6297:com.coloros.alarmclock:clockWidget/u0a154 (adj 
+985): empty #17
+         1791624198.625  1914  3365 D OplusUIFirst_FB: com.coloros.alarmclock remove pid: 6297
+         1791624244.594 19194 19194 D Ana Vodafone - UALib: PermissionsManager - Checking permission status for 
+display_notifications
+         1791624245.211 19194 19194 D Ana Vodafone - UALib: PermissionsManager - Permission display_notifications 
+request result: granted
+         1791624382.741  3368  3368 D ModemAciService: onReceive 
+oplus.intent.action.INTERNAL_LOOP_UPDATE_ACTIVITYINFO_ALARM
+         1791624442.909  1914  2282 I ActivityManager: Start proc 19842:com.imo.android.imoim/u0a300 for service 
+{com.imo.android.imoim/com.imo.android.imoim.Alarms$AlarmJobScheduler}
+         1791624496.552  3452  4015 D MmsSmsDatabaseHelper: [MmsSmsDb] tableName: threads hasAutoIncrement: CREATE 
+TABLE threads (_id INTEGER PRIMARY KEY AUTOINCREMENT,date INTEGER DEFAULT 0,message_count INTEGER DEFAULT 
+0,recipient_ids TEXT,snippet TEXT,snippet_cs INTEGER DEFAULT 0,read INTEGER DEFAULT 1,archived INTEGER DEFAULT 0,type 
+INTEGER DEFAULT 0,error INTEGER DEFAULT 0,has_attachment INTEGER DEFAULT 0,attachment_info TEXT,notification INTEGER 
+DEFAULT 0,status INTEGER DEFAULT 0,oplus_drafts INTEGER DEFAULT 1,oplus_unread_count INTEGER DEFAULT 0,oplus_top_flag 
+INTEGER DEFAULT 0,oplus_thread_type INTEGER DEFAULT 0,ted_service_id TEXT,rcs_top INTEGER DEFAULT 0,rcs_top_time 
+INTEGER DEFAULT 0,rcs_number TEXT,last_msg_id INTEGER  DEFAULT -1,last_msg_type INTEGER  DEFAULT -1,msg_chat_type 
+INTEGER  DEFAULT -1,rcs_group_id INTEGER, rcs_extend_body TEXT, is_in_black INTEGER DEFAULT 0) result: true
+         1791624499.477 16844 20179 D WM-SystemJobScheduler: Scheduling work ID f9978ffc-2f9c-43d5-8bc1-a5ca50f64c93 
+(com.google.android.libraries.notifications.platform.entrypoints.job.GnpWorker), Job ID 2175
+         1791624499.541 16844 20179 D WM-SystemJobScheduler: Scheduling work ID 26f490ab-bdcf-46d7-ae06-c1f1a470ba44 
+(com.google.android.libraries.notifications.platform.entrypoints.job.GnpWorker), Job ID 2170
+         1791624499.564 16844 20179 D WM-SystemJobScheduler: Scheduling work ID 17864f48-5316-47eb-96ac-542f43ea0d44 
+(com.google.android.libraries.notifications.platform.entrypoints.job.GnpWorker), Job ID 2321
+         1791624499.575 16844 20179 D WM-SystemJobScheduler: Scheduling work ID 117f7162-4335-463c-aa53-fb735c7a37d8 
+(com.google.android.libraries.notifications.platform.entrypoints.job.GnpWorker), Job ID 2171
+         1791624500.637 16844 20211 I BugleNotifications: Creating notification from ReceiveSmsMessageHelper [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624500.676 16844 20173 W GoogleApiManager: Not showing notification since connectionResult is not 
+user-facing: ConnectionResult{statusCode=API_UNAVAILABLE, resolution=null, message=null, clientMethodKey=null, 
+errorResolutionInfo=null}
+         1791624501.021 16844 20178 I BugleNotifications: ConversationNotificationHandler is triggered, with 
+IncomingMessageNotificationWorkItemParameters.size=1 [CONTEXT x_message_id=-5085022560700342566 
+work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624501.228 16844 20172 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215 [CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" ]
+         1791624501.229 16844 20172 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215 [CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" ]
+         1791624501.316 16844 20201 I BugleTrustedContacts: Devices not under supervision, conversation notification 
+should always be posted. [CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" class_name="ConversationTrustedContactsApi" ratelimit_period="1 MINUTES" ]
+         1791624501.320 16844 20204 I BugleNotifications: queueDefaultNotification for conversationId=215, 
+isSilent=false, shouldPostNotificationBasedOnParentalApproval=POST_INCOMING_MESSAGE_NOTIFICATION [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+class_name="QueueStrategyDefault" ]
+         1791624501.344 16844 20204 I BugleNotifications: queued notification work item for conversation 215 [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624501.572  1914  1914 D NotificationService--OplusNotificationManagerServiceExtImpl: 
+isForwardToAssistants: true, case : Is local notification
+         1791624501.572  1914  1914 D NotificationService: This application enqueue notifications is need postDelayed 
+mcsAssistantDelayTime: 100
+         1791624501.677 16844 20169 I BugleNotifications: Set shortcut badge counter to 38 [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624501.727  3134  3134 D InterruptionStateProvider: No heads up: unimportant notification: 
+0|com.google.android.apps.messaging|174344743|null|10235
+         1791624501.918  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{88b5144 V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624501.918  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{4ac822d V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624502.583 16844 20210 I BugleNotifications: PhoneNotificationBlueprintEligibility: show notification 
+[CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" notification_type="2" ]
+         1791624502.595 16844 20210 I BugleNotifications: Creating notification input ids [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+im_entry_input="215:1791624498853" im_notification_input="" im_settings_store_input="" 
+im_final_input="215:1791624498853" ]
+         1791624502.611 16844 20202 I BugleNotifications: Conversation mute threshold = MUTE_NONE [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624502.800 16844 20202 I BugleNotifications: Queried message ids [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" im_message_ids="2233" ]
+         1791624502.871 16844 20180 I BugleNotifications: Loading suggestions from DB by message ID [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+message_id="2233" ]
+         1791624502.874 16844 20188 I BugleNotifications: Conversation/message doesn't allow smart text actions, not 
+creating text classifier actions [CONTEXT x_message_id=-5085022560700342566 
+work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624502.876 16844 20188 I BugleNotifications: Skipping text classifier smart actions [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624502.878 16844 20210 I BugleNotifications: Skipping non-text smart actions [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624502.882 16844 20201 I WM-WorkerWrapper: Worker result SUCCESS for Work [ 
+id=fe63b21f-18aa-49f4-ba8d-e18ed0f52ae4, 
+class=com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim, tags={ 
+com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim,refresh_message_failure_notification- 
+} ]
+         1791624502.886 16844 20202 I WM-WorkerWrapper: Worker result SUCCESS for Work [ 
+id=f23a46a5-dadb-45c2-a8eb-2904ca2501e5, 
+class=com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim, tags={ 
+com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim,CONVERSATION_NOTIFICATION-215 } ]
+         1791624502.895 16844 20210 I BugleNotifications: Conversation/message doesn't allow quick reply, not adding 
+quick reply action [CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" conversation_id="215" ]
+         1791624502.898 16844 20188 I BugleNotifications: Notification actions created [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624502.910 16844 20188 I BugleNotifications: Wearable notification actions created [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624502.937 16844 20188 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624502.938 16844 20188 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624502.982 16844 20188 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624502.983 16844 20188 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624503.000 16844 20210 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624503.002 16844 20210 I BugleConversation: No conversation notification settings join found for 
+ConversationId = 215
+         1791624503.242 16844 20180 I BugleNotifications: Should alert: isNewMessage=true, isSuppressedByDitto=false, 
+isUpdate=false [CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" conversation_id="215" ]
+         1791624503.277 16844 20180 I BugleNotifications: Notification builder info created [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624503.301 16844 20180 I BugleNotifications: No notification channel to delete [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+notification_channel_id="215" ]
+         1791624503.327 16844 20188 I BugleNotifications: PhoneNotificationBlueprintEligibility: show notification 
+[CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" notification_type="2" ]
+         1791624503.382 16844 20188 I BugleNotifications: Conversation specific info added to notification builder 
+[CONTEXT x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" 
+pipeline_type="SmsReceivePipeline" notification_type="2" 
+notification_tag="com.google.android.apps.messaging:incoming_message:215" ]
+         1791624503.421 16844 20188 I BugleNotifications: Style info set on notification builder [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+conversation_id="215" ]
+         1791624503.431 16844 20188 I BugleNotifications: Actions and callbacks set on notification builder [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624503.433 16844 20188 I BugleNotifications: Converted builderInfo to notification builder [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+notification_type="2" notification_tag="com.google.android.apps.messaging:incoming_message:215" is_silent=false 
+is_only_alert_once=false ]
+         1791624503.436 16844 20188 W Notification: Bubbles work best with icons of TYPE_URI or 
+TYPE_URI_ADAPTIVE_BITMAP. In the future, using an icon of this type will be required.
+         1791624503.448  1914  1914 D NotificationService--OplusNotificationManagerServiceExtImpl: 
+isForwardToAssistants: true, case : Is local notification
+         1791624503.448  1914  1914 D NotificationService: This application enqueue notifications is need postDelayed 
+mcsAssistantDelayTime: 100
+         1791624503.451 16844 20188 I BugleNotifications: Notifying [CONTEXT x_message_id=-5085022560700342566 
+work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" notification_type="2" 
+notification_tag="com.google.android.apps.messaging:incoming_message:215" notification_shortcut="215" 
+notification_channel_id="bugle_default_channel : 215" notification_importance=4 
+notification_actions="NAT_MARK_AS_READ" ]
+         1791624503.453 16844 20188 I BugleNotifications: Notification posted [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" 
+notification_type="2" notification_tag="com.google.android.apps.messaging:incoming_message:215" ]
+         1791624503.523 16844 20210 I BugleNotifications: Saved current notification state [CONTEXT 
+x_message_id=-5085022560700342566 work_id="41bc2454-a45e-4620-ac0d-e823552a2dcc" pipeline_type="SmsReceivePipeline" ]
+         1791624503.561 16844 20201 I WM-WorkerWrapper: Worker result SUCCESS for Work [ 
+id=d9804c64-7659-46d6-988a-8c4ca8f66c5a, 
+class=com.google.android.apps.messaging.shared.datamodel.workqueue.WorkQueueWorkerShim, tags={ com.google.android.apps.
+messaging.shared.datamodel.workqueue.WorkQueueWorkerShim,shared_notification_queue_name-NT_INCOMING_MESSAGE } ]
+         1791624503.608  1914  3641 D NotificationService--OplusNavigationManager: 
+Notification--isSuppressedByDriveMode--userId:-1,mode:false
+         1791624503.620  1516 13370 I ExtendedNuUtils: printFileName fd(8) -> 
+/data/system_de/0/ringtones/notification_sound_cache
+         1791624503.666  1914  3763 I MediaFocusControl: requestAudioFocus() from uid/pid 10192/3134 
+AA=USAGE_NOTIFICATION/CONTENT_TYPE_SONIFICATION clientId=android.media.AudioManager@29d63a5 
+callingPack=com.android.systemui req=3 flags=0x0 sdk=33
+         1791624503.773  3134  3134 D NotificationShadeWindowController: notifyUiSwitched 0
+         1791624503.837  1914  3641 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=4, 
+oldvis=4, req=1080x2400
+         1791624503.851  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{d1e6f3f V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624503.851  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{594c00c V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624503.851  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{8219d55 V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624503.881  1914  3641 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=0, 
+oldvis=4, req=1080x2400
+         1791624503.890  3134  3297 D BufferQueueProducer: [VRI[NotificationShade]#9(BLAST 
+Consumer)9](id:c3e00000009,api:1,p:3134,c:3134) connect: api=1 producerControlledByApp=true
+         1791624503.891  3134  3134 D VRI[NotificationShade]: registerCallbacksForSync syncBuffer=false
+         1791624503.917  3134  3297 D VRI[NotificationShade]: Received frameCommittedCallback 
+lastAttemptedDrawFrameNum=1 didProduceBuffer=true syncBuffer=false
+         1791624503.918  3134  3134 D VRI[NotificationShade]: draw finished.
+         1791624503.926  1914  3641 D WindowManager: finishDrawingWindow: Window{b2a0e26 u0 NotificationShade} 
+mDrawState=DRAW_PENDING
+         1791624503.926  1151  1151 D OplusLayer: (161,NotificationShade#161,com.android.systemui) setBuffer
+         1791624504.280  1516 20412 D AudioTrack: set(): streamType 5, sampleRate 44100, format 0x1, channelMask 0x3, 
+frameCount 22050, flags #2, notificationFrames 0, sessionId 145, transferType 0, uid 10192, pid 3134
+         1791624504.293  1138  1619 D AudioFlinger: Client defaulted notificationFrames to 3544 for frameCount 7088
+         1791624504.293  1138  1619 D AudioFlinger: createTrack_l output 13 final frameCount 7088 for track session 
+145 , mFrameCount 192, mNormalFrameCount 960, notificationFrameCount 3544
+         1791624504.306  1516 20412 I AudioTrack: createTrack_l(30) on outputId(13) : 0xe9f72c00, mCblk = 0xe9d32100,  
+mLatency = 208, mAfLatency = 48, frameCount = 7088, mSampleRate = 44100, mFlags = 0x2, mReqFrameCount = 22050, 
+mNotificationFramesAct = 3544
+         1791624507.157 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.analytics2.fabric.onefabric.FFAlarmUploadJobService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.157 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.registration.notification.RegistrationNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.157 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.notifications.appwidget.bugreporter.NotificationsWidgetDebugHelper is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.157 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.account.login.notification.LoginNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.163 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.compost.service.CompostNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.163 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.messaging.notify.client.MessagesNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.164 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.confirmation.notification.ConfirmationNotificationService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624507.164 20216 20280 W fb4a.ServiceInfoParser: X.4w8: Service 
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncService is missing meta key 
+com.facebook.common.jobscheduler.compat.jobIds
+         1791624508.282  1914  7079 W PackageManager: package unknown uid 10265 pid 20216 call 
+SetEnabledSetting(com.facebook.katana component = 
+com.facebook.notifications.settings.InAppNotificationSettingsActivity, 1, 0)
+         1791624509.531  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{d1e6f3f V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624509.532  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{594c00c V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624509.532  3134  3134 W View    : requestLayout() improperly called by 
+android.view.NotificationHeaderView{8219d55 V.E...... ......ID 0,0-984,156 #10203e7 android:id/notification_header} 
+during layout: running second layout pass
+         1791624510.021  1914  3606 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=0, 
+oldvis=0, req=1080x2400
+         1791624510.063  3134  3134 D NotificationShadeWindowController: notifyUiSwitched 0
+         1791624510.075  3134  3297 D BufferQueueProducer: [VRI[NotificationShade]#9(BLAST 
+Consumer)9](id:c3e00000009,api:1,p:3134,c:3134) disconnect: api 1
+         1791624510.078  1914  3606 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=4, 
+oldvis=0, req=1080x2400
+         1791624510.082  1151  1151 D Layer   : reparent to null sequence=161, seq[5], name=NotificationShade#161
+         1791624510.090  3134  3134 D BufferQueueConsumer: [VRI[NotificationShade]#9(BLAST 
+Consumer)9](id:c3e00000009,api:0,p:-1,c:3134) disconnect
+         1791624510.099  1151  1151 D OplusLayer: ~Layer() sequence=161, name=NotificationShade#161
+         1791624513.177  6374  6374 D BoundBrokerSvc: onBind: Intent { 
+act=com.google.android.gms.notifications.capping.api.NotificationsCappingApiService.START dat=chimera-action:/... 
+cmp=com.google.android.gms/.chimera.GmsApiService }
+         1791624513.178  6374  6374 D BoundBrokerSvc: Loading bound service for intent: Intent { 
+act=com.google.android.gms.notifications.capping.api.NotificationsCappingApiService.START dat=chimera-action:/... 
+cmp=com.google.android.gms/.chimera.GmsApiService }
+         1791624520.895 16844 20163 I BugleNotifications: Set shortcut badge counter to 38
+         1791624528.282  6374  6374 D BoundBrokerSvc: onUnbind: Intent { 
+act=com.google.android.gms.notifications.capping.api.NotificationsCappingApiService.START dat=chimera-action:/... 
+cmp=com.google.android.gms/.chimera.GmsApiService }
+         1791624592.619  1914  2235 W NotifHistoryProto: notification package name (com.google.android.apps.messaging) 
+not found in string cache
+         1791624592.619  1914  2235 W NotifHistoryProto: notification channel name (Vodafone365) not found in string 
+cache
+         1791624592.620  1914  2235 W NotifHistoryProto: notification channel id (bugle_default_channel : 215) not 
+found in string cache
+         1791624592.621  1914  2235 W NotifHistoryProto: notification package name (com.google.android.apps.messaging) 
+not found in string cache
+         1791624592.621  1914  2235 W NotifHistoryProto: notification channel name (Background tasks) not found in 
+string cache
+         1791624592.621  1914  2235 W NotifHistoryProto: notification channel id (bugle_broadcast_receiver_channel) 
+not found in string cache
+         1791624592.622  1914  2235 W NotifHistoryProto: notification package name (com.google.android.gm) not found 
+in string cache
+         1791624592.622  1914  2235 W NotifHistoryProto: notification channel name (Mail) not found in string cache
+         1791624592.622  1914  2235 W NotifHistoryProto: notification channel id (^[REDACTED_EMAIL]) 
+not found in string cache
+         1791624631.874  5802 20857 I AlarmManager: setExactAndAllowWhileIdle [name: FcmRetry type: 2 triggerAtMillis: 
+2512679]
+         1791624631.888  5802 19830 W WakeLock: GCM_HB_ALARM release without a matched acquire! [CONTEXT 
+service_id=259 ]
+         1791624631.888  5802 19830 W WakeLock: GCM_HB_ALARM counter does not exist
+         1791624631.900  5802 19830 W WakeLock: GCM_CONN_ALARM release without a matched acquire! [CONTEXT 
+service_id=259 ]
+         1791624631.900  5802 19830 W WakeLock: GCM_CONN_ALARM counter does not exist
+         1791624641.910  9862 10422 W fbservices-stub:NotificationDeliveryStorePreferences: [AI] Failed to deserialize 
+notification item
+         1791624641.911  9862 10422 W fbservices-stub:NotificationDeliveryStorePreferences: [AI] Failed to deserialize 
+notification item
+         1791624642.432  5802 20889 W WakeLock: GCM_CONN_ALARM release without a matched acquire! [CONTEXT 
+service_id=259 ]
+         1791624673.586  3368  3368 D ModemAciService: onReceive 
+oplus.intent.action.INTERNAL_LOOP_UPDATE_ACTIVITYINFO_ALARM
+         1791624846.397  1914  2869 I OplusHansManager : unfreeze uid: 10343 com.muslimguide.app pids: [16784] reason: 
+Alarm scene: LcdOn
+         1791624846.400  1914  3391 I OplusHansManager : uid=10343, pkg=com.muslimguide.app, transition from Frozen to 
+Middle, reason=Alarm
+         1791624846.400  1914  3391 I OplusHansManager : uid=10343, pkg=com.muslimguide.app F exit(), F stay=844, 
+reason=Alarm
+         1791624846.534  1914  1914 D NotificationService--OplusNotificationManagerServiceExtImpl: 
+isForwardToAssistants: true, case : Is local notification
+         1791624846.534  1914  1914 D NotificationService: This application enqueue notifications is need postDelayed 
+mcsAssistantDelayTime: 100
+         1791624846.693  1914  7079 D NotificationService--OplusNavigationManager: 
+Notification--isSuppressedByDriveMode--userId:-1,mode:false
+         1791624846.845  3134  3134 D NotificationShadeWindowController: notifyUiSwitched 0
+         1791624846.864  1914  2736 I MediaFocusControl: requestAudioFocus() from uid/pid 10192/3134 
+AA=USAGE_NOTIFICATION/CONTENT_TYPE_UNKNOWN clientId=android.media.AudioManager@6227693 
+callingPack=com.android.systemui req=3 flags=0x0 sdk=33
+         1791624846.876  1914  7079 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=4, 
+oldvis=4, req=1080x2400
+         1791624846.922  1914  7079 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=0, 
+oldvis=4, req=1080x2400
+         1791624846.934  3134  3297 D BufferQueueProducer: [VRI[NotificationShade]#10(BLAST 
+Consumer)10](id:c3e0000000a,api:1,p:3134,c:3134) connect: api=1 producerControlledByApp=true
+         1791624846.935  3134  3134 D VRI[NotificationShade]: registerCallbacksForSync syncBuffer=false
+         1791624846.947  3134  3297 D VRI[NotificationShade]: Received frameCommittedCallback 
+lastAttemptedDrawFrameNum=1 didProduceBuffer=true syncBuffer=false
+         1791624846.948  3134  3134 D VRI[NotificationShade]: draw finished.
+         1791624846.955  1151  1151 D OplusLayer: (164,NotificationShade#164,com.android.systemui) setBuffer
+         1791624846.956  1914  7632 D WindowManager: finishDrawingWindow: Window{b2a0e26 u0 NotificationShade} 
+mDrawState=DRAW_PENDING
+         1791624847.442  1516 21139 D AudioTrack: set(): streamType 5, sampleRate 22050, format 0x1, channelMask 0x1, 
+frameCount 11025, flags #1, notificationFrames 0, sessionId 153, transferType 0, uid 10192, pid 3134
+         1791624847.450  1138  1619 D AudioFlinger: Client defaulted notificationFrames to 1780 for frameCount 3560
+         1791624847.450  1138  1619 D AudioFlinger: createTrack_l output 13 final frameCount 3560 for track session 
+153 , mFrameCount 192, mNormalFrameCount 960, notificationFrameCount 1780
+         1791624847.464  1516 21139 I AudioTrack: createTrack_l(31) on outputId(13) : 0xe3e09000, mCblk = 0xe9dd1100,  
+mLatency = 209, mAfLatency = 48, frameCount = 3560, mSampleRate = 22050, mFlags = 0, mReqFrameCount = 11025, 
+mNotificationFramesAct = 1780
+         1791624853.058  1914  7630 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=0, 
+oldvis=0, req=1080x2400
+         1791624853.093  3134  3134 D NotificationShadeWindowController: notifyUiSwitched 0
+         1791624853.109  3134  3297 D BufferQueueProducer: [VRI[NotificationShade]#10(BLAST 
+Consumer)10](id:c3e0000000a,api:1,p:3134,c:3134) disconnect: api 1
+         1791624853.115  1914  7630 V WindowManager: Relayout Window{b2a0e26 u0 NotificationShade}: viewVisibility=4, 
+oldvis=0, req=1080x2400
+         1791624853.123  3134  3134 D BufferQueueConsumer: [VRI[NotificationShade]#10(BLAST 
+Consumer)10](id:c3e0000000a,api:0,p:-1,c:3134) disconnect
+         1791624853.128  1151  1151 D Layer   : reparent to null sequence=164, seq[5], name=NotificationShade#164
+         1791624853.132  1151  1151 D OplusLayer: ~Layer() sequence=164, name=NotificationShade#164
+         1791624882.929 21241 21284 D WM-PackageManagerHelper: Skipping component enablement for 
+androidx.work.impl.background.systemalarm.RescheduleReceiver
+         1791624931.743  6386  6386 I adbd    : adbd service requested 'shell,v2,raw:dumpsys notification --noredact'
+         1791624932.175  6386  6386 I adbd    : adbd service requested 'shell,v2,raw:dumpsys alarm'
+         1791624932.236  1914  7630 D AlarmManagerServiceExtImpl: dynamicallyConfigLogTag , opti = 0, args.length=0
+         1791624932.257  1914  7630 D AlarmManagerServiceExtImpl: dynamicallyConfigLogTag , opti = 0, args.length=1

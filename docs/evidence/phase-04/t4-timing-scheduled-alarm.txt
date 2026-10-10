@@ -1,0 +1,94 @@
+﻿Captured at: Sat Oct 10 12:17:16 EEST 2026
+    RTC_WAKEUP #2: Alarm{aaa78b7 type 0 origWhen 1791624770000 whenElapsed 2530808 com.muslimguide.app} uid 10343 whenElapsed 2530808 windowLength 725776 maxWhenElapsed 3256584 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #3: Alarm{44f06d8 type 0 origWhen 1791659947000 whenElapsed 37707809 com.muslimguide.app} uid 10343 whenElapsed 37707809 windowLength 3600000 maxWhenElapsed 41307809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #5: Alarm{b49afc6 type 0 origWhen 1791685683000 whenElapsed 63443809 com.muslimguide.app} uid 10343 whenElapsed 63443809 windowLength 3600000 maxWhenElapsed 67043809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{52f2923 type 0 origWhen 1791697359000 whenElapsed 75119808 com.muslimguide.app} uid 10343 whenElapsed 75119808 windowLength 3600000 maxWhenElapsed 78719808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #8: Alarm{5065511 type 0 origWhen 1791706300000 whenElapsed 84060809 com.muslimguide.app} uid 10343 whenElapsed 84060809 windowLength 3600000 maxWhenElapsed 87660809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #2: Alarm{443c8e4 type 0 origWhen 1791711090000 whenElapsed 88850808 com.muslimguide.app} uid 10343 whenElapsed 88850808 windowLength 3600000 maxWhenElapsed 92450808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{142fe4e type 0 origWhen 1791746396000 whenElapsed 124156809 com.muslimguide.app} uid 10343 whenElapsed 124156809 windowLength 3600000 maxWhenElapsed 127756809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #2: Alarm{a393d05 type 0 origWhen 1791772068000 whenElapsed 149828809 com.muslimguide.app} uid 10343 whenElapsed 149828809 windowLength 3600000 maxWhenElapsed 153428809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{5bcf868 type 0 origWhen 1791783700000 whenElapsed 161460808 com.muslimguide.app} uid 10343 whenElapsed 161460808 windowLength 3600000 maxWhenElapsed 165060808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{6d42967 type 0 origWhen 1791792619000 whenElapsed 170379809 com.muslimguide.app} uid 10343 whenElapsed 170379809 windowLength 3600000 maxWhenElapsed 173979809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #2: Alarm{b811b2 type 0 origWhen 1791797411000 whenElapsed 175171809 com.muslimguide.app} uid 10343 whenElapsed 175171809 windowLength 3600000 maxWhenElapsed 178771809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{a1162b9 type 0 origWhen 1791832845000 whenElapsed 210605809 com.muslimguide.app} uid 10343 whenElapsed 210605809 windowLength 3600000 maxWhenElapsed 214205809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{fdc7175 type 0 origWhen 1791858453000 whenElapsed 236213809 com.muslimguide.app} uid 10343 whenElapsed 236213809 windowLength 3600000 maxWhenElapsed 239813809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{7534b98 type 0 origWhen 1791870040000 whenElapsed 247800808 com.muslimguide.app} uid 10343 whenElapsed 247800808 windowLength 3600000 maxWhenElapsed 251400808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{9a43a57 type 0 origWhen 1791878939000 whenElapsed 256699809 com.muslimguide.app} uid 10343 whenElapsed 256699809 windowLength 3600000 maxWhenElapsed 260299809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{34824f3 type 0 origWhen 1791883732000 whenElapsed 261492809 com.muslimguide.app} uid 10343 whenElapsed 261492809 windowLength 3600000 maxWhenElapsed 265092809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{ecfbbae type 0 origWhen 1791919294000 whenElapsed 297054808 com.muslimguide.app} uid 10343 whenElapsed 297054808 windowLength 3600000 maxWhenElapsed 300654808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{1ada1e5 type 0 origWhen 1791944839000 whenElapsed 322599809 com.muslimguide.app} uid 10343 whenElapsed 322599809 windowLength 3600000 maxWhenElapsed 326199809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{67ccac8 type 0 origWhen 1791956381000 whenElapsed 334141809 com.muslimguide.app} uid 10343 whenElapsed 334141809 windowLength 3600000 maxWhenElapsed 337741809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{5d26747 type 0 origWhen 1791965259000 whenElapsed 343019809 com.muslimguide.app} uid 10343 whenElapsed 343019809 windowLength 3600000 maxWhenElapsed 346619809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{64a5112 type 0 origWhen 1791970055000 whenElapsed 347815809 com.muslimguide.app} uid 10343 whenElapsed 347815809 windowLength 3600000 maxWhenElapsed 351415809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{2e2b199 type 0 origWhen 1792005743000 whenElapsed 383503808 com.muslimguide.app} uid 10343 whenElapsed 383503808 windowLength 3600000 maxWhenElapsed 387103808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{36d150c type 0 origWhen 1792031225000 whenElapsed 408985808 com.muslimguide.app} uid 10343 whenElapsed 408985808 windowLength 3600000 maxWhenElapsed 412585808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{574d95b type 0 origWhen 1792042722000 whenElapsed 420482809 com.muslimguide.app} uid 10343 whenElapsed 420482809 windowLength 3600000 maxWhenElapsed 424082809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{3afa936 type 0 origWhen 1792051580000 whenElapsed 429340809 com.muslimguide.app} uid 10343 whenElapsed 429340809 windowLength 3600000 maxWhenElapsed 432940809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{1d8730d type 0 origWhen 1792056379000 whenElapsed 434139808 com.muslimguide.app} uid 10343 whenElapsed 434139808 windowLength 3600000 maxWhenElapsed 437739808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{6e40c10 type 0 origWhen 1792092192000 whenElapsed 469952808 com.muslimguide.app} uid 10343 whenElapsed 469952808 windowLength 3600000 maxWhenElapsed 473552808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{2ec6f2f type 0 origWhen 1792117612000 whenElapsed 495372809 com.muslimguide.app} uid 10343 whenElapsed 495372809 windowLength 3600000 maxWhenElapsed 498972809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{3c8481a type 0 origWhen 1792129064000 whenElapsed 506824808 com.muslimguide.app} uid 10343 whenElapsed 506824808 windowLength 3600000 maxWhenElapsed 510424808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{d443a41 type 0 origWhen 1792137902000 whenElapsed 515662809 com.muslimguide.app} uid 10343 whenElapsed 515662809 windowLength 3600000 maxWhenElapsed 519262809 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+    RTC_WAKEUP #1: Alarm{4c613d4 type 0 origWhen 1792142703000 whenElapsed 520463808 com.muslimguide.app} uid 10343 whenElapsed 520463808 windowLength 3600000 maxWhenElapsed 524063808 repeatInterval 0 action null component ComponentInfo{com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver} flags 0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-10 12:32:50.000 window=+12m5s776ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-10 22:19:07.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-11 05:28:03.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-11 08:42:39.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-11 11:11:40.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-11 12:31:30.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-11 22:19:56.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-12 05:27:48.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-12 08:41:40.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-12 11:10:19.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-12 12:30:11.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-12 22:20:45.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-13 05:27:33.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-13 08:40:40.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-13 11:08:59.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-13 12:28:52.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-13 22:21:34.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-14 05:27:19.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-14 08:39:41.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-14 11:07:39.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-14 12:27:35.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-14 22:22:23.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-15 05:27:05.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-15 08:38:42.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-15 11:06:20.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-15 12:26:19.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-15 22:23:12.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-16 05:26:52.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-16 08:37:44.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-16 11:05:02.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
+      tag=*walarm*:com.muslimguide.app/com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
+      type=RTC_WAKEUP origWhen=2026-10-16 12:25:03.000 window=+1h0m0s0ms exactAllowReason=permission repeatInterval=0 count=0 flags=0x4
