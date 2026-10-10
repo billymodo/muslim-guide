@@ -73,4 +73,4 @@
 | GAP-compass-pinned | flutter_compass 0.8.1 (MIT, exact) — added to pubspec | — | CR-0011 (Phase 03) | **CLOSED (this commit)** |
 | GAP-city-resolution-dup | cityId → coordinates resolution duplicated in QiblaNotifier (copied from location_provider) | P3 | Phase 03 Task 6 | **OPEN (Phase 05+ refactor)** |
 | GAP-qibla-bg | `assets/images/qibla_bg.webp` — license TBD — deferred | P3 | UI_VISION §4 (PROPOSED) | **OPEN** (Phase 05+ — UI polish؛ Phase 03 يستخدم gradient placeholder) |
-| GAP-deeplink-consolidation | Deep-link intent filters path-specific (`/prayer`, `/qibla`); consider wildcard or production scheme | P3 | Phase 03 Task 10 | OPEN (Phase 04+) |
+| GAP-deeplink-consolidation | Deep-link intent filters path-specific (`/prayer`, `/qibla`); consider wildcard or production scheme | P3 | Phase 03 Task 10 | **CLOSED-PENDING-DEVICE** — unified `muslimguide://<feature>/<action>` scheme and legacy aliases; parser and router tests pass; device verification pending |
