@@ -11,6 +11,7 @@ abstract final class DeepLinkParser {
       ('prayer', '/now') || ('test', '/prayer') => '/prayer',
       ('qibla', '/show') || ('test', '/qibla') => '/qibla',
       ('location', '/pick') => '/location-picker',
+      ('diagnostics', '/notifications') => '/diagnostics/notifications',
       _ => null,
     };
   }

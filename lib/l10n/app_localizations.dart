@@ -373,6 +373,84 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تغيير المدينة'**
   String get qibla_open_settings;
+
+  /// No description provided for @notif_diag_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'تشخيص الإشعارات'**
+  String get notif_diag_title;
+
+  /// No description provided for @notif_diag_explainer.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحقق من أذونات النظام اللازمة لإشعارات الصلاة والتنبيهات الدقيقة.'**
+  String get notif_diag_explainer;
+
+  /// No description provided for @notif_diag_notifications_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات'**
+  String get notif_diag_notifications_title;
+
+  /// No description provided for @notif_diag_notifications_granted.
+  ///
+  /// In ar, this message translates to:
+  /// **'إذن الإشعارات ممنوح.'**
+  String get notif_diag_notifications_granted;
+
+  /// No description provided for @notif_diag_notifications_denied.
+  ///
+  /// In ar, this message translates to:
+  /// **'إذن الإشعارات غير ممنوح.'**
+  String get notif_diag_notifications_denied;
+
+  /// No description provided for @notif_diag_exact_alarms_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'التنبيهات الدقيقة'**
+  String get notif_diag_exact_alarms_title;
+
+  /// No description provided for @notif_diag_exact_alarms_granted.
+  ///
+  /// In ar, this message translates to:
+  /// **'إذن التنبيهات الدقيقة ممنوح.'**
+  String get notif_diag_exact_alarms_granted;
+
+  /// No description provided for @notif_diag_exact_alarms_denied.
+  ///
+  /// In ar, this message translates to:
+  /// **'إذن التنبيهات الدقيقة غير ممنوح.'**
+  String get notif_diag_exact_alarms_denied;
+
+  /// No description provided for @notif_diag_not_applicable.
+  ///
+  /// In ar, this message translates to:
+  /// **'غير مطلوب على إصدار أندرويد هذا.'**
+  String get notif_diag_not_applicable;
+
+  /// No description provided for @notif_diag_request.
+  ///
+  /// In ar, this message translates to:
+  /// **'طلب الإذن'**
+  String get notif_diag_request;
+
+  /// No description provided for @notif_diag_open_settings.
+  ///
+  /// In ar, this message translates to:
+  /// **'فتح إعدادات الإشعارات'**
+  String get notif_diag_open_settings;
+
+  /// No description provided for @notif_diag_retry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get notif_diag_retry;
+
+  /// No description provided for @notif_diag_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر قراءة حالة الأذونات. حاول مرة أخرى.'**
+  String get notif_diag_error;
 }
 
 class _AppLocalizationsDelegate

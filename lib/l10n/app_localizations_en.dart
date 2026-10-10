@@ -147,4 +147,50 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get qibla_open_settings => 'Change city';
+
+  @override
+  String get notif_diag_title => 'Notification diagnostics';
+
+  @override
+  String get notif_diag_explainer =>
+      'Check system access needed for prayer notifications and exact alarms.';
+
+  @override
+  String get notif_diag_notifications_title => 'Notifications';
+
+  @override
+  String get notif_diag_notifications_granted =>
+      'Notification permission is granted.';
+
+  @override
+  String get notif_diag_notifications_denied =>
+      'Notification permission is not granted.';
+
+  @override
+  String get notif_diag_exact_alarms_title => 'Exact alarms';
+
+  @override
+  String get notif_diag_exact_alarms_granted =>
+      'Exact-alarm access is granted.';
+
+  @override
+  String get notif_diag_exact_alarms_denied =>
+      'Exact-alarm access is not granted.';
+
+  @override
+  String get notif_diag_not_applicable =>
+      'Not required on this Android version.';
+
+  @override
+  String get notif_diag_request => 'Request permission';
+
+  @override
+  String get notif_diag_open_settings => 'Open notification settings';
+
+  @override
+  String get notif_diag_retry => 'Retry';
+
+  @override
+  String get notif_diag_error =>
+      'Could not read permission status. Please retry.';
 }

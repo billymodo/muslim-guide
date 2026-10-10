@@ -45,5 +45,18 @@
   "qibla_no_location": "Location not set",
   "qibla_error": "Failed to read compass",
   "qibla_retry": "Retry",
-  "qibla_open_settings": "Change city"
+  "qibla_open_settings": "Change city",
+  "notif_diag_title": "Notification diagnostics",
+  "notif_diag_explainer": "Check system access needed for prayer notifications and exact alarms.",
+  "notif_diag_notifications_title": "Notifications",
+  "notif_diag_notifications_granted": "Notification permission is granted.",
+  "notif_diag_notifications_denied": "Notification permission is not granted.",
+  "notif_diag_exact_alarms_title": "Exact alarms",
+  "notif_diag_exact_alarms_granted": "Exact-alarm access is granted.",
+  "notif_diag_exact_alarms_denied": "Exact-alarm access is not granted.",
+  "notif_diag_not_applicable": "Not required on this Android version.",
+  "notif_diag_request": "Request permission",
+  "notif_diag_open_settings": "Open notification settings",
+  "notif_diag_retry": "Retry",
+  "notif_diag_error": "Could not read permission status. Please retry."
 }

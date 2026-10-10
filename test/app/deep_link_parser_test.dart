@@ -24,6 +24,15 @@ void main() {
       );
     });
 
+    test('resolves the notification diagnostics deep link', () {
+      expect(
+        DeepLinkParser.parse(
+          Uri.parse('muslimguide://diagnostics/notifications'),
+        ),
+        '/diagnostics/notifications',
+      );
+    });
+
     test('resolves the legacy prayer deep link', () {
       expect(
         DeepLinkParser.parse(Uri.parse('muslimguide://test/prayer')),

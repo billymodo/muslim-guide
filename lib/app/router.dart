@@ -6,6 +6,7 @@ import 'package:muslim_guide/app/deep_link_parser.dart';
 import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
 import 'package:muslim_guide/core/logging/local_error_log.dart';
 import 'package:muslim_guide/features/home/presentation/home_placeholder.dart';
+import 'package:muslim_guide/features/notifications/presentation/notification_diagnostics_screen.dart';
 import 'package:muslim_guide/features/onboarding/presentation/language_selection_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/prayer_times_screen.dart';
@@ -63,6 +64,10 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const LocationPickerScreen(),
       ),
       GoRoute(path: '/qibla', builder: (context, state) => const QiblaScreen()),
+      GoRoute(
+        path: '/diagnostics/notifications',
+        builder: (context, state) => const NotificationDiagnosticsScreen(),
+      ),
     ],
   );
   ref.onDispose(router.dispose);

@@ -45,5 +45,18 @@
   "qibla_no_location": "لم يتم تحديد الموقع",
   "qibla_error": "تعذّر قراءة البوصلة",
   "qibla_retry": "إعادة المحاولة",
-  "qibla_open_settings": "تغيير المدينة"
+  "qibla_open_settings": "تغيير المدينة",
+  "notif_diag_title": "تشخيص الإشعارات",
+  "notif_diag_explainer": "تحقق من أذونات النظام اللازمة لإشعارات الصلاة والتنبيهات الدقيقة.",
+  "notif_diag_notifications_title": "الإشعارات",
+  "notif_diag_notifications_granted": "إذن الإشعارات ممنوح.",
+  "notif_diag_notifications_denied": "إذن الإشعارات غير ممنوح.",
+  "notif_diag_exact_alarms_title": "التنبيهات الدقيقة",
+  "notif_diag_exact_alarms_granted": "إذن التنبيهات الدقيقة ممنوح.",
+  "notif_diag_exact_alarms_denied": "إذن التنبيهات الدقيقة غير ممنوح.",
+  "notif_diag_not_applicable": "غير مطلوب على إصدار أندرويد هذا.",
+  "notif_diag_request": "طلب الإذن",
+  "notif_diag_open_settings": "فتح إعدادات الإشعارات",
+  "notif_diag_retry": "إعادة المحاولة",
+  "notif_diag_error": "تعذر قراءة حالة الأذونات. حاول مرة أخرى."
 }

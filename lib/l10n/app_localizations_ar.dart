@@ -146,4 +146,45 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get qibla_open_settings => 'تغيير المدينة';
+
+  @override
+  String get notif_diag_title => 'تشخيص الإشعارات';
+
+  @override
+  String get notif_diag_explainer =>
+      'تحقق من أذونات النظام اللازمة لإشعارات الصلاة والتنبيهات الدقيقة.';
+
+  @override
+  String get notif_diag_notifications_title => 'الإشعارات';
+
+  @override
+  String get notif_diag_notifications_granted => 'إذن الإشعارات ممنوح.';
+
+  @override
+  String get notif_diag_notifications_denied => 'إذن الإشعارات غير ممنوح.';
+
+  @override
+  String get notif_diag_exact_alarms_title => 'التنبيهات الدقيقة';
+
+  @override
+  String get notif_diag_exact_alarms_granted => 'إذن التنبيهات الدقيقة ممنوح.';
+
+  @override
+  String get notif_diag_exact_alarms_denied =>
+      'إذن التنبيهات الدقيقة غير ممنوح.';
+
+  @override
+  String get notif_diag_not_applicable => 'غير مطلوب على إصدار أندرويد هذا.';
+
+  @override
+  String get notif_diag_request => 'طلب الإذن';
+
+  @override
+  String get notif_diag_open_settings => 'فتح إعدادات الإشعارات';
+
+  @override
+  String get notif_diag_retry => 'إعادة المحاولة';
+
+  @override
+  String get notif_diag_error => 'تعذر قراءة حالة الأذونات. حاول مرة أخرى.';
 }

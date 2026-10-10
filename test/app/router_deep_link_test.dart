@@ -23,6 +23,12 @@ GoRouter _buildRouter({
         path: '/location-picker',
         builder: (_, _) => const Scaffold(body: Text('location destination')),
       ),
+      GoRoute(
+        path: '/diagnostics/notifications',
+        builder: (_, _) => const Scaffold(
+          body: Text('diagnostics destination'),
+        ),
+      ),
     ],
   );
 }
@@ -67,6 +73,22 @@ void main() {
     await _openDeepLink(tester, router, 'muslimguide://location/pick');
 
     expect(find.text('location destination'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('routes notification diagnostics deep link to its screen', (
+    tester,
+  ) async {
+    final router = _buildRouter(logUnknownUri: (_) async {});
+    addTearDown(router.dispose);
+
+    await _openDeepLink(
+      tester,
+      router,
+      'muslimguide://diagnostics/notifications',
+    );
+
+    expect(find.text('diagnostics destination'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
