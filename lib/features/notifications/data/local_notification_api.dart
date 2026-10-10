@@ -1,7 +1,7 @@
 import 'package:timezone/timezone.dart' as tz;
 
 /// Android channel used by scheduled prayer notifications.
-const String prayerAdhanNotificationChannelId = 'prayer_adhan_v1';
+const String prayerAdhanNotificationChannelId = 'prayer_adhan_v2';
 
 /// Platform notification operations used by the prayer scheduler.
 abstract interface class LocalNotificationApi {

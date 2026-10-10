@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:muslim_guide/features/notifications/data/flutter_local_notification_scheduler.dart';
+import 'package:muslim_guide/features/notifications/data/local_notification_api.dart';
 import 'package:muslim_guide/features/notifications/domain/permission_state.dart';
 import 'package:muslim_guide/features/notifications/domain/permission_status.dart';
 import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
@@ -122,7 +123,10 @@ void main() {
       expect(api.cancelledIds, hasLength(35));
       expect(api.cancelledIds.toSet(), hasLength(35));
       expect(api.scheduledNotifications.single.id, 0);
-      expect(api.scheduledNotifications.single.channelId, 'prayer_adhan_v1');
+      expect(
+        api.scheduledNotifications.single.channelId,
+        prayerAdhanNotificationChannelId,
+      );
       expect(api.scheduledNotifications.single.title, 'Fajr Prayer');
     },
   );

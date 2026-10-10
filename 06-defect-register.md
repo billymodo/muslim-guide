@@ -62,6 +62,12 @@
 | BUG-5 | Splash deadlock — bootstrap gate (`4ba60bd`) causes splash to never navigate when bootstrap already complete (normal startup broken; only deep link works) | P0 | T0 — Oppo A95 (2026-10-09) | **FIXED in `862376e`** — analyze ✅ tests 262/262 | `t-bug2-00-fail-splash-deadlock.png` + logcat؛ regression test في `splash_screen_test.dart` |
 | BUG-6 | Location picker opened via `context.go` from Prayer hero — no AppBar back button; system BACK exits app instead of returning to /prayer | P3 | M5 — Oppo A95 (2026-10-09) | **OPEN** (backlog — Phase 05+) | `t8c-03` observation + report M5 deviation #2 |
 
+## Phase 04 — Device Testing Bugs
+
+| ID | Bug | Severity | Found In | Status | Evidence |
+|---|---|---|---|---|---|
+| BUG-7 | Prayer notification arrives without audible sound although `prayer_adhan_v1` has a raw WAV sound configured | P1 | Oppo A95 / Android 13 — 2026-10-10 | **OPEN** (OGG replacement and `prayer_adhan_v2` awaiting device verification) | Owner observation; channel dump showed the WAV resource and normal ringer mode |
+
 ## Known Gaps (pre-Phase 03)
 
 | ID | Gap | Severity | Found In | Status |

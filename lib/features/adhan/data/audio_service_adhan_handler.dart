@@ -11,7 +11,7 @@ class AudioServiceAdhanHandler extends BaseAudioHandler
   /// Creates the handler; [player] can be supplied by focused tests.
   new({AudioPlayer? player}) : _player = player ?? AudioPlayer();
 
-  static const String _assetPath = 'assets/audio/adhan_placeholder.wav';
+  static const String _assetPath = 'assets/audio/adhan_placeholder.ogg';
 
   final AudioPlayer _player;
   final StreamController<AdhanPlayerState> _states =

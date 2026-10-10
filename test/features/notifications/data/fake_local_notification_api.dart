@@ -46,7 +46,7 @@ class FakeLocalNotificationApi implements LocalNotificationApi {
     required String channelId,
   }) async {
     if (failScheduleId == id) throw StateError('injected schedule failure');
-    if (channelId != 'prayer_adhan_v1') {
+    if (channelId != prayerAdhanNotificationChannelId) {
       throw StateError('Unexpected prayer notification channel: $channelId');
     }
     scheduledNotifications.add((
