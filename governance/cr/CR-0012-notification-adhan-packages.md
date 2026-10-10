@@ -225,7 +225,7 @@ integration from a scheduled notification.
 - `LICENSES.md` updated.
 - `security/02-dependencies.md` updated.
 - Native integration verified via `flutter build apk --debug`.
-- Commit: pending.
+- Commit: `a331b78`.
 
 ## References
 
