@@ -65,7 +65,12 @@ check confirmed `SCHEDULE_EXACT_ALARM` is granted, but
 whitelist despite the reported battery-optimization exemption. This mismatch
 needs verification in ColorOS settings; the follow-up snapshot does not prove
 the exact device-idle state at delivery time. Scheduler timing investigation
-is required before Phase 04 can proceed to Task 6. Evidence:
+is required before Phase 04 can proceed to Task 6. **Update 2026-10-11
+07:40 EEST (foreground retest):** the next prayer alarm target was
+07:39:25.000 EEST (`origWhen=1791693565000`); NotificationManager recorded
+`mCreationTimeMs=1791693609888`. The measured delay was **+44.888 seconds**,
+within the ±60-second target: **PASS (foreground)**. The owner heard the 3
+notification beeps. Evidence:
 [t4-timing-scheduled-alarm.txt](evidence/phase-04/t4-timing-scheduled-alarm.txt),
 [t4-timing-notification-record.txt](evidence/phase-04/t4-timing-notification-record.txt),
 [t4-timing-notification-manager.txt](evidence/phase-04/t4-timing-notification-manager.txt),
