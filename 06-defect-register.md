@@ -96,3 +96,4 @@
 | GAP-cr0013-missing-photo | CR-0013 device-verified PASS by owner, but screenshot file missing in repo. Add when available | P3 | Phase 04 CR-0013 | OPEN |
 | GAP-task6-device-interruption | Audio focus interruption (real call, competing session, system silence) not device-tested — requires physical call. Schedule next device session | P2 | Phase 04 Task 6 | OPEN |
 | GAP-all-prayers-disabled-hint | No UI hint when all prayer notifications disabled. Consider subtle info in Phase 05+ | P3 | Phase 04 Task 7 | OPEN |
+| GAP-integration-player-race | Integration adhan_player_test race: state stream may miss 'playing' on short assets / ColorOS. Test redesigned to observe sequence (subscribe-before-play, any-non-idle, back-to-idle). If still unstable → GAP-integration-player-coloros. | P3 | Phase 04 Task 10 | OPEN |
