@@ -104,6 +104,16 @@ The notification-sound truncation gap remains untested: the placeholder is only
 eight seconds long. ColorOS playback passed under the tested settings; this
 does not establish behavior when battery optimization is enabled.
 
+## Lesson — ColorOS integration audio tests
+
+Integration audio tests on ColorOS need `adb shell am force-stop
+com.muslimguide.app` before each run: a stale `audio_service` foreground
+service poisons the state stream and the next run hangs or fails.
+Additionally, `flutter test integration_test/` replaces the app package on
+the device — reinstall with `flutter install --debug` and verify launch
+afterwards. Documented for Task 11 and future integration tests
+(GAP-integration-player-race).
+
 ## Pending measurements
 
 1. Verify the ColorOS battery-optimization setting against the app's absence
