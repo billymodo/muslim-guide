@@ -21,6 +21,7 @@
 | الحزمة | الإصدار | السبب (DEC) | الترخيص | أداة التحقق |
 |---|---|---|---|---|
 | audio_service | 0.18.19 (exact) | خدمة تشغيل الصوت بالخلفية — CR-0012 | MIT (+ Apache-2.0 ExoPlayer) | CR-0012 + LICENSE — https://pub.dev/packages/audio_service/versions/0.18.19 |
+| audio_session | 0.2.4 (exact) | إعداد AudioSession ومراقبة المقاطعات (Task 6) — CR-0014 | MIT | pub.dev API 2026-10-11 (نُشر 2026-06-29T13:10:31.881382Z) — https://pub.dev/packages/audio_session/versions/0.2.4 |
 | flutter_local_notifications | 22.3.1 (exact) | الإشعارات المحلية المجدولة — CR-0012 | BSD-3-Clause | أرشيف pub.dev LICENSE — https://pub.dev/packages/flutter_local_notifications/versions/22.3.1 |
 | flutter_riverpod | 2.6.1 (exact) | إدارة الحالة — DEC-0002، DEC-0016 | MIT | pub.dev صفحة الإصدار + API — https://pub.dev/packages/flutter_riverpod/versions/2.6.1 |
 | flutter_localizations | Flutter SDK | الترجمة وتهيئة ARB | BSD-style (BSD-3-Clause text) | Flutter SDK |

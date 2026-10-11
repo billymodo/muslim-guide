@@ -21,6 +21,7 @@
 | Package | Purpose | Constraint | License | Verified | Location |
 |---|---|---|---|---|---|
 | audio_service | Background Adhan playback service (CR-0012) | `0.18.19` (exact) | MIT (+ Apache-2.0 ExoPlayer) | 2026-10-10 — https://pub.dev/packages/audio_service/versions/0.18.19 | `pubspec.yaml`; Phase 04 Task 5 |
+| audio_session | AudioSession config + interruption/noisy watchers (CR-0014, Task 6) | `0.2.4` (exact) | MIT | 2026-10-11 — https://pub.dev/packages/audio_session/versions/0.2.4 (published 2026-06-29T13:10:31.881382Z) | `pubspec.yaml`; Phase 04 Task 6 |
 | flutter_riverpod | State management (DEC-0002، DEC-0016) | `2.6.1` (exact) | MIT | 2026-10-05 — https://pub.dev/packages/flutter_riverpod/versions/2.6.1 | `pubspec.yaml` dependencies |
 | flutter_localizations | Localization (Phase 01) | Flutter SDK | BSD-style (BSD-3-Clause text) | Flutter SDK | `pubspec.yaml` dependencies |
 | flutter_local_notifications | Scheduled local notifications (DEC-0009, CR-0012) | `22.3.1` (exact) | BSD-3-Clause | 2026-10-10 — https://pub.dev/packages/flutter_local_notifications/versions/22.3.1 | `pubspec.yaml`; Phase 04 Tasks 3–4 |
