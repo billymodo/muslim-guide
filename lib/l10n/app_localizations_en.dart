@@ -16,9 +16,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get app_tagline => 'Your worship companion';
 
   @override
-  String get btn_start => 'Get Started';
-
-  @override
   String get onboarding_choose_language => 'Choose Language';
 
   @override
@@ -257,9 +254,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get night_last_third_tahajjud => 'Last Third (Tahajjud)';
-
-  @override
-  String get prayer_notification_toggle => 'Prayer notification';
 
   @override
   String get prayer_notification_enabled => 'Prayer notification on';

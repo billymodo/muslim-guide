@@ -16,9 +16,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get app_tagline => 'رفيقك في العبادة';
 
   @override
-  String get btn_start => 'ابدأ الآن';
-
-  @override
   String get onboarding_choose_language => 'اختر اللغة';
 
   @override
@@ -251,9 +248,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get night_last_third_tahajjud => 'الثلث الأخير (التهجد)';
-
-  @override
-  String get prayer_notification_toggle => 'إشعار الصلاة';
 
   @override
   String get prayer_notification_enabled => 'إشعار الصلاة مفعّل';

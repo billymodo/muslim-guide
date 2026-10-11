@@ -110,12 +110,6 @@ abstract class AppLocalizations {
   /// **'رفيقك في العبادة'**
   String get app_tagline;
 
-  /// No description provided for @btn_start.
-  ///
-  /// In ar, this message translates to:
-  /// **'ابدأ الآن'**
-  String get btn_start;
-
   /// No description provided for @onboarding_choose_language.
   ///
   /// In ar, this message translates to:
@@ -577,12 +571,6 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الثلث الأخير (التهجد)'**
   String get night_last_third_tahajjud;
-
-  /// No description provided for @prayer_notification_toggle.
-  ///
-  /// In ar, this message translates to:
-  /// **'إشعار الصلاة'**
-  String get prayer_notification_toggle;
 
   /// No description provided for @prayer_notification_enabled.
   ///
