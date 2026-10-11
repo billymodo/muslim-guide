@@ -113,6 +113,17 @@ does not establish behavior when battery optimization is enabled.
 3. Keep Task 6 blocked until the scheduler timing failure is resolved.
 4. Do not treat the reboot-restoration failure as a timing-test result.
 
+## CR-0013 — Night thirds row (2026-10-11)
+
+**PASS (owner device verification, Oppo A95).** Build: debug APK from `89ffed7`.
+Alexandria selected; Prayer screen showed two new cells (first third +
+last third/Tahajjud) positioned between the hero and the prayer-times list.
+Times were sensible, Arabic labels correct, no overflow observed.
+
+- [Prayer screen with night thirds](evidence/phase-04/cr0013-01-prayer-with-thirds.png)
+- Polar spot-check (Tromsø + 2026-06-21 → cells hidden): optional, not run
+  in this session.
+
 ## Source changes and commit
 
 No application source, Manifest, or build configuration was changed during
