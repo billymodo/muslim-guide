@@ -74,5 +74,8 @@
   "adhan_player_state_playing": "Playing",
   "adhan_player_state_paused": "Paused",
   "adhan_player_state_completed": "Finished",
-  "adhan_player_state_error": "Audio playback failed"
+  "adhan_player_state_error": "Audio playback failed",
+  "@@night_last_third_virtue": "TODO(Phase 05+): add religious text with verified source",
+  "night_first_third": "First Third",
+  "night_last_third_tahajjud": "Last Third (Tahajjud)"
 }

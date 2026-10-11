@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:muslim_guide/features/adhan/application/adhan_player_provider.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
+import 'package:muslim_guide/features/prayer/domain/models/night_thirds.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 
 import '../../../adhan/fake_adhan_player_service.dart';
@@ -16,11 +17,10 @@ void main() {
     bool failFirstBuild = false,
   }) {
     final adhanPlayer = FakeAdhanPlayerService();
+    final times = buildTestTimes(dayOffset: dayOffset, withFajr: withFajr);
     return [
-      prayerTimesOverride(
-        buildTestTimes(dayOffset: dayOffset, withFajr: withFajr),
-        failFirstBuild: failFirstBuild,
-      ),
+      prayerTimesOverride(times, failFirstBuild: failFirstBuild),
+      nightThirdsOverride(NightThirds.unavailable),
       countdownOverride(() => const Duration(minutes: 42)),
       locationOverride(const CitySelection('riyadh')),
       citiesOverride(),
@@ -48,7 +48,13 @@ void main() {
   }
 
   testWidgets('shows the skeleton while times are loading', (tester) async {
-    await pumpTimesScreen(tester, overrides: [pendingPrayerTimesOverride()]);
+    await pumpTimesScreen(
+      tester,
+      overrides: [
+        pendingPrayerTimesOverride(),
+        pendingNightThirdsOverride(),
+      ],
+    );
 
     expect(find.byKey(const ValueKey('prayer_skeleton')), findsOneWidget);
     expect(find.text('الفجر'), findsNothing);
@@ -61,6 +67,7 @@ void main() {
       tester,
       overrides: [
         prayerTimesOverride(null),
+        nightThirdsOverride(null),
         locationOverride(null),
         citiesOverride(),
       ],
@@ -114,6 +121,12 @@ void main() {
     expect(find.text('00:42:00'), findsOneWidget);
     expect(find.text('الرياض'), findsOneWidget);
     expect(find.text('ليست صلاة فرض'), findsOneWidget);
+
+    // The fixed night-thirds row above the list pushes the bottom controls
+    // below the fold in the default test surface; scroll to reveal them.
+    await tester.drag(find.byType(ListView), const Offset(0, -500));
+    await tester.pumpAndSettle();
+
     expect(find.text('إعدادات التنبيه'), findsOneWidget);
     expect(find.text('تشغيل الأذان'), findsOneWidget);
     expect(tester.takeException(), isNull);

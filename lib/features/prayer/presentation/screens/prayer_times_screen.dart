@@ -7,7 +7,9 @@ import 'package:muslim_guide/app/theme/app_colors.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/features/adhan/presentation/adhan_player_controls.dart';
 import 'package:muslim_guide/features/prayer/application/countdown_provider.dart';
+import 'package:muslim_guide/features/prayer/application/night_thirds_provider.dart';
 import 'package:muslim_guide/features/prayer/application/prayer_times_provider.dart';
+import 'package:muslim_guide/features/prayer/presentation/widgets/night_thirds_row.dart';
 import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_hero_card.dart';
 import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_time_row.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
@@ -54,9 +56,21 @@ class PrayerTimesScreen extends ConsumerWidget {
             );
           }
           final next = nextPrayerTime(times, DateTime.now());
+          final thirdsAsync = ref.watch(nightThirdsProvider);
           return Column(
             children: [
               const PrayerHeroCard(),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.l,
+                  vertical: AppSpacing.s,
+                ),
+                child: thirdsAsync.when(
+                  data: (thirds) => NightThirdsRow(thirds: thirds),
+                  loading: () => const SizedBox.shrink(),
+                  error: (_, _) => const SizedBox.shrink(),
+                ),
+              ),
               Expanded(
                 child: RefreshIndicator(
                   onRefresh: () => _refreshTimes(ref),

@@ -547,6 +547,18 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تعذر تشغيل الصوت'**
   String get adhan_player_state_error;
+
+  /// No description provided for @night_first_third.
+  ///
+  /// In ar, this message translates to:
+  /// **'الثلث الأول'**
+  String get night_first_third;
+
+  /// No description provided for @night_last_third_tahajjud.
+  ///
+  /// In ar, this message translates to:
+  /// **'الثلث الأخير (التهجد)'**
+  String get night_last_third_tahajjud;
 }
 
 class _AppLocalizationsDelegate

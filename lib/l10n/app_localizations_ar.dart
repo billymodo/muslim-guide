@@ -236,4 +236,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get adhan_player_state_error => 'تعذر تشغيل الصوت';
+
+  @override
+  String get night_first_third => 'الثلث الأول';
+
+  @override
+  String get night_last_third_tahajjud => 'الثلث الأخير (التهجد)';
 }

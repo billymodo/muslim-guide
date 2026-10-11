@@ -242,4 +242,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get adhan_player_state_error => 'Audio playback failed';
+
+  @override
+  String get night_first_third => 'First Third';
+
+  @override
+  String get night_last_third_tahajjud => 'Last Third (Tahajjud)';
 }

@@ -13,6 +13,7 @@ import 'package:muslim_guide/features/location/domain/location_result.dart';
 import 'package:muslim_guide/features/location/domain/location_service.dart';
 import 'package:muslim_guide/features/prayer/application/countdown_provider.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
+import 'package:muslim_guide/features/prayer/application/night_thirds_provider.dart';
 import 'package:muslim_guide/features/prayer/application/prayer_times_provider.dart';
 import 'package:muslim_guide/features/prayer/data/cities_loader.dart';
 import 'package:muslim_guide/features/prayer/domain/models/asr_method.dart';
@@ -20,6 +21,7 @@ import 'package:muslim_guide/features/prayer/domain/models/calculation_method.da
 import 'package:muslim_guide/features/prayer/domain/models/city.dart';
 import 'package:muslim_guide/features/prayer/domain/models/high_latitude_rule.dart';
 import 'package:muslim_guide/features/prayer/domain/models/location_data.dart';
+import 'package:muslim_guide/features/prayer/domain/models/night_thirds.dart';
 import 'package:muslim_guide/features/prayer/domain/models/prayer_times_result.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/prayer_times_screen.dart';
@@ -247,6 +249,38 @@ Override prayerTimesOverride(
 Override pendingPrayerTimesOverride() {
   FakePrayerTimesNotifier.buildCount = 0;
   return prayerTimesProvider.overrideWith(PendingPrayerTimesNotifier.new);
+}
+
+/// Overrides night thirds with a fixed [thirds] value.
+Override nightThirdsOverride(NightThirds? thirds) {
+  return nightThirdsProvider.overrideWith(
+    () => FixedNightThirdsNotifier(thirds),
+  );
+}
+
+/// Serves a fixed [NightThirds] value (screen tests).
+class FixedNightThirdsNotifier extends NightThirdsNotifier {
+  /// Creates a notifier serving [thirds].
+  new(this.thirds);
+
+  /// Value returned to the provider.
+  final NightThirds? thirds;
+
+  @override
+  Future<NightThirds?> build() => Future<NightThirds?>.value(thirds);
+}
+
+/// Overrides night thirds with a permanently pending calculation.
+Override pendingNightThirdsOverride() {
+  return nightThirdsProvider.overrideWith(PendingNightThirdsNotifier.new);
+}
+
+/// Keeps the night-thirds provider in AsyncLoading for the whole test.
+class PendingNightThirdsNotifier extends NightThirdsNotifier {
+  @override
+  Future<NightThirds?> build() {
+    return Completer<NightThirds?>().future;
+  }
 }
 
 /// Overrides the countdown with a one-shot stream built from [value].

@@ -74,5 +74,8 @@
   "adhan_player_state_playing": "يعمل الآن",
   "adhan_player_state_paused": "متوقف مؤقتاً",
   "adhan_player_state_completed": "انتهى التشغيل",
-  "adhan_player_state_error": "تعذر تشغيل الصوت"
+  "adhan_player_state_error": "تعذر تشغيل الصوت",
+  "@@night_last_third_virtue": "TODO(Phase 05+): add religious text with verified source",
+  "night_first_third": "الثلث الأول",
+  "night_last_third_tahajjud": "الثلث الأخير (التهجد)"
 }
