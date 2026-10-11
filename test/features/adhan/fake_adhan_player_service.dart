@@ -50,6 +50,8 @@ class FakeAdhanPlayerService implements AdhanPlayerService {
 
   void pause() => _emit(AdhanPlayerState.paused);
 
+  void interrupt() => _emit(AdhanPlayerState.interrupted);
+
   void complete() => _emit(AdhanPlayerState.completed);
 
   void fail() => _emit(AdhanPlayerState.error);

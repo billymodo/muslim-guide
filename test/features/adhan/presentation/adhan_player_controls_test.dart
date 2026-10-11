@@ -41,4 +41,97 @@ void main() {
     expect(player.stopCalls, 1);
     expect(find.text('Ready'), findsOneWidget);
   });
+
+  testWidgets('restart button is hidden in normal states (M-4)', (
+    tester,
+  ) async {
+    final player = FakeAdhanPlayerService();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [adhanPlayerServiceProvider.overrideWithValue(player)],
+        child: const MaterialApp(
+          locale: Locale('en'),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Scaffold(body: AdhanPlayerControls()),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    // idle: no restart button.
+    expect(find.text('Restart adhan'), findsNothing);
+
+    await tester.tap(find.text('Play adhan'));
+    await tester.pump();
+
+    // playing: still no restart button.
+    expect(find.text('Restart adhan'), findsNothing);
+  });
+
+  testWidgets('interrupted state shows restart only (M-4)', (
+    tester,
+  ) async {
+    final player = FakeAdhanPlayerService();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [adhanPlayerServiceProvider.overrideWithValue(player)],
+        child: const MaterialApp(
+          locale: Locale('en'),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Scaffold(body: AdhanPlayerControls()),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('Play adhan'));
+    await tester.pump();
+
+    player.interrupt();
+    await tester.pump();
+
+    expect(find.text('Stopped by interruption'), findsOneWidget);
+    expect(find.text('Restart adhan'), findsOneWidget);
+    // Play stays disabled while interrupted; restart is the only path.
+    final playButton =
+        find.widgetWithText(FilledButton, 'Play adhan').evaluate().single;
+    expect(
+      (playButton.widget as FilledButton).onPressed,
+      isNull,
+    );
+  });
+
+  testWidgets('tapping restart calls play and returns to playing', (
+    tester,
+  ) async {
+    final player = FakeAdhanPlayerService();
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [adhanPlayerServiceProvider.overrideWithValue(player)],
+        child: const MaterialApp(
+          locale: Locale('en'),
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Scaffold(body: AdhanPlayerControls()),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    await tester.tap(find.text('Play adhan'));
+    await tester.pump();
+    player.interrupt();
+    await tester.pump();
+    expect(find.text('Restart adhan'), findsOneWidget);
+
+    await tester.tap(find.text('Restart adhan'));
+    await tester.pump();
+
+    // One play from setup + one from restart.
+    expect(player.playCalls, 2);
+    expect(find.text('Playing'), findsOneWidget);
+    expect(find.text('Restart adhan'), findsNothing);
+  });
 }

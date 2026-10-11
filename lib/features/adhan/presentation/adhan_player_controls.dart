@@ -24,6 +24,8 @@ class AdhanPlayerControls extends ConsumerWidget {
     final isActive =
         currentState == AdhanPlayerState.playing ||
         currentState == AdhanPlayerState.loading;
+    // M-4: restart is offered only after an interruption stop.
+    final isInterrupted = currentState == AdhanPlayerState.interrupted;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -34,7 +36,9 @@ class AdhanPlayerControls extends ConsumerWidget {
           spacing: 8,
           children: [
             FilledButton.icon(
-              onPressed: isActive ? null : () => unawaited(service.play()),
+              onPressed: isActive || isInterrupted
+                  ? null
+                  : () => unawaited(service.play()),
               icon: const Icon(Icons.play_arrow),
               label: Text(localizations.adhan_player_play),
             ),
@@ -43,6 +47,12 @@ class AdhanPlayerControls extends ConsumerWidget {
               icon: const Icon(Icons.stop),
               label: Text(localizations.adhan_player_stop),
             ),
+            if (isInterrupted)
+              FilledButton.tonalIcon(
+                onPressed: () => unawaited(service.play()),
+                icon: const Icon(Icons.refresh),
+                label: Text(localizations.adhan_player_restart),
+              ),
           ],
         ),
       ],
@@ -57,6 +67,8 @@ class AdhanPlayerControls extends ConsumerWidget {
       AdhanPlayerState.paused => localizations.adhan_player_state_paused,
       AdhanPlayerState.completed => localizations.adhan_player_state_completed,
       AdhanPlayerState.error => localizations.adhan_player_state_error,
+      AdhanPlayerState.interrupted =>
+        localizations.adhan_player_state_interrupted,
     };
   }
 }

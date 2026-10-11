@@ -220,6 +220,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get adhan_player_stop => 'إيقاف الأذان';
 
   @override
+  String get adhan_player_restart => 'إعادة تشغيل الأذان';
+
+  @override
   String get adhan_player_state_idle => 'جاهز';
 
   @override
@@ -236,6 +239,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get adhan_player_state_error => 'تعذر تشغيل الصوت';
+
+  @override
+  String get adhan_player_state_interrupted => 'توقف بسبب مقاطعة';
 
   @override
   String get night_first_third => 'الثلث الأول';

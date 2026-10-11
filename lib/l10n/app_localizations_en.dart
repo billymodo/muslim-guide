@@ -226,6 +226,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get adhan_player_stop => 'Stop adhan';
 
   @override
+  String get adhan_player_restart => 'Restart adhan';
+
+  @override
   String get adhan_player_state_idle => 'Ready';
 
   @override
@@ -242,6 +245,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get adhan_player_state_error => 'Audio playback failed';
+
+  @override
+  String get adhan_player_state_interrupted => 'Stopped by interruption';
 
   @override
   String get night_first_third => 'First Third';

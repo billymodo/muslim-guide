@@ -512,6 +512,12 @@ abstract class AppLocalizations {
   /// **'إيقاف الأذان'**
   String get adhan_player_stop;
 
+  /// No description provided for @adhan_player_restart.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة تشغيل الأذان'**
+  String get adhan_player_restart;
+
   /// No description provided for @adhan_player_state_idle.
   ///
   /// In ar, this message translates to:
@@ -547,6 +553,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'تعذر تشغيل الصوت'**
   String get adhan_player_state_error;
+
+  /// No description provided for @adhan_player_state_interrupted.
+  ///
+  /// In ar, this message translates to:
+  /// **'توقف بسبب مقاطعة'**
+  String get adhan_player_state_interrupted;
 
   /// No description provided for @night_first_third.
   ///
