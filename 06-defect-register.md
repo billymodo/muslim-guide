@@ -66,7 +66,7 @@
 
 | ID | Bug | Severity | Found In | Status | Evidence |
 |---|---|---|---|---|---|
-| BUG-7 | Prayer notification arrives without audible sound although `prayer_adhan_v1` has a raw WAV sound configured | P1 | Oppo A95 / Android 13 — 2026-10-10 | **OPEN** (OGG replacement and `prayer_adhan_v2` awaiting device verification) | Owner observation; channel dump showed the WAV resource and normal ringer mode |
+| BUG-7 | Prayer notification arrives without audible sound although `prayer_adhan_v1` has a raw WAV sound configured | P1 | Oppo A95 / Android 13 — 2026-10-10 | **CLOSED (device-verified in `74a0700`)** — Device test 2026-10-11: 3 beeps heard + AudioTrack streamType 5 confirmed via logcat | Channel `prayer_adhan_v2` plays OGG correctly; WAV→OGG conversion confirmed as fix; evidence `docs/evidence/phase-04/p1-ogg-*.txt` |
 
 ## Known Gaps (pre-Phase 03)
 
