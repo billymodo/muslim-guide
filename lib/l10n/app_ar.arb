@@ -17,6 +17,7 @@
   "prayer_title": "مواقيت الصلاة",
   "prayer_fajr": "الفجر",
   "prayer_sunrise": "الشروق",
+  "sunrise_not_obligatory": "ليست صلاة فريضة",
   "prayer_dhuhr": "الظهر",
   "prayer_asr": "العصر",
   "prayer_maghrib": "المغرب",

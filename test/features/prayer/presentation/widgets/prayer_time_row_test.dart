@@ -13,6 +13,7 @@ void main() {
     DateTime? time,
     bool isNext = false,
     String? note,
+    String? inlineNote,
   }) async {
     final localizations = await loadL10n(arabic);
     await tester.pumpWidget(
@@ -23,6 +24,7 @@ void main() {
             time: time,
             isNext: isNext,
             note: note,
+            inlineNote: inlineNote,
           ),
         ),
       ),
@@ -67,6 +69,22 @@ void main() {
     expect(find.text('ليست صلاة فرض'), findsOneWidget);
     final element = tester.element(find.byType(PrayerTimeRow));
     expect(Directionality.of(element), TextDirection.rtl);
+  });
+
+  testWidgets('renders the inline note beside the label (Commit A)', (
+    tester,
+  ) async {
+    await pumpRow(
+      tester,
+      time: DateTime(2026, 10, 1, 6, 30),
+      inlineNote: 'ليست صلاة فريضة',
+    );
+
+    // Same row: label + inline note + time all visible, no overflow.
+    expect(find.text('الفجر'), findsOneWidget);
+    expect(find.text('ليست صلاة فريضة'), findsOneWidget);
+    expect(find.text('06:30'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('shows no switch without toggle params (sunrise row)', (

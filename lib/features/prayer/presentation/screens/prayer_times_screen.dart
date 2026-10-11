@@ -116,6 +116,11 @@ class PrayerTimesScreen extends ConsumerWidget {
                         ),
                       ),
                       PrayerTimeRow(
+                        label: localizations.prayer_sunrise,
+                        time: times.sunrise,
+                        inlineNote: localizations.sunrise_not_obligatory,
+                      ),
+                      PrayerTimeRow(
                         label: localizations.prayer_dhuhr,
                         time: times.dhuhr,
                         isNext: _isNext(times.dhuhr, next),
@@ -174,11 +179,6 @@ class PrayerTimesScreen extends ConsumerWidget {
                         onNotificationToggle: (enabled) => unawaited(
                           togglePrayer(PrayerNotification.isha, enabled),
                         ),
-                      ),
-                      PrayerTimeRow(
-                        label: localizations.prayer_sunrise,
-                        time: times.sunrise,
-                        note: localizations.sunrise_not_prayer,
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(

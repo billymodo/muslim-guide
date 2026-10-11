@@ -200,6 +200,12 @@ abstract class AppLocalizations {
   /// **'الشروق'**
   String get prayer_sunrise;
 
+  /// No description provided for @sunrise_not_obligatory.
+  ///
+  /// In ar, this message translates to:
+  /// **'ليست صلاة فريضة'**
+  String get sunrise_not_obligatory;
+
   /// No description provided for @prayer_dhuhr.
   ///
   /// In ar, this message translates to:

@@ -8,6 +8,7 @@ import 'package:muslim_guide/features/notifications/domain/prayer_notification.d
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
 import 'package:muslim_guide/features/prayer/domain/models/night_thirds.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
+import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_time_row.dart';
 
 import '../../../adhan/fake_adhan_player_service.dart';
 import '../presentation_test_utils.dart';
@@ -143,7 +144,7 @@ void main() {
     expect(find.text('19:40'), findsOneWidget);
     expect(find.text('00:42:00'), findsOneWidget);
     expect(find.text('الرياض'), findsOneWidget);
-    expect(find.text('ليست صلاة فرض'), findsOneWidget);
+    expect(find.text('ليست صلاة فريضة'), findsOneWidget);
 
     // The fixed night-thirds row above the list pushes the bottom controls
     // below the fold in the default test surface; scroll to reveal them.
@@ -184,6 +185,31 @@ void main() {
 
     expect(find.text('لا صلاة قادمة اليوم'), findsOneWidget);
     expect(find.text('00:42:00'), findsNothing);
+  });
+
+  testWidgets('shows sunrise between fajr and dhuhr (Commit A)', (
+    tester,
+  ) async {
+    await pumpTimesScreen(tester, overrides: successOverrides());
+
+    // Row order: Fajr → Sunrise → Dhuhr → Asr → Maghrib → Isha.
+    final rows = tester.widgetList<PrayerTimeRow>(find.byType(PrayerTimeRow));
+    final labels = rows.map((row) => row.label).toList();
+    expect(labels, [
+      'الفجر',
+      'الشروق',
+      'الظهر',
+      'العصر',
+      'المغرب',
+      'العشاء',
+    ]);
+
+    // The sunrise row carries the inline note and no switch.
+    final sunrise = rows.elementAt(1);
+    expect(sunrise.inlineNote, 'ليست صلاة فريضة');
+    expect(sunrise.notificationEnabled, isNull);
+    expect(sunrise.onNotificationToggle, isNull);
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('shows notification switches and toggles a prayer', (

@@ -61,6 +61,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get prayer_sunrise => 'الشروق';
 
   @override
+  String get sunrise_not_obligatory => 'ليست صلاة فريضة';
+
+  @override
   String get prayer_dhuhr => 'الظهر';
 
   @override

@@ -17,6 +17,7 @@
   "prayer_title": "Prayer Times",
   "prayer_fajr": "Fajr",
   "prayer_sunrise": "Sunrise",
+  "sunrise_not_obligatory": "Not an obligatory prayer",
   "prayer_dhuhr": "Dhuhr",
   "prayer_asr": "Asr",
   "prayer_maghrib": "Maghrib",

@@ -62,6 +62,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get prayer_sunrise => 'Sunrise';
 
   @override
+  String get sunrise_not_obligatory => 'Not an obligatory prayer';
+
+  @override
   String get prayer_dhuhr => 'Dhuhr';
 
   @override

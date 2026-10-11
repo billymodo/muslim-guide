@@ -26,6 +26,7 @@ class PrayerTimeRow extends StatelessWidget {
     required this.time,
     this.isNext = false,
     this.note,
+    this.inlineNote,
     this.notificationEnabled,
     this.onNotificationToggle,
     this.notificationToggleSemantics,
@@ -44,6 +45,10 @@ class PrayerTimeRow extends StatelessWidget {
   /// Optional secondary note shown under the label, such as
   /// `sunrise_not_prayer`.
   final String? note;
+
+  /// Optional small inline note shown beside the label (Commit A: sunrise
+  /// "not an obligatory prayer" marker, same row height as normal rows).
+  final String? inlineNote;
 
   /// Whether notifications are enabled for this prayer (Task 7).
   ///
@@ -121,12 +126,32 @@ class PrayerTimeRow extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    label,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      fontWeight: isNext ? FontWeight.w700 : FontWeight.w500,
-                      color: labelColor,
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          label,
+                          style: theme.textTheme.bodyLarge?.copyWith(
+                            fontWeight: isNext
+                                ? FontWeight.w700
+                                : FontWeight.w500,
+                            color: labelColor,
+                          ),
+                        ),
+                      ),
+                      if (inlineNote != null) ...[
+                        const SizedBox(width: AppSpacing.xs),
+                        Flexible(
+                          child: Text(
+                            inlineNote!,
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                   if (noteText != null)
                     Text(
