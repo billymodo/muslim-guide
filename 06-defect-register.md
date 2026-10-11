@@ -93,3 +93,5 @@
 | GAP-format-time-dup | `_formatTime` duplicated in night_thirds_row — consider shared util Phase 05+ | P3 | Phase 04 CR-0013 | OPEN |
 | GAP-night-thirds-2x-calc | nightThirdsProvider re-calculates 2x per refresh (today + tomorrow) — acceptable; revisit if perf issue | P3 | Phase 04 CR-0013 | OPEN |
 | GAP-system-silence-not-detectable | System-level silence (silent mode/DND on `usage: media` audio) generates no interruption event and is not detectable via `audio_session`; no custom MethodChannel used | P3 | Phase 04 Task 6 | OPEN (documented limit) |
+| GAP-cr0013-missing-photo | CR-0013 device-verified PASS by owner, but screenshot file missing in repo. Add when available | P3 | Phase 04 CR-0013 | OPEN |
+| GAP-task6-device-interruption | Audio focus interruption (real call, competing session, system silence) not device-tested — requires physical call. Schedule next device session | P2 | Phase 04 Task 6 | OPEN |
