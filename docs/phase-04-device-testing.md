@@ -124,6 +124,19 @@ Times were sensible, Arabic labels correct, no overflow observed.
 - Polar spot-check (Tromsø + 2026-06-21 → cells hidden): optional, not run
   in this session.
 
+## Task 8 — Sunrise reposition + settings screen (2026-10-11)
+
+**PASS (owner device verification, Oppo A95).**
+
+- Sunrise row between Fajr and Dhuhr with inline "ليست صلاة فريضة" note.
+- `/settings/notifications` opens with 6 sections (prayer alerts,
+  notifications, adhan, device, licenses, about).
+- Deep link `muslimguide://notifications/settings` opens the screen.
+- Toggle Fajr off → dumpsys alarm check pending explicit confirmation.
+
+- [Settings screen](evidence/phase-04/t8-01-settings.png)
+- [Sunrise position](evidence/phase-04/t8-02-sunrise-position.png)
+
 ## Source changes and commit
 
 No application source, Manifest, or build configuration was changed during
