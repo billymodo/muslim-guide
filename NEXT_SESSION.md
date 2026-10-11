@@ -17,7 +17,7 @@
 4. فتح Phase 05 (TBD)
 
 ### main HEAD
-c8521ea (after push — update with actual SHA)
+430f6aa
 
 ### تنبيهات
 - لا push دون موافقة صريحة.
