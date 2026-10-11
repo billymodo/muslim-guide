@@ -190,6 +190,24 @@ assets:
     reviewer: null
     phase: 04
 
+  - asset_id: adhan-placeholder-sound
+    asset_type: audio
+    name: "Adhan placeholder (generated beeps)"
+    path: "assets/audio/adhan_placeholder.ogg"
+    provider: "Generated locally via tool/generate_adhan_placeholder.py"
+    source_url: "N/A (generated — no third-party content)"
+    license_type: "Generated — no third-party content"
+    redistribution_allowed: true
+    attribution_required: false
+    checksum: "sha256:A23C84E9B65C1B9DEBC43C074F420A6A7247A803B0D1893F8DAB78D008126B59"
+    checksum_method: "SHA-256 of assets/audio/adhan_placeholder.ogg bytes"
+    status: APPROVED
+    reviewed_at: "2026-10-11"
+    evidence: []
+    reviewer: null
+    phase: 04
+    notes: "CI-002 registration for Phase 04 OGG placeholder (8s Vorbis beeps). Not a religious recording; replaced WAV to fix BUG-7. Real adhan selection remains pending per phases/04.md."
+
   - asset_id: quran-recitation
     asset_type: audio
     name: "تلاوة القرآن"
