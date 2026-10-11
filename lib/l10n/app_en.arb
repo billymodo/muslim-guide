@@ -79,5 +79,8 @@
   "adhan_player_state_interrupted": "Stopped by interruption",
   "@@night_last_third_virtue": "TODO(Phase 05+): add religious text with verified source",
   "night_first_third": "First Third",
-  "night_last_third_tahajjud": "Last Third (Tahajjud)"
+  "night_last_third_tahajjud": "Last Third (Tahajjud)",
+  "prayer_notification_toggle": "Prayer notification",
+  "prayer_notification_enabled": "Prayer notification on",
+  "prayer_notification_disabled": "Prayer notification off"
 }

@@ -68,4 +68,85 @@ void main() {
     final element = tester.element(find.byType(PrayerTimeRow));
     expect(Directionality.of(element), TextDirection.rtl);
   });
+
+  testWidgets('shows no switch without toggle params (sunrise row)', (
+    tester,
+  ) async {
+    await pumpRow(tester, time: DateTime(2026, 10, 1, 6, 30));
+
+    expect(find.byType(Switch), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('shows an enabled switch and reports toggles', (tester) async {
+    final semantics = tester.ensureSemantics();
+    var toggledTo = true;
+    final localizations = await loadL10n(arabic);
+    await tester.pumpWidget(
+      buildTestApp(
+        child: Scaffold(
+          body: Center(
+            child: PrayerTimeRow(
+              label: localizations.prayer_fajr,
+              time: DateTime(2026, 10, 1, 5, 15),
+              notificationEnabled: true,
+              notificationToggleSemantics: 'إشعار الصلاة مفعّل',
+              onNotificationToggle: (enabled) => toggledTo = enabled,
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    final toggle = tester.widget<Switch>(find.byType(Switch));
+    expect(toggle.value, isTrue);
+    expect(
+      find.bySemanticsLabel('الفجر: 05:15 إشعار الصلاة مفعّل'),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.byType(Switch));
+    await tester.pump();
+
+    expect(toggledTo, isFalse);
+    expect(tester.takeException(), isNull);
+    semantics.dispose();
+  });
+
+  testWidgets('dims only the label when notifications are disabled', (
+    tester,
+  ) async {
+    final semantics = tester.ensureSemantics();
+    final localizations = await loadL10n(arabic);
+    await tester.pumpWidget(
+      buildTestApp(
+        child: Scaffold(
+          body: Center(
+            child: PrayerTimeRow(
+              label: localizations.prayer_fajr,
+              time: DateTime(2026, 10, 1, 5, 15),
+              notificationEnabled: false,
+              notificationToggleSemantics: 'إشعار الصلاة معطّل',
+              onNotificationToggle: (_) {},
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.pump();
+
+    // Director 3.5: the time keeps its normal color; only the label dims.
+    final timeText = tester.widget<Text>(find.text('05:15'));
+    expect(timeText.style?.color, isNotNull);
+    final labelText = tester.widget<Text>(find.text('الفجر'));
+    expect(labelText.style?.color, isNotNull);
+    expect(labelText.style?.color, isNot(timeText.style?.color));
+    expect(
+      find.bySemanticsLabel('الفجر: 05:15 إشعار الصلاة معطّل'),
+      findsOneWidget,
+    );
+    expect(tester.takeException(), isNull);
+    semantics.dispose();
+  });
 }

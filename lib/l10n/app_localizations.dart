@@ -571,6 +571,24 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'الثلث الأخير (التهجد)'**
   String get night_last_third_tahajjud;
+
+  /// No description provided for @prayer_notification_toggle.
+  ///
+  /// In ar, this message translates to:
+  /// **'إشعار الصلاة'**
+  String get prayer_notification_toggle;
+
+  /// No description provided for @prayer_notification_enabled.
+  ///
+  /// In ar, this message translates to:
+  /// **'إشعار الصلاة مفعّل'**
+  String get prayer_notification_enabled;
+
+  /// No description provided for @prayer_notification_disabled.
+  ///
+  /// In ar, this message translates to:
+  /// **'إشعار الصلاة معطّل'**
+  String get prayer_notification_disabled;
 }
 
 class _AppLocalizationsDelegate

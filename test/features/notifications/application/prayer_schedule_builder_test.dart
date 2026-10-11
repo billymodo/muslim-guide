@@ -108,4 +108,106 @@ void main() {
       isTrue,
     );
   });
+
+  test('excludes disabled prayers from the schedule', () {
+    const repository = PrayerTimesRepositoryImpl();
+    const location = LocationData(
+      latitude: 40.7128,
+      longitude: -74.006,
+      timeZoneId: 'America/New_York',
+    );
+    final zone = tz.getLocation(location.timeZoneId);
+    final now = tz.TZDateTime(zone, 2026, 3, 7);
+    final template = repository.calculate(location: location, date: now);
+
+    final schedule = buildPrayerNotificationSchedule(
+      calculationTemplate: template,
+      repository: repository,
+      now: now,
+      body: 'Prayer time',
+      titleForPrayer: (prayer) => prayer.name,
+      enabledPrayers: PrayerNotification.values.toSet()
+        ..remove(PrayerNotification.fajr),
+    );
+
+    expect(schedule.notifications, isNotEmpty);
+    expect(
+      schedule.notifications.any(
+        (notification) => notification.prayer == PrayerNotification.fajr,
+      ),
+      isFalse,
+    );
+    expect(
+      schedule.notifications
+          .map((notification) => notification.prayer)
+          .toSet(),
+      containsAll([
+        PrayerNotification.dhuhr,
+        PrayerNotification.asr,
+        PrayerNotification.maghrib,
+        PrayerNotification.isha,
+      ]),
+    );
+  });
+
+  test('empty enabled set produces an empty schedule (§3.3)', () {
+    const repository = PrayerTimesRepositoryImpl();
+    const location = LocationData(
+      latitude: 40.7128,
+      longitude: -74.006,
+      timeZoneId: 'America/New_York',
+    );
+    final zone = tz.getLocation(location.timeZoneId);
+    final now = tz.TZDateTime(zone, 2026, 3, 7);
+    final template = repository.calculate(location: location, date: now);
+
+    final schedule = buildPrayerNotificationSchedule(
+      calculationTemplate: template,
+      repository: repository,
+      now: now,
+      body: 'Prayer time',
+      titleForPrayer: (prayer) => prayer.name,
+      enabledPrayers: const {},
+    );
+
+    expect(schedule.notifications, isEmpty);
+  });
+
+  test('disabling a prayer keeps other notification IDs stable', () {
+    const repository = PrayerTimesRepositoryImpl();
+    const location = LocationData(
+      latitude: 40.7128,
+      longitude: -74.006,
+      timeZoneId: 'America/New_York',
+    );
+    final zone = tz.getLocation(location.timeZoneId);
+    final now = tz.TZDateTime(zone, 2026, 3, 7);
+    final template = repository.calculate(location: location, date: now);
+
+    PrayerNotificationSchedule buildWith(Set<PrayerNotification> enabled) =>
+        buildPrayerNotificationSchedule(
+          calculationTemplate: template,
+          repository: repository,
+          now: now,
+          body: 'Prayer time',
+          titleForPrayer: (prayer) => prayer.name,
+          enabledPrayers: enabled,
+        );
+
+    final full = buildWith(PrayerNotification.values.toSet());
+    final withoutFajr = buildWith(
+      PrayerNotification.values.toSet()..remove(PrayerNotification.fajr),
+    );
+
+    final fullByKey = {
+      for (final notification in full.notifications)
+        (notification.prayer, notification.dayOffset): notification.id,
+    };
+    for (final notification in withoutFajr.notifications) {
+      expect(
+        notification.id,
+        fullByKey[(notification.prayer, notification.dayOffset)],
+      );
+    }
+  });
 }

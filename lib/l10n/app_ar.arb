@@ -79,5 +79,8 @@
   "adhan_player_state_interrupted": "توقف بسبب مقاطعة",
   "@@night_last_third_virtue": "TODO(Phase 05+): add religious text with verified source",
   "night_first_third": "الثلث الأول",
-  "night_last_third_tahajjud": "الثلث الأخير (التهجد)"
+  "night_last_third_tahajjud": "الثلث الأخير (التهجد)",
+  "prayer_notification_toggle": "إشعار الصلاة",
+  "prayer_notification_enabled": "إشعار الصلاة مفعّل",
+  "prayer_notification_disabled": "إشعار الصلاة معطّل"
 }

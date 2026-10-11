@@ -1,4 +1,5 @@
 import 'package:hive_ce/hive.dart';
+import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
 import 'package:muslim_guide/features/prayer/domain/models/asr_method.dart';
 import 'package:muslim_guide/features/prayer/domain/models/calculation_method.dart';
 import 'package:muslim_guide/features/prayer/domain/models/high_latitude_rule.dart';
@@ -224,6 +225,47 @@ class SettingsRepository {
   /// Saves the selected high-latitude rule.
   Future<void> setHighLatitudeRule(HighLatitudeRule rule) async {
     await _box.put('high_latitude_rule', rule.name);
+  }
+
+  /// Returns the prayers with notifications enabled (Task 7).
+  ///
+  /// Absence of the key means all five prayers are enabled (SETTING-006).
+  /// Unknown stored names are ignored (forward tolerance).
+  Future<Set<PrayerNotification>> getEnabledPrayerNotifications() async {
+    final value = _boxOrNull?.get('enabled_prayer_notifications');
+    if (value == null) {
+      return PrayerNotification.values.toSet();
+    }
+    if (value is! List) {
+      throw FormatException(
+        'Invalid stored enabled_prayer_notifications value: $value',
+      );
+    }
+    final enabled = <PrayerNotification>{};
+    for (final entry in value) {
+      if (entry is! String) {
+        throw FormatException(
+          'Invalid stored enabled_prayer_notifications entry: $entry',
+        );
+      }
+      for (final prayer in PrayerNotification.values) {
+        if (prayer.name == entry) {
+          enabled.add(prayer);
+        }
+      }
+    }
+    return enabled;
+  }
+
+  /// Saves the prayers with notifications enabled (Task 7).
+  ///
+  /// An empty set disables all prayer notifications; the scheduler then
+  /// produces an empty schedule.
+  Future<void> setEnabledPrayerNotifications(
+    Set<PrayerNotification> prayers,
+  ) async {
+    final names = prayers.map((prayer) => prayer.name).toList()..sort();
+    await _box.put('enabled_prayer_notifications', names);
   }
 
   Box<dynamic>? get _boxOrNull =>

@@ -1,7 +1,7 @@
 import 'package:hive_ce/hive.dart';
 
 /// Current schema version for the settings box.
-const currentSettingsVersion = 1;
+const currentSettingsVersion = 2;
 
 /// Applies sequential schema migrations to [box].
 Future<void> runMigrations(Box<dynamic> box) async {
@@ -20,6 +20,12 @@ Future<void> runMigrations(Box<dynamic> box) async {
 
   if (schemaVersion < 1) {
     // Version 1 introduces schema tracking; no existing values need conversion.
+  }
+
+  // v1 → v2: added enabled_prayer_notifications key.
+  // No conversion needed (absence = all enabled).
+  if (schemaVersion < 2) {
+    // New key only; existing boxes keep working with the all-enabled default.
   }
 
   await box.put('schemaVersion', currentSettingsVersion);

@@ -248,4 +248,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get night_last_third_tahajjud => 'الثلث الأخير (التهجد)';
+
+  @override
+  String get prayer_notification_toggle => 'إشعار الصلاة';
+
+  @override
+  String get prayer_notification_enabled => 'إشعار الصلاة مفعّل';
+
+  @override
+  String get prayer_notification_disabled => 'إشعار الصلاة معطّل';
 }

@@ -254,4 +254,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get night_last_third_tahajjud => 'Last Third (Tahajjud)';
+
+  @override
+  String get prayer_notification_toggle => 'Prayer notification';
+
+  @override
+  String get prayer_notification_enabled => 'Prayer notification on';
+
+  @override
+  String get prayer_notification_disabled => 'Prayer notification off';
 }

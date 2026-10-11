@@ -4,12 +4,23 @@ import 'package:muslim_guide/features/prayer/domain/repositories/prayer_times_re
 import 'package:timezone/timezone.dart' as tz;
 
 /// Builds a seven-day local-calendar schedule from prayer-calculation inputs.
+///
+/// Only prayers in [enabledPrayers] are scheduled (Task 7); disabled
+/// prayers are filtered out. Defaults to all five for callers that do not
+/// track the enabled set (e.g. legacy tests).
 PrayerNotificationSchedule buildPrayerNotificationSchedule({
   required PrayerTimesResult calculationTemplate,
   required PrayerTimesRepository repository,
   required DateTime now,
   required String body,
   required String Function(PrayerNotification prayer) titleForPrayer,
+  Set<PrayerNotification> enabledPrayers = const {
+    PrayerNotification.fajr,
+    PrayerNotification.dhuhr,
+    PrayerNotification.asr,
+    PrayerNotification.maghrib,
+    PrayerNotification.isha,
+  },
 }) {
   final location = tz.getLocation(calculationTemplate.location.timeZoneId);
   final localNow = tz.TZDateTime.from(now, location);
@@ -48,6 +59,7 @@ PrayerNotificationSchedule buildPrayerNotificationSchedule({
     for (final entry in times.entries) {
       final prayerTime = entry.value;
       if (prayerTime == null || !prayerTime.isAfter(localNow)) continue;
+      if (!enabledPrayers.contains(entry.key)) continue;
       notifications.add(
         ScheduledPrayerNotification(
           prayer: entry.key,

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:muslim_guide/data/settings/settings_repository.dart';
+import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
 import 'package:muslim_guide/features/prayer/domain/models/asr_method.dart';
 import 'package:muslim_guide/features/prayer/domain/models/calculation_method.dart';
 import 'package:muslim_guide/features/prayer/domain/models/high_latitude_rule.dart';
@@ -132,6 +133,53 @@ void main() {
     await box.put('high_latitude_rule', 'nope');
     await expectLater(
       repository.getHighLatitudeRule(),
+      throwsFormatException,
+    );
+  });
+
+  test(
+    'defaults to all prayers enabled and persists the enabled set',
+    () async {
+    final box = await Hive.openBox<dynamic>('settings');
+    final repository = SettingsRepository(box);
+
+    expect(
+      await repository.getEnabledPrayerNotifications(),
+      PrayerNotification.values.toSet(),
+    );
+
+    await repository.setEnabledPrayerNotifications({
+      PrayerNotification.fajr,
+      PrayerNotification.isha,
+    });
+    expect(
+      await repository.getEnabledPrayerNotifications(),
+      {PrayerNotification.fajr, PrayerNotification.isha},
+    );
+
+    await repository.setEnabledPrayerNotifications({});
+    expect(await repository.getEnabledPrayerNotifications(), isEmpty);
+  });
+
+  test('ignores unknown stored prayer names and rejects wrong types', () async {
+    final box = await Hive.openBox<dynamic>('settings');
+    final repository = SettingsRepository(box);
+
+    await box.put('enabled_prayer_notifications', ['fajr', 'bong', 'isha']);
+    expect(
+      await repository.getEnabledPrayerNotifications(),
+      {PrayerNotification.fajr, PrayerNotification.isha},
+    );
+
+    await box.put('enabled_prayer_notifications', 'fajr');
+    await expectLater(
+      repository.getEnabledPrayerNotifications(),
+      throwsFormatException,
+    );
+
+    await box.put('enabled_prayer_notifications', ['fajr', 42]);
+    await expectLater(
+      repository.getEnabledPrayerNotifications(),
       throwsFormatException,
     );
   });

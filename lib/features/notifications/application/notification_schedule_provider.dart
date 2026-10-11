@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
+import 'package:muslim_guide/features/notifications/application/enabled_prayers_provider.dart';
 import 'package:muslim_guide/features/notifications/application/permission_provider.dart';
 import 'package:muslim_guide/features/notifications/application/prayer_schedule_builder.dart';
 import 'package:muslim_guide/features/notifications/data/flutter_local_notification_api.dart';
@@ -62,6 +63,7 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
     ref.listen(asrMethodProvider, (_, _) => _scheduleDebounced());
     ref.listen(highLatitudeRuleProvider, (_, _) => _scheduleDebounced());
     ref.listen(permissionStateProvider, (_, _) => _scheduleDebounced());
+    ref.listen(enabledPrayersProvider, (_, _) => _scheduleDebounced());
 
     _lifecycleObserver = _ScheduleLifecycleObserver(
       onResumed: _refreshTimezoneAndSchedule,
@@ -142,6 +144,7 @@ class NotificationScheduleNotifier extends Notifier<ScheduleResult?> {
         repository: ref.read(prayerTimesRepositoryProvider),
         now: tz.TZDateTime.now(tz.getLocation(calculation.location.timeZoneId)),
         body: localizations.notif_prayer_body,
+        enabledPrayers: ref.read(enabledPrayersProvider),
         titleForPrayer: (prayer) => switch (prayer) {
           PrayerNotification.fajr => localizations.notif_prayer_title_fajr,
           PrayerNotification.dhuhr => localizations.notif_prayer_title_dhuhr,
