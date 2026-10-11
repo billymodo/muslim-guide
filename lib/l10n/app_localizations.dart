@@ -595,6 +595,108 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'إشعار الصلاة معطّل'**
   String get prayer_notification_disabled;
+
+  /// No description provided for @settings_notifications_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعدادات الإشعارات'**
+  String get settings_notifications_title;
+
+  /// No description provided for @settings_section_prayer_alerts.
+  ///
+  /// In ar, this message translates to:
+  /// **'تنبيهات الصلوات'**
+  String get settings_section_prayer_alerts;
+
+  /// No description provided for @settings_prayer_alerts_hint.
+  ///
+  /// In ar, this message translates to:
+  /// **'فعّل/عطّل إشعارات كل صلاة'**
+  String get settings_prayer_alerts_hint;
+
+  /// No description provided for @settings_section_notifications.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات'**
+  String get settings_section_notifications;
+
+  /// No description provided for @settings_notifications_on.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات مفعّلة.'**
+  String get settings_notifications_on;
+
+  /// No description provided for @settings_notifications_off.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإشعارات غير مفعّلة بالكامل.'**
+  String get settings_notifications_off;
+
+  /// No description provided for @settings_open_diagnostics.
+  ///
+  /// In ar, this message translates to:
+  /// **'فتح تشخيص الإشعارات'**
+  String get settings_open_diagnostics;
+
+  /// No description provided for @settings_section_adhan.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأذان'**
+  String get settings_section_adhan;
+
+  /// No description provided for @settings_adhan_sound.
+  ///
+  /// In ar, this message translates to:
+  /// **'صوت الأذان'**
+  String get settings_adhan_sound;
+
+  /// No description provided for @settings_adhan_sound_coming_soon.
+  ///
+  /// In ar, this message translates to:
+  /// **'قريباً'**
+  String get settings_adhan_sound_coming_soon;
+
+  /// No description provided for @settings_section_device.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجهاز'**
+  String get settings_section_device;
+
+  /// No description provided for @settings_coloros_guide.
+  ///
+  /// In ar, this message translates to:
+  /// **'على أجهزة Oppo/ColorOS: عطّل تحسين البطارية لهذا التطبيق، واسمح بالتشغيل التلقائي والتشغيل في الخلفية لتصل إشعارات الصلاة في وقتها.'**
+  String get settings_coloros_guide;
+
+  /// No description provided for @settings_oem_note.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأجهزة الأخرى (MIUI وOneUI وEMUI) غير مختبرة بعد.'**
+  String get settings_oem_note;
+
+  /// No description provided for @settings_section_licenses.
+  ///
+  /// In ar, this message translates to:
+  /// **'التراخيص'**
+  String get settings_section_licenses;
+
+  /// No description provided for @settings_licenses.
+  ///
+  /// In ar, this message translates to:
+  /// **'تراخيص المصادر المفتوحة'**
+  String get settings_licenses;
+
+  /// No description provided for @settings_section_about.
+  ///
+  /// In ar, this message translates to:
+  /// **'حول'**
+  String get settings_section_about;
+
+  /// No description provided for @settings_app_version.
+  ///
+  /// In ar, this message translates to:
+  /// **'0.1.0+1'**
+  String get settings_app_version;
 }
 
 class _AppLocalizationsDelegate

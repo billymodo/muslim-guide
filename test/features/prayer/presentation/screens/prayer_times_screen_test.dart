@@ -3,8 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:muslim_guide/features/adhan/application/adhan_player_provider.dart';
-import 'package:muslim_guide/features/notifications/application/enabled_prayers_provider.dart';
-import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
 import 'package:muslim_guide/features/prayer/domain/models/night_thirds.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
@@ -12,27 +10,6 @@ import 'package:muslim_guide/features/prayer/presentation/widgets/prayer_time_ro
 
 import '../../../adhan/fake_adhan_player_service.dart';
 import '../presentation_test_utils.dart';
-
-/// Test-only enabled-prayers notifier with in-memory state (no Hive).
-class _FixedEnabledPrayersNotifier extends EnabledPrayersNotifier {
-  new(this.fixed);
-
-  final Set<PrayerNotification> fixed;
-
-  @override
-  Set<PrayerNotification> build() => Set.of(fixed);
-
-  @override
-  Future<void> setPrayerEnabled(PrayerNotification prayer, bool enabled) async {
-    final updated = Set<PrayerNotification>.of(state);
-    if (enabled) {
-      updated.add(prayer);
-    } else {
-      updated.remove(prayer);
-    }
-    state = updated;
-  }
-}
 
 void main() {
   List<Override> successOverrides({
@@ -207,42 +184,6 @@ void main() {
     // The sunrise row carries the inline note and no switch.
     final sunrise = rows.elementAt(1);
     expect(sunrise.inlineNote, 'ليست صلاة فريضة');
-    expect(sunrise.notificationEnabled, isNull);
-    expect(sunrise.onNotificationToggle, isNull);
-    expect(tester.takeException(), isNull);
-  });
-
-  testWidgets('shows notification switches and toggles a prayer', (
-    tester,
-  ) async {
-    await pumpTimesScreen(
-      tester,
-      overrides: [
-        ...successOverrides(),
-        enabledPrayersProvider.overrideWith(
-          () => _FixedEnabledPrayersNotifier({
-            PrayerNotification.fajr,
-            PrayerNotification.dhuhr,
-            PrayerNotification.asr,
-            PrayerNotification.maghrib,
-            PrayerNotification.isha,
-          }),
-        ),
-      ],
-    );
-
-    // Five prayer rows carry switches; the sunrise row does not.
-    expect(find.byType(Switch), findsNWidgets(5));
-
-    // Disable Fajr via its switch.
-    await tester.tap(find.byType(Switch).first);
-    await tester.pump();
-    await tester.pump();
-
-    expect(find.byType(Switch), findsNWidgets(5));
-    final switches = tester.widgetList<Switch>(find.byType(Switch)).toList();
-    expect(switches.first.value, isFalse);
-    expect(switches.skip(1).every((toggle) => toggle.value), isTrue);
     expect(tester.takeException(), isNull);
   });
 

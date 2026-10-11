@@ -260,4 +260,57 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get prayer_notification_disabled => 'إشعار الصلاة معطّل';
+
+  @override
+  String get settings_notifications_title => 'إعدادات الإشعارات';
+
+  @override
+  String get settings_section_prayer_alerts => 'تنبيهات الصلوات';
+
+  @override
+  String get settings_prayer_alerts_hint => 'فعّل/عطّل إشعارات كل صلاة';
+
+  @override
+  String get settings_section_notifications => 'الإشعارات';
+
+  @override
+  String get settings_notifications_on => 'الإشعارات مفعّلة.';
+
+  @override
+  String get settings_notifications_off => 'الإشعارات غير مفعّلة بالكامل.';
+
+  @override
+  String get settings_open_diagnostics => 'فتح تشخيص الإشعارات';
+
+  @override
+  String get settings_section_adhan => 'الأذان';
+
+  @override
+  String get settings_adhan_sound => 'صوت الأذان';
+
+  @override
+  String get settings_adhan_sound_coming_soon => 'قريباً';
+
+  @override
+  String get settings_section_device => 'الجهاز';
+
+  @override
+  String get settings_coloros_guide =>
+      'على أجهزة Oppo/ColorOS: عطّل تحسين البطارية لهذا التطبيق، واسمح بالتشغيل التلقائي والتشغيل في الخلفية لتصل إشعارات الصلاة في وقتها.';
+
+  @override
+  String get settings_oem_note =>
+      'الأجهزة الأخرى (MIUI وOneUI وEMUI) غير مختبرة بعد.';
+
+  @override
+  String get settings_section_licenses => 'التراخيص';
+
+  @override
+  String get settings_licenses => 'تراخيص المصادر المفتوحة';
+
+  @override
+  String get settings_section_about => 'حول';
+
+  @override
+  String get settings_app_version => '0.1.0+1';
 }

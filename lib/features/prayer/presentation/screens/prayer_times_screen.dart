@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,8 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:muslim_guide/app/theme/app_colors.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/features/adhan/presentation/adhan_player_controls.dart';
-import 'package:muslim_guide/features/notifications/application/enabled_prayers_provider.dart';
-import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
 import 'package:muslim_guide/features/prayer/application/countdown_provider.dart';
 import 'package:muslim_guide/features/prayer/application/night_thirds_provider.dart';
 import 'package:muslim_guide/features/prayer/application/prayer_times_provider.dart';
@@ -61,24 +57,6 @@ class PrayerTimesScreen extends ConsumerWidget {
           }
           final next = nextPrayerTime(times, DateTime.now());
           final thirdsAsync = ref.watch(nightThirdsProvider);
-          final enabledPrayers = ref.watch(enabledPrayersProvider);
-          String toggleSemantics(PrayerNotification prayer, String label) {
-            final enabled = enabledPrayers.contains(prayer);
-            final stateText = enabled
-                ? localizations.prayer_notification_enabled
-                : localizations.prayer_notification_disabled;
-            return '$label: $stateText';
-          }
-
-          Future<void> togglePrayer(
-            PrayerNotification prayer,
-            // ignore: avoid_positional_boolean_parameters // Local helper mirrors provider API.
-            bool enabled,
-          ) {
-            return ref
-                .read(enabledPrayersProvider.notifier)
-                .setPrayerEnabled(prayer, enabled);
-          }
           return Column(
             children: [
               const PrayerHeroCard(),
@@ -104,16 +82,6 @@ class PrayerTimesScreen extends ConsumerWidget {
                         label: localizations.prayer_fajr,
                         time: times.fajr,
                         isNext: _isNext(times.fajr, next),
-                        notificationEnabled: enabledPrayers.contains(
-                          PrayerNotification.fajr,
-                        ),
-                        notificationToggleSemantics: toggleSemantics(
-                          PrayerNotification.fajr,
-                          localizations.prayer_fajr,
-                        ),
-                        onNotificationToggle: (enabled) => unawaited(
-                          togglePrayer(PrayerNotification.fajr, enabled),
-                        ),
                       ),
                       PrayerTimeRow(
                         label: localizations.prayer_sunrise,
@@ -124,61 +92,21 @@ class PrayerTimesScreen extends ConsumerWidget {
                         label: localizations.prayer_dhuhr,
                         time: times.dhuhr,
                         isNext: _isNext(times.dhuhr, next),
-                        notificationEnabled: enabledPrayers.contains(
-                          PrayerNotification.dhuhr,
-                        ),
-                        notificationToggleSemantics: toggleSemantics(
-                          PrayerNotification.dhuhr,
-                          localizations.prayer_dhuhr,
-                        ),
-                        onNotificationToggle: (enabled) => unawaited(
-                          togglePrayer(PrayerNotification.dhuhr, enabled),
-                        ),
                       ),
                       PrayerTimeRow(
                         label: localizations.prayer_asr,
                         time: times.asr,
                         isNext: _isNext(times.asr, next),
-                        notificationEnabled: enabledPrayers.contains(
-                          PrayerNotification.asr,
-                        ),
-                        notificationToggleSemantics: toggleSemantics(
-                          PrayerNotification.asr,
-                          localizations.prayer_asr,
-                        ),
-                        onNotificationToggle: (enabled) => unawaited(
-                          togglePrayer(PrayerNotification.asr, enabled),
-                        ),
                       ),
                       PrayerTimeRow(
                         label: localizations.prayer_maghrib,
                         time: times.maghrib,
                         isNext: _isNext(times.maghrib, next),
-                        notificationEnabled: enabledPrayers.contains(
-                          PrayerNotification.maghrib,
-                        ),
-                        notificationToggleSemantics: toggleSemantics(
-                          PrayerNotification.maghrib,
-                          localizations.prayer_maghrib,
-                        ),
-                        onNotificationToggle: (enabled) => unawaited(
-                          togglePrayer(PrayerNotification.maghrib, enabled),
-                        ),
                       ),
                       PrayerTimeRow(
                         label: localizations.prayer_isha,
                         time: times.isha,
                         isNext: _isNext(times.isha, next),
-                        notificationEnabled: enabledPrayers.contains(
-                          PrayerNotification.isha,
-                        ),
-                        notificationToggleSemantics: toggleSemantics(
-                          PrayerNotification.isha,
-                          localizations.prayer_isha,
-                        ),
-                        onNotificationToggle: (enabled) => unawaited(
-                          togglePrayer(PrayerNotification.isha, enabled),
-                        ),
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(
@@ -195,13 +123,13 @@ class PrayerTimesScreen extends ConsumerWidget {
                           AppSpacing.xxl,
                         ),
                         child: Tooltip(
-                          message: localizations.prayer_settings_coming_soon,
+                          message: localizations.prayer_notification_settings,
                           child: FilledButton.tonal(
                             style: FilledButton.styleFrom(
                               minimumSize: const Size.fromHeight(48),
                             ),
-                            // TODO(phase-04): enable with notifications.
-                            onPressed: null,
+                            onPressed: () =>
+                                context.push('/settings/notifications'),
                             child: Text(
                               localizations.prayer_notification_settings,
                             ),

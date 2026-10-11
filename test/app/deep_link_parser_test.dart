@@ -33,6 +33,15 @@ void main() {
       );
     });
 
+    test('resolves the notifications settings deep link', () {
+      expect(
+        DeepLinkParser.parse(
+          Uri.parse('muslimguide://notifications/settings'),
+        ),
+        '/settings/notifications',
+      );
+    });
+
     test('resolves the legacy prayer deep link', () {
       expect(
         DeepLinkParser.parse(Uri.parse('muslimguide://test/prayer')),
@@ -79,6 +88,10 @@ void main() {
 
     test('returns null for an unknown path-only link', () {
       expect(DeepLinkParser.parse(Uri.parse('/unknown')), isNull);
+    });
+
+    test('leaves the bare settings path unresolved', () {
+      expect(DeepLinkParser.parse(Uri.parse('/settings')), isNull);
     });
   });
 }

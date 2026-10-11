@@ -83,5 +83,22 @@
   "night_last_third_tahajjud": "الثلث الأخير (التهجد)",
   "prayer_notification_toggle": "إشعار الصلاة",
   "prayer_notification_enabled": "إشعار الصلاة مفعّل",
-  "prayer_notification_disabled": "إشعار الصلاة معطّل"
+  "prayer_notification_disabled": "إشعار الصلاة معطّل",
+  "settings_notifications_title": "إعدادات الإشعارات",
+  "settings_section_prayer_alerts": "تنبيهات الصلوات",
+  "settings_prayer_alerts_hint": "فعّل/عطّل إشعارات كل صلاة",
+  "settings_section_notifications": "الإشعارات",
+  "settings_notifications_on": "الإشعارات مفعّلة.",
+  "settings_notifications_off": "الإشعارات غير مفعّلة بالكامل.",
+  "settings_open_diagnostics": "فتح تشخيص الإشعارات",
+  "settings_section_adhan": "الأذان",
+  "settings_adhan_sound": "صوت الأذان",
+  "settings_adhan_sound_coming_soon": "قريباً",
+  "settings_section_device": "الجهاز",
+  "settings_coloros_guide": "على أجهزة Oppo/ColorOS: عطّل تحسين البطارية لهذا التطبيق، واسمح بالتشغيل التلقائي والتشغيل في الخلفية لتصل إشعارات الصلاة في وقتها.",
+  "settings_oem_note": "الأجهزة الأخرى (MIUI وOneUI وEMUI) غير مختبرة بعد.",
+  "settings_section_licenses": "التراخيص",
+  "settings_licenses": "تراخيص المصادر المفتوحة",
+  "settings_section_about": "حول",
+  "settings_app_version": "0.1.0+1"
 }

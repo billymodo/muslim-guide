@@ -266,4 +266,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get prayer_notification_disabled => 'Prayer notification off';
+
+  @override
+  String get settings_notifications_title => 'Notification settings';
+
+  @override
+  String get settings_section_prayer_alerts => 'Prayer alerts';
+
+  @override
+  String get settings_prayer_alerts_hint => 'Enable or disable each prayer';
+
+  @override
+  String get settings_section_notifications => 'Notifications';
+
+  @override
+  String get settings_notifications_on => 'Notifications are enabled.';
+
+  @override
+  String get settings_notifications_off =>
+      'Notifications are not fully enabled.';
+
+  @override
+  String get settings_open_diagnostics => 'Open notification diagnostics';
+
+  @override
+  String get settings_section_adhan => 'Adhan';
+
+  @override
+  String get settings_adhan_sound => 'Adhan sound';
+
+  @override
+  String get settings_adhan_sound_coming_soon => 'Coming soon';
+
+  @override
+  String get settings_section_device => 'Device';
+
+  @override
+  String get settings_coloros_guide =>
+      'On Oppo/ColorOS: disable battery optimization for this app, allow auto-launch, and allow background running so prayer notifications arrive on time.';
+
+  @override
+  String get settings_oem_note =>
+      'Other devices (MIUI, OneUI, EMUI) are not tested yet.';
+
+  @override
+  String get settings_section_licenses => 'Licenses';
+
+  @override
+  String get settings_licenses => 'Open-source licenses';
+
+  @override
+  String get settings_section_about => 'About';
+
+  @override
+  String get settings_app_version => '0.1.0+1';
 }

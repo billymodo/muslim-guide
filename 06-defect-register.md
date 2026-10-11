@@ -73,7 +73,7 @@
 | ID | Gap | Severity | Found In | Status |
 |---|---|---|---|---|
 | GAP-meta-caret | `meta: ^1.15.0` يستخدم `^` بدل exact pin — Rule 019 audit | P3 | Pre-existing | **CLOSED (this commit — follows f44ffc9)** — Pinned to 1.18.3 exact (Rule 019). |
-| GAP-license-page | لا يوجد `showLicensePage`/`LicenseRegistry` في `lib/` — سياسة `legal/02-attribution-policy.md` تتوقع عرض تراخيص الحزم (مثل flutter_timezone Apache-2.0) | P3 | CR-0010 review (2026-10-09) | **OPEN** (Phase 05+ — قرار Decisions 5؛ LICENSES.md + legal/CI يكفيان مؤقتاً) |
+| GAP-license-page | لا يوجد `showLicensePage`/`LicenseRegistry` في `lib/` — سياسة `legal/02-attribution-policy.md` تتوقع عرض تراخيص الحزم (مثل flutter_timezone Apache-2.0) | P3 | CR-0010 review (2026-10-09) | **CLOSED-PARTIAL (Task 8)** — licenses entry in `/settings/notifications` opens `showLicensePage`; full attribution review stays Phase 05+ |
 | GAP-compass-maintenance | flutter_compass 0.8.1 — maintenance stopped ~23 months; migration to sensors_plus if critical | P3 | CR-0011 (Phase 03) | **OPEN** (Phase 05+ audit) |
 | GAP-hive-patch | hive_ce 2.20.1 → 2.20.2 patch upgrade | P3 | Phase 03 Task 2 | **CLOSED (this commit — follows f44ffc9)** |
 | GAP-compass-pinned | flutter_compass 0.8.1 (MIT, exact) — added to pubspec | — | CR-0011 (Phase 03) | **CLOSED (this commit)** |

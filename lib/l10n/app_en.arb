@@ -83,5 +83,22 @@
   "night_last_third_tahajjud": "Last Third (Tahajjud)",
   "prayer_notification_toggle": "Prayer notification",
   "prayer_notification_enabled": "Prayer notification on",
-  "prayer_notification_disabled": "Prayer notification off"
+  "prayer_notification_disabled": "Prayer notification off",
+  "settings_notifications_title": "Notification settings",
+  "settings_section_prayer_alerts": "Prayer alerts",
+  "settings_prayer_alerts_hint": "Enable or disable each prayer",
+  "settings_section_notifications": "Notifications",
+  "settings_notifications_on": "Notifications are enabled.",
+  "settings_notifications_off": "Notifications are not fully enabled.",
+  "settings_open_diagnostics": "Open notification diagnostics",
+  "settings_section_adhan": "Adhan",
+  "settings_adhan_sound": "Adhan sound",
+  "settings_adhan_sound_coming_soon": "Coming soon",
+  "settings_section_device": "Device",
+  "settings_coloros_guide": "On Oppo/ColorOS: disable battery optimization for this app, allow auto-launch, and allow background running so prayer notifications arrive on time.",
+  "settings_oem_note": "Other devices (MIUI, OneUI, EMUI) are not tested yet.",
+  "settings_section_licenses": "Licenses",
+  "settings_licenses": "Open-source licenses",
+  "settings_section_about": "About",
+  "settings_app_version": "0.1.0+1"
 }

@@ -19,6 +19,7 @@ abstract final class DeepLinkParser {
       ('qibla', '/show') || ('test', '/qibla') => '/qibla',
       ('location', '/pick') => '/location-picker',
       ('diagnostics', '/notifications') => '/diagnostics/notifications',
+      ('notifications', '/settings') => '/settings/notifications',
       _ => null,
     };
   }
@@ -28,10 +29,10 @@ abstract final class DeepLinkParser {
       '/now' => '/prayer',
       '/show' => '/qibla',
       '/pick' => '/location-picker',
+      // '/settings' alone is intentionally unresolved: without the host
+      // it is ambiguous, and GAP-deeplink-host-loss warns against
+      // broadening path-only mappings.
       _ => null,
     };
   }
 }
-
-// TODO(phase-04-task-8): Add the notifications settings deep link.
-// URI: muslimguide://notifications/settings → /settings/notifications
