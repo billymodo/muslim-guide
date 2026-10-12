@@ -155,6 +155,7 @@ Times were sensible, Arabic labels correct, no overflow observed.
   without truncation** on channel `prayer_adhan_v2`.
 - Notification arrived with full 2:34 adhan sound.
 - **No GAP-prayer-adhan-truncation** — Android played the full 2:34.
+- [Adhan notification on device](evidence/phase-04/t12-01-adhan-notification.png)
 
 ## Source changes and commit
 

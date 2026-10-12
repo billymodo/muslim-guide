@@ -33,7 +33,7 @@ Phase 04 (Notifications & Adhan) delivered:
 | Task 5 (adhan player) | PASS | docs/evidence/phase-04/t5-* |
 | Task 7 (toggles) | PASS | docs/evidence/phase-04/t7-* |
 | Task 8 (settings + sunrise) | PASS | docs/evidence/phase-04/t8-* |
-| Task 12 (real adhan 2:34) | PASS | docs/phase-04-device-testing.md (Task 12 section) |
+| Task 12 (real adhan 2:34) | PASS (full play, no truncation) | docs/evidence/phase-04/t12-01-adhan-notification.png |
 
 ## Bugs Resolved
 | ID | Description | Fix |
