@@ -71,6 +71,12 @@ You are an implementation agent working under MASTER_SPEC.
 لا تقل "منجز" إلا إذا نُفذ التحقق فعليًا.
 الدليل يشمل: الأمر، النتيجة، المخرجات، الحالة.
 
+## Git discipline
+
+- Never amend pushed commits.
+- If discovered: `git reset --hard origin/main` + new forward commit.
+- Prefer pre-push review over post-push fix.
+
 ## Related
 
 - `governance/00-change-control.md`
