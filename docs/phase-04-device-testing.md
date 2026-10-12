@@ -147,6 +147,15 @@ Times were sensible, Arabic labels correct, no overflow observed.
 - [Settings screen](evidence/phase-04/t8-01-settings.png)
 - [Sunrise position](evidence/phase-04/t8-02-sunrise-position.png)
 
+## Task 12 — Real adhan 2:34 (2026-10-12)
+
+**PASS (owner device verification, Oppo A95).**
+
+- Beautiful_adhan.ogg (CC0, 2:34, 1.17MB, Adam-synagda) plays **fully
+  without truncation** on channel `prayer_adhan_v2`.
+- Notification arrived with full 2:34 adhan sound.
+- **No GAP-prayer-adhan-truncation** — Android played the full 2:34.
+
 ## Source changes and commit
 
 No application source, Manifest, or build configuration was changed during
