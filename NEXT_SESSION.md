@@ -13,7 +13,7 @@
 - GAPs: task6-interruption (P2), boot-no-recalc, format-time-dup, night-thirds-2x-calc, all-prayers-disabled-hint, license-page, cr0013-photo, integration-player-race, deeplink-host-loss (كلها P3).
 
 ## Commit HEAD
-9953547
+a7d52cd
 
 ## الجهاز المرجعي
 Oppo A95 (CPH2365, Android 13) — OD-0029
