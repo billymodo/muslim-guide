@@ -23,3 +23,12 @@
 - لا push دون موافقة صريحة.
 - اختبارات audio integration على ColorOS: force-stop قبل كل run + إعادة تثبيت بعده (الدرس في docs/phase-04-device-testing.md).
 - ملفات `*_hang_log.txt` + `int_test_output.txt` مؤرشفة في .gitignore.
+
+## Phase 05+ — CR-0015 Multi-Adhan (مُسجَّل، لا تنفيذ)
+- 3 خيارات CC0:
+  1. Beautiful_adhan.ogg (CC0) — default
+  2. Mecca 2013 (CC-BY 3.0، Seyfula Islam) — يحتاج استخراج + attribution
+  3. Madinah CC0 (يُبحث ويتحقق في CR-0015)
+- UI: Dropdown في `/settings/notifications` + معاينة.
+- معمارية: قناة ديناميكية + إعادة إنشاء عند التغيير.
+- سبب التأجيل: حجم APK + channel immutability complexity.

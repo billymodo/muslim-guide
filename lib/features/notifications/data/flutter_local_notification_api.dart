@@ -37,7 +37,7 @@ class FlutterLocalNotificationApi implements LocalNotificationApi {
         description: description,
         importance: Importance.max,
         sound: const RawResourceAndroidNotificationSound(
-          'adhan_placeholder',
+          'adhan',
         ),
       ),
     );
@@ -64,7 +64,7 @@ class FlutterLocalNotificationApi implements LocalNotificationApi {
           importance: Importance.max,
           priority: Priority.high,
           sound: const RawResourceAndroidNotificationSound(
-            'adhan_placeholder',
+            'adhan',
           ),
         ),
       ),

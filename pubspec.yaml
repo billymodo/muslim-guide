@@ -44,4 +44,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/cities/
-    - assets/audio/adhan_placeholder.ogg
+    - assets/audio/adhan.ogg

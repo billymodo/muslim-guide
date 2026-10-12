@@ -16,7 +16,7 @@ abstract class GenerateAdhanNotificationSound : DefaultTask() {
         val rawDirectory = outputDirectory.get().asFile.resolve("raw")
         rawDirectory.mkdirs()
         sourceFile.get().asFile.copyTo(
-            rawDirectory.resolve("adhan_placeholder.ogg"),
+            rawDirectory.resolve("adhan.ogg"),
             overwrite = true,
         )
     }
@@ -24,7 +24,7 @@ abstract class GenerateAdhanNotificationSound : DefaultTask() {
 
 val copyAdhanNotificationSound =
     tasks.register<GenerateAdhanNotificationSound>("copyAdhanNotificationSound") {
-        sourceFile.set(layout.projectDirectory.file("../../assets/audio/adhan_placeholder.ogg"))
+        sourceFile.set(layout.projectDirectory.file("../../assets/audio/adhan.ogg"))
         outputDirectory.set(layout.buildDirectory.dir("generated/res/adhanNotificationSound"))
     }
 

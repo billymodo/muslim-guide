@@ -25,7 +25,7 @@ class AudioServiceAdhanHandler extends BaseAudioHandler
           // androidResumeOnClick for notification taps).
           AudioPlayer(handleInterruptions: false);
 
-  static const String _assetPath = 'assets/audio/adhan_placeholder.ogg';
+  static const String _assetPath = 'assets/audio/adhan.ogg';
 
   final AudioPlayer _player;
   AudioFocusWatcher? _focusWatcher;
