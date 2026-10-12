@@ -1,28 +1,30 @@
 # NEXT_SESSION — اقرأني أولاً
 
-## الحالة (2026-10-11 ~16:00 EEST)
+> آخر تحديث: 2026-10-12
+> الحالة: Phase 04 ✅ COMPLETED → Phase 05 — بانتظار spec
 
-### Phase 04 — ACTIVE (~85%)
-- Tasks 1-10 ✅ (489 unit/widget PASS, 4 integration files, build ✅)
-- Task 11a ✅ (T-A +44.888s, within ±60s)
-- Task 11b 🟡 (partial — background/reboot, Task 4 partial)
-- Task 11c ⏸️ (real call — PENDING, GAP-task6-device-interruption)
-- Task 12 ⏸️ (Owner selects adhan audio — placeholder in code)
-- Output report: DRAFT ([docs/phase-04-output-report.md](docs/phase-04-output-report.md))
+## المرحلة الحالية
+- Phase 04: ✅ COMPLETED (2026-10-12) — output report: docs/phase-04-output-report.md
+- Phase 05: ⏳ NOT STARTED — بانتظار تحديد النطاق
 
-### الجلسة القادمة
-1. Task 11c — device test (مكالمة حقيقية لمقاطعة الصوت)
-2. Task 12 — Owner: مرشحي الأذان (3-5, Rule 020)
-3. Phase 04 closeout (output report DRAFT → APPROVED)
-4. فتح Phase 05 (TBD)
+## المتبقي
+- CR-0015 Multi-Adhan (Phase 05+).
+- Task 11c — real call device test (Phase 05 device session).
+- GAPs: task6-interruption (P2), boot-no-recalc, format-time-dup, night-thirds-2x-calc, all-prayers-disabled-hint, license-page, cr0013-photo, integration-player-race, deeplink-host-loss (كلها P3).
 
-### main HEAD
-430f6aa
+## Commit HEAD
+c52ae8c (قبل push closeout — يُحدَّث بعد Push)
 
-### تنبيهات
-- لا push دون موافقة صريحة.
-- اختبارات audio integration على ColorOS: force-stop قبل كل run + إعادة تثبيت بعده (الدرس في docs/phase-04-device-testing.md).
-- ملفات `*_hang_log.txt` + `int_test_output.txt` مؤرشفة في .gitignore.
+## الجهاز المرجعي
+Oppo A95 (CPH2365, Android 13) — OD-0029
+
+## دروس رئيسية (Phase 04)
+1. Android notification sound: WAV لا يعمل → OGG.
+2. Flutter default deep linking → path-only (solution A+).
+3. integration_test على ColorOS: force-stop إلزامي قبل كل run.
+4. Never amend pushed commits → reset --hard origin/main + forward commit.
+5. Notification channels: immutability → v2 عند تغيير sound.
+6. Notification 2:34 adhan plays fully — لا truncation على Oppo A95.
 
 ## Phase 05+ — CR-0015 Multi-Adhan (مُسجَّل، لا تنفيذ)
 - 3 خيارات CC0:

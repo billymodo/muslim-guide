@@ -118,7 +118,20 @@
 
 
 
-\## المراحل المكتملة
+\## Phase 04 — Notifications & Adhan
+- Status: ✅ COMPLETED (2026-10-12)
+- Duration: 2 days (2026-10-10 → 2026-10-12)
+- Tasks: 1-12 (11c PARTIAL → Phase 05+, 12 device-verified 2:34 full play)
+- Tests: 489/489
+- Bugs: BUG-7 (WAV→OGG) CLOSED
+- Output Report: docs/phase-04-output-report.md
+
+## Remaining Deferrals
+- CR-0015 Multi-Adhan (Phase 05+).
+- Task 11c real call (Phase 05 device session).
+- GAPs: task6-device-interruption (P2), boot-no-recalc, format-time-dup, night-thirds-2x-calc, all-prayers-disabled-hint, license-page, cr0013-photo, integration-player-race, deeplink-host-loss (P3).
+
+## المراحل المكتملة
 
 
 
