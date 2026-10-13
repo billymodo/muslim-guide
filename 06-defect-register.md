@@ -97,3 +97,4 @@
 | GAP-task6-device-interruption | Audio focus interruption (real call, competing session, system silence) not device-tested — requires physical call. Schedule next device session | P2 | Phase 04 Task 6 | OPEN |
 | GAP-all-prayers-disabled-hint | Subtle all-off hint under prayer switches in `/settings/notifications` (Phase 05-A: hint widget + ARB + 2 widget tests) | P3 | Phase 04 Task 7 | **CLOSED** |
 | GAP-integration-player-race | Integration adhan_player_test race: state stream may miss 'playing' on short assets / ColorOS. Test redesigned to observe sequence (subscribe-before-play, any-non-idle, back-to-idle). If still unstable → GAP-integration-player-coloros. | P3 | Phase 04 Task 10 | OPEN |
+| GAP-calc-method-ui | No UI to select calculation method (MWL default). Egyptian users see +7 min Fajr offset. Phase 05-B: UI + country detection. | P2 | Phase 05-A → 05-B | OPEN |
