@@ -73,9 +73,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get prayer_isha => 'العشاء';
 
   @override
-  String get sunrise_not_prayer => 'ليست صلاة فرض';
-
-  @override
   String get prayer_no_location => 'لم يتم تحديد الموقع';
 
   @override
@@ -301,6 +298,76 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settings_section_licenses => 'التراخيص';
+
+  @override
+  String get settings_calculation_title => 'إعدادات طريقة الحساب';
+
+  @override
+  String get settings_section_calculation => 'طريقة الحساب';
+
+  @override
+  String get settings_calculation_method => 'الطريقة';
+
+  @override
+  String get settings_asr_method => 'مذهب العصر';
+
+  @override
+  String get settings_high_latitude_rule => 'قاعدة خطوط العرض العالية';
+
+  @override
+  String get settings_calculation_apply => 'تطبيق';
+
+  @override
+  String get settings_calculation_undo => 'تراجع';
+
+  @override
+  String get calc_method_mwl => 'رابطة العالم الإسلامي';
+
+  @override
+  String get calc_method_egyptian => 'الهيئة المصرية العامة للمساحة';
+
+  @override
+  String get calc_method_umm_al_qura => 'أم القرى';
+
+  @override
+  String get calc_method_karachi => 'جامعة العلوم الإسلامية - كراتشي';
+
+  @override
+  String get calc_method_isna => 'الجمعية الإسلامية لأمريكا الشمالية';
+
+  @override
+  String get calc_method_tehran => 'معهد الجيوفيزياء - طهران';
+
+  @override
+  String get calc_method_jafari => 'المذهب الجعفري';
+
+  @override
+  String get asr_method_standard => 'الجمهور (شافعي/مالكي/حنبلي)';
+
+  @override
+  String get asr_method_hanafi => 'الحنفي';
+
+  @override
+  String get hlr_middle_of_night => 'منتصف الليل';
+
+  @override
+  String get hlr_seventh_of_night => 'سُبع الليل';
+
+  @override
+  String get hlr_twilight_angle => 'زاوية الشفق';
+
+  @override
+  String get hlr_none => 'لا شيء';
+
+  @override
+  String settings_calculation_applied(String method) {
+    return 'تم تطبيق: $method';
+  }
+
+  @override
+  String settings_calculation_suggestion(String method) {
+    return 'الاقتراح لبلدك: $method';
+  }
 
   @override
   String get settings_licenses => 'تراخيص المصادر المفتوحة';

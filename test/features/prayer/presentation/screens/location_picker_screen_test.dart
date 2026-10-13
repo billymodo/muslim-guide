@@ -2,13 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
+import 'package:muslim_guide/data/settings/settings_repository.dart';
 import 'package:muslim_guide/features/location/domain/location_permission_status.dart';
 import 'package:muslim_guide/features/location/domain/location_result.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
+import 'package:muslim_guide/features/prayer/domain/models/calculation_method.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/prayer_times_screen.dart';
 
 import '../presentation_test_utils.dart';
+
+/// In-memory settings repository (no Hive box).
+///
+/// [isCalculationMethodExplicit] returns `true` so the Phase 05-B country
+/// auto-apply hook in the picker returns early — this Phase 02 test only
+/// verifies city selection + navigation.
+class _PickerSettingsRepository extends SettingsRepository {
+  new() : super(null);
+
+  @override
+  Future<bool> isCalculationMethodExplicit() async => true;
+
+  @override
+  Future<CalculationMethod> getCalculationMethod() async =>
+      CalculationMethod.mwl;
+
+  @override
+  Future<void> setCalculationMethod(
+    CalculationMethod method, {
+    bool markExplicit = true,
+  }) async {}
+}
 
 void main() {
   List<Override> pickerOverrides() {
@@ -16,6 +41,7 @@ void main() {
       citiesOverride(),
       prayerTimesOverride(null),
       locationOverride(null),
+      settingsRepositoryProvider.overrideWithValue(_PickerSettingsRepository()),
     ];
   }
 

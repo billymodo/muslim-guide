@@ -21,7 +21,6 @@
   "prayer_asr": "Asr",
   "prayer_maghrib": "Maghrib",
   "prayer_isha": "Isha",
-  "sunrise_not_prayer": "Not a prayer",
   "prayer_no_location": "No location set",
   "prayer_set_location": "Set location",
   "prayer_calc_error": "Could not calculate prayer times",
@@ -97,6 +96,40 @@
   "settings_coloros_guide": "On Oppo/ColorOS: disable battery optimization for this app, allow auto-launch, and allow background running so prayer notifications arrive on time.",
   "settings_oem_note": "Other devices (MIUI, OneUI, EMUI) are not tested yet.",
   "settings_section_licenses": "Licenses",
+  "settings_calculation_title": "Calculation settings",
+  "settings_section_calculation": "Calculation method",
+  "settings_calculation_method": "Method",
+  "settings_asr_method": "Asr school",
+  "settings_high_latitude_rule": "High-latitude rule",
+  "settings_calculation_apply": "Apply",
+  "settings_calculation_undo": "Undo",
+  "calc_method_mwl": "Muslim World League",
+  "calc_method_egyptian": "Egyptian General Authority of Survey",
+  "calc_method_umm_al_qura": "Umm al-Qura",
+  "calc_method_karachi": "University of Islamic Sciences, Karachi",
+  "calc_method_isna": "Islamic Society of North America",
+  "calc_method_tehran": "Institute of Geophysics, University of Tehran",
+  "calc_method_jafari": "Shia Ithna-Ashari (Jafari)",
+  "asr_method_standard": "Standard (Shafi'i/Maliki/Hanbali)",
+  "asr_method_hanafi": "Hanafi",
+  "hlr_middle_of_night": "Middle of the Night",
+  "hlr_seventh_of_night": "Seventh of the Night",
+  "hlr_twilight_angle": "Twilight Angle",
+  "hlr_none": "None",
+  "settings_calculation_applied": "Applied: {method}",
+  "@settings_calculation_applied": {
+    "description": "SnackBar after auto-applying the country default method",
+    "placeholders": {
+      "method": {"type": "String", "example": "Egyptian General Authority of Survey"}
+    }
+  },
+  "settings_calculation_suggestion": "Suggested for your country: {method}",
+  "@settings_calculation_suggestion": {
+    "description": "Quiet suggestion inside the calculation settings screen",
+    "placeholders": {
+      "method": {"type": "String", "example": "Egyptian General Authority of Survey"}
+    }
+  },
   "settings_licenses": "Open-source licenses",
   "settings_section_about": "About",
   "settings_app_version": "0.1.0+1"

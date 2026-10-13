@@ -21,7 +21,6 @@
   "prayer_asr": "العصر",
   "prayer_maghrib": "المغرب",
   "prayer_isha": "العشاء",
-  "sunrise_not_prayer": "ليست صلاة فرض",
   "prayer_no_location": "لم يتم تحديد الموقع",
   "prayer_set_location": "تحديد الموقع",
   "prayer_calc_error": "فشل حساب المواقيت",
@@ -97,6 +96,40 @@
   "settings_coloros_guide": "على أجهزة Oppo/ColorOS: عطّل تحسين البطارية لهذا التطبيق، واسمح بالتشغيل التلقائي والتشغيل في الخلفية لتصل إشعارات الصلاة في وقتها.",
   "settings_oem_note": "الأجهزة الأخرى (MIUI وOneUI وEMUI) غير مختبرة بعد.",
   "settings_section_licenses": "التراخيص",
+  "settings_calculation_title": "إعدادات طريقة الحساب",
+  "settings_section_calculation": "طريقة الحساب",
+  "settings_calculation_method": "الطريقة",
+  "settings_asr_method": "مذهب العصر",
+  "settings_high_latitude_rule": "قاعدة خطوط العرض العالية",
+  "settings_calculation_apply": "تطبيق",
+  "settings_calculation_undo": "تراجع",
+  "calc_method_mwl": "رابطة العالم الإسلامي",
+  "calc_method_egyptian": "الهيئة المصرية العامة للمساحة",
+  "calc_method_umm_al_qura": "أم القرى",
+  "calc_method_karachi": "جامعة العلوم الإسلامية - كراتشي",
+  "calc_method_isna": "الجمعية الإسلامية لأمريكا الشمالية",
+  "calc_method_tehran": "معهد الجيوفيزياء - طهران",
+  "calc_method_jafari": "المذهب الجعفري",
+  "asr_method_standard": "الجمهور (شافعي/مالكي/حنبلي)",
+  "asr_method_hanafi": "الحنفي",
+  "hlr_middle_of_night": "منتصف الليل",
+  "hlr_seventh_of_night": "سُبع الليل",
+  "hlr_twilight_angle": "زاوية الشفق",
+  "hlr_none": "لا شيء",
+  "settings_calculation_applied": "تم تطبيق: {method}",
+  "@settings_calculation_applied": {
+    "description": "SnackBar after auto-applying the country default method",
+    "placeholders": {
+      "method": {"type": "String", "example": "الهيئة المصرية العامة للمساحة"}
+    }
+  },
+  "settings_calculation_suggestion": "الاقتراح لبلدك: {method}",
+  "@settings_calculation_suggestion": {
+    "description": "Quiet suggestion inside the calculation settings screen",
+    "placeholders": {
+      "method": {"type": "String", "example": "الهيئة المصرية العامة للمساحة"}
+    }
+  },
   "settings_licenses": "تراخيص المصادر المفتوحة",
   "settings_section_about": "حول",
   "settings_app_version": "0.1.0+1"

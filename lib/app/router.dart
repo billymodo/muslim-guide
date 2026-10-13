@@ -11,6 +11,7 @@ import 'package:muslim_guide/features/onboarding/presentation/language_selection
 import 'package:muslim_guide/features/prayer/presentation/screens/location_picker_screen.dart';
 import 'package:muslim_guide/features/prayer/presentation/screens/prayer_times_screen.dart';
 import 'package:muslim_guide/features/qibla/presentation/qibla_screen.dart';
+import 'package:muslim_guide/features/settings/presentation/screens/calculation_settings_screen.dart';
 import 'package:muslim_guide/features/settings/presentation/screens/notifications_settings_screen.dart';
 import 'package:muslim_guide/features/splash/presentation/splash_screen.dart';
 
@@ -72,6 +73,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/settings/notifications',
         builder: (context, state) => const NotificationsSettingsScreen(),
+      ),
+      GoRoute(
+        path: '/settings/calculation',
+        builder: (context, state) => const CalculationSettingsScreen(),
       ),
     ],
   );

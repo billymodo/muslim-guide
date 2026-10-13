@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/features/location/domain/location_permission_status.dart';
+import 'package:muslim_guide/features/prayer/application/calculation_method_provider.dart';
 import 'package:muslim_guide/features/prayer/application/location_provider.dart';
+import 'package:muslim_guide/features/prayer/data/country_method_mapping.dart';
+import 'package:muslim_guide/features/prayer/domain/models/calculation_method.dart';
 import 'package:muslim_guide/features/prayer/domain/models/city.dart';
+import 'package:muslim_guide/features/settings/presentation/screens/calculation_settings_screen.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
 
 /// Location picker: search bundled cities or use the current GPS position.
@@ -191,9 +196,50 @@ class _LocationPickerScreenState extends ConsumerState<LocationPickerScreen> {
 
   Future<void> _selectCity(String cityId) async {
     await ref.read(locationProvider.notifier).selectCity(cityId);
+    if (!mounted) return;
+    await _maybeApplyCountryMethod(cityId);
     if (mounted) {
       _close();
     }
+  }
+
+  /// Auto-applies the country's default calculation method while the method
+  /// is still implicit (Phase 05-B Q2).
+  ///
+  /// Implicit users get the suggestion applied with an Undo SnackBar; the
+  /// choice stays implicit so future picks keep suggesting. Explicit users
+  /// (manual Settings choice or a past Undo) are never touched here; their
+  /// suggestion lives only inside `/settings/calculation`.
+  Future<void> _maybeApplyCountryMethod(String cityId) async {
+    final cities = await ref.read(citiesLoaderProvider).load();
+    final index = cities.indexWhere((city) => city.id == cityId);
+    if (index < 0 || !mounted) return;
+    final suggested =
+        countryMethodMapping[cities[index].countryCode.toUpperCase()];
+    if (suggested == null) return;
+    final repository = ref.read(settingsRepositoryProvider);
+    if (await repository.isCalculationMethodExplicit()) return;
+    await ref
+        .read(calculationMethodProvider.notifier)
+        .setMethod(suggested, markExplicit: false);
+    if (!mounted) return;
+    final localizations = AppLocalizations.of(context)!;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          localizations.settings_calculation_applied(
+            CalculationSettingsScreen.methodName(localizations, suggested),
+          ),
+        ),
+        action: SnackBarAction(
+          label: localizations.settings_calculation_undo,
+          onPressed: () => ref
+              .read(calculationMethodProvider.notifier)
+              .setMethod(CalculationMethod.mwl),
+        ),
+        duration: const Duration(seconds: 60),
+      ),
+    );
   }
 
   Future<void> _useGps() async {

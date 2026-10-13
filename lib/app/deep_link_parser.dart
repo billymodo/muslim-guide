@@ -20,6 +20,7 @@ abstract final class DeepLinkParser {
       ('location', '/pick') => '/location-picker',
       ('diagnostics', '/notifications') => '/diagnostics/notifications',
       ('notifications', '/settings') => '/settings/notifications',
+      ('settings', '/calculation') => '/settings/calculation',
       _ => null,
     };
   }

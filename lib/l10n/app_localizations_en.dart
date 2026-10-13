@@ -74,9 +74,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get prayer_isha => 'Isha';
 
   @override
-  String get sunrise_not_prayer => 'Not a prayer';
-
-  @override
   String get prayer_no_location => 'No location set';
 
   @override
@@ -308,6 +305,77 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings_section_licenses => 'Licenses';
+
+  @override
+  String get settings_calculation_title => 'Calculation settings';
+
+  @override
+  String get settings_section_calculation => 'Calculation method';
+
+  @override
+  String get settings_calculation_method => 'Method';
+
+  @override
+  String get settings_asr_method => 'Asr school';
+
+  @override
+  String get settings_high_latitude_rule => 'High-latitude rule';
+
+  @override
+  String get settings_calculation_apply => 'Apply';
+
+  @override
+  String get settings_calculation_undo => 'Undo';
+
+  @override
+  String get calc_method_mwl => 'Muslim World League';
+
+  @override
+  String get calc_method_egyptian => 'Egyptian General Authority of Survey';
+
+  @override
+  String get calc_method_umm_al_qura => 'Umm al-Qura';
+
+  @override
+  String get calc_method_karachi => 'University of Islamic Sciences, Karachi';
+
+  @override
+  String get calc_method_isna => 'Islamic Society of North America';
+
+  @override
+  String get calc_method_tehran =>
+      'Institute of Geophysics, University of Tehran';
+
+  @override
+  String get calc_method_jafari => 'Shia Ithna-Ashari (Jafari)';
+
+  @override
+  String get asr_method_standard => 'Standard (Shafi\'i/Maliki/Hanbali)';
+
+  @override
+  String get asr_method_hanafi => 'Hanafi';
+
+  @override
+  String get hlr_middle_of_night => 'Middle of the Night';
+
+  @override
+  String get hlr_seventh_of_night => 'Seventh of the Night';
+
+  @override
+  String get hlr_twilight_angle => 'Twilight Angle';
+
+  @override
+  String get hlr_none => 'None';
+
+  @override
+  String settings_calculation_applied(String method) {
+    return 'Applied: $method';
+  }
+
+  @override
+  String settings_calculation_suggestion(String method) {
+    return 'Suggested for your country: $method';
+  }
 
   @override
   String get settings_licenses => 'Open-source licenses';

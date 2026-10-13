@@ -28,12 +28,21 @@ class CalculationMethodNotifier extends Notifier<CalculationMethod> {
 
   /// Selects [method] and persists it.
   ///
+  /// [markExplicit] mirrors `SettingsRepository.setCalculationMethod`:
+  /// manual changes (default) mark the choice explicit; country auto-apply
+  /// passes `false` so future city picks can still suggest.
+  ///
   /// The state updates immediately; persistence errors propagate to the
   /// caller while the in-session selection stays active.
-  Future<void> setMethod(CalculationMethod method) async {
+  Future<void> setMethod(
+    CalculationMethod method, {
+    bool markExplicit = true,
+  }) async {
     _touched = true;
     state = method;
-    await ref.read(settingsRepositoryProvider).setCalculationMethod(method);
+    await ref
+        .read(settingsRepositoryProvider)
+        .setCalculationMethod(method, markExplicit: markExplicit);
   }
 
   Future<void> _restore() async {

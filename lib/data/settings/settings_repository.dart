@@ -179,8 +179,25 @@ class SettingsRepository {
   }
 
   /// Saves the selected calculation method.
-  Future<void> setCalculationMethod(CalculationMethod method) async {
+  ///
+  /// [markExplicit] records that the user chose the method deliberately
+  /// (manual Settings change or SnackBar Undo). Auto-apply from country
+  /// detection passes `false` so the method stays implicit.
+  Future<void> setCalculationMethod(
+    CalculationMethod method, {
+    bool markExplicit = true,
+  }) async {
     await _box.put('calculation_method', method.name);
+    if (markExplicit) {
+      await _box.put('calculation_method_explicit', true);
+    }
+  }
+
+  /// Whether the user has ever chosen a calculation method deliberately.
+  ///
+  /// Absence of the key means implicit (Phase 05-B country auto-apply).
+  Future<bool> isCalculationMethodExplicit() async {
+    return _boxOrNull?.get('calculation_method_explicit') == true;
   }
 
   /// Returns the saved Asr method, or Standard (DEC-0028).

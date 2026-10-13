@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:go_router/go_router.dart';
+
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/features/notifications/application/enabled_prayers_provider.dart';
 import 'package:muslim_guide/features/notifications/application/permission_provider.dart';
 import 'package:muslim_guide/features/notifications/domain/permission_status.dart';
 import 'package:muslim_guide/features/notifications/domain/prayer_notification.dart';
+import 'package:muslim_guide/features/prayer/application/calculation_method_provider.dart';
+import 'package:muslim_guide/features/settings/presentation/screens/calculation_settings_screen.dart';
 import 'package:muslim_guide/features/settings/presentation/widgets/settings_navigation_tile.dart';
 import 'package:muslim_guide/features/settings/presentation/widgets/settings_section_header.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
@@ -64,6 +68,7 @@ class NotificationsSettingsScreen extends ConsumerWidget {
               (prayer) => _PrayerAlertTile(prayer: prayer),
             ),
             const _AllOffHint(),
+            const CalculationSectionTile(),
             SettingsSectionHeader(
               title: localizations.settings_section_notifications,
             ),
@@ -156,6 +161,28 @@ class NotificationsSettingsScreen extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// Calculation section linking to the calculation settings screen.
+///
+/// Extracted so the row is unit-testable (navigation is a plain push).
+class CalculationSectionTile extends ConsumerWidget {
+  /// Creates the tile.
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final localizations = AppLocalizations.of(context)!;
+    return SettingsNavigationTile(
+      icon: Icons.calculate_outlined,
+      title: localizations.settings_section_calculation,
+      subtitle: CalculationSettingsScreen.methodName(
+        localizations,
+        ref.watch(calculationMethodProvider),
+      ),
+      onTap: () => context.push('/settings/calculation'),
     );
   }
 }

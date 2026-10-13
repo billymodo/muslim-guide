@@ -94,6 +94,13 @@ You are an implementation agent working under MASTER_SPEC.
 - **Cache Gradle:** `~/.gradle/caches` + `~/.gradle/wrapper`.
 - **Symptom of low disk:** `No space left on device` during `packageDebug`, or Gradle cache write failures.
 
+## Test/Production coupling
+
+- NEVER commit a test that asserts on production code not yet committed.
+- Rule: tests + production changes in the SAME commit.
+- Violation: CI will fail on the test-only commit (c188955, 2026-10-13).
+- Always run `git status` + `git show origin/main:<file>` before assuming a test is valid.
+
 ## Widget test — layout coupling
 
 - Test each section in isolation where possible: "shows X section" → scroll to X → assert X.

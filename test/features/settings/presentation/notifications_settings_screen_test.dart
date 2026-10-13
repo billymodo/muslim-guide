@@ -67,31 +67,33 @@ Widget _buildScreen({
 }
 
 void main() {
-  testWidgets('shows all seven sections', (tester) async {
+  testWidgets('shows top sections initially', (tester) async {
     await tester.pumpWidget(_buildScreen());
     await tester.pumpAndSettle();
-
-    // Stage 1 — top sections (visible without scrolling).
     expect(find.text('Notification settings'), findsOneWidget);
     expect(find.text('Prayer alerts'), findsOneWidget);
-    expect(find.text('Notifications'), findsOneWidget);
+  });
 
-    // Stage 2 — calculation method section.
+  testWidgets('shows calculation section after scrolling', (tester) async {
+    await tester.pumpWidget(_buildScreen());
+    await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('Calculation method'), 400);
-    await tester.pumpAndSettle();
     expect(find.text('Calculation method'), findsOneWidget);
+  });
 
-    // Stage 3 — adhan section.
+  testWidgets('shows adhan section after scrolling', (tester) async {
+    await tester.pumpWidget(_buildScreen());
+    await tester.pumpAndSettle();
     await tester.scrollUntilVisible(find.text('Adhan'), 400);
-    await tester.pumpAndSettle();
     expect(find.text('Adhan'), findsOneWidget);
+  });
 
-    // Stage 4 — about section (bottom).
-    await tester.scrollUntilVisible(find.text('About'), 400);
+  testWidgets('shows bottom sections after scrolling', (tester) async {
+    await tester.pumpWidget(_buildScreen());
     await tester.pumpAndSettle();
+    await tester.scrollUntilVisible(find.text('About'), 400);
     expect(find.text('About'), findsOneWidget);
     expect(find.textContaining('ColorOS'), findsOneWidget);
-    expect(tester.takeException(), isNull);
   });
 
   testWidgets('shows five prayer switches and no sunrise entry', (

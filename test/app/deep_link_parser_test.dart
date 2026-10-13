@@ -42,6 +42,17 @@ void main() {
       );
     });
 
+    test('resolves the calculation settings deep link', () {
+      expect(
+        DeepLinkParser.parse(Uri.parse('muslimguide://settings/calculation')),
+        '/settings/calculation',
+      );
+    });
+
+    test('returns null for a bare path-only calculation route', () {
+      expect(DeepLinkParser.parse(Uri.parse('/calculation')), isNull);
+    });
+
     test('resolves the legacy prayer deep link', () {
       expect(
         DeepLinkParser.parse(Uri.parse('muslimguide://test/prayer')),

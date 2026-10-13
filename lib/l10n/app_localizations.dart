@@ -224,12 +224,6 @@ abstract class AppLocalizations {
   /// **'العشاء'**
   String get prayer_isha;
 
-  /// No description provided for @sunrise_not_prayer.
-  ///
-  /// In ar, this message translates to:
-  /// **'ليست صلاة فرض'**
-  String get sunrise_not_prayer;
-
   /// No description provided for @prayer_no_location.
   ///
   /// In ar, this message translates to:
@@ -673,6 +667,138 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'التراخيص'**
   String get settings_section_licenses;
+
+  /// No description provided for @settings_calculation_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعدادات طريقة الحساب'**
+  String get settings_calculation_title;
+
+  /// No description provided for @settings_section_calculation.
+  ///
+  /// In ar, this message translates to:
+  /// **'طريقة الحساب'**
+  String get settings_section_calculation;
+
+  /// No description provided for @settings_calculation_method.
+  ///
+  /// In ar, this message translates to:
+  /// **'الطريقة'**
+  String get settings_calculation_method;
+
+  /// No description provided for @settings_asr_method.
+  ///
+  /// In ar, this message translates to:
+  /// **'مذهب العصر'**
+  String get settings_asr_method;
+
+  /// No description provided for @settings_high_latitude_rule.
+  ///
+  /// In ar, this message translates to:
+  /// **'قاعدة خطوط العرض العالية'**
+  String get settings_high_latitude_rule;
+
+  /// No description provided for @settings_calculation_apply.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق'**
+  String get settings_calculation_apply;
+
+  /// No description provided for @settings_calculation_undo.
+  ///
+  /// In ar, this message translates to:
+  /// **'تراجع'**
+  String get settings_calculation_undo;
+
+  /// No description provided for @calc_method_mwl.
+  ///
+  /// In ar, this message translates to:
+  /// **'رابطة العالم الإسلامي'**
+  String get calc_method_mwl;
+
+  /// No description provided for @calc_method_egyptian.
+  ///
+  /// In ar, this message translates to:
+  /// **'الهيئة المصرية العامة للمساحة'**
+  String get calc_method_egyptian;
+
+  /// No description provided for @calc_method_umm_al_qura.
+  ///
+  /// In ar, this message translates to:
+  /// **'أم القرى'**
+  String get calc_method_umm_al_qura;
+
+  /// No description provided for @calc_method_karachi.
+  ///
+  /// In ar, this message translates to:
+  /// **'جامعة العلوم الإسلامية - كراتشي'**
+  String get calc_method_karachi;
+
+  /// No description provided for @calc_method_isna.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجمعية الإسلامية لأمريكا الشمالية'**
+  String get calc_method_isna;
+
+  /// No description provided for @calc_method_tehran.
+  ///
+  /// In ar, this message translates to:
+  /// **'معهد الجيوفيزياء - طهران'**
+  String get calc_method_tehran;
+
+  /// No description provided for @calc_method_jafari.
+  ///
+  /// In ar, this message translates to:
+  /// **'المذهب الجعفري'**
+  String get calc_method_jafari;
+
+  /// No description provided for @asr_method_standard.
+  ///
+  /// In ar, this message translates to:
+  /// **'الجمهور (شافعي/مالكي/حنبلي)'**
+  String get asr_method_standard;
+
+  /// No description provided for @asr_method_hanafi.
+  ///
+  /// In ar, this message translates to:
+  /// **'الحنفي'**
+  String get asr_method_hanafi;
+
+  /// No description provided for @hlr_middle_of_night.
+  ///
+  /// In ar, this message translates to:
+  /// **'منتصف الليل'**
+  String get hlr_middle_of_night;
+
+  /// No description provided for @hlr_seventh_of_night.
+  ///
+  /// In ar, this message translates to:
+  /// **'سُبع الليل'**
+  String get hlr_seventh_of_night;
+
+  /// No description provided for @hlr_twilight_angle.
+  ///
+  /// In ar, this message translates to:
+  /// **'زاوية الشفق'**
+  String get hlr_twilight_angle;
+
+  /// No description provided for @hlr_none.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا شيء'**
+  String get hlr_none;
+
+  /// SnackBar after auto-applying the country default method
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تطبيق: {method}'**
+  String settings_calculation_applied(String method);
+
+  /// Quiet suggestion inside the calculation settings screen
+  ///
+  /// In ar, this message translates to:
+  /// **'الاقتراح لبلدك: {method}'**
+  String settings_calculation_suggestion(String method);
 
   /// No description provided for @settings_licenses.
   ///
