@@ -3,7 +3,7 @@
 **Status:** DEFERRED — 2026-10-13
 **Date:** 2026-10-13
 **Phase:** 05 (Calculation & Settings — Multi-Adhan)
-**Related decisions:** CR-0012 (notification/adhan packages), DEC-0020-equivalent owner content approval (Rule 020)
+**Related decisions:** CR-0012 (notification/adhan packages); Rule 020 (owner content approval — REFUSE recorded 2026-10-13)
 **Related registers:** `06-defect-register.md` → `GAP-multi-adhan-deferred`; `legal/assets.yaml` → `adhan-audio-cc0`
 **Related phase document:** `NEXT_SESSION.md`
 
