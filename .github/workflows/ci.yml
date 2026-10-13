@@ -184,7 +184,6 @@ jobs:
           sudo rm -rf /usr/local/share/boost
           sudo rm -rf /usr/local/lib/android/sdk/system-images
           sudo rm -rf /usr/local/lib/android/sdk/emulator
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           df -h
 
       - name: Cache Gradle
