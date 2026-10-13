@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
-
-/// Formats [time] as a 24-hour `HH:mm` string with Latin digits (DEC-0026).
-String _formatTime(DateTime time) {
-  final hour = time.hour.toString().padLeft(2, '0');
-  final minute = time.minute.toString().padLeft(2, '0');
-  return '$hour:$minute';
-}
+import 'package:muslim_guide/shared/utils/time_format.dart';
 
 /// A single prayer-time row: label, formatted time, and optional notes.
 ///
@@ -55,7 +49,7 @@ class PrayerTimeRow extends StatelessWidget {
 
     final timeText = effectiveTime == null
         ? localizations.prayer_time_unavailable
-        : _formatTime(effectiveTime);
+        : formatTimeHm(effectiveTime);
 
     final semanticsText = noteText == null
         ? '$label: $timeText'

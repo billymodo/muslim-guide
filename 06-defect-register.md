@@ -90,7 +90,7 @@
 | GAP-t4-timing-margin | Foreground exact-alarm timing: +44.888s (within ±60s target). Higher than expected for foreground setExact — investigate in Phase 05+ | P3 | Phase 04 Task 4 | OPEN |
 | GAP-adhan-truncation | Android may truncate notification sound >30s — verify on Oppo A95 + document | P3 | Phase 04 Task 5 | OPEN (device test) |
 | GAP-audio-service-coloros | audio_service background play may be blocked on ColorOS 13 without battery optimization disabled | P3 | Phase 04 Task 5 | PARTIAL (Oppo A95 swipe-away/reopen passed with Don't optimize and background running enabled; behavior with optimization enabled remains unverified) |
-| GAP-format-time-dup | `_formatTime` duplicated in night_thirds_row — consider shared util Phase 05+ | P3 | Phase 04 CR-0013 | OPEN |
+| GAP-format-time-dup | `_formatTime` duplicated in night_thirds_row — shared util `formatTimeHm` in `lib/shared/utils/time_format.dart` (Phase 05-A) | P3 | Phase 04 CR-0013 | **CLOSED** (`57fcdbc`) |
 | GAP-night-thirds-2x-calc | nightThirdsProvider re-calculates 2x per refresh (today + tomorrow) — acceptable; revisit if perf issue | P3 | Phase 04 CR-0013 | OPEN |
 | GAP-system-silence-not-detectable | System-level silence (silent mode/DND on `usage: media` audio) generates no interruption event and is not detectable via `audio_session`; no custom MethodChannel used | P3 | Phase 04 Task 6 | OPEN (documented limit) |
 | GAP-cr0013-missing-photo | CR-0013 device-verified PASS by owner, screenshot added | P3 | Phase 04 CR-0013 | **CLOSED** (screenshot `docs/evidence/phase-04/cr0013-01-prayer-with-thirds.png`) |

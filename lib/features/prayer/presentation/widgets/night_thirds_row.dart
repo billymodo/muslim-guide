@@ -3,17 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:muslim_guide/app/theme/app_spacing.dart';
 import 'package:muslim_guide/features/prayer/domain/models/night_thirds.dart';
 import 'package:muslim_guide/l10n/app_localizations.dart';
-
-/// Formats [time] as a 24-hour `HH:mm` string with Latin digits (DEC-0026).
-///
-/// Intentionally private and duplicated from `prayer_time_row.dart`
-/// (see GAP-format-time-dup); do not export or share without the Phase 05+
-/// cleanup decision.
-String _formatTime(DateTime time) {
-  final hour = time.hour.toString().padLeft(2, '0');
-  final minute = time.minute.toString().padLeft(2, '0');
-  return '$hour:$minute';
-}
+import 'package:muslim_guide/shared/utils/time_format.dart';
 
 /// A two-cell row showing the first and last thirds of the night.
 ///
@@ -67,7 +57,7 @@ class _NightThirdCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final timeText = _formatTime(time);
+    final timeText = formatTimeHm(time);
     return Semantics(
       label: '$label: $timeText',
       excludeSemantics: true,
