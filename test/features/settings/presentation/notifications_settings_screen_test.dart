@@ -67,27 +67,30 @@ Widget _buildScreen({
 }
 
 void main() {
-  testWidgets('shows all six sections', (tester) async {
+  testWidgets('shows all seven sections', (tester) async {
     await tester.pumpWidget(_buildScreen());
     await tester.pumpAndSettle();
 
+    // Stage 1 — top sections (visible without scrolling).
     expect(find.text('Notification settings'), findsOneWidget);
-    for (final header in [
-      'Prayer alerts',
-      'Notifications',
-      'Adhan',
-    ]) {
-      expect(find.text(header), findsOneWidget);
-    }
-    await tester.drag(find.byType(ListView), const Offset(0, -800));
+    expect(find.text('Prayer alerts'), findsOneWidget);
+    expect(find.text('Notifications'), findsOneWidget);
+
+    // Stage 2 — calculation method section.
+    await tester.scrollUntilVisible(find.text('Calculation method'), 400);
     await tester.pumpAndSettle();
-    for (final header in [
-      'Device',
-      'Licenses',
-      'About',
-    ]) {
-      expect(find.text(header), findsOneWidget);
-    }
+    expect(find.text('Calculation method'), findsOneWidget);
+
+    // Stage 3 — adhan section.
+    await tester.scrollUntilVisible(find.text('Adhan'), 400);
+    await tester.pumpAndSettle();
+    expect(find.text('Adhan'), findsOneWidget);
+
+    // Stage 4 — about section (bottom).
+    await tester.scrollUntilVisible(find.text('About'), 400);
+    await tester.pumpAndSettle();
+    expect(find.text('About'), findsOneWidget);
+    expect(find.textContaining('ColorOS'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -205,6 +208,8 @@ void main() {
     await tester.pumpWidget(_buildScreen());
     await tester.pumpAndSettle();
 
+    await tester.scrollUntilVisible(find.text('Adhan sound'), 400);
+    await tester.pumpAndSettle();
     expect(find.text('Adhan sound'), findsOneWidget);
     expect(find.text('Coming soon'), findsOneWidget);
     expect(tester.takeException(), isNull);

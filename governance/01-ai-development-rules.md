@@ -94,6 +94,15 @@ You are an implementation agent working under MASTER_SPEC.
 - **Cache Gradle:** `~/.gradle/caches` + `~/.gradle/wrapper`.
 - **Symptom of low disk:** `No space left on device` during `packageDebug`, or Gradle cache write failures.
 
+## Widget test — layout coupling
+
+- Test each section in isolation where possible: "shows X section" → scroll to X → assert X.
+- Avoid "shows all N sections" mega-tests — fragile against layout changes.
+- When mega-test required: sequence stages (top → scroll → mid → scroll → bottom).
+- Never assume a section is "top" — viewport depends on prior sections' height.
+- Use `tester.scrollUntilVisible(target, 400)` (no `scrollable:` parameter) — never `drag(fixedPixels)`.
+- GAP-widget-test-layout-coupling registered (refactor to section-specific tests in Phase 06).
+
 ## Related
 
 - `governance/00-change-control.md`
