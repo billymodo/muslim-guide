@@ -138,6 +138,38 @@ void main() {
   });
 
   test(
+    'calculation method explicit flag defaults false, set true on demand',
+    () async {
+      final box = await Hive.openBox<dynamic>('settings');
+      final repository = SettingsRepository(box);
+
+      // Implicit by default (country auto-apply allowed).
+      expect(await repository.isCalculationMethodExplicit(), isFalse);
+
+      // Manual choice marks explicit (default markExplicit: true).
+      await repository.setCalculationMethod(CalculationMethod.egyptian);
+      expect(await repository.isCalculationMethodExplicit(), isTrue);
+      expect(
+        await repository.getCalculationMethod(),
+        CalculationMethod.egyptian,
+      );
+
+      // Auto-apply keeps implicit (markExplicit: false).
+      final freshBox = await Hive.openBox<dynamic>('settings_fresh');
+      final fresh = SettingsRepository(freshBox);
+      await fresh.setCalculationMethod(
+        CalculationMethod.ummAlQura,
+        markExplicit: false,
+      );
+      expect(await fresh.isCalculationMethodExplicit(), isFalse);
+      expect(
+        await fresh.getCalculationMethod(),
+        CalculationMethod.ummAlQura,
+      );
+    },
+  );
+
+  test(
     'defaults to all prayers enabled and persists the enabled set',
     () async {
     final box = await Hive.openBox<dynamic>('settings');
