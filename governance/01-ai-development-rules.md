@@ -73,9 +73,26 @@ You are an implementation agent working under MASTER_SPEC.
 
 ## Git discipline
 
-- Never amend pushed commits.
-- If discovered: `git reset --hard origin/main` + new forward commit.
-- Prefer pre-push review over post-push fix.
+- **Never amend pushed commits.**
+  - إن اكتُشف amend على commit مدفوع → `git reset --hard origin/main` + forward commit جديد. لا force-push.
+- **Pre-push review:**
+  - قبل كل push: `git log --oneline -5` + `git status`.
+  - تأكد main HEAD صحيح + الشجرة نظيفة.
+- **Pre-push checklist:**
+  - [ ] analyze --fatal-infos = 0 issues
+  - [ ] flutter test = all pass
+  - [ ] flutter build apk --debug = Built
+  - [ ] No `*.txt` debug files
+  - [ ] No amended commits
+
+## CI — Flutter on GitHub Actions
+
+- **Free disk space step إلزامي:**
+  - Flutter projects with native plugins (share_plus, geolocator, flutter_compass) قد تنفد من مساحة runner (14 GB).
+  - أضف step: `Free disk space` (NDK, dotnet, ghc, emulator, system-images).
+- **NEVER `rm -rf "$AGENT_TOOLSDIRECTORY"`** — Flutter lives there. (Phase 04 lesson, CI #90)
+- **Cache Gradle:** `~/.gradle/caches` + `~/.gradle/wrapper`.
+- **Symptom of low disk:** `No space left on device` during `packageDebug`, or Gradle cache write failures.
 
 ## Related
 
