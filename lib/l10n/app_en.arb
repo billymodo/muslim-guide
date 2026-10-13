@@ -85,6 +85,7 @@
   "settings_notifications_title": "Notification settings",
   "settings_section_prayer_alerts": "Prayer alerts",
   "settings_prayer_alerts_hint": "Enable or disable each prayer",
+  "settings_prayer_alerts_all_off": "All prayer alerts are disabled",
   "settings_section_notifications": "Notifications",
   "settings_notifications_on": "Notifications are enabled.",
   "settings_notifications_off": "Notifications are not fully enabled.",

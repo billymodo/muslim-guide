@@ -265,6 +265,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settings_prayer_alerts_hint => 'فعّل/عطّل إشعارات كل صلاة';
 
   @override
+  String get settings_prayer_alerts_all_off => 'جميع تنبيهات الصلاة معطّلة';
+
+  @override
   String get settings_section_notifications => 'الإشعارات';
 
   @override

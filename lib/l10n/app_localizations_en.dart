@@ -271,6 +271,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_prayer_alerts_hint => 'Enable or disable each prayer';
 
   @override
+  String get settings_prayer_alerts_all_off => 'All prayer alerts are disabled';
+
+  @override
   String get settings_section_notifications => 'Notifications';
 
   @override

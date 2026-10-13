@@ -63,6 +63,7 @@ class NotificationsSettingsScreen extends ConsumerWidget {
             ...PrayerNotification.values.map(
               (prayer) => _PrayerAlertTile(prayer: prayer),
             ),
+            const _AllOffHint(),
             SettingsSectionHeader(
               title: localizations.settings_section_notifications,
             ),
@@ -159,6 +160,29 @@ class NotificationsSettingsScreen extends ConsumerWidget {
   }
 }
 
+
+/// Hint shown under the prayer switches when every prayer is disabled
+/// (GAP-all-prayers-disabled-hint).
+class _AllOffHint extends ConsumerWidget {
+  /// Creates the all-off hint.
+  const new();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final enabledPrayers = ref.watch(enabledPrayersProvider);
+    if (enabledPrayers.isNotEmpty) return const SizedBox.shrink();
+    final localizations = AppLocalizations.of(context)!;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
+      child: Text(
+        localizations.settings_prayer_alerts_all_off,
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          color: Theme.of(context).colorScheme.onSurfaceVariant,
+        ),
+      ),
+    );
+  }
+}
 
 /// One per-prayer notification switch row (Task 8 prayer-alerts section).
 class _PrayerAlertTile extends ConsumerWidget {

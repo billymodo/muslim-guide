@@ -602,6 +602,12 @@ abstract class AppLocalizations {
   /// **'فعّل/عطّل إشعارات كل صلاة'**
   String get settings_prayer_alerts_hint;
 
+  /// No description provided for @settings_prayer_alerts_all_off.
+  ///
+  /// In ar, this message translates to:
+  /// **'جميع تنبيهات الصلاة معطّلة'**
+  String get settings_prayer_alerts_all_off;
+
   /// No description provided for @settings_section_notifications.
   ///
   /// In ar, this message translates to:

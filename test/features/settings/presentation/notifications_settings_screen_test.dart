@@ -105,6 +105,28 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('settings_prayer_alerts_all_off shows when all disabled', (
+    tester,
+  ) async {
+    await tester.pumpWidget(_buildScreen(enabled: <PrayerNotification>{}));
+    await tester.pumpAndSettle();
+
+    expect(find.text('All prayer alerts are disabled'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('settings_prayer_alerts_all_off hidden when one enabled', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _buildScreen(enabled: {PrayerNotification.fajr}),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('All prayer alerts are disabled'), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('toggling a prayer updates its switch', (tester) async {
     await tester.pumpWidget(_buildScreen());
     await tester.pumpAndSettle();

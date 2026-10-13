@@ -85,6 +85,7 @@
   "settings_notifications_title": "إعدادات الإشعارات",
   "settings_section_prayer_alerts": "تنبيهات الصلوات",
   "settings_prayer_alerts_hint": "فعّل/عطّل إشعارات كل صلاة",
+  "settings_prayer_alerts_all_off": "جميع تنبيهات الصلاة معطّلة",
   "settings_section_notifications": "الإشعارات",
   "settings_notifications_on": "الإشعارات مفعّلة.",
   "settings_notifications_off": "الإشعارات غير مفعّلة بالكامل.",
