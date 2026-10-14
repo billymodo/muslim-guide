@@ -22,7 +22,7 @@ import 'package:muslim_guide/l10n/app_localizations.dart';
 class FakeAzkarAssetBundle extends CachingAssetBundle {
   /// Creates a bundle answering with [payload].
   /// Plain form required: `const new(...)` errors on the non-const super.
-  // ignore: unnecessary_type_name_in_constructor
+  // ignore: unnecessary_type_name_in_constructor // Plain form required: const new(...) errors on the non-const CachingAssetBundle super.
   FakeAzkarAssetBundle(this.payload);
 
   /// JSON payload served for every load.

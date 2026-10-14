@@ -19,7 +19,7 @@ enum AzkarCategoryId {
   /// Explicit const form required for value-carrying entries (file errors
   /// without it); the two lints contradict the project `const new(...)`
   /// mandate here, so both are suppressed with justification.
-  // ignore: unnecessary_const_in_enum_constructor, unnecessary_type_name_in_constructor
+  // ignore: unnecessary_const_in_enum_constructor, unnecessary_type_name_in_constructor // Explicit const form required for value-carrying entries; lints contradict the project const new(...) mandate (phases/02.md, phases/06.md deviation).
   const AzkarCategoryId(this.value);
 
   /// Stable JSON value.
