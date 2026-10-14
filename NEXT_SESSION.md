@@ -1,10 +1,11 @@
 # NEXT_SESSION — اقرأني أولاً
 
 > آخر تحديث: 2026-10-14
-> الحالة: Phase 05-A/B ✅ → Phase 06 (Azkar skeleton, Empty state) ✅ LOCAL — بانتظار push + device test. Phase 05-C DEFERRED.
+> الحالة: Phase 06 ✅ COMPLETED — skeleton/Empty state pushed; verified pack BLOCKED → Phase 07. Device test PASS (owner-reported). Phase 05-C DEFERRED.
 
 ## المرحلة الحالية
-- Phase 06: ✅ Azkar library skeleton (commit `c794d8b` local) — Empty state ("Azkar library is being prepared")، pack = BLOCKED (GAP-azkar-pack-pending P1).
+- Phase 06: ✅ COMPLETED — skeleton + Empty state; output report: `docs/phase-06-output-report.md`; pack = BLOCKED (GAP-azkar-pack-pending P1), carried to Phase 07.
+- Phase 07: NEXT — Azkar Pack via new CR; verify source/license/checksum and complete human review before shipping.
 - Phase 05-C: ⏸️ Multi-Adhan (CR-0015) — **DEFERRED**.
 
 ## Phase 07 — Azkar Pack (CR جديد)
@@ -28,7 +29,7 @@
 - GAPs: task6-interruption (P2), layout-coupling (P2), multi-adhan-deferred (P3), in-call-adhan-fallback (P3), atomic-commit-gap (P3).
 
 ## Commit HEAD
-33773c5 (أو أحدث)
+Current main: Phase 06 closeout commits pushed; see `git log -1 --oneline`.
 
 ## الجهاز
 Oppo A95 (CPH2365, Android 13)
@@ -40,4 +41,3 @@ Oppo A95 (CPH2365, Android 13)
 4. Test + production في نفس الـcommit (atomic).
 5. ListView lazy: لا تطالب بأعلى+أسفل في نفس الاختبار.
 6. Android in-call: audio focus blocks adhan (expected).
-
