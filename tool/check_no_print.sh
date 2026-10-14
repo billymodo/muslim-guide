@@ -11,7 +11,7 @@ fi
 # Check ignore (both // ignore: and // ignore_for_file:)
 # Must match: // ignore(_for_file)?: rule1, rule2 // reason or — reason
 while IFS= read -r line; do
-  if ! printf '%s' "$line" | grep -qE '//\s*ignore(_for_file)?:\s*[a-zA-Z0-9_,\s]+\s*(//|—|--).+'; then
+  if ! printf '%s' "$line" | grep -qE '//[[:space:]]*ignore(_for_file)?:[[:space:]]*[a-zA-Z0-9_,[:space:]]+[[:space:]]*(//|—|--).+'; then
     echo "FAIL: ignore without reason: $line"
     FAIL=1
   fi
