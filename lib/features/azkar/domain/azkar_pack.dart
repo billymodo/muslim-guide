@@ -10,6 +10,7 @@ class AzkarPack {
   const new({required this.categories, required this.items});
 
   /// Empty pack: no verified content approved yet (Rule 020).
+  // ignore: unnecessary_type_name_in_constructor
   factory AzkarPack.pending() {
     return const AzkarPack(categories: <AzkarCategory>[], items: <Dhikr>[]);
   }

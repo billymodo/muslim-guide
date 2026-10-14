@@ -16,9 +16,10 @@ enum AzkarCategoryId {
   tasbih('tasbih');
 
   /// Creates a category id.
-  // Valid Dart 3 form for value-carrying enums (required — file errors
-  // without it). `unnecessary_*` lints fire here; accepted as a Phase 06
-  // deviation pending a codebase-wide enum style decision.
+  /// Explicit const form required for value-carrying entries (file errors
+  /// without it); the two lints contradict the project `const new(...)`
+  /// mandate here, so both are suppressed with justification.
+  // ignore: unnecessary_const_in_enum_constructor, unnecessary_type_name_in_constructor
   const AzkarCategoryId(this.value);
 
   /// Stable JSON value.
