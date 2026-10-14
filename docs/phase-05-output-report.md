@@ -1,7 +1,7 @@
-# Phase 05 — Output Report (DRAFT)
+# Phase 05 — Output Report (FINAL)
 
 ## Status
-DRAFT — Task 11c + CR-0015 pending.
+FINAL — 2026-10-14 (Task 0.5, Phase 06). Phase 05-A/B ✅ COMPLETED. Phase 05-C (CR-0015 Multi-Adhan) ⏸️ DEFERRED — pending verified license (CR-0016 on readiness). Supersedes DRAFT status per `NEXT_SESSION.md` (2026-10-13).
 
 ## Summary
 Phase 05-A/B delivered: audit + governance + calculation method UI.
@@ -45,10 +45,10 @@ Phase 05-A/B delivered: audit + governance + calculation method UI.
 | GAP-system-silence-not-detectable | P3 | Phase 04 (carried) |
 | GAP-integration-player-race | P3 | Phase 04 (carried) |
 
-## Deferrals to Phase 05-C+
-- CR-0015 Multi-Adhan (3 CC0 options).
-- Task 11c real call (audio focus).
-- GAPs P2/P3.
+## Deferrals (Phase 05-C DEFERRED → CR-0016 on readiness)
+- CR-0015 Multi-Adhan — DEFERRED (no verified license; see `NEXT_SESSION.md` 2026-10-13 + `governance/cr/CR-0015-multi-adhan.md`).
+- Task 11c real call (audio focus) — carried.
+- GAPs P2/P3 — carried (see Known Gaps above).
 
 ## Next Phase
-Phase 05-C — Multi-Adhan.
+Phase 06 — Athkar (DRAFT `phases/06.md`, 2026-10-14). Phase 05-C re-opens only via CR-0016 with verified source.
