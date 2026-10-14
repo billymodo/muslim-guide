@@ -817,6 +817,120 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'0.1.0+1'**
   String get settings_app_version;
+
+  /// No description provided for @azkar_library_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأذكار'**
+  String get azkar_library_title;
+
+  /// No description provided for @azkar_library_loading.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري تحميل الأذكار'**
+  String get azkar_library_loading;
+
+  /// No description provided for @azkar_library_empty.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا فئات متاحة'**
+  String get azkar_library_empty;
+
+  /// No description provided for @azkar_library_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تحميل الأذكار'**
+  String get azkar_library_error;
+
+  /// No description provided for @azkar_detail_loading.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري تحميل الذكر'**
+  String get azkar_detail_loading;
+
+  /// No description provided for @azkar_detail_empty.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا عناصر في هذه الفئة'**
+  String get azkar_detail_empty;
+
+  /// No description provided for @azkar_detail_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تحميل التفاصيل'**
+  String get azkar_detail_error;
+
+  /// No description provided for @azkar_retry.
+  ///
+  /// In ar, this message translates to:
+  /// **'إعادة المحاولة'**
+  String get azkar_retry;
+
+  /// No description provided for @azkar_category_morning.
+  ///
+  /// In ar, this message translates to:
+  /// **'أذكار الصباح'**
+  String get azkar_category_morning;
+
+  /// No description provided for @azkar_category_evening.
+  ///
+  /// In ar, this message translates to:
+  /// **'أذكار المساء'**
+  String get azkar_category_evening;
+
+  /// No description provided for @azkar_category_sleep.
+  ///
+  /// In ar, this message translates to:
+  /// **'أذكار النوم'**
+  String get azkar_category_sleep;
+
+  /// No description provided for @azkar_category_wake_up.
+  ///
+  /// In ar, this message translates to:
+  /// **'أذكار الاستيقاظ'**
+  String get azkar_category_wake_up;
+
+  /// No description provided for @azkar_category_tasbih.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسابيح'**
+  String get azkar_category_tasbih;
+
+  /// No description provided for @azkar_complete_one.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم'**
+  String get azkar_complete_one;
+
+  /// No description provided for @azkar_counter_semantics.
+  ///
+  /// In ar, this message translates to:
+  /// **'تقدم اليوم'**
+  String get azkar_counter_semantics;
+
+  /// No description provided for @azkar_home_title.
+  ///
+  /// In ar, this message translates to:
+  /// **'أذكار اليوم'**
+  String get azkar_home_title;
+
+  /// No description provided for @azkar_home_loading.
+  ///
+  /// In ar, this message translates to:
+  /// **'جاري تحميل تقدم الأذكار'**
+  String get azkar_home_loading;
+
+  /// No description provided for @azkar_home_error.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذر تحميل تقدم الأذكار'**
+  String get azkar_home_error;
+
+  /// No description provided for @azkar_empty_pending_pack.
+  ///
+  /// In ar, this message translates to:
+  /// **'مكتبة الأذكار قيد الإعداد'**
+  String get azkar_empty_pending_pack;
 }
 
 class _AppLocalizationsDelegate

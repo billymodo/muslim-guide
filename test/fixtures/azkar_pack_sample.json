@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "note": "TEST FIXTURE ONLY (never ships — CI-017). Shape reference for loader parsing tests. No real religious text.",
+  "categories": [
+    {"id": "morning", "total": 2},
+    {"id": "evening", "total": 2},
+    {"id": "sleep", "total": 1},
+    {"id": "wake_up", "total": 1},
+    {"id": "tasbih", "total": 1}
+  ],
+  "items": [
+    {"id": "morning-01", "category": "morning", "text": "[PLACEHOLDER-DHIKR-morning-01]", "virtue": "[PLACEHOLDER-VIRTUE-morning-01]", "repeat": 1, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "morning-02", "category": "morning", "text": "[PLACEHOLDER-DHIKR-morning-02]", "virtue": "[PLACEHOLDER-VIRTUE-morning-02]", "repeat": 3, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "evening-01", "category": "evening", "text": "[PLACEHOLDER-DHIKR-evening-01]", "virtue": "[PLACEHOLDER-VIRTUE-evening-01]", "repeat": 1, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "evening-02", "category": "evening", "text": "[PLACEHOLDER-DHIKR-evening-02]", "virtue": "[PLACEHOLDER-VIRTUE-evening-02]", "repeat": 3, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "sleep-01", "category": "sleep", "text": "[PLACEHOLDER-DHIKR-sleep-01]", "virtue": "[PLACEHOLDER-VIRTUE-sleep-01]", "repeat": 1, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "wake-up-01", "category": "wake_up", "text": "[PLACEHOLDER-DHIKR-wake-up-01]", "virtue": "[PLACEHOLDER-VIRTUE-wake-up-01]", "repeat": 1, "source": "[PLACEHOLDER-SOURCE]"},
+    {"id": "tasbih-01", "category": "tasbih", "text": "[PLACEHOLDER-DHIKR-tasbih-01]", "virtue": "[PLACEHOLDER-VIRTUE-tasbih-01]", "repeat": 33, "source": "[PLACEHOLDER-SOURCE]"}
+  ]
+}

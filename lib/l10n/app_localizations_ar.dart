@@ -377,4 +377,61 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settings_app_version => '0.1.0+1';
+
+  @override
+  String get azkar_library_title => 'الأذكار';
+
+  @override
+  String get azkar_library_loading => 'جاري تحميل الأذكار';
+
+  @override
+  String get azkar_library_empty => 'لا فئات متاحة';
+
+  @override
+  String get azkar_library_error => 'تعذر تحميل الأذكار';
+
+  @override
+  String get azkar_detail_loading => 'جاري تحميل الذكر';
+
+  @override
+  String get azkar_detail_empty => 'لا عناصر في هذه الفئة';
+
+  @override
+  String get azkar_detail_error => 'تعذر تحميل التفاصيل';
+
+  @override
+  String get azkar_retry => 'إعادة المحاولة';
+
+  @override
+  String get azkar_category_morning => 'أذكار الصباح';
+
+  @override
+  String get azkar_category_evening => 'أذكار المساء';
+
+  @override
+  String get azkar_category_sleep => 'أذكار النوم';
+
+  @override
+  String get azkar_category_wake_up => 'أذكار الاستيقاظ';
+
+  @override
+  String get azkar_category_tasbih => 'تسابيح';
+
+  @override
+  String get azkar_complete_one => 'تم';
+
+  @override
+  String get azkar_counter_semantics => 'تقدم اليوم';
+
+  @override
+  String get azkar_home_title => 'أذكار اليوم';
+
+  @override
+  String get azkar_home_loading => 'جاري تحميل تقدم الأذكار';
+
+  @override
+  String get azkar_home_error => 'تعذر تحميل تقدم الأذكار';
+
+  @override
+  String get azkar_empty_pending_pack => 'مكتبة الأذكار قيد الإعداد';
 }

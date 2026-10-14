@@ -5,6 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:muslim_guide/app/deep_link_parser.dart';
 import 'package:muslim_guide/app/providers/bootstrap_provider.dart';
 import 'package:muslim_guide/core/logging/local_error_log.dart';
+import 'package:muslim_guide/features/azkar/domain/azkar_category.dart';
+import 'package:muslim_guide/features/azkar/presentation/azkar_detail_screen.dart';
+import 'package:muslim_guide/features/azkar/presentation/azkar_library_screen.dart';
 import 'package:muslim_guide/features/home/presentation/home_placeholder.dart';
 import 'package:muslim_guide/features/notifications/presentation/notification_diagnostics_screen.dart';
 import 'package:muslim_guide/features/onboarding/presentation/language_selection_screen.dart';
@@ -77,6 +80,21 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/settings/calculation',
         builder: (context, state) => const CalculationSettingsScreen(),
+      ),
+      GoRoute(
+        path: '/azkar',
+        builder: (context, state) => const AzkarLibraryScreen(),
+        routes: [
+          GoRoute(
+            path: ':category',
+            builder: (context, state) {
+              final raw = state.pathParameters['category'];
+              final category = AzkarCategoryId.fromValue(raw) ??
+                  AzkarCategoryId.morning;
+              return AzkarDetailScreen(categoryId: category);
+            },
+          ),
+        ],
       ),
     ],
   );

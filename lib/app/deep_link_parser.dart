@@ -21,6 +21,12 @@ abstract final class DeepLinkParser {
       ('diagnostics', '/notifications') => '/diagnostics/notifications',
       ('notifications', '/settings') => '/settings/notifications',
       ('settings', '/calculation') => '/settings/calculation',
+      ('azkar', '/morning') => '/azkar/morning',
+      ('azkar', '/evening') => '/azkar/evening',
+      ('azkar', '/sleep') => '/azkar/sleep',
+      ('azkar', '/wake_up') => '/azkar/wake_up',
+      ('azkar', '/tasbih') => '/azkar/tasbih',
+      ('test', '/azkar') => '/azkar',
       _ => null,
     };
   }

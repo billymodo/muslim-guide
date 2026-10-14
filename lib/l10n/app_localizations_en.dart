@@ -385,4 +385,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settings_app_version => '0.1.0+1';
+
+  @override
+  String get azkar_library_title => 'Azkar';
+
+  @override
+  String get azkar_library_loading => 'Loading azkar';
+
+  @override
+  String get azkar_library_empty => 'No categories available';
+
+  @override
+  String get azkar_library_error => 'Could not load azkar';
+
+  @override
+  String get azkar_detail_loading => 'Loading details';
+
+  @override
+  String get azkar_detail_empty => 'No items in this category';
+
+  @override
+  String get azkar_detail_error => 'Could not load details';
+
+  @override
+  String get azkar_retry => 'Retry';
+
+  @override
+  String get azkar_category_morning => 'Morning azkar';
+
+  @override
+  String get azkar_category_evening => 'Evening azkar';
+
+  @override
+  String get azkar_category_sleep => 'Sleep azkar';
+
+  @override
+  String get azkar_category_wake_up => 'Wake-up azkar';
+
+  @override
+  String get azkar_category_tasbih => 'Tasbih';
+
+  @override
+  String get azkar_complete_one => 'Done';
+
+  @override
+  String get azkar_counter_semantics => 'Today\'s progress';
+
+  @override
+  String get azkar_home_title => 'Today\'s azkar';
+
+  @override
+  String get azkar_home_loading => 'Loading azkar progress';
+
+  @override
+  String get azkar_home_error => 'Could not load azkar progress';
+
+  @override
+  String get azkar_empty_pending_pack => 'Azkar library is being prepared';
 }
