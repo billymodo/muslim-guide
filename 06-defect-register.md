@@ -68,6 +68,12 @@
 |---|---|---|---|---|---|
 | BUG-7 | Prayer notification arrives without audible sound although `prayer_adhan_v1` has a raw WAV sound configured | P1 | Oppo A95 / Android 13 — 2026-10-10 | **CLOSED (device-verified in `74a0700`)** — Device test 2026-10-11: 3 beeps heard + AudioTrack streamType 5 confirmed via logcat | Channel `prayer_adhan_v2` plays OGG correctly; WAV→OGG conversion confirmed as fix; evidence `docs/evidence/phase-04/p1-ogg-*.txt` |
 
+## Phase 06 — Device Testing Bugs
+
+| ID | Bug | Severity | Found In | Status | Evidence |
+|---|---|---|---|---|---|
+| BUG-8 | Swiping notification panel during Adhan playback stops `audio_service` on ColorOS. Diagnosis: not an `audio_session` interruption (H2 rejected), not `audio_service` pause/task-removed/notification-deleted hooks (H5 rejected). Suspected ColorOS media-session policy or Activity lifecycle; needs a controlled test on another device. | P2 | Phase 06 → Phase 07 | OPEN (deferred, device test pending) | Scenario 3, Abdo 2026-10-15 |
+
 ## Known Gaps (pre-Phase 03)
 
 | ID | Gap | Severity | Found In | Status |

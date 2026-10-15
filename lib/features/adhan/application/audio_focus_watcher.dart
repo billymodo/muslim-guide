@@ -6,10 +6,9 @@ import 'package:muslim_guide/features/adhan/data/audio_session_config.dart';
 /// Watches audio-focus interruptions and noisy-device events for Task 6.
 ///
 /// Policy (OD-0023, M-3):
-/// - On every interruption `begin` (call, competing session, duck, or
-///   permanent loss): invokes the stop callback if the player was playing,
-///   recording the reason. Duck arrives as pause thanks to
-///   `willPauseWhenDucked: true`.
+/// - On interruption `begin` with `duck`: records the event but keeps playing.
+/// - On other interruption `begin` events (call or permanent loss): invokes
+///   the stop callback if the player was playing, recording the reason.
 /// - On interruption `end`: deliberately nothing — no play call, which
 ///   prevents automatic resume.
 /// - On `becomingNoisy` (headset/Bluetooth disconnect): same as begin.
@@ -83,8 +82,11 @@ class AudioFocusWatcher {
       // M-3: on end — deliberately nothing. No play call → no auto-resume.
       return;
     }
-    // M-3: on every begin (pause/duck/unknown — call, competing session,
-    // or permanent loss): stop if playing.
+    if (event.type == AudioInterruptionType.duck) {
+      lastInterruptionReason = 'duck-ignored';
+      return;
+    }
+    // M-3: pause/unknown begin (call or permanent loss): stop if playing.
     lastInterruptionReason = 'interruption-begin:${event.type.name}';
     await _stopIfPlaying();
   }

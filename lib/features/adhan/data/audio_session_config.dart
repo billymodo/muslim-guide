@@ -40,16 +40,21 @@ class RealAdhanAudioSession implements AdhanAudioSession {
 /// Configures the shared audio session for Adhan playback (Task 6).
 ///
 /// Uses the `speech()` recipe: the Adhan is continuous human voice, closer
-/// to speech than music. `willPauseWhenDucked: true` converts transient-duck
-/// focus losses into pause events so small competing sounds stop (rather
-/// than duck) playback — the respectful behavior approved in M-1.
+/// to speech than music. On Android, transient duck events remain `duck`
+/// rather than being converted to `pause`, allowing the focus watcher to
+/// ignore duck events while still stopping on pauses. Notification-panel
+/// behavior remains unverified on ColorOS (BUG-8).
 ///
 /// Verbatim recipe (`audio_session 0.2.4`):
 /// `playback` category, `spokenAudio` mode, `usage: media`,
-/// `contentType: speech`, `focus gain`, `willPauseWhenDucked: true`.
+/// `contentType: speech`, `focus gain`; Android override:
+/// `willPauseWhenDucked: false`.
 ///
 /// Android-only scope (Phase 04 per DEC-0015); iOS fields are documented
 /// but not exercised here.
 Future<void> configureAdhanAudioSession(AudioSession session) {
-  return session.configure(const AudioSessionConfiguration.speech());
+  final configuration = const AudioSessionConfiguration.speech().copyWith(
+    androidWillPauseWhenDucked: false,
+  );
+  return session.configure(configuration);
 }

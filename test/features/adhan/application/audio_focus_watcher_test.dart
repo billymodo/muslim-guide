@@ -59,7 +59,7 @@ void main() {
     expect(env.watcher.lastInterruptionReason, 'interruption-begin:pause');
   });
 
-  test('begin-duck while playing stops (willPauseWhenDucked policy)', () async {
+  test('begin-duck while playing is ignored', () async {
     var stops = 0;
     final env = makeWatcher(
       isPlaying: () => true,
@@ -76,8 +76,9 @@ void main() {
     env.session.beginInterruption(AudioInterruptionType.duck);
     await pumpEventQueue();
 
-    expect(stops, 1);
-    expect(env.watcher.wasInterrupted, isTrue);
+    expect(stops, 0);
+    expect(env.watcher.wasInterrupted, isFalse);
+    expect(env.watcher.lastInterruptionReason, 'duck-ignored');
   });
 
   test('begin-unknown while playing stops (permanent loss)', () async {
