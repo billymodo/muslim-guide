@@ -214,6 +214,25 @@
 
 **Package:** `flutter_timezone` — verify on pub.dev before CR-0010 approval and implementation.
 
+## DEC-0030 — Quran storage format: JSON
+
+**Status:** APPROVED
+**Date:** 2026-10-16
+
+**Decision:** Store the Quran text as JSON at `assets/content/quran/quran-uthmani.json`.
+
+**Reason:**
+- The generated dataset is 1.77 MB, acceptable for a bundled asset.
+- It can be loaded directly from Flutter assets without SQLite or another package.
+- The reader can select surahs from the structured JSON.
+- Cold-start performance remains subject to measurement against REQ-QURAN-001 on the reference device.
+
+**Alternatives considered:**
+- SQLite asset: unnecessary infrastructure for this dataset.
+- Compressed JSON: additional complexity without a demonstrated need.
+
+**Closes:** OD-0003.
+
 ## Change Requests (CRs)
 
 - CR-0001 — Phase-Aware CI Rollout — APPROVED (2026-10-05) — `governance/cr/CR-0001-phase-aware-ci-rollout.md`

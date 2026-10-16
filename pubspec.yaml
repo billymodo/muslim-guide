@@ -45,3 +45,8 @@ flutter:
   assets:
     - assets/cities/
     - assets/audio/adhan.ogg
+    - assets/content/quran/
+  fonts:
+    - family: AmiriQuran
+      fonts:
+        - asset: assets/fonts/AmiriQuran.ttf

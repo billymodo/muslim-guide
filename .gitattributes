@@ -2,3 +2,11 @@
 *.sh text eol=lf
 *.yaml text eol=lf
 *.yml text eol=lf
+
+# Preserve checksummed Quran text, generated data, and license evidence verbatim.
+assets/content/quran/quran-uthmani.json -text
+tool/tanzil/quran-uthmani.txt -text
+tool/tanzil/quran-data.xml -text
+legal/evidence/tanzil-uthmani-source-2026-10-16.txt -text
+legal/evidence/tanzil-license-2026-10-16.txt -text
+legal/evidence/amiri-ofl-2026-10-16.txt -text

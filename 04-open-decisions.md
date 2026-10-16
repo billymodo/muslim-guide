@@ -15,13 +15,14 @@
 ## OD-0003 — تنسيق تخزين القرآن
 - **Question**: JSON واحد أم SQLite كـasset؟
 - **Blocking Phase**: Phase 06
-- **Status**: OPEN
-- **Criterion**: cold start < 2.0s على الجهاز المرجعي.
+- **Status**: CLOSED — JSON (`assets/content/quran/quran-uthmani.json`), DEC-0030 (2026-10-16)
+- **Criterion**: cold start < 2.0s على الجهاز المرجعي؛ القياس ما زال مطلوبًا.
 
 ## OD-0004 — تطبيع البحث العربي
 - **Question**: قواعد التطبيع (تشكيل، همزات، ألف مقصورة، تاء مربوطة)؟
-- **Blocking Phase**: قبل Phase 06
+- **Blocking Phase**: Phase 12
 - **Status**: OPEN
+- **Note (2026-10-16)**: البحث معطّل في Phase 06؛ يُحسم هذا القرار في Phase 12.
 
 ## OD-0005 — التقويم الهجري
 - **Question**: أم القرى / فلكي / خيار للمستخدم؟

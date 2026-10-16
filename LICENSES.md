@@ -74,7 +74,22 @@
 
 ## 5. الأصول (محتوى/خطوط/صور)
 
-- **لا أصول مُشحونة في Phase 00** — `assets/` فارغ عدا `.gitkeep` (يتحقق منه CI-002).
+- لم تكن هناك أصول مُشحونة في Phase 00. أصول Phase 06 موثقة أدناه وفي `legal/assets.yaml`.
+
+### Tanzil Quran Text
+
+- Version: Uthmani 1.1 (2021-02).
+- License: Creative Commons Attribution 3.0; changing the Quran text is not allowed.
+- Use: Tanzil's developer FAQ says its resources are for non-commercial purposes. The application is free with no monetization per `00-project-charter.md`.
+- Required attribution: “Tanzil Quran Text — Copyright (C) 2007-2026 Tanzil Project — License: Creative Commons Attribution 3.0”, with a link to https://tanzil.net.
+- Copyright notice discrepancy: the downloaded text embeds 2007-2026, while the license page displays 2007-2021. Both source snapshots are retained under `legal/evidence/`.
+
+### Amiri Quran Font
+
+- Version: 1.003; published 2025-06-13 — https://github.com/aliftype/amiri/releases/tag/1.003
+- License: SIL Open Font License 1.1 — https://openfontlicense.org/
+- The font may be bundled and redistributed with software, but not sold by itself. Modifications are permitted under OFL terms, including its Reserved Font Name conditions.
+- Include the copyright notice and OFL with each distributed font copy; the license snapshot is `legal/evidence/amiri-ofl-2026-10-16.txt`.
 - سجل الأصول الكامل: `legal/assets.yaml` (يُحدَّث إلى schema v2 قبل تفعيل CI-001/003–008 — DEC-0018).
 
 ## 6. حزم حُذفت من قالب `flutter create` (غير مدرجة في أي DEC)

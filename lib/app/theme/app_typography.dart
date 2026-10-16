@@ -13,4 +13,12 @@ class AppTypography {
     bodyMedium: TextStyle(fontSize: 14),
     bodySmall: TextStyle(fontSize: 12),
   );
+
+  /// Style for Quranic text (Amiri Quran font), not interface text.
+  static const TextStyle quran = TextStyle(
+    fontFamily: 'AmiriQuran',
+    fontSize: 28,
+    height: 2,
+    letterSpacing: 0,
+  );
 }

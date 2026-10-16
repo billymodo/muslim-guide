@@ -7,17 +7,41 @@ assets:
   # ===== النص القرآني والترجمة والتفسير =====
   - asset_id: quran-uthmani
     asset_type: text
-    name: "النص القرآني العثماني"
+    name: "النص القرآني العثماني (Tanzil)"
     provider: "Tanzil.net"
     source_url: "https://tanzil.net"
+    source_version: "1.1"
     license_type: "CC BY 3.0 (no modification)"
     redistribution_allowed: true
+    modification_allowed: false
     attribution_required: true
+    conditions:
+      - "Attribution: Tanzil Quran Text — Copyright (C) 2007-2026 Tanzil Project"
+      - "Link to https://tanzil.net"
+      - "Do not modify the Quran text"
+      - "Non-commercial use per the Tanzil developer FAQ; this application is free"
     status: SOURCE_IDENTIFIED
+    path: "assets/content/quran/quran-uthmani.json"
+    captured_at: "2026-10-16"
+    checksum: "sha256:09a5745c5fe77a3d5711940ae739f7cd7c85bb16bd32e106bbada65571233fa0"
+    checksum_method: "SHA-256 of the UTF-8 quran-uthmani.json bytes"
+    evidence:
+      - kind: license_snapshot
+        ref: legal/evidence/tanzil-license-2026-10-16.txt
+        captured_at: "2026-10-16"
+        sha256: "6a43ba86f196e0b0e425d3864973af62308a00488360f45f320b9631032a3d4d"
+      - kind: source_snapshot
+        ref: legal/evidence/tanzil-uthmani-source-2026-10-16.txt
+        captured_at: "2026-10-16"
+        sha256: "6933e133dd56db778c801bf738848454e43648105a151e8d84d86a7cae39ec5f"
     reviewed_at: null
-    evidence: []
     reviewer: shaykh-4
     phase: 06
+    notes: |
+      - Tanzil text release 1.1 (2021-02); text exported from the official Uthmani download.
+      - The license page shows the copyright notice as 2007-2021; the downloaded text's embedded notice says 2007-2026.
+      - The downloaded developer FAQ describes Tanzil resources as non-commercial; the app has no monetization per the project charter.
+      - JSON structures the source text without modifying verse text.
 
   - asset_id: quran-translation-en
     asset_type: text
@@ -236,14 +260,25 @@ assets:
   # ===== الخطوط =====
   - asset_id: amiri-quran-font
     asset_type: font
-    name: "Amiri Quran"
+    name: "Amiri Quran Font"
     provider: "Amiri Project"
     source_url: "https://github.com/aliftype/amiri"
-    license_type: "OFL"
+    source_version: "1.003"
+    license_type: "SIL OFL 1.1"
     redistribution_allowed: true
+    modification_allowed: true
     attribution_required: true
-    status: LICENSE_REVIEW
+    status: SOURCE_IDENTIFIED
+    path: "assets/fonts/AmiriQuran.ttf"
+    captured_at: "2026-10-16"
+    checksum: "sha256:5594121cfcd33d05ea4635b7908d15c0eced0c91aa06469a95354b3369ca2949"
+    checksum_method: "SHA-256 of the AmiriQuran.ttf bytes"
+    evidence:
+      - kind: license_snapshot
+        ref: legal/evidence/amiri-ofl-2026-10-16.txt
+        captured_at: "2026-10-16"
+        sha256: "72de68e5954f4fdd24702292ef5a32f003ca960ec9330dc86e5eefb5dffb9b22"
     reviewed_at: null
-    evidence: []
     reviewer: null
     phase: 06
+    notes: "Amiri 1.003 released 2025-06-13. OFL permits modification subject to its terms, including keeping modified font software under OFL and respecting Reserved Font Names."
