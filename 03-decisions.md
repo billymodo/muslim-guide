@@ -244,3 +244,36 @@
 - CR-0007 — compileSdk 36 لدعم share_plus — APPROVED (2026-10-06) — `governance/cr/CR-0007-compilesdk-36-share-plus.md`
 - CR-0008 — timezone package — APPROVED (2026-10-07) — `governance/cr/CR-0008-timezone-package.md`
 - CR-0009 — geolocator package — APPROVED (2026-10-08) — `governance/cr/CR-0009-geolocator.md`
+### DEC-0031 — Phase A definition
+
+**Status:** APPROVED
+**Date:** 2026-10-16
+
+**Decision:** phase_A = ["00", "00B"] (بنية تحتية).
+
+**Reason:**
+- 00 = قرارات + وثائق + CI
+- 00B = Spike الإشعارات
+- كلاهما مكتمل
+
+**Consequences:**
+- APR-0001 APPROVED
+- يفتح Phase 01 (جزء من phase_B)
+
+### DEC-0032 — Phase B approved (retroactive)
+
+**Status:** APPROVED
+**Date:** 2026-10-16
+
+**Decision:** phase_B = ["01"..."09"] APPROVED بأثر رجعي.
+
+**Reason:**
+- 01-04 مكتملة
+- 05 skeleton مكتمل
+- 06 جاري
+- الاعتماد متأخر إدارياً
+
+**Consequences:**
+- APR-0002 APPROVED
+- العمل مستمر
+- CR-0016: annotated tags

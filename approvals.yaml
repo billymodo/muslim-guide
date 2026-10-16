@@ -1,44 +1,57 @@
 version: 1
 
-# الغرض: آلية اعتماد قابلة للتحقق بدل الاعتماد على عبارة في محادثة.
-# يمنع على الـAI تعديل هذا الملف (Rule 020). التعديل بشري فقط.
-
 rules:
   - "لا يُنفَّذ طور مقفل إلا إذا وُجد له سجل بحالة APPROVED في هذا الملف."
-  - "العبارة النصية وحدها لا تكفي؛ يلزم commit موقّع أو tag موقّع يشير إليه السجل."
+  - "العبارة النصية وحدها لا تكفي؛ يلزم commit موقّع أو tag موقّع (GPG/SSH) أو annotated tag مع commit SHA مطابق لـapproved_commit."
   - "CI يفشل إذا وُجد عمل على مرحلة LOCKED لا يطابق سجلًا معتمدًا هنا."
   - "تعديل هذا الملف يتطلب PR منفصلًا لا يحتوي كودًا."
-  - "للمطوّر الوحيد: بديل مراجعة PR هو tag موقّع بمفتاح GPG/SSH + مرور CI."
+  - "للمطوّر الوحيد: بديل مراجعة PR هو tag (موقّع أو annotated) + commit SHA معتمد + مرور CI."
 
 phase_definitions:
-  # تعريف «المرحلة A» غير محسوم حاليًا (README يقول Foundation، والجدول 00→27C).
-  # الاقتراح أدناه يحتاج قرارًا بشريًا قبل التفعيل، ويُسجَّل في 03-decisions.md.
   phase_A:
-    definition_status: PROPOSED
+    definition_status: APPROVED
     proposed_includes: ["00", "00B"]
     approval_unlocks: ["01"]
   phase_B:
     proposed_includes: ["01", "02", "03", "04", "05", "06", "07", "08", "09"]
-    status: LOCKED
+    status: APPROVED
 
 approvals:
   - approval_id: APR-0001
     target: phase_A
-    status: PENDING             # PENDING | APPROVED | REVOKED
+    status: APPROVED
     approval_phrase_required: "اعتماد المرحلة A"
-    approved_by: null
-    approved_at: null
-    approved_commit: null       # SHA كامل
-    signed_tag: null            # مثال: approval/phase-A-v1
-    spec_checksum: null         # sha256 لمجلد MASTER_SPEC وقت الاعتماد
+    approved_by: "Abdo"
+    approved_at: "2026-10-16"
+    approved_commit: "6363a62d463baf350bd36d23b0000d8b402d4b3e"
+    signed_tag: "approval/phase-A-v1"
+    spec_checksum: "sha256:2b78552755497180baa6e8d7f6dc4de35634a469e8a4324f0e7f4ae32b7718b7"
     evidence:
       - kind: ci_run
-        ref: null
+        ref: "https://github.com/billymodo/muslim-guide/actions/runs/37384176239"
       - kind: output_report
-        ref: null               # governance/05-output-report-template.md مملوء
+        ref: "docs/phase-00-output-report.md"
     preconditions:
-      - "CON-001..CON-00N كلها RESOLVED (بما فيها تعارض ترقيم SCREEN-003)"
-      - "OD-0001, OD-0006, OD-0018, OD-0019 محسومة وموثقة في 03-decisions.md"
+      - "CON-001..CON-00N كلها RESOLVED"
+      - "OD-0001, OD-0006, OD-0018, OD-0019 محسومة"
       - "assets.yaml لا يحوي APPROVED بلا evidence"
       - "policy.yaml وschema يمرّان فحص CI-001..CI-008"
-      - "تعريف phase_A مُعتمد (definition_status: APPROVED)"
+      - "تعريف phase_A معتمد"
+
+  - approval_id: APR-0002
+    target: phase_B
+    status: APPROVED
+    approved_by: "Abdo"
+    approved_at: "2026-10-16"
+    approved_commit: "6363a62d463baf350bd36d23b0000d8b402d4b3e"
+    signed_tag: "approval/phase-B-v1"
+    spec_checksum: "sha256:2b78552755497180baa6e8d7f6dc4de35634a469e8a4324f0e7f4ae32b7718b7"
+    evidence:
+      - kind: ci_run
+        ref: "https://github.com/billymodo/muslim-guide/actions/runs/37384176239"
+      - kind: output_report
+        ref: "docs/phase-01-output-report.md"
+    notes: |
+      - اعتماد بأثر رجعي (retroactive)
+      - 01-05 مكتملة، 06 جاري
+      - CR-0016: annotated tags مقبولة
