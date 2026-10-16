@@ -41,8 +41,8 @@ class RealAdhanAudioSession implements AdhanAudioSession {
 ///
 /// Uses the `speech()` recipe: the Adhan is continuous human voice, closer
 /// to speech than music. On Android, transient duck events remain `duck`
-/// rather than being converted to `pause`, allowing the focus watcher to
-/// ignore duck events while still stopping on pauses. Notification-panel
+/// rather than being converted to `pause`, which lets the focus watcher treat
+/// them as duck events while still stopping on pauses. Notification-panel
 /// behavior remains unverified on ColorOS (BUG-8).
 ///
 /// Verbatim recipe (`audio_session 0.2.4`):
