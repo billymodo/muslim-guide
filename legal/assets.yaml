@@ -76,6 +76,30 @@ assets:
     reviewer: shaykh-1
     phase: 05
 
+  - asset_id: azkar-received-archived
+    asset_type: text
+    name: "أذكار — ملف مستلم (مؤرشف)"
+    provider: "مستلم — المصدر غير موثق"
+    source_url: "N/A"
+    version: null
+    license_type: "UNKNOWN"
+    redistribution_allowed: false
+    modification_allowed: false
+    attribution_required: false
+    conditions: []
+    status: REJECTED
+    reviewed_at: null
+    review_expires_at: null
+    evidence: []
+    reviewer: null
+    phase: 05
+    notes: |
+      - ARCHIVED — لا يُستخدم في الإنتاج.
+      - لا دليل على المصدر أو حقوق إعادة التوزيع.
+      - مرجع تاريخي محتمل لـ v2.0 فقط بعد تحقق مستقل.
+      - الملف المقدم محفوظ في موضعه الأصلي خارج السجل؛ لم يُنسخ إلى المستودع.
+      - راجع docs/reviews/azkar-2026-10-16-received/.
+
   - asset_id: azkar-json-dataset
     asset_type: data
     name: "Adhkar JSON Dataset"
