@@ -14,27 +14,33 @@
 
 **Phase 01 preparation decisions:** OD-0008, OD-0010, OD-0012, and OD-0013 are decided by DEC-0024 through DEC-0027.
 
-\# Phase Progress — Snapshot
+# Phase Progress — Snapshot
 
-## Phase 06 — ✅ COMPLETED (2026-10-14)
-- Phase 06-A: Azkar skeleton and pending-pack Empty state completed.
-- Phase 06-B: Verified pack BLOCKED; carried to Phase 07.
-- Device test: PASS (owner-reported; see `docs/phase-06-output-report.md`).
-- Output report: `docs/phase-06-output-report.md`.
-- GAP-ci018-posix-regex: CLOSED (`b79e3c9`).
+> Updated 2026-10-16. Canonical phase numbering follows `phases/README.md`.
 
-## Phase 07 — NEXT
-- Azkar Pack (new CR): collect manually from approved sources; obtain license, checksum, and human review before shipping.
+| Phase | Scope | Status |
+|---|---|---|
+| 01–04 | Foundation, prayer/location, Qibla, Adhan/notifications | Completed |
+| 05 | Azkar skeleton and pending-pack Empty state | Completed; content pack deferred beyond v1.0 |
+| 06 | Quran | Active — source/licensing and content work not yet completed |
+| 07 | Recitation | Upcoming |
+| 08 | Calendar | Upcoming |
+| 09 | v1.0 stabilization | Upcoming |
 
+## Phase 06 — Quran (ACTIVE)
+- `assets/content/quran/` and `lib/features/quran/` contain placeholders only; no Quran dataset or feature implementation is present.
+- Next: verify source terms and attribution requirements before obtaining Quran text, then record provenance and validate the data before implementation.
+- No Quran code or content is represented as completed.
 
+## Phase 05 — Azkar
+- Skeleton and pending-pack Empty state are complete.
+- The received content remains unverified and is not shipped; the rights-clean rebuild is deferred beyond v1.0.
+- Output report: `docs/azkar-skeleton-output-report.md`.
 
-> \*\*آخر تحديث:\*\* 2026-10-14 (Phase 06 completed; Phase 07 next)
+## Historical progress records
+Older phase-specific task labels below this snapshot are preserved as historical records. Use the phase mapping above and `phases/README.md` for current numbering.
 
-> \*\*يُحدَّث:\*\* بعد كل خطوة (الوكيل مسؤول)
-
-
-
-\---
+---
 
 
 

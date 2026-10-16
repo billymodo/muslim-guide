@@ -1,43 +1,45 @@
-# NEXT_SESSION — اقرأني أولاً
+# NEXT_SESSION — Phase 06 Quran
 
-> آخر تحديث: 2026-10-14
-> الحالة: Phase 06 ✅ COMPLETED — skeleton/Empty state pushed; verified pack BLOCKED → Phase 07. Device test PASS (owner-reported). Phase 05-C DEFERRED.
+> Updated: 2026-10-16
+> Canonical phase mapping: `phases/README.md`
+> Current status: Phase 05 Azkar skeleton completed; Phase 06 Quran active.
 
-## المرحلة الحالية
-- Phase 06: ✅ COMPLETED — skeleton + Empty state; output report: `docs/phase-06-output-report.md`; pack = BLOCKED (GAP-azkar-pack-pending P1), carried to Phase 07.
-- Phase 07: NEXT — Azkar Pack via new CR; verify source/license/checksum and complete human review before shipping.
-- Phase 05-C: ⏸️ Multi-Adhan (CR-0015) — **DEFERRED**.
+## Current state
 
-## Phase 07 — Azkar Pack (CR جديد)
-- جمع يدوي من القرآن + الصحيحين (mubāḥ).
-- مراجعة بشرية (`content/reviewers.yaml`).
-- source_url + license (mubāḥ) + checksum + `legal/assets.yaml`.
-- CR-0016 أو CR-0017 عند الجاهزية.
+- `assets/content/quran/` and `lib/features/quran/` contain `.gitkeep` placeholders only.
+- No Quran text dataset, feature implementation, or Quran tests are present.
+- The Phase 05 Azkar content pack remains deferred beyond v1.0. The received content is not approved for production.
+- Do not treat any source license or rights status as verified without recording its evidence.
 
-## المرحلة الحالية
-- Phase 05-A: ✅ Audit & Cleanup
-- Phase 05-B: ✅ Calculation Method UI
-- Phase 05-C: ⏸️ Multi-Adhan (CR-0015) — **DEFERRED** (بانتظار مصدر بترخيص موثّق؛ يُفتح CR-0016 عند الجاهزية)
+## Phase 06 tasks
 
-## المتبقي
-- **CR-0015 Multi-Adhan — DEFERRED**: يُعاد فتحه عند:
-  - تسجيل محلي من مسجد (بإذن).
-  - ترخيص موثّق من SBA (السعودية) أو مؤسسة.
-  - مصدر CC0/CC-BY عالي الجودة على Commons/Freesound.
-  - **CR-0016** يُفتح عند الجاهزية.
-- Task 11c real call.
-- GAPs: task6-interruption (P2), layout-coupling (P2), multi-adhan-deferred (P3), in-call-adhan-fallback (P3), atomic-commit-gap (P3).
+1. **Verify the source and license**
+   - Review the exact Tanzil source/export and its current terms.
+   - Record the source URL, version, required attribution, and permitted use/modification in the legal registry before downloading content for production.
+   - Stop if the terms or permitted transformations are unclear.
 
-## Commit HEAD
-Current main: Phase 06 closeout commits pushed; see `git log -1 --oneline`.
+2. **Obtain and validate Quran text**
+   - After the rights gate is satisfied, obtain the selected Arabic text without modifying the source text.
+   - Record provenance and a SHA-256 checksum.
+   - Validate the source's surah/ayah structure, completeness, and text integrity before integrating it.
 
-## الجهاز
-Oppo A95 (CPH2365, Android 13)
+3. **Plan the data integration**
+   - Inspect the existing Quran feature and loader expectations; currently they are placeholders.
+   - Define the data format and attribution display consistent with the verified source terms.
+   - Keep the dataset outside production assets until licensing and validation are complete.
 
-## دروس Phase 05
-1. PowerShell `Set-Content` يُفسد UTF-8 (خاصة العربية) → محرر فقط.
-2. `git add <explicit list>` قد يفوّت ملفات → `git status` قبل commit.
-3. Widget tests: section-specific أفضل من mega-tests.
-4. Test + production في نفس الـcommit (atomic).
-5. ListView lazy: لا تطالب بأعلى+أسفل في نفس الاختبار.
-6. Android in-call: audio focus blocks adhan (expected).
+4. **Implement and verify**
+   - Only after the source and data are approved, implement the smallest required Quran reading flow and focused tests.
+   - Run the relevant analysis, tests, and build; verify the experience on a device before marking Phase 06 complete.
+
+## Constraints
+
+- Do not claim a license or source approval without evidence.
+- Do not modify source Quran text unless the verified terms explicitly allow it.
+- Do not mark Phase 06 complete while the dataset, feature, and validation remain outstanding.
+- Keep Phase 07 as Recitation and Phase 08 as Calendar, per `phases/README.md`.
+
+## Other deferred work
+
+- Multi-Adhan (CR-0015) remains deferred pending a verified source license.
+- Azkar content rebuilding is tracked separately in `docs/azkar-rebuild-plan.md`.

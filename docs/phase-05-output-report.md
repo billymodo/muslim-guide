@@ -1,7 +1,9 @@
 # Phase 05 — Output Report (FINAL)
 
 ## Status
-FINAL — 2026-10-14 (Task 0.5, Phase 06). Phase 05-A/B ✅ COMPLETED. Phase 05-C (CR-0015 Multi-Adhan) ⏸️ DEFERRED — pending verified license (CR-0016 on readiness). Supersedes DRAFT status per `NEXT_SESSION.md` (2026-10-13).
+FINAL — 2026-10-14 (Task 0.5; then tracked under Phase 06). Phase 05-A/B ✅ COMPLETED. Phase 05-C (CR-0015 Multi-Adhan) ⏸️ DEFERRED — pending verified license (CR-0016 on readiness). Supersedes DRAFT status per `NEXT_SESSION.md` (2026-10-13).
+
+> Historical record: the Phase 05-A/B labels below predate the canonical phase map in `phases/README.md`. The current Phase 05 is Azkar; this report preserves the completed calculation-method work without assigning it to the current roadmap.
 
 ## Summary
 Phase 05-A/B delivered: audit + governance + calculation method UI.
@@ -35,9 +37,9 @@ Phase 05-A/B delivered: audit + governance + calculation method UI.
 | GAP | Severity | Target |
 |---|---|---|
 | GAP-task6-device-interruption | P2 | Task 11c |
-| GAP-widget-test-layout-coupling | P2 | Phase 06 |
-| GAP-in-call-adhan-fallback | P3 | Phase 06 (optional) |
-| GAP-atomic-commit-gap | P3 | Phase 06 (process) |
+| GAP-widget-test-layout-coupling | P2 | Backlog (re-triage) |
+| GAP-in-call-adhan-fallback | P3 | Backlog (re-triage) |
+| GAP-atomic-commit-gap | P3 | Backlog (re-triage) |
 | GAP-calc-method-ui | — | CLOSED (05-B) |
 | GAP-cr0013-missing-photo | — | CLOSED (05-A) |
 | GAP-format-time-dup | — | CLOSED (05-A) |
@@ -51,4 +53,4 @@ Phase 05-A/B delivered: audit + governance + calculation method UI.
 - GAPs P2/P3 — carried (see Known Gaps above).
 
 ## Next Phase
-Phase 06 — Athkar (DRAFT `phases/06.md`, 2026-10-14). Phase 05-C re-opens only via CR-0016 with verified source.
+Current roadmap: Phase 05 — Athkar (`phases/05.md`); Phase 06 — Quran. The Phase 05-C multi-Adhan work recorded in this historical report remains deferred pending a verified source.
